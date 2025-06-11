@@ -13,21 +13,57 @@
 
     <title>Far From Home</title>
 </head>
-<body>
-    <section id="intro">
+<body class="bg-black">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container-xxl">
+            <a href="#intro" class="navbar-brand">
+                <span class="fw-bold text-light">
+                    Far From Home
+                </span>
+            </a>
+            <!-- toggle button for mobile nav -->
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+             </button>
+
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#narratives" class="nav-link">Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#themes" class="nav-link">Themes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#collection" class="nav-link">The collection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About the project</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a class="btn btn-light" href="stories">Explore the exhibition</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> 
+
+    <!-- intro section -->
+    <section id="intro" class="mt-5">
         <div class="container-lg">
           <div class="row align-items-center">
-            
             <!-- text column -->
             <div class="col-md-6 text-center text-md-start">
               <h1>
-                <div class="display-2">Far From Home</div>
-                <div class="display-5 text-muted">To have, to lose, to find home</div>
+                <div class="display-2" style="color: rgb(255, 255, 255)">Far From Home</div>
+                <div class="display-5" style="color: rgb(227, 227, 227)">To have, to lose, to find a home</div>
               </h1>
-              <p class="lead my-4 text-muted">
+              <p class="lead my-4" style="color: rgb(203, 200, 200)">
                 A multi-media university project for the master Digital Humanities and Digital knowledge at the University of Bologna (2024–2025).
               </p>
-              <a href="#start" class="p-2 btn btn-secondary btn-lg">Explore the exhibition</a>
+              <a href="#start" class="p-2 btn btn-light btn-lg" >Explore the exhibition</a>
             </div>
 
             <!-- image column -->
@@ -36,12 +72,14 @@
             </div>
           </div>
         </div>
-      </section>
-      <section id="theme-text">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-md-12 bg-light bg-gradient m-2 p-4">
-                    <p class="lead fs-6 fw-light ln-base">
+    </section>
+
+      <!-- exhibition abstract text section-->
+    <section id="abstract-text" class="mt-5">
+       <div class="container-lg">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-sm-10 p-2 text-white" style="background-color: rgba(248, 249, 250, 0.09);">
+                <p class="lead fs-6 fw-light ln-base">
                         In an era of unprecedented global mobility, home seems to be closer than ever before. 
                 Within hours we catch a flight or we instantly connect with our loved ones through a video call. 
                 ‘Coming home’ seems to be within our control, wherever we are. But what if our homes are taken from us by external forces? 
@@ -53,11 +91,70 @@
                 lens exposes how quickly such security can vanish during crisis. Together, these works illuminate the persistent human forces (political, 
                 environmental, technological) that continue to unsettle our sense of belonging. Home, that fundamental feeling of 'being at place', perhaps 
                 emerges most clearly when viewed through the lens of <i>its absence.</i>
-                    </p>
-                </div>
+                </p>
             </div>
         </div>
-      </section>
+    </div>
+    </section>
+
+    <!-- cards -->
+    <section id="themes" class="bg-black mt-5">
+        <div class="container-lg">
+            <div class="text-center">
+                <h2 class="text-white">Themes</h2>
+                <p class="lead text-light">Some text justifying the exhibition is grouped amongst several themes that structure the visit.</p>
+            </div>
+           
+            <div class="row row-cols-1 row-cols-md-2 g-4 my-5 align-items-center align-items-between justify-content-center">
+                <div class="col-8 col-lg-4 col-xl-4 ms-md-5">
+                    <div class="card border-0 mb-5 shadow-sm">
+                        <img src="./resources/img/breakfast_piece.jpg" class="card-img-top" alt="breakfast piece Pieter Claesz">
+                        <div class="card-body text-center py-4 ">
+                            <h4 class="card-title">Around the Kitchen Table</h4>
+                            <p class="lead card-subtitle">What do we define as our home?</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-outline-secondary btn-lg mt-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 col-lg-4 col-xl-4 ms-md-5 me-md-5">
+                    <div class="card h-100 border-0 mb-5 shadow-sm">
+                        <img src="./resources/img/posthumous_mary.jpg" class="card-img-top" alt="Posthumous Mary Stuart-II">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Taken a Flight</h4>
+                            <p class="lead card-subtitle">Who tells you where your home is?</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-outline-secondary btn-lg mt-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 col-lg-4 col-xl-4 ms-md-5">
+                    <div class="card h-100 border-0 mb-5 shadow-sm">
+                        <img src="./resources/img/the_earthquake_of_1855.jpg" class="card-img-top" alt="earthquake of 1855">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Against Nature</h4>
+                            <p class="lead card-subtitle">Where do our homes go?</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-outline-secondary btn-lg mt-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 col-lg-4 col-xl-4 me-md-5">
+                    <div class="card h-100 border-0 mb-5 shadow-sm">
+                        <img src="./resources/img/stone_age_computer_1.jpg" class="card-img-top" alt="Stone age computer" style="width: 18rem;">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Traveling Through Time</h4>
+                            <p class="lead card-subtitle">When have our homes gone missing?</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-outline-secondary btn-lg mt-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+      
     <!-- JAVASCRIPTS -->
     <!-- bootstrap javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
