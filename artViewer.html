@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Viewer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+    <section id="viewer">
+        <div class="container align-items-center justify-content-center">
+            <div class="card m-3">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-6 justify-content-center">
+                        <img class="img-fluid" src="resources/img/migrant_mother.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-body py-4">
+                            <h5 class="card-title mb-0">Migrant Mother</h5>
+                            <h6 class="text-muted">Dorothea Lange</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi deleniti similique molestias dolorum magni repellat aliquam iste nemo obcaecati. Enim tenetur autem facilis quaerat veniam animi culpa amet iure doloremque aliquid. Eum possimus tenetur illum recusandae dolorum maxime iure, vel sapiente corrupti error beatae mollitia praesentium modi est qui vero.</p>
+                            <!-- Accordian for Narratives -->
+                            <div class="accordion" id="narratives">
+                                <!-- an accordion is made up of accordion items -->
+                                <div class="accordion-item">
+                                    <!-- an accordion item is made up of an accordion header and accordion collapse -->
+                                    <h2 class="accordion-header" id="teacher">
+                                        <!-- an accordion header has an accordion button which triggers the collapse and opening -->
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#teacherNar" aria-expanded="true" aria-controls="teacherNar">Teacher Narrative</button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse show" id="teacherNar" aria-labelledby="teacher" data-bs-parent="#narratives">
+                                        <!-- an accordion collapse is made up of an accordion body -->
+                                        <div class="accordion-body">
+                                            <!-- the accordion body holds the text for that accordion section -->
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, corporis? Possimus id voluptatibus dicta debitis error illum! Quasi hic quos, officiis libero quae aperiam, reiciendis necessitatibus quia inventore consequuntur iusto excepturi. Maxime quaerat error iusto magnam atque animi molestiae maiores et nam? Sequi tempora sapiente voluptates eaque minus fugit eveniet.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="businessman">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#businessNar" aria-expanded="false" aria-controls="businessNar">Business Narrative</button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="businessNar" aria-labelledby="businessman" data-bs-parent="#narratives">
+                                        <div class="accordion-body">
+                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit suscipit pariatur ab. Sint saepe sunt molestiae, ea blanditiis debitis sapiente exercitationem aut vitae quo, laboriosam assumenda qui nisi voluptatem. Dignissimos at aliquid quae earum eaque odit, harum architecto inventore rerum! Qui quas ipsam velit odio omnis cum reprehenderit culpa molestias!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="phd">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#phdNar" aria-expanded="false" aria-controls="phdNar">PhD Narrative</button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="phdNar" aria-labelledby="phd" data-bs-parent="#narratives">
+                                        <div class="accordion-body">
+                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit suscipit pariatur ab. Sint saepe sunt molestiae, ea blanditiis debitis sapiente exercitationem aut vitae quo, laboriosam assumenda qui nisi voluptatem. Dignissimos at aliquid quae earum eaque odit, harum architecto inventore rerum! Qui quas ipsam velit odio omnis cum reprehenderit culpa molestias!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
