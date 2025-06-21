@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<objects>
+    <artwork xml:id="FFH-1-4">
+        <creator>Tesai Hokuba</creator>
+        <title>Five Beauties</title>
+        <creationDate>1840</creationDate>
+        <type>painting</type>
+        <medium>hanging scroll; ink and color on silk</medium>
+        <measurements>39.1 × 52.7 cm</measurements>
+        <creationLocation>Edo (Tokyo) , Japan</creationLocation>
+        <currentLocation>The Metropolitan Museum of Art</currentLocation>
+        <source>https://www.metmuseum.org/art/collection/search/667347</source>
+        <style>Ukiyo-e</style>
+        <subject>Women</subject>
+        <label/>
+        <theme>Around the Kitchen Table</theme>
+        <creditLine/>
+        <narrativeName>phdstudent</narrativeName>
+        <imageURL n="1">https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/fivebeauties_1.jpg</imageURL>
+        <imageURL n="2">https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/fivebeauties_2.jpg</imageURL>
+        <relativePath>resources/img/fivebeauties_1.jpg</relativePath>
+    </artwork>
+</objects>

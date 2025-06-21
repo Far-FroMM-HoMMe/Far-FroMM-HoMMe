@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<objects>
+    <artwork xml:id="FFH-2-5">
+        <creator>Adriaen Hanneman</creator>
+        <title>Posthumous Portrait of Mary I Stuart with a Servant</title>
+        <creationDate>1664</creationDate>
+        <type>painting</type>
+        <medium>oil on canvas</medium>
+        <measurements>129.5 x 119.3 cm</measurements>
+        <creationLocation/>
+        <currentLocation>Mauritshuis (The Haugue, The Netherlands)</currentLocation>
+        <source>https://www.mauritshuis.nl/en/our-collection/artworks/429-posthumous-portrait-of-mary-i-stuart-1631-1660-with-a-servant</source>
+        <style>Portrait</style>
+        <subject>Mary I Stuart, slaves, royalty</subject>
+        <label/>
+        <theme>Taking Flight</theme>
+        <creditLine>Mauritshuis, The Hague.</creditLine>
+        <narrativeName>teacher</narrativeName>
+        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/posthumous_mary.jpg</imageURL>
+        <relativePath>resources/img/posthumous_mary.jpg</relativePath>
+    </artwork>
+</objects>
