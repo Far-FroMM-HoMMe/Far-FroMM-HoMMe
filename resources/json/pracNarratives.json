@@ -1,0 +1,28 @@
+[
+    {
+        "name":"teacher",
+        "art":[
+            "FFH-1-3",
+            "FFH-3-3"
+        ]
+    },
+
+    {
+        "name":"businessman",
+        "art":[
+            "FFH-2-3",
+            "FFH-1-2",
+            "FFH-3-5",
+            "FFH-1-3"
+        ]
+    },
+
+    {
+        "name":"phdstudent",
+        "art":[
+            "FFH-1-4",
+            "FFH-2-3",
+            "FFH-3-4"
+        ]
+    }
+]
