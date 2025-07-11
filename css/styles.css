@@ -1,14 +1,64 @@
+/*--------------------------------------------------------------
+# global
+--------------------------------------------------------------*/
+
 @import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 
+/* custom properties you can call with var() */
+/* The dark-theme will be the default */
+
+:root {
+  --black: #1A1A1A;
+  --white: #EDEDED;
+  --primary-color: #82994B;         /*Moss Green*/
+  --primary-color-dark:#556a27 ;    /*darker moss green*/
+  --accent-color: #B14236;          /*Persian Red*/
+  --accent-color-dark: #952215;     /*darker persian red*/
+}
+
 body {
+    background-color: var(--black);
+    color: var(--white);
     font-family: "Cormorant Garamond", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.2rem;
-    color: #3c3c3c
 }
 
-/* styles.css */
+/* For light-theme pages, add class="light" to body to reverse bg and text colors */
+body.light {
+    background-color:  #EDEDED;           /*Anti Flash White*/
+    color: #1A1A1A;                       /*Eerie Black*/
+}
+
+/* links and buttons */
+a {
+  color: var(--accent-color);
+}
+
+a:hover {
+  color: var(--accent-color-dark);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(#EDEDED);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--primary-color-dark) !important;  /*added !important because sometimes the bootstrap default color shows up */
+  border-color: var(--primary-color-dark) !important;
+
+}
+
+
+
+/*--------------------------------------------------------------
+# index page
+--------------------------------------------------------------*/
 .hero-section {
     position: relative;
     height: 110vh;
@@ -71,3 +121,74 @@ body {
     padding: 0 40px;
     box-sizing: border-box;
 }
+
+
+/*--------------------------------------------------------------
+# exhibition page
+--------------------------------------------------------------*/
+
+/*floating answers styles*/
+#floating{
+    background-color: #fff;
+}
+
+.floating-answers-container {
+    position: relative;
+    min-height: 600px;
+    background-color: var(--text-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;      
+    padding: 80px 50px;  
+}
+
+.floating-answer {
+    position: absolute;
+    font-style: italic;
+    color: #6c757d;
+    padding: 5px 10px;
+    border-radius: 8px;
+    max-width: 200px;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
+100% { transform: translateY(0); }
+}
+
+/* card link styles */
+.link-card:hover,
+.link-card:focus,
+.link-card:active {
+    background-color: #EDEDED; /* hovering background color */
+    transition: background-color 0.2s ease;
+}
+
+/*  interactive map styles */
+/* change color with hover */
+.room:hover { fill: var(--primary-color); }
+
+  /* pop up style */
+.popup {
+    position: absolute;
+    display: none;
+    width: 50% ;            /* this is controlled with JS */
+    max-width: 300px;
+    padding: 1em 1.5em;
+    background: #fff;
+    border-radius: 1.5em;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+    font-size: 14px;
+    z-index: 10;
+}
+
+
+/*--------------------------------------------------------------
+# art viewer
+--------------------------------------------------------------*/
