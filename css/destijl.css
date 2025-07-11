@@ -1,0 +1,77 @@
+/* De Stijl STILL UNDER CONSTRUCTION */
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 汎用コンテナ */
+.container {
+  padding: 2rem;
+  display: block;
+}
+
+/* Mondrian風のボックス */
+.card {
+  border: 6px solid black;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* カラーランダム風：1〜4番目のカードを色分け */
+.card:nth-of-type(4n+1) {
+  background-color: #ff0000; /* 赤 */
+  color: #ffffff;
+}
+.card:nth-of-type(4n+2) {
+  background-color: #0000ff; /* 青 */
+  color: #ffffff;
+}
+.card:nth-of-type(4n+3) {
+  background-color: #ffff00; /* 黄 */
+  color: #000000;
+}
+.card:nth-of-type(4n+4) {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* タイトル */
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  border-bottom: 8px solid black;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ボタン */
+.btn-primary {
+  background-color: #000000;
+  color: white;
+  border-radius: 0;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.btn-primary:hover {
+  background-color: #ff0000;
+}
+
+/* リンク */
+a {
+  color: #0000ff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+a:hover {
+  color: #ff0000;
+}
