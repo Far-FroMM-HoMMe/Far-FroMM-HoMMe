@@ -14,9 +14,9 @@
 
     <title>Far From Home</title>
 </head>
-<body class="bg-black">
+<body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-xxl">
             <a href="#intro" class="navbar-brand">
                 <span class="fw-bold text-light">
@@ -24,9 +24,9 @@
                 </span>
             </a>
             <!-- toggle button for mobile nav -->
-             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-             </button>
+            </button>
 
             <!-- navbar links -->
             <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
@@ -43,63 +43,31 @@
                     <li class="nav-item">
                         <a href="#about" class="nav-link">About the project</a>
                     </li>
-                    <li class="nav-item ms-2 d-none d-md-inline">
-                        <a class="btn btn-light" href="stories">Explore the exhibition</a>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                            Choose your layout
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav> 
-
-    <!-- offcanvas -->
-    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-        Menu
-      </a>
-      
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-          </div>
-          <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="domainDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Study of the domain
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="domainDropdown">
-                <li><a class="dropdown-item" href="#domain-study">Idea</a></li>
-                <li><a class="dropdown-item" href="#time-line">Timeline</a></li>
-                <li><a class="dropdown-item" href="#items">Items</a></li>
-            </ul>
-        </div>
-          <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
     
     <!-- hero section -->
     <section class="hero-section" id="hero">
-        <div id="carouselHeaderImages" class="carousel slide hero-image" data-bs-ride="carousel" data-bs-interval="3000">
+        <div id="carouselHeaderImages" class="carousel slide hero-image" data-bs-ride="carousel" data-bs-interval="10000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="resources/img/refugees.jpg" class="d-block w-100" alt="Refugees">
+                    <img src="resources/img/refugees.jpg" alt="Refugees">
                 </div>
                 <div class="carousel-item">
-                    <img src="resources/img/the_earthquake_of_1855.jpg" class="d-block w-100" alt="Earthquake">
+                    <img src="resources/img/the_earthquake_of_1855.jpg"  alt="Earthquake">
                 </div>
                 <div class="carousel-item">
-                    <img src="resources/img/stone_age_computer.jpg" class="d-block w-100" alt="Stone Age Computer">
+                    <img src="resources/img/syrian_cidra.jpg" alt="Syrina cidra">
+                </div>
+                <div class="carousel-item">
+                    <img src="resources/img/i_am_an_american.jpg" alt="I am an american">
                 </div>
             </div>
         </div>
@@ -110,6 +78,9 @@
                 <!-- <p class="hero-subtitle" style="color: rgb(203, 200, 200)">
                     A multi-media university project for the master Digital Humanities and Digital knowledge at the University of Bologna (2024–2025).</p> -->
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-arrow-down" viewBox="0 0 16 16" onclick="">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+        </svg>
     </section>
 
     <!-- abstract infobox -->
@@ -118,14 +89,14 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-10 col-sm-10 text-box">
                         <p class="has-dropcap">
-                            <span class="dropcap">I</span>n an age of unprecedented global mobility, home feels closer than ever. A single flight or video call can instantly reconnect us with loved ones across the world. In this light, ‘coming home’ appears to be something we can summon at will, no matter where we are. But what happens when our home is taken from us—by conflict, crisis, or circumstance? Can we still find other ways to feel at home?</p>
-                        <p><i>Far From Home</i> brings together works spanning five centuries and multiple continents, revealing how the experience of displacement 
+                            <span class="dropcap">I</span>n an age of unprecedented global mobility, home can feel closer than ever. A single flight or video call can instantly reconnect us with loved ones across the world. In this light, ‘coming home’ appears to be something we can summon at will, no matter where we are. But what happens when our home is taken from us—by conflict, crisis, or circumstance? Can we still find other ways to feel at home?</p>
+                        <p>The virtual exhibition <i>Far From Home</i> brings together works spanning five centuries and multiple continents, revealing how the experience of displacement 
                         transcends time and geography. The exhibition traces a visual conversation across mediums. From early-modern Dutch painting to 
                         Depression-era photography and contemporary digital art, each generation utilizes the medium of their age to make sense of home and its loss. 
                         <span style="color: #B14236">Pieter Claesz</span>'s meticulous still life celebrates the domestic abundance of the 17th-century Dutch Republic, while <span style="color: #B14236">Dorothea Lange</span>'s documentary 
                         lens exposes how quickly such security can vanish during crisis. <span style="color: #B14236">I need to add some text about more contemporary works here.</span> Together, these works illuminate the persistent human forces (political, 
                         environmental, technological) that continue to unsettle our sense of belonging. Home, that fundamental feeling of 'being at place', perhaps 
-                        emerges most clearly when viewed through the lens of its absence.</p>
+                        emerges most clearly when viewed through the lens of its absence. Yet these artists remind us that belonging can be rebuilt, reimagined, and rediscovered, not just in physical spaces, but in the act of creation itself.</p>
                     </div>
                 </div>
             </div>
@@ -232,8 +203,46 @@
             </div>
     </section>
 
+    <!-- offcanvas section -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Choose your layout</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                <p><i>Far From Home</i> is a cross-cultural and period-spanning virtual experience. To help you emerge in different time periods, and for the sake of this digital project, we designed several layouts that you can choose from. Each layout is inspired by a different period and culture, and it will change the way you experience the exhibition. To learn more about our design choices and CSS script, visit the <a href="#about">About the project</a> section.</p>
+            </div>
+            <div class="dropdown mt-3">
+                <a class="btn btn-primary dropdown-toggle" href="#" id="domainDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pre-modern layouts (1500-1900)
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="domainDropdown">
+                <li><a class="dropdown-item" href="#gothic">Gothic</a></li>
+                <li><a class="dropdown-item" href="#artnouveau">Art Nouveau</a></li>
+                </ul>
+            </div>
+            <div class="dropdown mt-3">
+                <a class="btn btn-primary dropdown-toggle" href="#" id="domainDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Modern and post-war layouts (1900-1970)
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="domainDropdown">
+                  <li><a class="dropdown-item" href="#destijl">De Stijl</a></li>
+                  <li><a class="dropdown-item" href="#lesterbeall">Lester Beall</a></li>
+                </ul>
+              </div>
+            <div class="dropdown mt-3">
+                <a class="btn btn-primary dropdown-toggle" href="#" id="domainDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Post-modern layouts (1970-2035)
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="domainDropdown">
+                  <li><a class="dropdown-item" href="#webdesign">90s-00s Web design</a></li>
+                  <li><a class="dropdown-item" href="#cyberpunk">Japanese anime cyberpunk</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> 
 
-      
     <!-- JAVASCRIPTS -->
     <!-- bootstrap javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
