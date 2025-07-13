@@ -1,0 +1,92 @@
+/* EXAMPLE* Lester Beall */
+
+body {
+  background-color: #EDEDED;
+  color: #1A1A1A;
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-left: 10px solid red;
+  border-right: 10px solid blue;
+  background-color: #ffffff;
+}
+
+/* Main title */
+.main-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+  border-bottom: 4px solid red;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color:#82994B;
+  border-color: #82994B;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  background-color: #597021;
+  border-color: #597021;
+}
+
+/* Cards */
+.card {
+  background-color: #f0f0f0;
+  border: 3px solid #000;
+  border-radius: 0;
+  padding: 1.5rem;
+  box-shadow: 5px 5px 0 red;
+}
+
+/* Diagonal lines：graphical effects for Beall-like
+body::before {
+  content: '';
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 300%;
+  height: 300%;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 48px,
+    rgba(255, 0, 0, 0.05) 48px,
+    rgba(255, 0, 0, 0.05) 96px
+  );
+  z-index: -1;
+}
+
+/* Links */
+a {
+  color: #0033cc;
+  text-decoration: underline;
+  font-weight: bold;
+}
+a:hover {
+  color: #ff0000;
+}
+
+/* Section headings */
+h2, h3 {
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  border-left: 5px solid #ff0000;
+  padding-left: 0.5rem;
+  margin-top: 2rem;
+}

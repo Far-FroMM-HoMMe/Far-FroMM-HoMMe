@@ -4,6 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 
+
+@font-face {
+  font-family: 'DeStijl';
+  src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* custom properties you can call with var() */
 /* The dark-theme will be the default */
 
@@ -83,6 +91,16 @@ a:hover {
 .offcanvas {
   background-color: var(--black);
   color: var(--white);
+}
+
+#aldine-button {
+  /* background-color: wheat !important; */
+  font-family: "adobe-aldine-variable",sans-serif !important;
+  font-variation-settings: 'opsz' 24, 'wght' 300 !important;
+ }
+
+#stijl-button {
+  font-family: "DeStijl", "sans-serif" !important;
 }
 
 /*--------------------------------------------------------------

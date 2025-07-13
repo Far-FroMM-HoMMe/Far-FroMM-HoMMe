@@ -212,33 +212,20 @@
         <div class="offcanvas-body">
             <div>
                 <p><i>Far From Home</i> is a cross-cultural and period-spanning virtual experience. To help you emerge in different time periods, and for the sake of this digital project, we designed several layouts that you can choose from. Each layout is inspired by a different period and culture, and it will change the way you experience the exhibition. To learn more about our design choices and CSS script, visit the <a href="#about">About the project</a> section.</p>
+                <p id="example">an example text to test the De Stijl style</p>
             </div>
-            <div class="dropdown mt-3">
-                <a class="btn btn-primary dropdown-toggle" href="#" id="domainDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Pre-modern layouts (1500-1900)
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="domainDropdown">
-                <li><a class="dropdown-item" href="#gothic">Gothic</a></li>
-                <li><a class="dropdown-item" href="#artnouveau">Art Nouveau</a></li>
-                </ul>
-            </div>
-            <div class="dropdown mt-3">
-                <a class="btn btn-primary dropdown-toggle" href="#" id="domainDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Modern and post-war layouts (1900-1970)
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="domainDropdown">
-                  <li><a class="dropdown-item" href="#destijl">De Stijl</a></li>
-                  <li><a class="dropdown-item" href="#lesterbeall">Lester Beall</a></li>
-                </ul>
-              </div>
-            <div class="dropdown mt-3">
-                <a class="btn btn-primary dropdown-toggle" href="#" id="domainDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Post-modern layouts (1970-2035)
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="domainDropdown">
-                  <li><a class="dropdown-item" href="#webdesign">90s-00s Web design</a></li>
-                  <li><a class="dropdown-item" href="#cyberpunk">Japanese anime cyberpunk</a></li>
-                </ul>
+            <div class="mb-4">
+                <h5 style="color: rgb(118, 118, 118)">Return to default settings</h5>
+                <button onclick="switchStyle('css/styles.css')" class="btn btn-secondary mb-3">Default</button>
+                <h5>Pre-modern layouts (1500-1900)</h5>
+                <button id="aldine-button" onclick="switchStyle('css/aldine.css')" class="btn btn-primary">Aldine</button>
+                <button onclick="switchStyle('css/artnouveau.css')" class="btn btn-primary">Art nouveau</button>
+                <h5 class="mt-3">Modern and post-war layouts (1900-1970)</h5>
+                <button id="stijl-button" onclick="switchStyle('css/destijl.css')" class="btn btn-primary">De Stijl</button>
+                <button onclick="switchStyle('css/beall.css')" class="btn btn-primary">Lester Beall</button>
+                <h5 class="mt-3">Post-modern layouts (1970-2035)</h5>
+                <button onclick="switchStyle('css/90sweb.css')" class="btn btn-primary">90s-00s Web design</button>
+                <button onclick="switchStyle('css/cyberpunk.css')" class="btn btn-primary">Japanese anime cyberpunk</button>
             </div>
         </div>
     </div> 

@@ -1,4 +1,25 @@
 
+/*--------------------------------------------------------------
+# global
+--------------------------------------------------------------*/
+
+/** This function switches the stylesheet based on the selected theme. */
+function switchStyle(sheet) {
+    document.getElementById("themeStylesheet").setAttribute("href", sheet);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// -----------------------------------------------------
 
 /** Grabs the DOM element with ID 'app', where the page content will be dynamically injected.
  * All routed content will be loaded into this container, replacing the need for multiple page loads
