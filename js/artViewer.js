@@ -1,15 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-        //store global variables
-    // html elements
-    const viewer = document.querySelector("section"); //section
-    const artCarousel = document.querySelector(".carousel-inner");//.coursel
-    const carItem = document.querySelector(".carousel-item"); //.coursel-item
-    const modal = document.querySelector(".modal");
-    const metaAccordion = document.querySelector("#metadata-FFH-32");
-    //narrative to run
-    let narValue = null;
+    //store global variables
+
+    //get skeleton doc to access its elements
+    getSkeleton();
+    let carouselItem;
+    let card;
+    let metaAccordion;
+    let narAccordion;
+    let narValue = "phdstudent";
 
     populate();
+
+    //replace modal content whenever new image is clicked
+    const modal = document.querySelector(".modal");
+    if (modal) {
+        modal.addEventListener('show.bs.modal', event => {
+            // Button that triggered the modal
+            const button = event.relatedTarget;
+            // Extract info from data-bs-* attributes
+            const artUrl = button.getAttribute('data-bs-whatever');
+            // If necessary, you could initiate an Ajax request here
+            // and then do the updating in a callback.
+
+            // Update the modal's content.
+            const modalImg = modal.querySelector('img');
+
+            modalImg.setAttribute("src", artUrl);
+            // modalImg.setAttribute("alt", art.title);
+        })
+    }
 
     //create asynchronous function to run fetch()
     async function populate(){
@@ -35,35 +54,97 @@ document.addEventListener('DOMContentLoaded', () => {
         // console.log(narratives);
     }
 
+    async function getSkeleton() {
+        const response = await fetch("resources/viewerSkeleton.html");
+        const htmlText = await response.text();
+        const parser = new DOMParser();
+        const skeletonDoc = parser.parseFromString(htmlText, "text/html");
+        console.log(skeletonDoc); // ✅ parsed external HTML
+        carouselItem = skeletonDoc.querySelector(".carousel-item");
+        card = skeletonDoc.querySelector(".card");
+        metaAccordion = skeletonDoc.querySelector(".accordion#metadata");
+        narAccordion = skeletonDoc.querySelector(".accordion#narrative");
+    }
+
 
     //addArt() - creates art card to hold art image and info
     function addArt(artworks, narratives) {
-        console.log(artworks);
-        //clear art carousel
-        artCarousel.firstElementChild.remove();
+        //check if a narrative has been set
+        let narrative;
+        if (narValue !== null) {
+            for (nar of narratives) {
+                if (narValue === nar.name) {
+                    narrative = nar;
+                }
+            }
+        }
 
-        //make a card item for each artwork
-        for (let i=0; i<artworks.length; i++) {
-            let art = artworks[i];
-            console.log(art);
-            createCard(art);
+        //filter artworks based on narrative and make cards
+        if (narrative) {
+            const narArt = [];
+            for (const art of artworks) {
+                if (art.id in narrative.art) {
+                    narArt.push(art);
+                }
+            }
+
+            //make a card item for each artwork
+            for (let i=0; i<narArt.length; i++) {
+                //create new carousel item
+                //clone carousel item node to add it to current doc
+                const newCarItem = document.importNode(carouselItem, true);
+
+                //add new item to carousel 
+                document.querySelector(".carousel-inner").appendChild(newCarItem);
+
+                //clear item of cards 
+                newCarItem.querySelector(".card").remove();
+
+                let art = narArt[i];
+                newCarItem.appendChild(createCard(art, narrative));
+            }
+
+        }
+
+        else {
+            //make a card item for each artwork
+            for (let i=0; i<artworks.length; i++) {
+                //create new carousel item
+                //clone carousel item node to add it to current doc
+                const newCarItem = document.importNode(carouselItem, true);
+
+                //add new item to carousel 
+                document.querySelector(".carousel-inner").appendChild(newCarItem);
+
+                //clear item of cards 
+                newCarItem.querySelector(".card").remove();
+
+                let art = artworks[i];
+                newCarItem.appendChild(createCard(art));
+            }
         }
 
         //set the first item to active
-        artCarousel.firstElementChild.classList.add("active");
+        document.querySelector(".carousel-inner").firstElementChild.classList.add("active");
     }
 
     function createCard(art, narrative=null) {
-        const newItem = carItem.cloneNode(true);
-        artCarousel.appendChild(newItem);
+        //create new card for art
+        //clone card node to add to current doc
+        const newCard = document.importNode(card, true);
 
-        const card = newItem.querySelector(".card");
-        const modalButton = card.querySelector("button");
-        const modalBtnImg = modalButton.querySelector("img")
-        const cardBody = card.querySelector(".card-body");
+        //clear accordions from card
+        newCard.querySelector("#narrative").remove();
+        newCard.querySelector("#metadata").remove();
+
+
+        //select elements to set attributes and text
+        const modalButton = newCard.querySelector("button");
+        const modalBtnImg = modalButton.querySelector("img");
+        const cardBody = newCard.querySelector(".card-body");
 
         //set attributes and id
-        card.setAttribute("id", art.id);
+        newCard.setAttribute("id", art.id);
         modalButton.setAttribute("data-bs-whatever", art.relativePath);
         modalBtnImg.setAttribute("src", art.relativePath);
         modalBtnImg.setAttribute("alt", art.title);
@@ -73,91 +154,79 @@ document.addEventListener('DOMContentLoaded', () => {
         cardBody.querySelector("h6").textContent = art.creator;
         cardBody.querySelector("p").textContent = art.label;
 
-        //remove narrative accordion when no narrative selected
-        cardBody.querySelector("#narrative-FFH-32").remove();
-        // cardBody.querySelector("#metadata-FFH-32").remove();
-
-        //create modal element for art
-        createModal(art);
-
-        //add metadata accordion
+        //add accordion for metadata
         cardBody.appendChild(addMeta(art));
-    }
 
-    function createModal(art) {
-        // const newModal = modal;
-        // modal.remove();
-        // const modalImg = newModal.querySelector("img");
-        // newModal.setAttribute("id", `modal-${art.id}`);
-        // newModal.setAttribute("aria-labelledby", `modal-${art.id}`);
-        // modalImg.setAttribute("src", art.relativePath);
-        // modalImg.setAttribute("alt", art.title);
-
-        // document.querySelector("body").appendChild(newModal);
-        if (modal) {
-            modal.addEventListener('show.bs.modal', event => {
-                // Button that triggered the modal
-                const button = event.relatedTarget;
-                // Extract info from data-bs-* attributes
-                const artUrl = button.getAttribute('data-bs-whatever');
-                // If necessary, you could initiate an Ajax request here
-                // and then do the updating in a callback.
-
-                // Update the modal's content.
-                const modalImg = modal.querySelector('img');
-
-                modalImg.setAttribute("src", art.relativePath);
-                modalImg.setAttribute("alt", art.title);
-            })
+        //add narrative accordion if narrative has been selected 
+        if (narrative) {
+            cardBody.appendChild(addNar(art, narrative));
         }
+
+        return newCard;
+
     }
 
     function addMeta(art) {
-       const newMeta = metaAccordion;
-       newMeta.setAttribute("id", `metadata-${art.id}`);
-       newMeta.querySelector("h2").setAttribute("id", `meta-${art.id}_header`);
+        //create new metadata accordion
+        //clone accordion node to add to current document
+        const newMetaAcc = document.importNode(metaAccordion, true);
 
-       const collapse = newMeta.querySelector(".accordion-collapse");
-       collapse.setAttribute("id", `meta-${art.id}`);
-       collapse.setAttribute("aria-labelledby", `meta-${art.id}_header`);
-       collapse.setAttribute("data-bs-parent", `#metadata-${art.id}`);
+        //select elements to set attributes
+        newMetaAcc.setAttribute("id", `metadata-${art.id}`);
+        newMetaAcc.querySelector("h2").setAttribute("id", `meta-${art.id}_header`);
 
-       const metaTable = collapse.querySelector("tbody");
-       for (let i=0; i<metaTable.length; i++) {
-        let meta = metaTable[i];
-        tabelRow = document.createElement("td");
-        meta.appendChild(tabelRow);
-        tabelRow.textContent(art[meta.getAttribute("id")]);
-       }
+        const accButton = newMetaAcc.querySelector("button");
+        accButton.setAttribute("data-bs-target", `#meta-${art.id}`);
+        accButton.setAttribute("aria-controls", `meta-${art.id}`);
 
-       return newMeta;
+        const collapse = newMetaAcc.querySelector(".accordion-collapse");
+        collapse.setAttribute("id", `meta-${art.id}`);
+        collapse.setAttribute("aria-labelledby", `meta-${art.id}_header`);
+        collapse.setAttribute("data-bs-parent", `#metadata-${art.id}`);
+
+        //add data to table 
+        const tableRows = collapse.querySelectorAll("tr");
+        for (const row of tableRows) {
+            let metaProperty = row.getAttribute("id");
+            const rowHeader = document.createElement("td");
+            const rowValue = document.createElement("td");
+
+            row.appendChild(rowHeader);
+            row.appendChild(rowValue);
+
+            rowHeader.textContent = metaProperty;
+            rowValue.textContent = art[metaProperty];
+        }
+
+        return newMetaAcc;
+
     }
+
+    function addNar(art, narrative) {
+        //create new metadata accordion
+        //clone accordion node to add to current document
+        const newNar = document.importNode(narAccordion, true);
+
+        //select elements to set attributes
+        newNar.setAttribute("id", `narrative-${art.id}`);
+        newNar.querySelector("h2").setAttribute("id", `narrative-${art.id}_header`);
+
+        const accButton = newNar.querySelector("button");
+        accButton.setAttribute("data-bs-target", `#nar-${art.id}`);
+        accButton.setAttribute("aria-controls", `nar-${art.id}`);
+        accButton.textContent = narrative.name;
+
+        const collapse = newNar.querySelector(".accordion-collapse");
+        collapse.setAttribute("id", `nar-${art.id}`);
+        collapse.setAttribute("aria-labelledby", `nar-${art.id}_header`);
+        collapse.setAttribute("data-bs-parent", `#narrative-${art.id}`);
+
+        //add narrative text
+        collapse.querySelector("p").textContent = narrative.art[art.id];
+
+        return newNar;
+
+    }
+
 });
 
-//addToAccordion() 
-//createModal()
-
-    //set narrative to follow if one has been selected
-    // let narrative;
-    // let art = [];
-    // if (narValue !== null) {
-    //     for (n of narratives) {
-    //         if (n.name === narValue) {
-    //             narrative = n;
-    //         }
-    //     }
-    // }
-    //filter out artworks based on narrative, if one is selected
-    // if (narrative !== null) {
-    //     for (a of artworks) {
-    //         if (a.id in narrative.art) {
-    //             art.append(a);
-    //         }
-    //     }
-    //     createCard(art, narrative);
-    // }
-
-    //if not create cards with no narrative info 
-    // else {
-    //     createCard(artworks);
-    // }
