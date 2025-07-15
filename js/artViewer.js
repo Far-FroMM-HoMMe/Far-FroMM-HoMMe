@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let card;
     let metaAccordion;
     let narAccordion;
-    let narValue = "phdstudent";
+    let narValue = null;
 
     populate();
 
@@ -139,15 +139,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         //select elements to set attributes and text
-        const modalButton = newCard.querySelector("button");
-        const modalBtnImg = modalButton.querySelector("img");
+        // const modalButton = newCard.querySelector("button");
+        // const modalBtnImg = modalButton.querySelector("img");
         const cardBody = newCard.querySelector(".card-body");
+        const lbAnchor = newCard.querySelector("a");
+        const lbImg = lbAnchor.querySelector("img");
 
         //set attributes and id
         newCard.setAttribute("id", art.id);
-        modalButton.setAttribute("data-bs-whatever", art.relativePath);
-        modalBtnImg.setAttribute("src", art.relativePath);
-        modalBtnImg.setAttribute("alt", art.title);
+        // modalButton.setAttribute("data-bs-whatever", art.relativePath);
+        // modalBtnImg.setAttribute("src", art.relativePath);
+        // modalBtnImg.setAttribute("alt", art.title);
+        lbAnchor.setAttribute("href", art.relativePath);
+        lbAnchor.setAttribute("data-caption", art.title);
+        lbImg.setAttribute("src", art.relativePath);
 
         //add text 
         cardBody.querySelector("h5").textContent = art.title;
@@ -214,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const accButton = newNar.querySelector("button");
         accButton.setAttribute("data-bs-target", `#nar-${art.id}`);
         accButton.setAttribute("aria-controls", `nar-${art.id}`);
-        accButton.textContent = narrative.name;
+        accButton.textContent = `${narrative.name} narrative`;
 
         const collapse = newNar.querySelector(".accordion-collapse");
         collapse.setAttribute("id", `nar-${art.id}`);
@@ -223,6 +228,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //add narrative text
         collapse.querySelector("p").textContent = narrative.art[art.id];
+
+        //make the narrative text visable 
+        collapse.classList.add("show");
 
         return newNar;
 
