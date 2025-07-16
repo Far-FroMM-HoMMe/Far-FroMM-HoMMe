@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<objects>
+    <artwork xml:id="FFH-2-1">
+        <creator>Jan Rembowski</creator>
+        <title>Refugees</title>
+        <creationDate>beginning of the 20th c.</creationDate>
+        <type>painting</type>
+        <medium>oil on canvas</medium>
+        <measurements>200 x 284 cm</measurements>
+        <creationLocation>Poland</creationLocation>
+        <currentLocation>National Museum in Warsaw (Warsaw, Poland)</currentLocation>
+        <source>https://cyfrowe.mnw.art.pl/en/catalog/446995</source>
+        <style>Young Poland</style>
+        <subject>Refugees</subject>
+        <label/>
+        <theme>Taking Flight</theme>
+        <creditLine>National Museum in Warsaw.</creditLine>
+        <narrativeName>phdstudent</narrativeName>
+        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/refugees.jpg</imageURL>
+        <relativePath>resources/img/refugees.jpg</relativePath>
+    </artwork>
+</objects>
