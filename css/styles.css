@@ -1,6 +1,7 @@
 /*--------------------------------------------------------------
 # global
 --------------------------------------------------------------*/
+<<<<<<< HEAD
 
 @import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 
@@ -326,3 +327,350 @@ a:hover {
   font-size: 16px;
 }
 
+=======
+
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
+
+@font-face {
+  font-family: 'DeStijl';
+  src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* custom properties you can call with var() */
+/* The dark-theme will be the default */
+
+:root {
+  --black: #1A1A1A;
+  --white: #EDEDED;
+  --primary-color: #82994B;         /*Moss Green*/
+  --primary-color-dark:#556a27 ;    /*darker moss green*/
+  --accent-color: #B14236;          /*Persian Red*/
+  --accent-color-dark: #952215;     /*darker persian red*/
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+p { 
+    margin-bottom: 1.5em;
+}
+
+/* For light-theme pages, add class="light" to body to reverse bg and text colors */
+body.light {
+    background-color:  #EDEDED;           /*Anti Flash White*/
+    color: #1A1A1A;                       /*Eerie Black*/
+}
+
+/* links and buttons */
+a {
+  color: var(--accent-color);
+}
+
+a:hover {
+  color: var(--accent-color-dark);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(#EDEDED);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--primary-color-dark) !important;  /*added !important because sometimes the bootstrap default color shows up */
+  border-color: var(--primary-color-dark) !important;
+
+}
+
+.text-box {
+  background-color: rgba(248, 249, 250, 0);
+  padding: 15px;
+  margin-left: 10px;
+}
+
+.has-dropcap {
+  overflow: hidden;
+  font-size: 2rem;
+}
+
+.dropcap {
+  float: left;
+  font-size: clamp(18rem, 6vw, 8.5rem);
+  line-height: 0.70;
+  margin: 0.1em 0.1em 0em 0;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  padding-right: 0.15rem;
+}
+
+.navbar {
+  background-color: #12121258;
+  color: var(--white);
+  position: fixed;
+}
+
+.nav-link {
+  color: var(--white) !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.active {
+  color: var(--primary-color-dark) !important;
+}
+
+.offcanvas {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+#aldine-button {
+  /* background-color: wheat !important; */
+  font-family: "adobe-aldine-variable",sans-serif !important;
+  font-variation-settings: 'opsz' 24, 'wght' 300 !important;
+ }
+
+#stijl-button {
+  font-family: "DeStijl", "sans-serif" !important;
+}
+
+footer {
+  background-color: #20202097;
+  color: white;
+  padding: 30px 0;
+  font-size: 0.9rem;
+  margin-top: 5rem;
+}
+
+/*--------------------------------------------------------------
+# index page
+--------------------------------------------------------------*/
+.hero-section {
+    position: relative;
+    height: 110vh;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  object-position: center 30%;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(84, 83, 83, 0.2), rgba(0, 0, 0, 0.898));
+}
+
+.hero-text {
+    font-family: "DeStijl", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: clamp(4.5rem, 10vw, 12rem);
+    color: rgb(247, 247, 247);
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 0.8;
+    
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.hero-subtitle {
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(2rem, 3vw, 5rem);
+    color: #82994B;
+    text-align: center;
+    text-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772);
+    line-height: 0.8;
+    
+    position: absolute;
+    top: clamp(78%, 78vw, 82%);
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin-top: 0.15rem;
+}
+
+.bi-arrow-down {
+    position: absolute;
+    top: clamp(90%, 90vw, 93%);
+    width: 5%;
+    height: 5%;
+    left: 50%;
+    right: 50%;
+    color: rgb(195, 194, 194);
+    box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772);
+
+}
+
+.img-card {
+    border-radius: 0; 
+    border: none;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    max-height: 600px;
+}
+
+.card-img-overlay {
+    background: #121212a9;
+    border-radius: 0;
+}
+
+.card-title-carousel {
+    font-size: clamp(2.8rem, 2.5vw, 3rem);
+    color: var(--white);
+}
+
+.card-text-carousel {
+    color: var(--white);
+}
+
+.infoboxes-title {
+    font-size: clamp(6vw, 6vw, 7vw) !important;
+}
+
+.infoboxes-text {
+    font-size: clamp(1rem, 0.75rem, 1.2rem);
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+
+
+/* div {
+  animation-name: moveright ;
+  animation-duration: 2s ; 
+  animation-iteration-count: 3;
+  animation-fill-mode: forwards;
+  animation-delay: 1s; 
+}
+
+@keyframes versoDestra {
+  from {
+    left: 0%; 
+    background-color: #1A1A1A; 
+  }
+  to {
+    left: 50%;
+    background-color: #82994B;
+  }
+}
+
+#infobox-theme {animation-timing-function: linear;} */
+
+
+/*--------------------------------------------------------------
+# exhibition page
+--------------------------------------------------------------*/
+
+/*floating answers styles*/
+#floating{
+    background-color: #fff;
+}
+
+.floating-answers-container {
+    position: relative;
+    min-height: 600px;
+    background-color: var(--text-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;      
+    padding: 80px 50px;  
+}
+
+.floating-answer {
+    position: absolute;
+    font-style: italic;
+    color: #6c757d;
+    padding: 5px 10px;
+    border-radius: 8px;
+    max-width: 200px;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
+100% { transform: translateY(0); }
+}
+
+/* card link styles */
+.link-card:hover,
+.link-card:focus,
+.link-card:active {
+    background-color: #EDEDED; /* hovering background color */
+    transition: background-color 0.2s ease;
+}
+
+/*  interactive map styles */
+/* change color with hover */
+.room:hover { fill: var(--primary-color); }
+
+  /* pop up style */
+.popup {
+    position: absolute;
+    display: none;
+    width: 50% ;            /* this is controlled with JS */
+    max-width: 300px;
+    padding: 1em 1.5em;
+    background: #fff;
+    border-radius: 1.5em;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+    font-size: 14px;
+    z-index: 10;
+}
+
+
+/*--------------------------------------------------------------
+# art viewer
+--------------------------------------------------------------*/
+>>>>>>> landingpage
