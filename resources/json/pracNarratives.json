@@ -19,7 +19,8 @@
     },
 
     {
-        "name":"phdstudent",
+        "id":"phd",
+        "name":"Transcience in Photography",
         "art":{
             "FFH-1-4":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
             "FFH-2-3":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
