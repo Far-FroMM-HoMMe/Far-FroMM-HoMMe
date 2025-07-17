@@ -20,8 +20,8 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-xxl">
             <a href="#intro" class="navbar-brand">
-                <span class="fw-bold text-light">
-                    <img src="resources/img/suitcase-favicon-white.png" style="max-width: 50px; color: white;">
+                <span class="text-light">
+                    <img src="resources/img/suitcase-favicon-white.png" style="max-width: 50px; color: white;"><span id="navbartext">To have, to lose, to find</span>
                 </span>
             </a>
             <!-- toggle button for mobile nav -->
@@ -74,11 +74,8 @@
         </div>
         <div class="hero-overlay">
             <div>
-                <p class="hero-text">Far From <span style="color: #82994B">Home</span><br> 
+                <p class="hero-text">Far<br>From<br><span style="color: #82994B">Home</span><br> 
                 <p class="hero-subtitle">To have, to lose, to find</p>
-        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-arrow-down" viewBox="0 0 16 16" onclick="">
-            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
-        </svg>
     </section>
 
     <!-- abstract infobox -->
@@ -86,9 +83,9 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-10 col-sm-10 text-box">
-                        <p class="has-dropcap">
+                        <p class="has-dropcap hidden">
                             <span class="dropcap">I</span>n an age of unprecedented global mobility, home can feel closer than ever. A single flight or video call can instantly reconnect us with loved ones across the world. In this light, ‘coming home’ appears to be something we can summon at will, no matter where we are. But what happens when our home is taken from us—by conflict, crisis, or circumstance? Can we still find other ways to feel at home?</p>
-                        <p>The virtual exhibition <i>Far From Home</i> brings together works spanning five centuries and multiple continents, revealing how the experience of displacement 
+                        <p class="hidden">The virtual exhibition <i>Far From Home</i> brings together works spanning five centuries and multiple continents, revealing how the experience of displacement 
                         transcends time and geography. The exhibition traces a visual conversation across mediums. From early-modern Dutch painting to 
                         Depression-era photography and contemporary digital art, each generation utilizes the medium of their age to make sense of home and its loss. 
                         <span style="color: #B14236">Pieter Claesz</span>'s meticulous still life celebrates the domestic abundance of the 17th-century Dutch Republic, while <span style="color: #B14236">Dorothea Lange</span>'s documentary 
@@ -107,7 +104,7 @@
           
             <!-- text box -->
             <div class="col-md-4 col-sm-10 col-xs-12 d-flex">
-                <div class="text-box p-4 w-100" style="background: #82994bd5">
+                <div class="text-box hidden p-4 w-100" style="background: #82994bd5">
                     <h5 class="infoboxes-title">Themes</h5>
                     <p class="infoboxes-text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. In earum a facere accusamus perspiciatis nobis, repellendus alias consequuntur. Suscipit reprehenderit, nostrum ducimus esse excepturi incidunt eos odit sequi recusandae fugiat quis quam, natus consequuntur voluptatem dolor facilis? Sed rerum illo odit repellendus nostrum earum esse impedit blanditiis necessitatibus suscipit! Quam!
@@ -119,7 +116,7 @@
             <!-- image box -->
             <div class="col-md-6 col-sm-10 d-flex">
                 <!-- do not change this - helps to rescale the img to textbox-->
-                <div class="card w-100 h-100" style="border-radius: 0; border: none">
+                <div class="card hidden w-100 h-100" style="border-radius: 0; border: none">
                     <!-- carousel for the card image -->
                     <div id="carouselThemeImages" class="carousel slide card-img" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -176,7 +173,7 @@
 
             <!-- text box -->
              <!-- order-1 order-md-2 helps to keep the text aligned right but stacked on top for mobile phones -->
-            <div class="col-md-4 col-sm-10 col-xs-12 d-flex order-1 order-md-2">
+            <div class="col-md-4 col-sm-10 col-xs-12 d-flex order-1 order-md-2 hidden">
                 <div class="text-box p-4 w-100" style="background: #B14236">
                     <h5 class="infoboxes-title">Stories</h5>
                     <p class="infoboxes-text">
@@ -188,9 +185,9 @@
 
 
             <!-- image box -->
-            <div class="col-md-6 col-sm-10 d-flex order-2 order-md-1">
+            <div class="col-md-6 col-sm-10 d-flex order-2 order-md-1 hidden">
                 <!-- do not change this - helps to rescale the img to textbox-->
-                <div id="narrativesImages" class="card w-100 h-100" style="border-radius: 0; border: none">
+                <div class="card w-100 h-100" style="border-radius: 0; border: none">
                     <!-- carousel for the card image -->
                     <div id="carouselNarrativeImages" class="carousel slide card-img" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -238,7 +235,7 @@
     <section id="abstractinfo" class="mt-md-5">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-10 col-sm-10 text-box">
+                <div class="col-lg-10 col-md-10 col-sm-10 text-box hidden">
                     <p class="has-dropcap">
                         <span class="dropcap">A</span>bout the project is a page that documents the multi-media university project for the master Digital Humanities and Digital knowledge at the University of Bologna (2024–2025).</p>
                     <p>The virtual exhibition <i>Far From Home</i> brings together works spanning five centuries and multiple continents, revealing how the experience of displacement 
@@ -322,7 +319,7 @@
     <!-- bootstrap javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <!-- custom javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/landing.js"></script>
   </body>
 </html>
 </body>
