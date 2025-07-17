@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //create asynchronous function to run fetch()
     async function populate(){
         //create variable to store url to json files
-        const artworkURL = "resources/json/pracArtworks.json";
+        const artworkURL = "resources/json/artworks.json";
         const narURL = "resources/json/pracNarratives.json";
         
         //create requests object to pass into fetch()

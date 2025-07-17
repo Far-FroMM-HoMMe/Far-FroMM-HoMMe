@@ -8,8 +8,8 @@ from xml.dom import minidom
 import os
 
 # CSV path and output directory
-csv_path = "xml\metadata.csv"
-output_dir = r"C:\Users\shiho\Documents\Study\Unibo\MMMM\Far-FroMM-HoMMe\xml\xml_files"
+csv_path = "xml/metadata.csv"
+output_dir = r"xml/xml_files"
 os.makedirs(output_dir, exist_ok=True)
 
 # mapping the narrativeName

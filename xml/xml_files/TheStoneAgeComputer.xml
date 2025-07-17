@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<objects>
+    <artwork xml:id="FFH-4-2">
+        <creator>Mathilde μP</creator>
+        <title>The Stone Age Computer</title>
+        <creationDate>1993</creationDate>
+        <type>Installaton</type>
+        <medium>computer, stone, rocks limestone, moss, wood, soil, water, wild plants</medium>
+        <measurements>N.A.</measurements>
+        <creationLocation>Netherlands</creationLocation>
+        <currentLocation>private collection</currentLocation>
+        <source>https://oertijd.home.xs4all.nl/st-age/index.htm</source>
+        <style>Electronic art</style>
+        <subject>Technology</subject>
+        <label/>
+        <theme>Traveling Through Time</theme>
+        <creditLine/>
+        <narrativeName n="1">businessman</narrativeName>
+        <narrativeName n="2">phdstudent</narrativeName>
+        <imageURL n="1">https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/stone_age_computer_1.jpg</imageURL>
+        <imageURL n="2">https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/stone_age_computer_2.jpg</imageURL>
+        <relativePath n="1">resources/img/stone_age_computer_1.jpg</relativePath>
+        <relativePath n="2">resources/img/stone_age_computer_2.jpg</relativePath>
+    </artwork>
+</objects>

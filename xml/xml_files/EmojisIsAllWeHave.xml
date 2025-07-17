@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<objects>
+    <artwork xml:id="FFH-4-4">
+        <creator>Moniker</creator>
+        <title>Emojis Is All We Have</title>
+        <creationDate>2020</creationDate>
+        <type>video</type>
+        <medium>video series</medium>
+        <measurements>N.A.</measurements>
+        <creationLocation>The Netherlands</creationLocation>
+        <currentLocation>Moniker</currentLocation>
+        <source>https://staging.studiomoniker.com/projects/emoji-is-all-we-have</source>
+        <style>-</style>
+        <subject>social media, technology</subject>
+        <label/>
+        <theme>Traveling Through Time</theme>
+        <creditLine>Luna Maurer &amp; Roel Wouters, Emojis is all we have</creditLine>
+        <narrativeName n="1">businessman</narrativeName>
+        <narrativeName n="2">phdstudent</narrativeName>
+        <imageURL n="1">https://vimeo.com/1088999517/10614fa4d5</imageURL>
+        <imageURL n="2">https://vimeo.com/1089037854/a051e377ac</imageURL>
+        <relativePath>resources/img/emoji.jpg</relativePath>
+    </artwork>
+</objects>

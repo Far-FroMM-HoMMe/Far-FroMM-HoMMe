@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<objects>
+    <artwork xml:id="FFH-1-1">
+        <creator>Pieter Claesz</creator>
+        <title>Still life with a glass of beer and smoked herring on a plate</title>
+        <creationDate>1636</creationDate>
+        <type>painting</type>
+        <medium>oil on panel</medium>
+        <measurements>49 x 36cm</measurements>
+        <creationLocation>Northern Netherlands</creationLocation>
+        <currentLocation>Museum Boijmans van Beuningen [Rotterdam, The Netherlands]</currentLocation>
+        <source>https://www.boijmans.nl/en/collection/artworks/1646/breakfast-piece</source>
+        <style>Still life</style>
+        <subject>Food</subject>
+        <label/>
+        <theme>Around the Kitchen Table</theme>
+        <creditLine/>
+        <narrativeName n="1">businessman</narrativeName>
+        <narrativeName n="2">phdstudent</narrativeName>
+        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/breakfast_piece.jpg</imageURL>
+        <relativePath>resources/img/breakfast_piece.jpg</relativePath>
+    </artwork>
+</objects>
