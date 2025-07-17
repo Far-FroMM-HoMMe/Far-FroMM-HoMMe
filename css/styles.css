@@ -102,6 +102,12 @@ a:hover {
   position: fixed;
 }
 
+@media (max-width: 578px) {
+  .navbar {
+    background-color: #121212c4;
+  }
+}
+
 #navbartext {
   margin-left: 20px; 
   font-family: 'Libertinus Mono', monospace; 
@@ -182,7 +188,7 @@ footer {
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
-    font-size: clamp(10rem, 12vw, 12rem);
+    font-size: clamp(9rem, 12vw, 11rem);
     color: rgb(247, 247, 247);
     text-align: start;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -206,7 +212,7 @@ footer {
     color: #82994B;
     text-align: end;
     text-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772);
-    line-height: 0.8;
+    line-height: 1;
     
     position: absolute;
     top: clamp(95%, 81vw, 89%);
@@ -498,8 +504,4 @@ footer {
 
 .accordion-body p {
   font-size: 16px;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> landingpage
