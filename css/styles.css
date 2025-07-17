@@ -188,7 +188,7 @@ footer {
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
-    font-size: clamp(9rem, 12vw, 11rem);
+    font-size: clamp(7rem, 12vw, 11rem);
     color: rgb(247, 247, 247);
     text-align: start;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -224,18 +224,6 @@ footer {
     margin-top: 0.15rem;
 }
 
-.bi-arrow-down {
-    position: absolute;
-    top: clamp(90%, 90vw, 93%);
-    width: 5%;
-    height: 5%;
-    left: 50%;
-    right: 50%;
-    color: rgb(195, 194, 194);
-    box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772);
-
-}
-
 .img-card {
     border-radius: 0; 
     border: none;
@@ -266,6 +254,24 @@ footer {
 
 .card-text-carousel {
     color: var(--white);
+}
+
+.carousel-control-prev-icon {
+    width: 24px;
+    height: 24px;
+}
+    
+.carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+      width: 5vw;
+      height: 5vw;
+  }
 }
 
 .infoboxes-title {
