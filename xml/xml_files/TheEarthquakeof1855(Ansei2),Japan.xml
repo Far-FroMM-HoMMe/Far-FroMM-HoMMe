@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<objects>
+    <artwork xml:id="FFH-3-5">
+        <creator>Unknown Artist</creator>
+        <title>The Earthquake of 1855 (Ansei 2), Japan</title>
+        <creationDate>1855</creationDate>
+        <type>print</type>
+        <medium>woodblock print; ink and color on paper</medium>
+        <measurements>36.5 x 48.9 cm</measurements>
+        <creationLocation>Edo (Tokyo) , Japan</creationLocation>
+        <currentLocation>Museum of Fine Arts Boston</currentLocation>
+        <source>http://collections.mfa.org/objects/498401/the-earthquake-of-1855-ansei-2-230-years-since-the-great</source>
+        <style>Namazu-e</style>
+        <subject>Earthquake</subject>
+        <label/>
+        <theme>Nature Interferes</theme>
+        <creditLine/>
+        <narrativeName>businessman</narrativeName>
+        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/the_earthquake_of_1855.jpg</imageURL>
+        <relativePath>resources/img/the_earthquake_of_1855.jpg</relativePath>
+    </artwork>
+</objects>

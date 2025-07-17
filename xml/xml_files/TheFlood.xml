@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<objects>
+    <artwork xml:id="FFH-3-4">
+        <creator>Michel Anguierd</creator>
+        <title>The Flood</title>
+        <creationDate>1648-1649</creationDate>
+        <type>sculpture</type>
+        <medium>terracotta</medium>
+        <measurements>33.7 x 32.1 cm</measurements>
+        <creationLocation>Rome, Italy</creationLocation>
+        <currentLocation>The Metropolitan Museum of Art</currentLocation>
+        <source>https://www.metmuseum.org/art/collection/search/206836</source>
+        <style>Mannerist</style>
+        <subject>Flood</subject>
+        <label/>
+        <theme>Nature Interferes</theme>
+        <creditLine>Rogers Fund and Director's Discretionary Fund, 1980</creditLine>
+        <narrativeName>phdstudent</narrativeName>
+        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/the_flood.jpg</imageURL>
+        <relativePath>resources/img/the_flood.jpg</relativePath>
+    </artwork>
+</objects>

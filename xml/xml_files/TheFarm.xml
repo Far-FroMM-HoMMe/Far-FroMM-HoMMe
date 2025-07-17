@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<objects>
+    <artwork xml:id="FFH-1-3">
+        <creator>Joan Miró</creator>
+        <title>The Farm</title>
+        <creationDate>1921-1922</creationDate>
+        <type>painting</type>
+        <medium>oil on canvas</medium>
+        <measurements>overall: 123.8 x 141.3 x 3.3 cm (48 3/4 x 55 5/8 x 1 5/16 in.)
+framed: 138.4 x 155.9 x 7.6 cm (54 1/2 x 61 3/8 x 3 in.)</measurements>
+        <creationLocation>Paris, France</creationLocation>
+        <currentLocation>National Gallery of Art (Washington D.C., USA)</currentLocation>
+        <source>https://www.nga.gov/artworks/69660-farm</source>
+        <style>cubeism, realism</style>
+        <subject>Farmhouse, Animals, Crops</subject>
+        <label/>
+        <theme>Around the Kitchen Table</theme>
+        <creditLine/>
+        <narrativeName n="1">teacher</narrativeName>
+        <narrativeName n="2">businessman</narrativeName>
+        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/thefarm.jpg</imageURL>
+        <relativePath>resources/img/thefarm.jpg</relativePath>
+    </artwork>
+</objects>
