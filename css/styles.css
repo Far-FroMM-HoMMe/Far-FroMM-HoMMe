@@ -382,36 +382,46 @@ footer {
 
 /* === Carousel === */
 
-.carousel-control-prev, .carousel-control-next {
-  width: 4%;
+#artCarousel .carousel-control-prev, .carousel-control-next {
+  width: 3%;
 }
+
+/* Make carousel-inner scrollable if content grows */
+#artCarousel .carousel-inner {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
 
 /* === Card === */
 
-.card {
+#artCarousel .card {
   background: var(--black);
+  border: none;
+  border-radius: 0;
 }
 
-.card-body h5 {
+#artCarousel .card-body h5 {
   font-size: 30px;
   font-weight: 600;
   padding-bottom: 8px;
 
 }
 
-.card-body h6 {
+#artCarousel .card-body h6 {
   font-size: 24px;
   font-weight: 600;
 }
 
-.card-body p {
+#artCarousel .card-body p {
   font-size: 20px;
   
 }
 
 /* --- Accordion --- */
 
-.accordion-button {
+#artCarousel .accordion-button {
   background-color: var(--black);
   color: var(--white);
   border: none;
@@ -427,39 +437,39 @@ footer {
   
 }
 
-.accordion-button:focus {
+#artCarousel .accordion-button:focus {
   box-shadow: none;
   outline: none;
   border: none;
 }
 
-.accordion-button:not(.collapsed) {
+#artCarousel .accordion-button:not(.collapsed) {
   border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
   background-color: var(--black);
   color: var(--white);
 }
 
 /* When accordion is collapsed */
-.accordion-button.collapsed {
+#artCarousel .accordion-button.collapsed {
   border-bottom: 2px solid var(--primary-color);
   background-color: var(--black);
   color: var(--white);
 }
 
-.accordion-body {
+#artCarousel .accordion-body {
   background-color: var(--black);
   color: var(--white);
   border-bottom: 2px solid var(--primary-color);
   border-radius: 0;
 }
 
-.accordion-item {
+#artCarousel .accordion-item {
   border: none; /* Removes the border around the item */
   border-radius: 0;
   background-color: transparent;
 }
 
-.accordion-button::after {
+#artCarousel .accordion-button::after {
   flex-shrink: 0;
   width: 1.25rem;
   height: 1.25rem;
@@ -472,18 +482,18 @@ footer {
 }
 
 /* When accordion is open */
-.accordion-button:not(.collapsed)::after {
+#artCarousel .accordion-button:not(.collapsed)::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23BEBEBECC' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
 }
 
 /* === Metadata Table === */
-.accordion-body table {
+#artCarousel .accordion-body table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
 }
 
-.accordion-body td {
+#artCarousel .accordion-body td {
   padding: 0.5rem 1rem; /* Padding inside cells */
   vertical-align: top;
   color: var(--white);
@@ -496,18 +506,18 @@ footer {
 } */
 
 /* Optional: spacing between first and second column */
-.accordion-body td:first-child {
+#artCarousel .accordion-body td:first-child {
   font-weight: bold;
   color: var(--primary-color);
   width: 30%;
   padding-left: 0px;
 }
 
-.accordion-body td:last-child {
+#artCarousel .accordion-body td:last-child {
   text-align: right;
   word-break: break-word;
 }
 
-.accordion-body p {
+#artCarousel .accordion-body p {
   font-size: 16px;
 }

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //get the selected narrative 
     let narValue = localStorage.getItem('narValue') || null;
     console.log(narValue);
-
+    localStorage.removeItem('narValue');
     populate();
 
     //create asynchronous function to run fetch()
@@ -142,8 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
         //check if there is an embedded video 
         if (art.embedURL) {
             lbAnchor.setAttribute("href", art.embedURL);
-            if (arguments.allow) {
+            if (art.allow) {
                 lbAnchor.setAttribute("allow", art.allow);
+            }
+            if (art.referrerpolicy) {
+                lbAnchor.setAttribute("referrerpolicy", art.referrerpolicy);
             }
         }
         else {
