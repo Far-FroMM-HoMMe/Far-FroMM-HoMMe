@@ -15,7 +15,6 @@
         "label": "",
         "theme": "Nature Interferes",
         "creditLine": "",
-        "narrativeName": "teacher",
         "relativePath": "resources/img/high_water.jpg"
     },
 
@@ -35,7 +34,7 @@
         "label": "",
         "theme": "Traveling Through Time",
         "creditLine": "",
-        "narrativeName": "teacher",
+        "embedURL": "https://www.youtube.com/embed/UKftOH54iNU?si=uuWkeseUOG_hLGFM",
         "relativePath": "resources/img/Stromae_carmen.jpg"
 	},
 
@@ -55,26 +54,7 @@
         "label": "",
         "theme": "Traveling Through Time",
         "creditLine": "Luna Maurer & Roel Wouters, Emojis is all we have",
-        "narrativeName": [
-            {
-                "_n": "1",
-                "__text": "businessman"
-            },
-            {
-                "_n": "2",
-                "__text": "phdstudent"
-            }
-        ],
-        "imageURL": [
-            {
-                "_n": "1",
-                "__text": "https://vimeo.com/1088999517/10614fa4d5"
-            },
-            {
-                "_n": "2",
-                "__text": "https://vimeo.com/1089037854/a051e377ac"
-            }
-        ],
+        "embedURL": "https://player.vimeo.com/video/1088999517/10614fa4d5",
         "relativePath": "resources/img/emoji.jpg"
     },
 
@@ -94,17 +74,6 @@
         "label": "",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
-        "narrativeName": "phdstudent",
-        "imageURL": [
-            {
-                "_n": "1",
-                "__text": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/fivebeauties_1.jpg"
-            },
-            {
-                "_n": "2",
-                "__text": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/fivebeauties_2.jpg"
-            }
-        ],
         "relativePath": "resources/img/fivebeauties_1.jpg"
     },
 
@@ -119,22 +88,11 @@
         "creationLocation": "Oakland, USA",
         "currentLocation": "LIbrary of Congress",
         "source": "https://www.loc.gov/item/2004665381/",
-        "style": "Journalism",
+        "style": "Photojournalism",
         "subject": "Japanese Americans, Forced Removal and Internment, Wartime Civil Control Administration",
         "label": "",
         "theme": "Taking Flight",
         "creditLine": "",
-        "narrativeName": [
-            {
-                "_n": "1",
-                "__text": "phdstudent"
-            },
-            {
-                "_n": "2",
-                "__text": "businessman"
-            }
-        ],
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/i_am_an_american.jpg",
         "relativePath": "resources/img/i_am_an_american.jpg"
     },
 
@@ -154,17 +112,6 @@
         "label": "",
         "theme": "Nature Interferes",
         "creditLine": "",
-        "narrativeName": [
-            {
-                "_n": "1",
-                "__text": "phdstudent"
-            },
-            {
-                "_n": "2",
-                "__text": "teacher"
-            }
-        ],
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/migrant_mother.jpg",
         "relativePath": "resources/img/migrant_mother.jpg"
     },
 
@@ -178,13 +125,12 @@
         "measurements": "-",
         "creationLocation": "Tokyo, Japan",
         "currentLocation": "Private collection",
-        "source": "-",
+        "source": "https://github.com/Far-FroMM-HoMMe/Far-FroMM-HoMMe/blob/f9cc542b6bcbb370ca4cfd69493c8f677c6928e9/resources/img/mandarake.jpg",
         "style": "street photography",
         "subject": "otaku collection",
         "label": "",
         "theme": "Traveling Through Time",
         "creditLine": "",
-        "narrativeName": "phdstudent",
         "relativePath": "resources/img/mandarake.jpg"
     },
 
@@ -204,17 +150,6 @@
         "label": "",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
-        "narrativeName": [
-            {
-                "_n": "1",
-                "__text": "teacher"
-            },
-            {
-                "_n": "2",
-                "__text": "phdstudent"
-            }
-        ],
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/playground.jpg",
         "relativePath": "resources/img/playground.jpg"
     },
 
@@ -234,8 +169,6 @@
         "label": "",
         "theme": "Taking Flight",
         "creditLine": "Mauritshuis, The Hague.",
-        "narrativeName": "teacher",
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/posthumous_mary.jpg",
         "relativePath": "resources/img/posthumous_mary.jpg"
     },
 
@@ -255,8 +188,6 @@
         "label": "",
         "theme": "Nature Interferes",
         "creditLine": "",
-        "narrativeName": "businessman",
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/refugee_astronaut.jpeg",
         "relativePath": "resources/img/refugee_astronaut.jpg"
     },
 
@@ -276,8 +207,6 @@
         "label": "",
         "theme": "Taking Flight",
         "creditLine": "National Museum in Warsaw.",
-        "narrativeName": "phdstudent",
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/refugees.jpg",
         "relativePath": "resources/img/refugees.jpg"
     },
 
@@ -297,17 +226,6 @@
         "label": "",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
-        "narrativeName": [
-            {
-                "_n": "1",
-                "__text": "businessman"
-            },
-            {
-                "_n": "2",
-                "__text": "phdstudent"
-            }
-        ],
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/breakfast_piece.jpg",
         "relativePath": "resources/img/breakfast_piece.jpg"
     },
 
@@ -320,14 +238,13 @@
         "medium": "digital image",
         "measurements": "-",
         "creationLocation": "Sweden",
-        "currentLocation": "-",
+        "currentLocation": "Private collection",
         "source": "http://olivierjobard.com/reportage_16_40_52_2_0_BALKANS-TRANSIT",
-        "style": "Journalism",
+        "style": "Photojournalism",
         "subject": "Migrant, Child",
         "label": "",
         "theme": "Taking Flight",
         "creditLine": "",
-        "narrativeName": "businessman",
         "relativePath": "resources/img/syrian_cidra.jpg"
     },
 
@@ -347,8 +264,6 @@
         "label": "",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
-        "narrativeName": "businessman",
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/the_bedroom_aic.jpg",
         "relativePath": "resources/img/the_bedroom_aic.jpg"
     },
 
@@ -368,8 +283,6 @@
         "label": "",
         "theme": "Nature Interferes",
         "creditLine": "",
-        "narrativeName": "businessman",
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/the_earthquake_of_1855.jpg",
         "relativePath": "resources/img/the_earthquake_of_1855.jpg"
     },
 
@@ -389,17 +302,6 @@
         "label": "",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
-        "narrativeName": [
-            {
-                "_n": "1",
-                "__text": "teacher"
-            },
-            {
-                "_n": "2",
-                "__text": "businessman"
-            }
-        ],
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/thefarm.jpg",
         "relativePath": "resources/img/thefarm.jpg"
     },
 
@@ -419,8 +321,6 @@
         "label": "",
         "theme": "Nature Interferes",
         "creditLine": "Rogers Fund and Director's Discretionary Fund, 1980",
-        "narrativeName": "phdstudent",
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/the_flood.jpg",
         "relativePath": "resources/img/the_flood.jpg"
     },
 
@@ -440,8 +340,8 @@
 			"label": "",
 			"theme": "Nature Interferes",
 			"creditLine": "Kato Tsubasa, The Lighthouses - 11.3 PROJECT, courtesy of the artist.",
-			"narrativeName": "teacher",
-			"imageURL": "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/288852544?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; picture-in-picture; clipboard-write; encrypted-media\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>",
+			"embedURL": "https://player.vimeo.com/video/288852544?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+            "allow": "autoplay; picture-in-picture; clipboard-write; encrypted-media",
 			"relativePath": "resources/img/lighthouse.jpg"
     },
 
@@ -461,8 +361,6 @@
         "label": "",
         "theme": "Taking Flight",
         "creditLine": "",
-        "narrativeName": "businessman",
-        "imageURL": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/the_soldiers_dream_of_home.jpg",
         "relativePath": "resources/img/the_soldiers_dream_of_home.jpg"
     },
 
@@ -482,26 +380,6 @@
         "label": "",
         "theme": "Traveling Through Time",
         "creditLine": "",
-        "narrativeName": [
-            {
-                "_n": "1",
-                "__text": "businessman"
-            },
-            {
-                "_n": "2",
-                "__text": "phdstudent"
-            }
-        ],
-        "imageURL": [
-            {
-                "_n": "1",
-                "__text": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/stone_age_computer_1.jpg"
-            },
-            {
-                "_n": "2",
-                "__text": "https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/stone_age_computer_2.jpg"
-            }
-        ],
         "relativePath": "resources/img/stone_age_computer_1.jpg"
     }
 ]

@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    //store global variables
 
+    const options = {
+        keyboard: true,
+        size: 'fullscreen'
+    };
+    //store global variables
     //get skeleton doc to access its elements
     getSkeleton();
     let carouselItem;
@@ -11,30 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     populate();
 
-    //replace modal content whenever new image is clicked
-    const modal = document.querySelector(".modal");
-    if (modal) {
-        modal.addEventListener('show.bs.modal', event => {
-            // Button that triggered the modal
-            const button = event.relatedTarget;
-            // Extract info from data-bs-* attributes
-            const artUrl = button.getAttribute('data-bs-whatever');
-            // If necessary, you could initiate an Ajax request here
-            // and then do the updating in a callback.
-
-            // Update the modal's content.
-            const modalImg = modal.querySelector('img');
-
-            modalImg.setAttribute("src", artUrl);
-            // modalImg.setAttribute("alt", art.title);
-        })
-    }
-
     //create asynchronous function to run fetch()
     async function populate(){
         //create variable to store url to json files
         const artworkURL = "resources/json/artworks.json";
-        const narURL = "resources/json/pracNarratives.json";
+        const narURL = "resources/json/narratives.json";
         
         //create requests object to pass into fetch()
         const artworkRequest = new Request(artworkURL);
@@ -139,9 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         //select elements to set attributes and text
-        // const modalButton = newCard.querySelector("button");
-        // const modalBtnImg = modalButton.querySelector("img");
         const cardBody = newCard.querySelector(".card-body");
+        //lightbox 
         const lbAnchor = newCard.querySelector("a");
         const lbImg = lbAnchor.querySelector("img");
 
@@ -150,9 +134,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // modalButton.setAttribute("data-bs-whatever", art.relativePath);
         // modalBtnImg.setAttribute("src", art.relativePath);
         // modalBtnImg.setAttribute("alt", art.title);
-        lbAnchor.setAttribute("href", art.relativePath);
-        lbAnchor.setAttribute("data-caption", art.title);
+        
+        //add content to lightbox
+        //check if there is an embedded video 
+        if (art.embedURL) {
+            lbAnchor.setAttribute("href", art.embedURL);
+            if (arguments.allow) {
+                lbAnchor.setAttribute("allow", art.allow);
+            }
+        }
+        else {
+            lbAnchor.setAttribute("href", art.relativePath);
+        }
+        //check if there is a specified credit line
+        if (art.creditLine !== ""){
+            lbAnchor.setAttribute("data-caption", art.creditLine);
+        }
+        else {
+            lbAnchor.setAttribute("data-caption", art.title);
+        }
+        
         lbImg.setAttribute("src", art.relativePath);
+
+        lbAnchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const lightbox = new Lightbox(lbAnchor, options);
+            lightbox.show();
+        });
 
         //add text 
         cardBody.querySelector("h5").textContent = art.title;
@@ -199,8 +207,21 @@ document.addEventListener('DOMContentLoaded', () => {
             row.appendChild(rowHeader);
             row.appendChild(rowValue);
 
-            rowHeader.textContent = metaProperty;
-            rowValue.textContent = art[metaProperty];
+            //add source url to current location 
+            if (metaProperty === "currentLocation") {
+                let sourceUrl = art.source;
+                const sourceAnchor = document.createElement("a");
+                rowValue.appendChild(sourceAnchor);
+                sourceAnchor.setAttribute("href", sourceUrl);
+                sourceAnchor.setAttribute("target", "_blank");
+                rowHeader.textContent = metaProperty;
+                sourceAnchor.textContent = art[metaProperty];
+            }
+
+            else {
+                rowHeader.textContent = metaProperty;
+                rowValue.textContent = art[metaProperty];
+            }
         }
 
         return newMetaAcc;
