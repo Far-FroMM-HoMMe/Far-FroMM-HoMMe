@@ -4,7 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 
-
 @font-face {
   font-family: 'DeStijl';
   src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
@@ -69,7 +68,7 @@ a:hover {
 
 .text-box {
   background-color: rgba(248, 249, 250, 0);
-  padding: 15px;
+  padding: 1.618rem;
   margin-left: 10px;
 }
 
@@ -218,6 +217,7 @@ footer {
 .img-card {
     border-radius: 0; 
     border: none;
+    max-width: 83.3%;
 }
 
 .card-img {
@@ -253,7 +253,10 @@ footer {
     margin-top: 1rem;
 }
 
-
+@media (max-width: 768px) {
+    
+}
+.narratives
 
 /* div {
   animation-name: moveright ;
