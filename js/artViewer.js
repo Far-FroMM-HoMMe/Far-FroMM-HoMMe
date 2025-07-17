@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let card;
     let metaAccordion;
     let narAccordion;
-    let narValue = null;
+    
+    //get the selected narrative 
+    let narValue = localStorage.getItem('narValue') || null;
+    console.log(narValue);
 
     populate();
 
@@ -58,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let narrative;
         if (narValue !== null) {
             for (nar of narratives) {
-                if (narValue === nar.name) {
+                if (narValue === nar.id) {
                     narrative = nar;
                 }
             }
@@ -258,4 +261,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
 
