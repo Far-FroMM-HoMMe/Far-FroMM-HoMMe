@@ -102,6 +102,12 @@ a:hover {
   position: fixed;
 }
 
+@media (max-width: 578px) {
+  .navbar {
+    background-color: #121212c4;
+  }
+}
+
 #navbartext {
   margin-left: 20px; 
   font-family: 'Libertinus Mono', monospace; 
@@ -182,7 +188,7 @@ footer {
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
-    font-size: clamp(10rem, 12vw, 12rem);
+    font-size: clamp(7rem, 12vw, 11rem);
     color: rgb(247, 247, 247);
     text-align: start;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -206,7 +212,7 @@ footer {
     color: #82994B;
     text-align: end;
     text-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772);
-    line-height: 0.8;
+    line-height: 1;
     
     position: absolute;
     top: clamp(95%, 81vw, 89%);
@@ -216,18 +222,6 @@ footer {
     padding: 0 40px;
     box-sizing: border-box;
     margin-top: 0.15rem;
-}
-
-.bi-arrow-down {
-    position: absolute;
-    top: clamp(90%, 90vw, 93%);
-    width: 5%;
-    height: 5%;
-    left: 50%;
-    right: 50%;
-    color: rgb(195, 194, 194);
-    box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772);
-
 }
 
 .img-card {
@@ -261,6 +255,12 @@ footer {
 .card-text-carousel {
     color: var(--white);
 }
+.card-text-carousel a {
+  font-size: 1.5rem;
+  font-weight: 200;
+  position: absolute;
+  top: 75%;
+}
 
 .infoboxes-title {
     font-size: clamp(6vw, 6vw, 7vw) !important;
@@ -270,6 +270,12 @@ footer {
     font-size: clamp(1rem, 0.75rem, 1.2rem);
     line-height: 1.6;
     margin-top: 1rem;
+    color: var(--white) !important;
+}
+
+
+.infoboxes-text a {
+  color: var(--white);
 }
 
 .hidden {
