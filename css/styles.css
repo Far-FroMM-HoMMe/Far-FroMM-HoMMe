@@ -419,6 +419,11 @@ footer {
   
 }
 
+#artCarousel .card img{
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
 /* --- Accordion --- */
 
 #artCarousel .accordion-button {

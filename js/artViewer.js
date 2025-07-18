@@ -168,8 +168,12 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.show();
         });
 
-        //add text 
-        cardBody.querySelector("h5").textContent = art.title;
+        //add text
+        const artTitle = cardBody.querySelector("h5");
+        const creationYear = document.createElement("span");
+        artTitle.textContent = art.title;
+        creationYear.textContent = ` (${art.creationDate})`;
+        artTitle.appendChild(creationYear);
         cardBody.querySelector("h6").textContent = art.creator;
         cardBody.querySelector("p").textContent = art.label;
 
