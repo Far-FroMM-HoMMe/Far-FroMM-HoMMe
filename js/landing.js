@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
+<<<<<<< HEAD
 
     // set narrative value and start story
     const startStoryLinks = document.querySelectorAll(".start-story");
@@ -22,3 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 });
+=======
+});
+
+
+function switchStyle(sheet) {
+  document.getElementById("themeStylesheet").setAttribute("href", sheet);
+}
+>>>>>>> landingpage
