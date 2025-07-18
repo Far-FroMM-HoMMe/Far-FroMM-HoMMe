@@ -1,45 +1,42 @@
+// adapt the cards from the viewerSkeleton html to populate the gallery 
+let globalArt;
+let card;
+let metaAccordion;
+let theme;
 document.addEventListener('DOMContentLoaded', () => {
-
     const options = {
         keyboard: true,
         size: 'fullscreen'
     };
+    
     //store global variables
     //get skeleton doc to access its elements
     getSkeleton();
-    let carouselItem;
-    let card;
-    let metaAccordion;
-    let narAccordion;
     
     //get the selected narrative 
-    let narValue = localStorage.getItem('narValue') || null;
-    console.log(narValue);
-    localStorage.removeItem('narValue');
+    // let narValue = localStorage.getItem('narValue') || null;
+    // console.log(narValue);
+    // localStorage.removeItem('narValue');
     populate();
 
     //create asynchronous function to run fetch()
     async function populate(){
         //create variable to store url to json files
         const artworkURL = "resources/json/artworks.json";
-        const narURL = "resources/json/narratives.json";
         
         //create requests object to pass into fetch()
         const artworkRequest = new Request(artworkURL);
-        const narRequest = new Request(narURL);
         
         //make network request with fetch() which will return a response
         const artworkResponse = await fetch(artworkRequest);
-        const narResponse = await fetch(narRequest);
         
         //run a second asynchronous function to retrieve the json file with json() and the promise response from fetch()
-        const artworks = await artworkResponse.json();
-        const narratives = await narResponse.json();
+        const artworksJson = await artworkResponse.json();
+
+        globalArt = artworksJson;
 
         //take the retrieved json and it pass into the functions to handle populating the html
-        addArt(artworks, narratives);
-        // console.log(artworks);
-        // console.log(narratives);
+        addArt(artworksJson);
     }
 
     async function getSkeleton() {
@@ -48,86 +45,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const parser = new DOMParser();
         const skeletonDoc = parser.parseFromString(htmlText, "text/html");
         console.log(skeletonDoc); // ✅ parsed external HTML
-        carouselItem = skeletonDoc.querySelector(".carousel-item");
         card = skeletonDoc.querySelector(".card");
         metaAccordion = skeletonDoc.querySelector(".accordion#metadata");
-        narAccordion = skeletonDoc.querySelector(".accordion#narrative");
     }
 
+    function addArt(artworks) {
+        //make a card item for each artwork
+        for (let i=0; i<artworks.length; i++) {
+            // create column div to hold art card 
+            const column = document.createElement("div");
+            document.querySelector(".row").appendChild(column);
+            column.classList.add("col-sm-12", "col-md-6", "col-lg-4", "mb-4", "px-3", "gallery-card");
 
-    //addArt() - creates art card to hold art image and info
-    function addArt(artworks, narratives) {
-        //check if a narrative has been set
-        let narrative;
-        if (narValue !== null) {
-            for (nar of narratives) {
-                if (narValue === nar.id) {
-                    narrative = nar;
-                }
-            }
+            //create card to hold art image and matadata table
+            let artwork = artworks[i];
+            column.appendChild(createCard(artwork));
         }
-
-        //filter artworks based on narrative and make cards
-        if (narrative) {
-            const narArt = [];
-            for (const art of artworks) {
-                if (art.id in narrative.art) {
-                    narArt.push(art);
-                }
-            }
-
-            //make a card item for each artwork
-            for (let i=0; i<narArt.length; i++) {
-                //create new carousel item
-                //clone carousel item node to add it to current doc
-                const newCarItem = document.importNode(carouselItem, true);
-
-                //add new item to carousel 
-                document.querySelector(".carousel-inner").appendChild(newCarItem);
-
-                //clear item of cards 
-                newCarItem.querySelector(".card").remove();
-
-                let art = narArt[i];
-                newCarItem.appendChild(createCard(art, narrative));
-            }
-
-        }
-
-        else {
-            //make a card item for each artwork
-            for (let i=0; i<artworks.length; i++) {
-                //create new carousel item
-                //clone carousel item node to add it to current doc
-                const newCarItem = document.importNode(carouselItem, true);
-
-                //add new item to carousel 
-                document.querySelector(".carousel-inner").appendChild(newCarItem);
-
-                //clear item of cards 
-                newCarItem.querySelector(".card").remove();
-
-                let art = artworks[i];
-                newCarItem.appendChild(createCard(art));
-            }
-        }
-
-        //set the first item to active
-        document.querySelector(".carousel-inner").firstElementChild.classList.add("active");
     }
 
-    function createCard(art, narrative=null) {
+    function createCard(art) {
         //create new card for art
         //clone card node to add to current doc
         const newCard = document.importNode(card, true);
+        newCard.classList.add("h-100");
 
         //clear accordions from card
         newCard.querySelector("#narrative").remove();
         newCard.querySelector("#metadata").remove();
 
+        //remove uneeded utility classes from card 
+        const cardRow = newCard.querySelector(".row");
+        cardRow.querySelector(".col-xl-7").classList.remove("col-xl-7");
+        cardRow.querySelector(".col-xl-5").classList.remove("col-xl-5");
+
 
         //select elements to set attributes and text
         const cardBody = newCard.querySelector(".card-body");
+        cardBody.classList.remove("px-xl-5");
         //lightbox 
         const lbAnchor = newCard.querySelector("a");
         const lbImg = lbAnchor.querySelector("img");
@@ -161,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         lbImg.setAttribute("src", art.relativePath);
+        lbAnchor.setAttribute("data-gallery", "collection-gallery");
 
 
         //add event listener to initialise lightbox when image is clicked
@@ -181,11 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //add accordion for metadata
         cardBody.appendChild(addMeta(art));
-
-        //add narrative accordion if narrative has been selected 
-        if (narrative) {
-            cardBody.appendChild(addNar(art, narrative));
-        }
 
         return newCard;
 
@@ -239,36 +189,39 @@ document.addEventListener('DOMContentLoaded', () => {
         return newMetaAcc;
 
     }
-
-    function addNar(art, narrative) {
-        //create new metadata accordion
-        //clone accordion node to add to current document
-        const newNar = document.importNode(narAccordion, true);
-
-        //select elements to set attributes
-        newNar.setAttribute("id", `narrative-${art.id}`);
-        newNar.querySelector("h2").setAttribute("id", `narrative-${art.id}_header`);
-
-        const accButton = newNar.querySelector("button");
-        accButton.setAttribute("data-bs-target", `#nar-${art.id}`);
-        accButton.setAttribute("aria-controls", `nar-${art.id}`);
-        accButton.textContent = `${narrative.name} narrative`;
-
-        const collapse = newNar.querySelector(".accordion-collapse");
-        collapse.setAttribute("id", `nar-${art.id}`);
-        collapse.setAttribute("aria-labelledby", `nar-${art.id}_header`);
-        collapse.setAttribute("data-bs-parent", `#narrative-${art.id}`);
-
-        //add narrative text
-        collapse.querySelector("p").textContent = narrative.art[art.id];
-
-        //make the narrative text visable 
-        collapse.classList.add("show");
-
-        return newNar;
-
-    }
-
 });
 
+const themeSelect = document.querySelector("#themes").querySelector("p").querySelectorAll("a");
+const allArtLink = document.querySelector("#all-art"); // your "show all" anchor
+console.log(globalArt);
+for (const theme of themeSelect) {
+    theme.addEventListener("click", () => {
+        const themeName = theme.getAttribute("id").replaceAll("-", " ");
 
+        // Get IDs of artworks matching the theme
+        const themeArtIDs = globalArt
+            .filter(art => art.theme === themeName)
+            .map(art => art.id);
+
+        const artColumns = document.querySelectorAll(".gallery-card");
+
+        for (const col of artColumns) {
+            const cardId = col.querySelector(".card").getAttribute("id");
+
+            if (themeArtIDs.includes(cardId)) {
+                col.classList.remove("d-none"); // show
+            } else {
+                col.classList.add("d-none"); // hide
+            }
+        }
+    });
+}
+
+// Add event listener to the "All Art" link
+allArtLink.addEventListener("click", () => {
+    const artColumns = document.querySelectorAll(".gallery-card");
+
+    for (const col of artColumns) {
+        col.classList.remove("d-none"); // show everything again
+    }
+});
