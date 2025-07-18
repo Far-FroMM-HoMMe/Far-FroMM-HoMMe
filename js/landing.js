@@ -12,3 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
 });
+
+
+function switchStyle(sheet) {
+  document.getElementById("themeStylesheet").setAttribute("href", sheet);
+}
