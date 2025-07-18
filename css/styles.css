@@ -255,6 +255,12 @@ footer {
 .card-text-carousel {
     color: var(--white);
 }
+.card-text-carousel a {
+  font-size: 1.5rem;
+  font-weight: 200;
+  position: absolute;
+  top: 75%;
+}
 
 .carousel-control-prev-icon {
     width: 24px;
@@ -282,6 +288,12 @@ footer {
     font-size: clamp(1rem, 0.75rem, 1.2rem);
     line-height: 1.6;
     margin-top: 1rem;
+    color: var(--white) !important;
+}
+
+
+.infoboxes-text a {
+  color: var(--white);
 }
 
 .hidden {
