@@ -20,7 +20,7 @@
 
     {
         "id": "FFH-4-3",
-        "creator": "Stromae, \nComposer(s): \nGeorges Bizet, Stromae\nLyricist(s): \nStromae, Orelsan\nAnimation:Sylvain Chomet",
+        "creator": "Stromae; \nComposer(s): \nGeorges Bizet, Stromae;\nLyricist(s): \nStromae, Orelsan;\nAnimation: Sylvain Chomet",
         "title": "Carmen",
         "creationDate": "2013",
         "type": "video",
@@ -34,7 +34,7 @@
         "label": "",
         "theme": "Traveling Through Time",
         "creditLine": "",
-        "embedURL": "https://www.youtube.com/embed/UKftOH54iNU?si=uuWkeseUOG_hLGFM",
+        "embedURL": "https://www.youtube.com/watch?v=UKftOH54iNU",
         "relativePath": "resources/img/Stromae_carmen.jpg"
 	},
 
@@ -54,7 +54,8 @@
         "label": "",
         "theme": "Traveling Through Time",
         "creditLine": "Luna Maurer & Roel Wouters, Emojis is all we have",
-        "embedURL": "https://player.vimeo.com/video/1088999517/10614fa4d5",
+        "embedURL": "https://player.vimeo.com/video/1088999517?h=10614fa4d5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "allow": "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share",
         "relativePath": "resources/img/emoji.jpg"
     },
 

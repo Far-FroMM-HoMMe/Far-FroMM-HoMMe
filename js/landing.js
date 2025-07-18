@@ -11,4 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
+
+    // set narrative value and start story
+    const startStoryLinks = document.querySelectorAll(".start-story");
+    startStoryLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const story = link.getAttribute("id");
+        console.log("Setting narValue:", story);
+        localStorage.setItem("narValue", story);
+      });
+    });
 });
