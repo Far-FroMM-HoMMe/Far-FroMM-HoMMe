@@ -271,4 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// Switching Layout button
+function switchStyle(sheet) {
+    document.getElementById("themeStylesheet").setAttribute("href", sheet);
+}
 
