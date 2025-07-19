@@ -84,15 +84,25 @@
   <!-- Intro Section -->
   <section id="intro">
     <div id="floating" class="container">
-       <!-- The user input answers come here -->
       <div class="floating-answers-container" id="floating-answers-container">
-        <div class="center-text">
+       
+        <!-- Floating answer area -->
+        <div id="answer-area" class="answer-display">
+        </div>
+       
+        <!-- Heading message -->
+        <div class="main-heading center-text">
           <h1 class="display-5 fw-bold">What does home mean to you?</h1>
+        </div>
+
+        <!-- Description message -->
+        <div class="description">
           <p class="lead mt-3 fw-bold text-muted">Here are what some other people have said...</p>
         </div>
 
+
         <!-- Button trigger modal -->
-        <div class="trigger-button mt-4">
+        <div class="action-area trigger-button">
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inputyouridea">
             Join the conversation
           </button>
@@ -110,7 +120,8 @@
                 <p class="text-muted">Is it a place? A person? A memory? <br>
                 Tell us what it means to you and see your answer appear on the screen.</p>
                 <form id="answer-form" class="d-flex gap-2 justify-content-center">
-                <input type="text" class="form-control" id="user-answer" placeholder="Type your answer..." required />  
+                <input type="text" class="form-control" id="user-answer" placeholder="Type your answer..." required /> 
+                </form> 
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -122,7 +133,7 @@
 
       </div>
     </div>  
-    <div class="container text-center my-3 ">
+    <div class="text-center my-3">
       <a href="#choose-narrative" class="text-decoration-none text-dark">
         <span><i class="bi bi-chevron-down"></i></span>
       </a>
@@ -130,59 +141,55 @@
   </section>
 
   <!--Narrative Section-->
-  <section id="choose-narrative">
+  <section id="choose-narrative" class="m-5 p-2">
     <div class="container text-left">
       <h1 class="mb-3 fw-bold">CHOOSE YOUR NARRATIVE</h1>
-      <p class="lead text-muted mb-4">Explore different perspectives on what home means.</p>
-    </div>
 
-    <div class="container my-5">
-    <div class="card-group gap-3">
-      <a href="artViewer.html" id="teacher" class="card border-0 text-decoration-none link-dark link-card rounded-3 start-story">
-          <div class="card-header bg-transparent border-0">
-          <h4 class="card-title text-center">Children's Scavenger's Hunt</h4></div>
-          <div class="card-body d-flex flex-column justify-content-between align-items-center text-center">
-            <div>
-            <img src="resources/img/thefarm.jpg" class="card-img-top rounded-0"  alt="...">
-            <p class="card-text mt-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>      
+      <p class="lead text-muted mb-4">Explore different perspectives on what home means.</p>
+      <div class="card-group gap-3">
+        <a href="artViewer.html" id="teacher" class="card border-0 text-decoration-none link-dark link-card rounded-3 start-story">
+            <div class="card-header bg-transparent border-0">
+            <h4 class="card-title text-center">Children's Scavenger's Hunt</h4></div>
+            <div class="card-body d-flex flex-column justify-content-between align-items-center text-center">
+              <div>
+              <img src="resources/img/thefarm.jpg" class="card-img-top rounded-0"  alt="...">
+              <p class="card-text mt-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>      
+              </div>
             </div>
-          </div>
-      </a> 
+        </a> 
+        
+        <a href="artViewer.html" id="businessman" class="card border-0 text-decoration-none link-dark link-card rounded-3 start-story">
+            <div class="card-header bg-transparent border-0">
+            <h4 class="card-title text-center">Business Travel</h4></div>
+            <div class="card-body d-flex flex-column justify-content-evenly align-items-center text-center">
+              <div>
+              <img src="resources/img/the_soldiers_dream_of_home.jpg" class="card-img-top rounded-0"  alt="...">
+              <p class="card-text mt-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>     
+              </div> 
+            </div>
+        </a>
       
-      <a href="artViewer.html" id="businessman" class="card border-0 text-decoration-none link-dark link-card rounded-3 start-story">
-          <div class="card-header bg-transparent border-0">
-          <h4 class="card-title text-center">Business Travel</h4></div>
-          <div class="card-body d-flex flex-column justify-content-evenly align-items-center text-center">
-            <div>
-            <img src="resources/img/the_soldiers_dream_of_home.jpg" class="card-img-top rounded-0"  alt="...">
-            <p class="card-text mt-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>     
-            </div> 
-          </div>
-      </a>
-    
-      <a href="artViewer.html" id="phd" class="card border-0 text-decoration-none link-dark link-card rounded-3 start-story">
-          <div class="card-header bg-transparent border-0">
-          <h4 class="card-title text-center">Expertise</45></div>
-          <div class="card-body d-flex flex-column justify-content-evenly align-items-center text-center">
-            <div>
-            <img src="resources/img/breakfast_piece.jpg" class="card-img-top rounded-0"  alt="...">
-            <p class="card-text mt-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>      
+        <a href="artViewer.html" id="phd" class="card border-0 text-decoration-none link-dark link-card rounded-3 start-story">
+            <div class="card-header bg-transparent border-0">
+            <h4 class="card-title text-center">Expertise</45></div>
+            <div class="card-body d-flex flex-column justify-content-evenly align-items-center text-center">
+              <div>
+              <img src="resources/img/breakfast_piece.jpg" class="card-img-top rounded-0"  alt="...">
+              <p class="card-text mt-4">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>      
+              </div>
             </div>
-          </div>
-      </a> 
+        </a> 
       </div>
     </div>  
   </section>
 
 <!--Discover the Rooms Section-->
-  <section id="rooms">
+  <section id="rooms" class="m-5 p-2">
     <div class="container text-left">
-      <h1 class="mb-3 fw-bold">DISCOVER THE ROOMS</h1>
-    </div>
-      <div class="container my-5">
+      <h1 class="mb-5 fw-bold">DISCOVER THE ROOMS</h1>
         <div class="row g-5">
           <!--svg image of the floorplan-->
-          <div class="col-12 col-md-7">
+          <div class="col-12 col-md-7 svg">
             <!--svg comes here: set width to 100% and height to auto when copy & pasting. add ids according to the rooms-->
             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" fill="none" viewBox="0 0 1491 982">
               <g class="floor-plan">
@@ -664,31 +671,28 @@
             </div>
 
 
-          <div class="col-12 col-md-5 d-flex flex-column justify-content-center">
-            <p class="lead">Search from the rooms see what objects are hosted there.</p>
+          <div class="lead col-12 col-md-5 d-flex flex-column justify-content-center">
+            <p>Search from the rooms see what objects are hosted there.</p>
           </div>
         </div>  
-      </div>
     </div>
   </section>
 
 <!--Browse the Collections Section-->
-  <section id="collections">
+  <section id="collections" class="m-5 p-2">
     <div class="container text-left my-5">
       <h1 class="mb-3 fw-bold">BROWSE THE COLLECTION</h1>
-    </div>
-    
-    <div class="container">
-    <div class="row g-5">
-      <div class="col-12 order-2 col-md-5 order-md-1 d-flex flex-column justify-content-center">
-        <p class="lead">Our team has collected a total of 20 items related to the theme of Far From Home.</p>
-        <a class="btn btn-outline-secondary mt-2" href="gallery.html" role="button">Browse the full collection</a>
-      </div>
+       
+      <div class="row g-5">
+        <div class="col-12 order-2 col-md-5 order-md-1 d-flex flex-column justify-content-center">
+          <p class="lead">Our team has collected a total of 20 items related to the theme of Far From Home.</p>
+          <a class="btn btn-outline-secondary mt-2" href="gallery.html" role="button">Browse the full collection</a>
+        </div>
 
-      <div class="col-12 order-1 col-md-7 order-md-2">
-        <img src="resources/img/fivebeauties_1.jpg" class="img-fluid" alt="five beauties">
+        <div class="col-12 order-1 col-md-7 order-md-2">
+          <img src="resources/img/fivebeauties_1.jpg" class="img-fluid p-3" alt="five beauties">
+        </div>
       </div>
-    </div>
     </div>
   
   </section>
@@ -729,7 +733,7 @@
     // retrieve HTML elements and create variables
     const form = document.getElementById("answer-form");
     const input = document.getElementById("user-answer");
-    const introContainer = document.getElementById("floating-answers-container");
+    const answerArea = document.getElementById("answer-area"); // 
     
     // store default answers (for first time access)
     const DEFAULT_ANSWERS = [
@@ -740,49 +744,41 @@
     ];
 
     // function to display answers randomly
-   function displayAnswers(text) {
-    
-    // create a new div for the answer, and set a class and text
-    const answerDiv = document.createElement("div");
-    answerDiv.className = "floating-answer";
-    answerDiv.innerText = `"${text}"`;
-    
-    // retrieve the dimensions of the introContainer (the floating-answers-container)
-    const frameWidth = introContainer.clientWidth;
-    const frameHeight = introContainer.clientHeight;
+    function displayAnswers(text) {
+      
+      // create a new div for the answer, and set a class and text
+      const answerDiv = document.createElement("div");
+      answerDiv.className = "floating-answer";
+      answerDiv.innerText = `"${text}"`;
+      answerArea.appendChild(answerDiv);
+      
+      // set the dimensions of the answer div (approximate)
+      const answerWidth = answerDiv.offsetWidth || 200;
+      const answerHeight = answerDiv.offsetHeight || 40;
 
-    // calculate the maximum width and height for the answer div
-    const maxWidth = frameWidth - 200;
-    const maxHeight = frameHeight - 30;
+      // retrieve the dimensions of the answer-area 
+      const frameWidth = answerArea.clientWidth;
+      const frameHeight = answerArea.clientHeight;
 
-    // define a no-go zone in the center of the container so that answers do not overlap with the intro text
-     const noGoZone = {
-      xMin: frameWidth / 2 - 200, // adjust the value if needed
-      xMax: frameWidth / 2 + 200,
-      yMin: frameHeight / 2 - 100,
-      yMax: frameHeight / 2 + 100
-    };
+      // calculate max height and width within the answer area (so that the answers do not overflow)
+      const maxX = frameWidth - answerWidth;
+      const maxY = frameHeight - answerHeight;
 
-    let x, y;
-    // generate random coordinates for the answer div, ensuring it does not overlap with the no-go zone
-    do {
-      x = Math.floor(Math.random() * maxWidth);
-      y = Math.floor(Math.random() * maxHeight);
-    } while (
-      x > noGoZone.xMin && x < noGoZone.xMax &&
-      y > noGoZone.yMin && y < noGoZone.yMax
-    );
-    // set the position of the answer div
-    answerDiv.style.left = `${x}px`;
-    answerDiv.style.top = `${y}px`;
+      // set a random position within the max height and width 
+      const x = Math.floor(Math.random() * maxX);
+      const y = Math.floor(Math.random() * maxY);
 
-    // set a random animation delay for the answer div
-    const delay = Math.random() * 5;
-    answerDiv.style.animationDelay = `${delay}s`;
+      // apply position to the answer div
+      answerDiv.style.left = `${x}px`;
+      answerDiv.style.top = `${y}px`;
 
-    introContainer.appendChild(answerDiv);
-    
-    }
+       // set a random animation delay for the answer div
+      const delay = Math.random() * 5;
+      answerDiv.style.animationDelay = `${delay}s`;
+
+      
+      
+      }
 
     
     // function to get stored answers from localStorage
