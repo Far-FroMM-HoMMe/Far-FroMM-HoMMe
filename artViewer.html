@@ -4,191 +4,61 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Art Viewer</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link id="themeStylesheet" rel="stylesheet" href="css/styles.css">
     </head>
-    <body class="bg-dark">
+    <body>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <div class="container-xxl">
+                <a href="#intro" class="navbar-brand">
+                    <span class="text-light">
+                        <img src="resources/img/suitcase-favicon-white.png" style="max-width: 50px; color: white;"><span id="navbartext">To have, to lose, to find</span>
+                    </span>
+                </a>
+                <!-- toggle button for mobile nav -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- navbar links -->
+                <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="exhibition.html#choose-narrative" class="nav-link">Stories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#themes" class="nav-link">Themes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#collection" class="nav-link">The collection</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="aboutDropdown">About</a>
+                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                <li><a class="dropdown-item" href="documentation.html">General scope and design choices</a></li>
+                                <li><a class="dropdown-item" href="disclaimer.html">Disclaimer</a></li>
+                                <li><a class="dropdown-item" href="about-creators.html">About the creators</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                Choose your layout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> 
+
+
         <section id="viewer">
             <!-- carousel for images  -->
-            <div id="artCarousel" class="carousel slide" data-bs-ride="false">
-                <!-- <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#artCarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#artCarouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#artCarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div> -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                        <div class="container d-flex align-items-center justify-content-center">
-                            <div class="card m-3 px-3 py-3" id="FFH-32" style="background: #01202d">
-                                <div class="row g-0 align-items-center">
-                                    <div class="col-lg-6 d-flex m-0 justify-content-center align-items-center">
-                                        <!-- <img src="resources/img/migrant_mother.jpg" class="img-fluid rounded-start" alt="Migrant mother, Nipomo, California"> -->
-                                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#artViewerModal" data-bs-whatever="resources/img/migrant_mother.jpg">
-                                            <img src="resources/img/migrant_mother.jpg" class="img-fluid" alt="Migrant mother, Nipomo, California">
-                                        </button>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card-body py-4 text-light">
-                                            <h5 class="card-title mb-0">Migrant Mother</h5>
-                                            <h6 class="text-muted">Dorothea Lange</h6>
-                                            <p class="card-text py-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi deleniti similique molestias dolorum magni repellat aliquam iste nemo obcaecati. Enim tenetur autem facilis quaerat veniam animi culpa amet iure doloremque aliquid. Eum possimus tenetur illum recusandae dolorum maxime iure, vel sapiente corrupti error beatae mollitia praesentium modi est qui vero.</p>
-                                            <!-- Accordian for Narratives -->
-                                            <div class="accordion" id="narrative-FFH-32">
-                                                <!-- an accordion is made up of accordion items -->
-                                                <div class="accordion-item" style="background: #01202d">
-                                                    <!-- an accordion item is made up of an accordion header and accordion collapse -->
-                                                    <h2 class="accordion-header" id="narT-FFH-32_header">
-                                                        <!-- an accordion header has an accordion button which triggers the collapse and opening -->
-                                                        <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#narT-FFH-32" aria-expanded="true" aria-controls="narT-FFH-32" style="background: #2d3341">Teacher Narrative</button>
-                                                    </h2>
-                                                    <div class="accordion-collapse collapse show" id="narT-FFH-32" aria-labelledby="narT-FFH-32_header" data-bs-parent="#narrative-FFH-32">
-                                                        <!-- an accordion collapse is made up of an accordion body -->
-                                                        <div class="accordion-body">
-                                                            <!-- the accordion body holds the text for that accordion section -->
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, corporis? Possimus id voluptatibus dicta debitis error illum! Quasi hic quos, officiis libero quae aperiam, reiciendis necessitatibus quia inventore consequuntur iusto excepturi. Maxime quaerat error iusto magnam atque animi molestiae maiores et nam? Sequi tempora sapiente voluptates eaque minus fugit eveniet.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item" style="background: #01202d">
-                                                    <h2 class="accordion-header" id="narB-FFH-32_header">
-                                                        <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#narB-FFH-32" aria-expanded="false" aria-controls="narB-FFH-32" style="background: #2d3341">Business Narrative</button>
-                                                    </h2>
-                                                    <div class="accordion-collapse collapse" id="narB-FFH-32" aria-labelledby="narB-FFH-32_header" data-bs-parent="#narrative-FFH-32">
-                                                        <div class="accordion-body">
-                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit suscipit pariatur ab. Sint saepe sunt molestiae, ea blanditiis debitis sapiente exercitationem aut vitae quo, laboriosam assumenda qui nisi voluptatem. Dignissimos at aliquid quae earum eaque odit, harum architecto inventore rerum! Qui quas ipsam velit odio omnis cum reprehenderit culpa molestias!</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item" style="background: #01202d">
-                                                    <h2 class="accordion-header" id="narP-FFH-32_header">
-                                                        <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#narP-FFH-32" aria-expanded="false" aria-controls="narP-FFH-32" style="background: #2d3341">PhD Narrative</button>
-                                                    </h2>
-                                                    <div class="accordion-collapse collapse" id="narP-FFH-32" aria-labelledby="narP-FFH-32_header" data-bs-parent="#narrative-FFH-32">
-                                                        <div class="accordion-body">
-                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit suscipit pariatur ab. Sint saepe sunt molestiae, ea blanditiis debitis sapiente exercitationem aut vitae quo, laboriosam assumenda qui nisi voluptatem. Dignissimos at aliquid quae earum eaque odit, harum architecto inventore rerum! Qui quas ipsam velit odio omnis cum reprehenderit culpa molestias!</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                        <div class="container align-items-center justify-content-center">
-                            <div class="card m-3 px-3 py-3" id="FFH-22" style="background: #01202d">
-                                <div class="row g-0 align-items-center">
-                                    <div class="col-lg-6 d-flex m-0 justify-content-center align-items-center bg-dark">
-                                        <img src="resources/img/the_soldiers_dream_of_home.jpg" class="img-fluid" alt="The Soldier's Dream of Home">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card-body py-4 text-light">
-                                            <h5 class="card-title mb-0">Soldier Dreams of Home</h5>
-                                            <h6 class="text-muted">Dorothea Lange</h6>
-                                            <p class="card-text py-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi deleniti similique molestias dolorum magni repellat aliquam iste nemo obcaecati. Enim tenetur autem facilis quaerat veniam animi culpa amet iure doloremque aliquid. Eum possimus tenetur illum recusandae dolorum maxime iure, vel sapiente corrupti error beatae mollitia praesentium modi est qui vero.</p>
-                                            <!-- Accordian for Narratives -->
-                                            <div class="accordion" id="narrative-FFH-22">
-                                                <!-- an accordion is made up of accordion items -->
-                                                <div class="accordion-item" style="background: #01202d">
-                                                    <!-- an accordion item is made up of an accordion header and accordion collapse -->
-                                                    <h2 class="accordion-header" id="narT-FFH-22_header">
-                                                        <!-- an accordion header has an accordion button which triggers the collapse and opening -->
-                                                        <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#narT-FFH-22" aria-expanded="true" aria-controls="narT-FFH-22" style="background: #2d3341">Teacher Narrative</button>
-                                                    </h2>
-                                                    <div class="accordion-collapse collapse show" id="narT-FFH-22" aria-labelledby="narT-FFH-22_header" data-bs-parent="#narrative-FFH-22">
-                                                        <!-- an accordion collapse is made up of an accordion body -->
-                                                        <div class="accordion-body">
-                                                            <!-- the accordion body holds the text for that accordion section -->
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, corporis? Possimus id voluptatibus dicta debitis error illum! Quasi hic quos, officiis libero quae aperiam, reiciendis necessitatibus quia inventore consequuntur iusto excepturi. Maxime quaerat error iusto magnam atque animi molestiae maiores et nam? Sequi tempora sapiente voluptates eaque minus fugit eveniet.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item" style="background: #01202d">
-                                                    <h2 class="accordion-header" id="narB-FFH-22_header">
-                                                        <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#narB-FFH-22" aria-expanded="false" aria-controls="narB-FFH-22" style="background: #2d3341">Business Narrative</button>
-                                                    </h2>
-                                                    <div class="accordion-collapse collapse" id="narB-FFH-22" aria-labelledby="narB-FFH-22_header" data-bs-parent="#narrative-FFH-22">
-                                                        <div class="accordion-body">
-                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit suscipit pariatur ab. Sint saepe sunt molestiae, ea blanditiis debitis sapiente exercitationem aut vitae quo, laboriosam assumenda qui nisi voluptatem. Dignissimos at aliquid quae earum eaque odit, harum architecto inventore rerum! Qui quas ipsam velit odio omnis cum reprehenderit culpa molestias!</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item" style="background: #01202d">
-                                                    <h2 class="accordion-header" id="narP-FFH-22_header">
-                                                        <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#narP-FFH-22" aria-expanded="false" aria-controls="narP-FFH-22" style="background: #2d3341">PhD Narrative</button>
-                                                    </h2>
-                                                    <div class="accordion-collapse collapse" id="narP-FFH-22" aria-labelledby="narP-FFH-22_header" data-bs-parent="#narrative-FFH-22">
-                                                        <div class="accordion-body">
-                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit suscipit pariatur ab. Sint saepe sunt molestiae, ea blanditiis debitis sapiente exercitationem aut vitae quo, laboriosam assumenda qui nisi voluptatem. Dignissimos at aliquid quae earum eaque odit, harum architecto inventore rerum! Qui quas ipsam velit odio omnis cum reprehenderit culpa molestias!</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                        <div class="container align-items-center justify-content-center">
-                            <div class="card m-3 px-3 py-3" id="FFH-13" style="background: #01202d">
-                                <div class="row g-0 align-items-center">
-                                    <div class="col-lg-6 d-flex m-0 justify-content-center align-items-center bg-dark">
-                                        <img src="resources/img/thefarm.jpg" class="img-fluid" alt="The Farm">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="card-body py-4 text-light">
-                                            <h5 class="card-title mb-0">The Farm</h5>
-                                            <h6 class="text-muted">Joan Miro</h6>
-                                            <p class="card-text py-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi deleniti similique molestias dolorum magni repellat aliquam iste nemo obcaecati. Enim tenetur autem facilis quaerat veniam animi culpa amet iure doloremque aliquid. Eum possimus tenetur illum recusandae dolorum maxime iure, vel sapiente corrupti error beatae mollitia praesentium modi est qui vero.</p>
-                                            <!-- Accordian for Narratives -->
-                                            <div class="accordion" id="narrative-FFH-13">
-                                                <!-- an accordion is made up of accordion items -->
-                                                <div class="accordion-item" style="background: #01202d">
-                                                    <!-- an accordion item is made up of an accordion header and accordion collapse -->
-                                                    <h2 class="accordion-header" id="narT-FFH-13_heading">
-                                                        <!-- an accordion header has an accordion button which triggers the collapse and opening -->
-                                                        <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#narT-FFH-13" aria-expanded="true" aria-controls="narT-FFH-13" style="background: #2d3341">Teacher Narrative</button>
-                                                    </h2>
-                                                    <div class="accordion-collapse collapse show" id="narT-FFH-13" aria-labelledby="narT-FFH-13_heading" data-bs-parent="#narrative-FFH-13">
-                                                        <!-- an accordion collapse is made up of an accordion body -->
-                                                        <div class="accordion-body">
-                                                            <!-- the accordion body holds the text for that accordion section -->
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, corporis? Possimus id voluptatibus dicta debitis error illum! Quasi hic quos, officiis libero quae aperiam, reiciendis necessitatibus quia inventore consequuntur iusto excepturi. Maxime quaerat error iusto magnam atque animi molestiae maiores et nam? Sequi tempora sapiente voluptates eaque minus fugit eveniet.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item" style="background: #01202d">
-                                                    <h2 class="accordion-header" id="narB-FFH-13_heading">
-                                                        <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#narB-FFH-13" aria-expanded="false" aria-controls="narB-FFH-13" style="background: #2d3341">Business Narrative</button>
-                                                    </h2>
-                                                    <div class="accordion-collapse collapse" id="narB-FFH-13" aria-labelledby="narB-FFH-13_heading" data-bs-parent="#narrative-FFH-13">
-                                                        <div class="accordion-body">
-                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit suscipit pariatur ab. Sint saepe sunt molestiae, ea blanditiis debitis sapiente exercitationem aut vitae quo, laboriosam assumenda qui nisi voluptatem. Dignissimos at aliquid quae earum eaque odit, harum architecto inventore rerum! Qui quas ipsam velit odio omnis cum reprehenderit culpa molestias!</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item" style="background: #01202d">
-                                                    <h2 class="accordion-header" id="narP-FFH-13_heading">
-                                                        <button class="accordion-button text-light" type="button" data-bs-toggle="collapse" data-bs-target="#narP-FFH-13" aria-expanded="false" aria-controls="narP-FFH-13" style="background: #2d3341">PhD Narrative</button>
-                                                    </h2>
-                                                    <div class="accordion-collapse collapse" id="narP-FFH-13" aria-labelledby="narP-FFH-13_heading" data-bs-parent="#narrative-FFH-13">
-                                                        <div class="accordion-body">
-                                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit suscipit pariatur ab. Sint saepe sunt molestiae, ea blanditiis debitis sapiente exercitationem aut vitae quo, laboriosam assumenda qui nisi voluptatem. Dignissimos at aliquid quae earum eaque odit, harum architecto inventore rerum! Qui quas ipsam velit odio omnis cum reprehenderit culpa molestias!</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div id="artCarousel" class="carousel slide min-vh-100" data-bs-interval="false" data-bs-pause="false">
+                <div class="carousel-inner p-3">
+                    <!-- === carousel item === -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#artCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -200,27 +70,53 @@
                 </button>
             </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="artViewerModal" tabindex="-1" aria-labelledby="artViewerModal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> -->
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="resources/img/migrant_mother.jpg" class="img-fluid" alt="Migrant mother, Nipomo, California">
-                        </div>
-                        <!-- <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div> -->
+        </section>
+
+        <!-- <div class="modal fade" id="artViewerModal" tabindex="-1" aria-labelledby="artViewerModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
+        </div> -->
+
+        <section id="offcanvas">
+            <!-- offcanvas section -->
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Choose your layout</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                  <div>
+                      <p><i>Far From Home</i> is a cross-cultural and period-spanning virtual experience. To help you emerge in different time periods, and for the sake of this digital project, we designed several layouts that you can choose from. Each layout is inspired by a different period and culture, and it will change the way you experience the exhibition. To learn more about our design choices and CSS script, visit the <a href="documentation.html">general purpose and design choices</a> section.</p>
+                  </div>
+                  <div class="mb-4">
+                      <h5 style="color: rgb(118, 118, 118)">Return to default settings</h5>
+                      <button onclick="switchStyle('css/styles.css')" class="btn btn-secondary mb-3">Default</button>
+                      <h5>Pre-modern layouts (1500-1900)</h5>
+                      <button id="aldine-button" onclick="switchStyle('css/aldine.css')" class="btn btn-primary">Aldine</button>
+                      <button onclick="switchStyle('css/artnouveau.css')" class="btn btn-primary">Art nouveau</button>
+                      <h5 class="mt-3">Modern and post-war layouts (1900-1970)</h5>
+                      <button id="stijl-button" onclick="switchStyle('css/destijl.css')" class="btn btn-primary">De Stijl</button>
+                      <button onclick="switchStyle('css/beall.css')" class="btn btn-primary">Lester Beall</button>
+                      <h5 class="mt-3">Post-modern layouts (1970-2035)</h5>
+                      <button onclick="switchStyle('css/90sweb.css')" class="btn btn-primary">90s-00s Web design</button>
+                      <button onclick="switchStyle('css/cyberpunk.css')" class="btn btn-primary">Japanese anime cyberpunk</button>
+                  </div>
+              </div>
+            </div> 
         </section>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+        <script src="js/index.bundle.min.js"></script>
+        <script src="js/artViewer.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+        <script src="https://player.vimeo.com/api/player.js"></script>
     </body>
 </html>

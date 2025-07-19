@@ -2,9 +2,8 @@
 # global
 --------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+
 
 @font-face {
   font-family: 'DeStijl';
@@ -12,6 +11,13 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+    font-family: 'GoudyDropcap';
+    src: url('../fonts/GoudyInitialen.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
 
 /* custom properties you can call with var() */
 /* The dark-theme will be the default */
@@ -28,9 +34,9 @@
 body {
     background-color: var(--black);
     color: var(--white);
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Cardo", serif;
     font-weight: 400;
-    font-style: normal;
+    font-style: italic;
     font-size: 18px;
     line-height: 1.5;
 }
@@ -234,10 +240,10 @@ footer {
 }
 
 .hero-text {
-    font-family: "Libertinus Mono", monospace;
+    font-family: "Carbo", "serif";
     font-optical-sizing: auto;
     font-weight: 100;
-    font-style: normal;
+    font-style: italic;
     font-size: clamp(7rem, 12vw, 11rem);
     color: rgb(247, 247, 247);
     text-align: start;
@@ -254,10 +260,10 @@ footer {
 }
 
 .hero-subtitle {
-    font-family: "Libertinus Mono", monospace;
+    font-family: "Carbo", "serif";
     font-optical-sizing: auto;
     font-weight: 600;
-    font-style: normal;
+    font-style: italic;
     font-size: clamp(1.5rem, 3vw, 5rem);
     color: #82994B;
     text-align: end;
@@ -288,9 +294,10 @@ footer {
 .dropcap {
   float: left;
   font-size: clamp(18rem, 6vw, 8.5rem);
+  font-style: normal;
   line-height: 0.70;
   margin: 0.1em 0.1em 0em 0;
-  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-family: "GoudyDropcap", serif;
   padding-right: 0.15rem;
 }
 
