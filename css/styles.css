@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+
 
 @font-face {
   font-family: 'DeStijl';
@@ -100,6 +102,11 @@ a:hover {
   color: var(--primary-color-dark) !important;
 }
 
+#chooseLayout {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
 /* According to dark theme */
 .offcanvas {
   background-color: var(--black);
@@ -121,11 +128,17 @@ a:hover {
   background-color: rgb(118, 118, 118) !important;
 }
 
-#gutenberg-button {
-  /* background-color: wheat !important; */
-  font-family: "adobe-aldine-variable",sans-serif !important;
-  font-variation-settings: 'opsz' 24, 'wght' 300 !important;
-  background-color: var(--primary-color) !important;
+#aldine-button {
+  background-color: #e4dec6 !important;
+  border-color: #e4dec6 !important;
+  color: #574d38 !important;
+  font-family: "Cardo", 'serif' !important;
+  font-style: italic;
+ }
+
+ #aldine-button:hover {
+  background-color: #574d38 !important;
+  color: #e4dec6 !important;
  }
 
  #artnouveau-button {
@@ -253,6 +266,10 @@ footer {
     box-sizing: border-box;
 }
 
+.hero-text span {
+    color: var(--primary-color);
+}
+
 .hero-subtitle {
     font-family: "Libertinus Mono", monospace;
     font-optical-sizing: auto;
@@ -363,10 +380,10 @@ color: var(--white);
 }
 #carouselThemeImages .card-text-carousel a,
 #carouselNarrativeImages .card-text-carousel a {
-  font-size: 1.5rem;
-  font-weight: 500;
-  position: absolute;
-  top: 75%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: absolute;
+    top: 75%;
 }
 
 /* About info section */

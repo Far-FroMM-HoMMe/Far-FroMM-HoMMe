@@ -13,7 +13,7 @@
     <link id="themeStylesheet" rel="stylesheet" href="css/styles.css">
 
     <title>Far From Home</title>
-    <link rel="icon" href="resources/img/suitcase-favicon.png" type="image/x-icon">
+    <link rel="icon" href="resources/img/compass-modern.png" type="image/x-icon">
 </head>
 <body class="dark">
     <!-- navbar -->
@@ -23,7 +23,7 @@
             <!-- suitcase brand icon and slogan -->
             <a href="#intro" class="navbar-brand">
                 <span class="text-light">
-                    <img src="resources/img/suitcase-favicon-white.png" style="max-width: 50px; color: white;"><span id="navbartext">To have, to lose, to find</span>
+                    <img src="resources/img/compass-modern-white.png" style="max-width: 50px; color: white;"><span id="navbartext">To have, to lose, to find</span>
                 </span>
             </a>
 
@@ -61,7 +61,7 @@
                     <!-- offcanvas button dedicated to pick layouts -->
                     <li class="nav-item ms-2">
                         <!-- Space to edit the offcanvas section is right before the body closing tag -->
-                        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                        <a id="chooseLayout" class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                             Choose your layout
                         </a>
                     </li>
@@ -91,7 +91,7 @@
         </div>
         <div class="hero-overlay">
             <div>
-                <p class="hero-text">Far<br>From<br><span style="color: #82994B">Home</span><br> 
+                <p class="hero-text">Far From <span>Home</span><br> 
                 <p class="hero-subtitle">To have, to lose, to find</p>
     </section>
 
@@ -131,7 +131,7 @@
             </div>
             
             <!-- image box -->
-            <div class="col-lg-6 col-md-5 col-sm-10 d-flex">
+            <div class="col-lg-6 col-md-5 col-sm-10 d-flex" id="theme-carousel-wrapper">
                 <!-- do not change this - helps to rescale the img to textbox-->
                 <div class="card hidden w-100 h-100" style="border-radius: 0; border: none">
                     <!-- carousel for the card image -->
@@ -153,7 +153,7 @@
                                     <p class="card-text-carousel"><small><a href="#">Explore the theme</a></small></p>
                                 </div>
                             </div>
-                            <div class="carousel-item">
+                            <div id="nature-img" class="carousel-item">
                                 <img src="resources/img/refugee_astronaut.jpg" class="card-img d-block w-100">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title-carousel">Nature Interferes</h5>
@@ -202,21 +202,21 @@
 
 
             <!-- image box -->
-            <div class="col-md-6 col-sm-10 d-flex order-2 order-md-1 hidden">
+            <div class="col-md-6 col-sm-10 d-flex order-2 order-md-1" id="narrative-carousel-wrapper">
                 <!-- do not change this - helps to rescale the img to textbox-->
                 <div class="card w-100 h-100" style="border-radius: 0; border: none">
                     <!-- carousel for the card image -->
                     <div id="carouselNarrativeImages" class="carousel slide card-img" data-bs-ride="carousel" data-bs-interval="30000" data-bs-pause="hover" data-bs-touch="true">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="resources/img/thefarm.jpg" class="card-img d-block w-100">
+                            <div id="teacher-img" class="carousel-item active">
+                                <img src="resources/img/thefarm.jpg" class="card-img d-block w-100 hidden">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title-carousel">Teacher</h5>
                                     <p class="card-text-carousel">This is a wider card with supporting text below...</p>
                                     <p class="card-text-carousel"><small><a href="artViewer.html" id="teacher" class="start-story">Explore the story</a></small></p>
                                 </div>
                             </div>
-                            <div class="carousel-item">
+                            <div id="business-img" class="carousel-item">
                                 <img src="resources/img/the_bedroom_aic.jpg" class="card-img d-block w-100">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title-carousel">Businessman</h5>
@@ -224,7 +224,7 @@
                                     <p class="card-text-carousel"><small><a href="artViewer.html" id="businessman" class="start-story">Explore the story</a></small></p>
                                 </div>
                             </div>
-                            <div class="carousel-item">
+                            <div id="transcience-img" class="carousel-item">
                                 <img src="resources/img/migrant_mother.jpg" class="card-img d-block w-100">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title-carousel">Transience in Photography</h5>
@@ -254,7 +254,7 @@
 
             <!-- text box -->
             <div class="col-lg-4 col-md-5 col-sm-10 col-xs-12 d-flex">
-                <div class="text-box hidden p-4 w-100">
+                <div div id="collections-text-box" class="text-box hidden p-4 w-100">
                     <h5 class="infoboxes-title">Browse the collection</h5>
                     <p class="infoboxes-text">
                         Our team has collected a total of 20 items related to the theme of Far From Home.
@@ -264,10 +264,10 @@
             </div>
 
             <!-- image box -->
-            <div class="col-lg-6 col-md-5 col-sm-10 d-flex">
+            <div id="collections-image-wrapper" class="col-lg-6 col-md-5 col-sm-10 d-flex">
                 <!-- do not change this - helps to rescale the img to textbox-->
-                <div class="card hidden w-100 h-100" style="border-radius: 0; border: none">
-                    <img src="resources/img/fivebeauties_1.jpg" class="card-img d-block w-100" alt="five beauties">
+                <div id="collectionsImageCard" class="card hidden w-100 h-100">
+                    <img id="collectionsImage" src="resources/img/fivebeauties_1.jpg" class="card-img d-block w-100" alt="five beauties">
                 </div>
             </div>
 
@@ -283,15 +283,15 @@
                         <span class="dropcap">C</span>urious about this virtual exhibition? <i>Far From Home</i> is the result of a multimedia university project created for the Master’s program in Digital Humanities and Digital Knowledge at the University of Bologna (academic year 2024/25). In the top menu bar, the <b>About</b> section gives you access to our curatorial statement, design choices, and disclaimer. You can also learn more about the creators and get in touch with us through the <b>About the Creators</b> page.</p>
                 </div>
             
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-10 col-sm-10 hidden">
                     <h1 class="infoboxes-title">Creator's favourites</h1>
             </div>
 
             <div class="row justify-content-center">
-                <div class="d-flex flex-wrap justify-content-center"></div>
+                <div class="d-flex flex-wrap justify-content-center"></div> -->
                     <!--flip card 1-->
-                    <div class="col-lg-3 col-md-3 col-sm-12">
+                    <!-- <div class="col-lg-3 col-md-3 col-sm-12">
                         <div class="flip-card card-spacing hidden">
                             <div class="flip-card-inner">
                             <div class="flip-card-front">
@@ -304,10 +304,10 @@
                             </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!--flip card 2-->
-                    <div class="col-lg-3 col-md-3 col-sm-12">
+                    <!-- <div class="col-lg-3 col-md-3 col-sm-12">
                         <div class="flip-card card-spacing hidden">
                             <div class="flip-card-inner">
                             <div class="flip-card-front">
@@ -320,10 +320,10 @@
                             </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!--flip card 3-->
-                    <div class="col-lg-3 col-md-12 col-sm-3">
+                    <!-- <div class="col-lg-3 col-md-12 col-sm-3">
                         <div class="flip-card card-spacing hidden">
                             <div class="flip-card-inner">
                             <div class="flip-card-front">
@@ -336,7 +336,7 @@
                             </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
             </div>
         </div> 
     </section>
