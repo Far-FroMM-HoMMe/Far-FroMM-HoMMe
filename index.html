@@ -142,7 +142,7 @@
                                 <div class="card-img-overlay">
                                     <h5 class="card-title-carousel">Around the Kitchen Table</h5>
                                     <p class="card-text-carousel">The clatter of cutlery, the smell of a burning moka pot, baked eggs or pancakes, steaming dishes, and juicy meats, best enjoyed in the company of loved ones, sharing stories and laughter. The kitchen table is often the heart of a home. Yet, what does ‘home’ evoke for some others, and you?</p>
-                                    <p class="card-text-carousel "><small><a href="#">Explore the theme</a></small></p>
+                                    <p class="card-text-carousel "><small><a id="Around-the-Kitchen-Table" href="gallery.html" class="select-theme">Explore the theme</a></small></p>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -150,7 +150,7 @@
                                 <div class="card-img-overlay">
                                     <h5 class="card-title-carousel">Taking Flight</h5>
                                     <p class="card-text-carousel">An emergency suitcase waits under the bed, ready to hold a life in moments of flight. Often linked to travel or adventure, the suitcase also symbolizes the forced departures of those displaced by war, political unrest, or crisis, when home is suddenly left behind, abandoned, destroyed, or taken away. What happens when the existence of your home is within the control of others?</p>
-                                    <p class="card-text-carousel"><small><a href="#">Explore the theme</a></small></p>
+                                    <p class="card-text-carousel"><small><a id="Taking-Flight" href="gallery.html" class="select-theme">Explore the theme</a></small></p>
                                 </div>
                             </div>
                             <div id="nature-img" class="carousel-item">
@@ -158,7 +158,7 @@
                                 <div class="card-img-overlay">
                                     <h5 class="card-title-carousel">Nature Interferes</h5>
                                     <p class="card-text-carousel">Amid human conflict, nature reminds humanity of its one invincible opponent. Survival once meant resisting nature, now we realize that our survival depends on protecting it. When the balance breaks, where do we go? What becomes of us when we can no longer make amends with the natural world?</p>
-                                    <p class="card-text-carousel"><small><a href="#">Explore the theme</a></small></p>
+                                    <p class="card-text-carousel"><small><a id="Nature-Interferes" href="gallery.html" class="select-theme">Explore the theme</a></small></p>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -166,7 +166,7 @@
                                 <div class="card-img-overlay">
                                     <h5 class="card-title-carousel">Traveling Through Time</h5>
                                     <p class="card-text-carousel">Rapid technological change has transformed the world beyond recognition, even from just years ago. As our lives shift, so does our sense of home, bringing nostalgia for childhood moments or old technologies such as a Nintendo DS. What familiar comforts might the future quietly replace?</p>
-                                    <p class="card-text-carousel"><small><a href="#">Explore the theme</a></small></p>
+                                    <p class="card-text-carousel"><small><a id="Travelling-Through-Time" href="gallery.html" class="select-theme">Explore the theme</a></small></p>
                                 </div>
                             </div>
                         </div>
@@ -414,6 +414,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <!-- custom javascript -->
     <script src="js/landing.js"></script>
+
+      <!-- set narrative value and start story -->
+    <script>
+        const themeLinks = document.querySelectorAll(".select-theme");
+        themeLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                const theme = link.getAttribute("id");
+                console.log("Setting themeValue:", theme);
+                localStorage.setItem("themeValue", theme);
+            });
+        });
+    </script>
   </body>
 </html>
 </body>

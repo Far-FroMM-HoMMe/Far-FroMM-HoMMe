@@ -8,6 +8,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+
+.glass-antiqua-regular {
+  font-family: "Glass Antiqua", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 @font-face {
   font-family: 'DeStijl';
   src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
@@ -39,6 +48,12 @@
   --accent-color: #B14236;          /*Persian Red*/
   --accent-color-dark: #952215;     /*darker persian red*/
 
+  --n-black: #211B29;
+  --n-white: #FBFDF7;
+  --n-purple: #574B60;
+  --n-blue: #74918A;
+  --n-green: #A8B162;
+
   /* Theme colours */
   --kitchen: #D19FCB;
   --flight: #9D3617;
@@ -47,9 +62,9 @@
 }
 
 body {
-    background-color: var(--black);
+    background-color: var(--n-white);
     color: var(--white);
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Glass Antiqua', serif;
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
@@ -90,9 +105,11 @@ a:hover {
 }
 /* According to dark theme */
 .navbar {
-  background-color: #12121258;
+  background-color: color-mix(in srgb, var(--n-blue), transparent 40%);
   color: var(--white);
   position: fixed;
+  border: 8px solid var(--n-green);
+  border-radius: 5% / 70%;
 }
 
 @media (max-width: 578px) {
@@ -414,6 +431,10 @@ color: var(--white);
     top: 75%;
 }
 
+
+.infoboxes-title {
+    font-size: clamp(6vw, 6vw, 7vw) !important;
+}
 /* About info section */
 /* --------------------------------------------------------------*/
 
@@ -532,10 +553,24 @@ color: var(--white);
 --------------------------------------------------------------*/
 
 #viewer {
-  margin-top: 5rem !important;
-  height: 90vh; /* Fixed height relative to screen */
-  width: 100%;
-  overflow-y: scroll;
+    margin-top: 6rem !important;
+    border: 50px solid transparent; /* Required for border-image to work */
+    border-image-source: url('/resources/img/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
+    border-image-slice: 165 65 220; /* Adjust as needed for thickness */
+    border-image-width: 50px;
+    border-image-repeat: round; /* Options: stretch | repeat | round | space */
+    border-image-outset: 0;
+    /* padding: 6px 3px; */
+    /* height: 100%; */
+    /* padding-top: 60px;
+    padding-bottom: 80px;
+    padding-inline: 5px; */
+
+    height: 90vh; /* Fixed height relative to screen */
+    width: 100%;
+    overflow-y: scroll;
+    
+    
 }
 
 /* === Carousel === */
@@ -544,32 +579,62 @@ color: var(--white);
   width: 3%;
 }
 
+#artCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0 !important;
+  height: 100%;
+  
+}
+
 /* Make carousel-inner scrollable if content grows */
 #artCarousel .carousel-inner {
-  height: 100vh;
+  background: var(--n-purple);
+  height: 100%;
   overflow-y: auto;
   scroll-behavior: smooth;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px !important;
+  /* margin: 5px;
+  margin-top: 50px;
+  margin-bottom: 80px; */
+  border-radius: 5px;
+}
+
+#artCarousel .carousel-item {
+  background: var(--n-purple);
+  height: 100%; /* Ensures uniform height */
+  padding: 0 !important;
+
+  
 }
 
 
 /* === Card === */
 
 #artCarousel .card {
-  background: var(--black);
+  background: var(--n-purple);
   border: none;
-  border-radius: 0;
+  border-radius: 2px;
+  width: 100%;
+  height: 100%; /* FIXED HEIGHT */
 }
 
 #artCarousel .card-body h5 {
+  font-family: 'ArtNouveauCaps';
   font-size: 30px;
   font-weight: 600;
   padding-bottom: 8px;
+  color: var(--n-white);
 
 }
 
 #artCarousel .card-body h6 {
   font-size: 24px;
   font-weight: 600;
+  color: var(--n-black) !important;
 }
 
 #artCarousel .card-body p {
@@ -581,15 +646,16 @@ color: var(--white);
   object-fit: contain;
   object-position: 50% 50%;
   max-height: 550px;
+  
 }
 
 /* --- Accordion --- */
 
 #artCarousel .accordion-button {
-  background-color: var(--black);
+  background: var(--n-purple);
   color: var(--white);
   border: none;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--n-green);
   border-radius: 0;
   box-shadow: none; /* removes default focus shadow */
   outline: none; /* removes focus outline */
@@ -609,21 +675,21 @@ color: var(--white);
 
 #artCarousel .accordion-button:not(.collapsed) {
   border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
-  background-color: var(--black);
+  background: var(--n-purple);
   color: var(--white);
 }
 
 /* When accordion is collapsed */
 #artCarousel .accordion-button.collapsed {
-  border-bottom: 2px solid var(--primary-color);
-  background-color: var(--black);
+  border-bottom: 2px solid var(--n-green);
+  background: var(--n-purple);
   color: var(--white);
 }
 
 #artCarousel .accordion-body {
-  background-color: var(--black);
+  background: var(--n-purple);
   color: var(--white);
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--n-green);
   border-radius: 0;
 }
 
@@ -641,13 +707,13 @@ color: var(--white);
   background-repeat: no-repeat;
   background-size: 1.25rem;
   background-position: center;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2382994B' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23A8B162' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
   transition: all 0.3s ease;
 }
 
 /* When accordion is open */
 #artCarousel .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23BEBEBECC' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23A8B162' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
 }
 
 /* === Metadata Table === */
@@ -672,7 +738,7 @@ color: var(--white);
 /* Optional: spacing between first and second column */
 #artCarousel .accordion-body td:first-child {
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--n-green);
   width: 30%;
   padding-left: 0px;
 }
