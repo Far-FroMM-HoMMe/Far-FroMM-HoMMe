@@ -314,7 +314,8 @@ footer {
 /* Themes-info and Narratives-info sections */
 /* they inherit most properties from the text-box class but need specific properties as well  */
 /* --------------------------------------------------------------*/
-#themes-info {
+#themes-info,
+#narratives-info {
     margin-top: 1.618rem;
 }
 
@@ -386,32 +387,17 @@ color: var(--white);
     top: 75%;
 }
 
-<<<<<<< HEAD
-.carousel-control-prev-icon {
-    width: 24px;
-    height: 24px;
-}
-    
-.carousel-control-next-icon {
-    width: 24px;
-    height: 24px;
-}
-
-@media (max-width: 768px) {
-    .carousel-control-next-icon,
-    .carousel-control-prev-icon {
-      width: 5vw;
-      height: 5vw;
-  }
-}
-
 .infoboxes-title {
     font-size: clamp(6vw, 6vw, 7vw) !important;
 }
-=======
+
+#collectionsImageCard {
+    border-radius: 0;
+    border: none;
+}
+
 /* About info section */
 /* --------------------------------------------------------------*/
->>>>>>> landingpage
 
 #about-info {
     margin-top: 1.618rem;

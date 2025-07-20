@@ -4,7 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
 
-
 @font-face {
   font-family: 'DeStijl';
   src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
@@ -35,7 +34,7 @@ body {
     background-color: #e4dec6;
     background-image: url('../resources/img/old-parchmentpaper.jpg');
     background-position: start;
-    background-size: 110vh;
+    background-size: 100vw 80vh;
     background-repeat: stretch;
     color: #574d38;
     font-family: "Cardo", serif;
@@ -83,7 +82,8 @@ a:hover {
   border-color: var(--primary-color-dark) !important;
 
 }
-/* According to dark theme */
+
+/* NAVBAR PROPERTIES */
 .navbar {
   background-color: #574d387d;
   color: var(--white);
@@ -96,7 +96,7 @@ a:hover {
 
 .navbar-brand {
   display: inline-block;
-  background-image: url('../resources/img/1ac47615-e26a-4cd5-a187-2751a5e95c08.png');
+  background-image: url('../resources/img/premodern-compas.png');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: contain;
@@ -129,12 +129,12 @@ a:hover {
   color: var(--accent-color-dark) !important;
 }
 
+/* OFFCANVAS PROPERTIES */
 #chooseLayout {
   background-color: var(--accent-color);
   color: var(--white);
 }
 
-/* According to dark theme */
 .offcanvas {
   background-image: url('../resources/img/old-parchmentpaper.jpg');
   color: #574d38;
@@ -189,7 +189,7 @@ a:hover {
  }
 
 
-
+/* FOOTER PROPERTIES */
 footer {
   background-color: #20202097;
   color: white;
@@ -199,29 +199,20 @@ footer {
 }
 
 /*--------------------------------------------------------------
-# index page
+# LANDING PAGE
 --------------------------------------------------------------*/
 
-/* index.global classes */
-.text-box {
-  padding: 1.618rem;
-}
-
-/* Smaller screens lose the margins to fit the whole screen */
-@media (max-width: 768px) {
-  .text-box {
-    padding: 1rem;
-  }
-}
-
-/* hero/thumbnail section */
+/* HERO SECTION */
 /* --------------------------------------------------------------*/
+
+/* Thumbnail carousel removed to make place for premodern compas logo */
 #carouselHeaderImages img {
   display: none;
 }
 
+/* Change entire positioning to a two page division, mimicking the layout of a Aldine Press book */
 #hero {
-  background-image: url('../resources/img/1ac47615-e26a-4cd5-a187-2751a5e95c08.png');
+  background-image: url('../resources/img/premodern-compas.png');
   background-size: 250px;
   background-position: center;
   background-repeat: no-repeat;
@@ -229,14 +220,15 @@ footer {
   height: 100vh;
   width: 50%;
   float: left;
-  overflow: hidden;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: center; /* Compas image centered as the introduction page */
   justify-content: center;
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
 
+/* Title font changed to most (free available) accurate version of Aldine press font */
+/* Source and download at the top of the file */
 .hero-text {
     font-family: "Carbo", "serif";
     font-optical-sizing: auto;
@@ -244,7 +236,6 @@ footer {
     font-style: normal;
     text-transform: uppercase;
     font-size: clamp(30pt, 3vw, 40pt);
-    color: #574d38;
     text-align: center;
     line-height: 1.5;
     letter-spacing: 0.75rem;
@@ -255,7 +246,7 @@ footer {
     right: 0;
     transform: translateY(-50%);
     padding: 0 40px;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 .hero-subtitle {
@@ -271,17 +262,16 @@ footer {
     letter-spacing: 0.5rem;
     
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 0;
     right: 0;
-    transform: translateY(-50%);
     padding: 0 40px;
-    box-sizing: border-box;
-    margin-top: 0.15rem;
+    box-sizing: content-box;
 }
 
 /* Abstract section */
 /* --------------------------------------------------------------*/
+
 #abstract {
   float: left;
   width: 50vw;
@@ -293,31 +283,30 @@ footer {
   margin-bottom: 1.618rem;
 }
 
-#abstract::after {
-  content: "";
-  position: absolute;
-  display: block;
-  clear: both;
-}
-
-section:not(#hero):not(#abstract) {
-  clear: both;
-}
-
 @media (max-width: 768px) {
   #hero {
       float: none;
       width: 100vw;
-      height: auto;
+      height: 80vh;
   }
   #abstract {
       float: none;
       width: 100vw;
-      height: auto;
+      height: 80vh;
       padding: 6vh 4vw 12vh 1vw;
   }
+
   .hero-subtitle {
       top: 85%;
+  }
+}
+
+/* scrolling element to keep abstract text within margin of the page */
+@media (max-width: 1152px) {
+  #abstract .text-box {
+      max-height: 60vh;
+      overflow: hidden;
+      overflow-y: scroll;
   }
 }
 
@@ -337,140 +326,96 @@ section:not(#hero):not(#abstract) {
   padding-right: 0.15rem;
 }
 
-/* Themes-info and Narratives-info sections */
-/* they inherit most properties from the text-box class but need specific properties as well  */
-/* --------------------------------------------------------------*/
-#themes-info {
-    position: relative;
-}
 
-#themes-info .row,
-#themes-info .col-lg-6 {
-    height: 50vh;
-}
-
-#theme-text-box {
-  float: left;
-  width: 50vw;
+/* --------------------------------------------
+   THEMES AND NARRATIVES SECTION LAYOUT
+--------------------------------------------- */
+#themes-info,
+#narratives-info {
+  display: flex;
+  flex-wrap: nowrap;
   height: 80vh;
-  padding: 6vh 4vw 12vh 6vw; 
-  overflow-y: auto;
-  position: relative;
-  z-index: 1;
 }
 
+/* Neutralize Bootstrap column behavior */
+#themes-info .col-lg-6,
+#themes-info .col-md-5,
+#themes-info .col-sm-10,
+#narratives-info .col-lg-6,
+#narratives-info .col-md-5,
+#narratives-info .col-sm-10 {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+/* --------------------------------------------
+   TEXT BOX
+--------------------------------------------- */
+#themes-text-box,
 #narratives-text-box {
-  float: left;
   width: 50vw;
-  height: 80vh;
-  padding: 6vh 4vw 12vh 6vw; 
-  overflow-y: auto;
-  position: relative;
-  z-index: 1;
+  padding: 6vh 8vw 12vh 8vw;
+  box-sizing: border-box;
 }
 
 .infoboxes-title {
-  font-size: clamp(20pt, 3vw, 30pt) !important;
+  font-size: clamp(1rem, 3vw, 1rem);
   font-style: normal;
-  text-transform: uppercase;
   letter-spacing: 0.75rem;
+  text-transform: uppercase;
+  color: #574d38;
+  margin-bottom: 1.618rem;
 }
 
-.infoboxes-text {
-  font-size: clamp(1rem, 0.75rem, 1.2rem);
-  line-height: 1.6;
-  margin-top: 1rem;
-  color: #574d38 !important;
-}
-
-/* Image tiles in the themes-info and narratives-info section */
-/* Carousel right side vw, aldine pargins */
+/* --------------------------------------------
+   CAROUSEL WRAPPER
+--------------------------------------------- */
 #theme-carousel-wrapper,
 #narrative-carousel-wrapper {
   width: 50vw;
-  padding: 6vh 4vw 12vh 6vw;
+  padding: 6vh 8vw 12vh 8vw;
   box-sizing: border-box;
-  background: transparent;
-  height: 100%;
   max-height: 50vh;
+  display: flex;
+  align-items: center;
 }
 
-.img-card,
-#collections-image-wrapper .card,
-#collections-image-wrapper img {
-  border-radius: 0; 
-  border: none;
-}
-
-/* images are sized to fit  */
-#carouselThemeImages .card-img,
-#carouselNarrativeImages .card-img,
-#collections-info .card-img {
+/* --------------------------------------------
+   CAROUSEL & IMAGES
+--------------------------------------------- */
+.carousel,
+.carousel-inner,
+.carousel-item {
   width: 100%;
   height: 100%;
-  object-fit: cover;   
-  object-position: center;
-  display: block;
-  border: #574d38 solid 1px;
+  max-height: 100%;
 }
 
-/* crop photo image height */
-.carousel-item img {
+.carousel-item img,
+#carouselThemeImages .card-img,
+#carouselNarrativeImages .card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  border-radius: 0;
 }
 
-.carousel-item {
-  height: 100%;
-  max-height: 50vh;
-}
-
-/* image carousels fit whole viewport */
-@media (max-width: 768px) {
-  #theme-carousel-wrapper,
-  #narrative-carousel-wrapper {
-    width: 100vw;
-    padding-bottom: 6vh;
-    max-height: none;
-    height: auto;
-    float: none;
-  }
-
-  #theme-text-box,
-  #narratives-text-box {
-    width: 100vw;
-    padding: 1rem; 
-    float: none;
-    height: auto;
-  }
-
-  #carouselThemeImages .card-img,
-  #carouselNarrativeImages .card-img {
-    height: auto;
-    max-height: none;
-    object-fit: cover;
-  }
-
-  .carousel-item img,
-  .carousel-item .card-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  #carouselThemeImages .card-img-overlay,
-  #carouselNarrativeImages .card-img-overlay {
-    padding: 6vh 4vw 12vh 6vw;
-  }
-}
-  
-/* carousel overlays */
+/* --------------------------------------------
+   OVERLAY
+--------------------------------------------- */
 #carouselThemeImages .card-img-overlay,
 #carouselNarrativeImages .card-img-overlay {
   background: #121212a9;
-  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: hidden;
+  box-sizing: border-box;
 }
 
 #carouselThemeImages .card-title-carousel,
@@ -484,20 +429,88 @@ section:not(#hero):not(#abstract) {
 
 #carouselThemeImages .card-text-carousel,
 #carouselNarrativeImages .card-text-carousel {
-  font-size: clamp(10.5pt, 3vw, 10.5pt) !important;
   color: var(--white);
+  font-size: clamp(10.5pt, 3vw, 10.5pt) !important;
+  overflow-y: auto;
+  max-height: 25vh;
+  padding-right: 0.5rem;
 }
-#carouselThemeImages .card-text-carousel a,
-#carouselNarrativeImages .card-text-carousel a {
-  font-size: clamp(12pt, 3vw, 12pt) !important;
-  font-weight: 500;
-  position: absolute;
+
+/* Optional scrollbar style */
+#carouselThemeImages .card-text-carousel::-webkit-scrollbar,
+#carouselNarrativeImages .card-text-carousel::-webkit-scrollbar {
+  width: 6px;
+}
+#carouselThemeImages .card-text-carousel::-webkit-scrollbar-thumb,
+#carouselNarrativeImages .card-text-carousel::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+/* --------------------------------------------
+   RESPONSIVE (Mobile)
+--------------------------------------------- */
+@media (max-width: 768px) {
+  #themes-info,
+  #narratives-info,
+  #collections-info {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #theme-text-box,
+  #narratives-text-box,
+  #collections-text-box,
+  #theme-carousel-wrapper,
+  #narrative-carousel-wrapper {
+    width: 100vw;
+    padding: 1rem;
+    height: auto;
+    max-height: none;
+  }
+
+  #theme-carousel-wrapper {
+    margin-bottom: 10vh; /* Add space between the carousel and narratives section */
+  }
+
+  .carousel-item img,
+  #carouselThemeImages .card-img,
+  #carouselNarrativeImages .card-img {
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+  }
+
+  #carouselThemeImages .card-img-overlay,
+  #carouselNarrativeImages .card-img-overlay {
+    padding: 1.618rem;
+  }
+  
+  #carouselThemeImages .card-title-carousel,
+  #carouselNarrativeImages .card-title-carousel
+  {
+    font-size: clamp(16pt, 3vw, 12pt) !important;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.75rem;
+    color: var(--white);
+  }
+
+  #carouselThemeImages .card-text-carousel,
+  #carouselNarrativeImages .card-text-carousel {
+    color: var(--white);
+    font-size: clamp(14pt, 3vw, 10.5pt) !important;
+    overflow-y: auto;
+    max-height: 25vh;
+    padding-right: 0.5rem;
+  }
 }
 
 /* Collections info section */
 /* --------------------------------------------------------------*/
 #collections-info {
   position: relative;
+  padding: 6vh 4vw 12vh 6vw;
 }
 
 #collections-info .row,
@@ -513,6 +526,31 @@ section:not(#hero):not(#abstract) {
   overflow-y: auto;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
+}
+
+#collections-image-wrapper {
+  float: left;
+  width: 50vw;
+  height: 80vh;
+  padding: 6vh 6vw 12vh 4vw; /* mirror padding to align on right side */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#collectionsImageCard {
+  width: 100%;
+  height: 100%;
+}
+
+#collectionsImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: #574d38 solid 1px;
 }
 
 @media (max-width: 768px) {
