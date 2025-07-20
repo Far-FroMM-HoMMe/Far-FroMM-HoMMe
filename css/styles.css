@@ -25,6 +25,12 @@
   --primary-color-dark:#556a27 ;    /*darker moss green*/
   --accent-color: #B14236;          /*Persian Red*/
   --accent-color-dark: #952215;     /*darker persian red*/
+
+  /* Theme colours */
+  --kitchen: #D19FCB;
+  --flight: #9D3617;
+  --nature: #DAF7DC;
+  --time: #ABC8C0;
 }
 
 body {
@@ -659,3 +665,158 @@ color: var(--white);
 #artCarousel .accordion-body p {
   font-size: 16px;
 }
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+
+.gallery-card .card {
+  background: var(--black);
+  /* border: none; */
+  border-radius: 0;
+}
+
+.gallery-card .card-body h5 {
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 8px;
+
+}
+
+.gallery-card .card-body h6 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.gallery-card .card-body p {
+  font-size: 16px;
+  
+}
+
+.gallery-card .card img{
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+/* --- Accordion --- */
+
+.gallery-card .accordion-button {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 0;
+  box-shadow: none; /* removes default focus shadow */
+  outline: none; /* removes focus outline */
+  padding-left: 2px;
+  padding-bottom: 20px;
+  /* font-weight: bold; */
+  font-size: 18px;
+  text-transform: capitalize;
+  
+}
+
+.gallery-card .accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.gallery-card .accordion-button:not(.collapsed) {
+  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* When accordion is collapsed */
+.gallery-card .accordion-button.collapsed {
+  border-bottom: 2px solid var(--primary-color);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.gallery-card .accordion-body {
+  background-color: var(--black);
+  color: var(--white);
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 0;
+}
+
+.gallery-card .accordion-item {
+  border: none; /* Removes the border around the item */
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.gallery-card .accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2382994B' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  transition: all 0.3s ease;
+}
+
+/* When accordion is open */
+.gallery-card .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23BEBEBECC' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+}
+
+/* === Metadata Table === */
+.gallery-card .accordion-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
+}
+
+.gallery-card .accordion-body td {
+  padding: 0.5rem 1rem; /* Padding inside cells */
+  vertical-align: top;
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+/* Row bottom border */
+/* .accordion-body tr td{
+  border-bottom: 1px solid color-mix(in srgb, var(--white), transparent 30%);;
+} */
+
+/* Optional: spacing between first and second column */
+.gallery-card .accordion-body td:first-child {
+  font-weight: bold;
+  color: var(--primary-color);
+  width: 30%;
+  padding-left: 0px;
+}
+
+.gallery-card .accordion-body td:last-child {
+  text-align: right;
+  word-break: break-word;
+}
+
+.gallery-card .accordion-body p {
+  font-size: 16px;
+}
+
+.nature-interferes {
+  /* border-color: var(--nature); */
+  border-left: 3px solid var(--nature);
+  
+}
+
+.travelling-through-time {
+  border-left: 3px solid var(--time);
+}
+
+.taking-flight {
+  border-left: 3px solid var(--flight);
+}
+
+.around-the-kitchen-table {
+  border-left: 3px solid var(--kitchen);
+
+}
+
