@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //get skeleton doc to access its elements
     getSkeleton();
     
+    //get the selected narrative 
+    // let narValue = localStorage.getItem('narValue') || null;
+    // console.log(narValue);
+    // localStorage.removeItem('narValue');
     populate();
 
     //create asynchronous function to run fetch()
@@ -227,7 +231,3 @@ allArtLink.addEventListener("click", () => {
         col.classList.remove("d-none"); // show everything again
     }
 });
-
-function switchStyle(sheet) {
-  document.getElementById("themeStylesheet").setAttribute("href", sheet);
-}
