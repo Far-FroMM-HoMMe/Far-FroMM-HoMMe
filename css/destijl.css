@@ -10,11 +10,11 @@
 --------------------------------------------------------------*/
 
 :root {
-  --black: #1A1A1A;
-  --white: #FFFFFF;
-  --red: #c32826ff;
-  --yellow: #ffe100ff;
-  --blue: #3c4a99ff;
+  --black: #050103;
+  --white: #EAEFE9;
+  --red: #E70503;
+  --yellow: #FDDE06;
+  --blue: #0300AD;
 }
 /* SCSS RGB 
 $fire-engine-red: rgba(195, 40, 38, 1);
@@ -77,12 +77,6 @@ body {
 
 
 /* Containers */
-.container {
-  background-color: rgba(255, 255, 255, 0.9);
-  
-  padding: 2rem;
-  display: block;
-}
 
 
 /* button */
@@ -175,6 +169,7 @@ a:hover {
   height: 100%;
   z-index: 1; /* bring it to the back */
   pointer-events: none;
+  background-color: white;
 }
 
 /* description */
@@ -358,9 +353,9 @@ a:hover {
 
 
 /* change color with hover */
-.room:nth-of-type(3n):hover { fill: #c32826ff; }
-.room:nth-of-type(3n+1):hover { fill: #3c4a99ff; }
-.room:nth-of-type(3n+2):hover { fill: #ffe100ff; }
+.room:nth-of-type(3n):hover { fill: var(--red); }
+.room:nth-of-type(3n+1):hover { fill: var(--blue); }
+.room:nth-of-type(3n+2):hover { fill: var(--yellow); }
   /* pop up style */
 .popup {
     position: absolute;
@@ -376,23 +371,23 @@ a:hover {
 }
 
 .popup:nth-of-type(4n+1) {
-  border-right: 4px solid #c32826ff !important;
-  border-bottom: 4px solid #c32826ff !important;
+  border-right: 4px solid var(--red) !important;
+  border-bottom: 4px solid var(--red) !important;
 }
 
 .popup:nth-of-type(4n+2) {
-  border-right: 4px solid #3c4a99ff !important;
-  border-bottom: 4px solid #3c4a99ff !important;
+  border-right: 4px solid var(--blue) !important;
+  border-bottom: 4px solid var(--blue) !important;
 }
 
 .popup:nth-of-type(4n+3) {
-  border-right: 4px solid #ffe100ff !important;
-  border-bottom: 4px solid #ffe100ff !important;
+  border-right: 4px solid var(--yellow) !important;
+  border-bottom: 4px solid var(--yellow) !important;
 }
 
 .popup:nth-of-type(4n+4) {
-  border-right: 4px solid black !important;
-  border-bottom: 4px solid black !important;
+  border-right: 4px solid var(--black) !important;
+  border-bottom: 4px solid var(--black) !important;
 }
 
 /* browse the collection styles */
