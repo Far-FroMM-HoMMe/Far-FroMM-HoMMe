@@ -8,15 +8,96 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <section id="gallery" class="p-4">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <div class="container-xxl">
+
+                <!-- suitcase brand icon and slogan -->
+                <a href="#intro" class="navbar-brand">
+                    <span class="text-light">
+                        <img src="resources/img/compass-modern-white.png" style="max-width: 50px; color: white;"><span id="navbartext">To have, to lose, to find</span>
+                    </span>
+                </a>
+
+                <!-- toggle button for mobile nav -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- navbar links -->
+                <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                    <ul class="navbar-nav">
+
+                        <!-- links to other pages  -->
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="exhibition.html#choose-narrative" class="nav-link">Stories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#themes" class="nav-link">Themes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#collection" class="nav-link">The collection</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="aboutDropdown">About</a>
+                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                <li><a class="dropdown-item" href="documentation.html">General scope and design choices</a></li>
+                                <li><a class="dropdown-item" href="disclaimer.html">Disclaimer</a></li>
+                                <li><a class="dropdown-item" href="about-creators.html">About the creators</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- offcanvas button dedicated to pick layouts -->
+                        <li class="nav-item ms-2">
+                            <!-- Space to edit the offcanvas section is right before the body closing tag -->
+                            <a id="chooseLayout" class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                Choose your layout
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav> 
+        <section id="gallery" class="p-4 mt-5">
             <h1 class="text-center">The Collection</h1>
             <div id="themes" class="text-center">
-                <p><a class="py-1" id="Around-the-Kitchen-Table">Around the Kitchen Table</a> | <a class="py-1" id="Taking-Flight">Taking Flight</a> | <a class="py-1" id="Nature-Interferes">Nature Intervenes</a> | <a class="py-1" id="Travelling-Through-Time">Travelling Through Time</a></p>
-                <p><a class="py-1" id="all-art">All</a></p>
+                <p><a class="px-1" id="Around-the-Kitchen-Table">Around the Kitchen Table</a> | <a class="px-1" id="Taking-Flight">Taking Flight</a> | <a class="px-1" id="Nature-Interferes">Nature Intervenes</a> | <a class="px-1" id="Travelling-Through-Time">Travelling Through Time</a></p>
+                <p><a class="px-1" id="all-art">All</a></p>
             </div>
             <div class="row justify-content-center">
             </div>
         </section>
+
+        <!-- offcanvas section -->
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Choose your layout</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+                    <p><i>Far From Home</i> is a cross-cultural and period-spanning virtual experience. To help you emerge in different time periods, and for the sake of this digital project, we designed several layouts that you can choose from. Each layout is inspired by a different period and culture, and it will change the way you experience the exhibition. To learn more about our design choices and CSS script, visit the <a href="documentation.html">general purpose and design choices</a> section.</p>
+                </div>
+                <div id="layout-buttons">
+                    <h5 id="default-title">Return to default settings</h5>
+                        <button id="default-button" onclick="switchStyle('css/styles.css')" class="btn">Default</button>
+                    <h5>Pre-modern layouts (1500-1900)</h5>
+                        <button id="aldine-button" onclick="switchStyle('css/aldine.css')" class="btn btn-primary">Aldine Press</button>
+                        <button id="artnouveau-button" onclick="switchStyle('css/artnouveau.css')" class="btn">Art nouveau</button>
+                    <h5>Modern and post-war layouts (1900-1970)</h5>
+                        <button id="stijl-button" onclick="switchStyle('css/destijl.css')" class="btn btn-primary">De Stijl</button>
+                        <button id="beall-button" onclick="switchStyle('css/beall.css')" class="btn">Lester Beall</button>
+                    <h5>Post-modern layouts (1970-2035)</h5>
+                        <button id="web90s-button" onclick="switchStyle('css/90sweb.css')" class="btn">90s-00s Web design</button>
+                        <button id="cyberpunk-button" onclick="switchStyle('css/cyberpunk.css')" class="btn">Japanese anime cyberpunk</button>
+                </div>
+            </div>
+        </div> 
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="js/index.bundle.min.js"></script>
         <script src="js/gallery.js"></script>
