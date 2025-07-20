@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <title>Grid lay-out part 2</title>
+    <style>
+        section{
+            padding: 60px 0;
+        }
+
+        .img-half-width{
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-xxl">
+            <a href="#intro" class="navbar-brand">
+                <span class="fw-bold text-secondary">
+                    Far From Home
+                </span>
+            </a>
+            <!-- toggle button for mobile nav -->
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+             </button>
+
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#narratives" class="nav-link">Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#themes" class="nav-link">Themes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#collection" class="nav-link">The collection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About the project</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a class="btn btn-secondary" href="stories">Explore the exhibition</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> 
+
+    <!-- main image & intro text-->
+    <section id="intro">
+        <div class="container-lg">
+          <div class="row align-items-center">
+            
+            <!-- text column -->
+            <div class="col-md-6 text-center text-md-start">
+              <h1>
+                <div class="display-2">Far From Home</div>
+                <div class="display-5 text-muted">To have, to lose, to find a home</div>
+              </h1>
+              <p class="lead my-4 text-muted">
+                A multi-media university project for the master Digital Humanities and Digital knowledge at the University of Bologna (2024–2025).
+              </p>
+              <a href="#start" class="p-2 btn btn-secondary btn-lg">Explore the exhibition</a>
+            </div>
+      
+            <!-- image column -->
+            <div class="col-md-6 d-none d-md-block text-end">
+              <img class="img-fluid" src="Far-FroMM-HoMMe/resources/img/refugees.jpg" alt="Refugees">
+            </div>
+      
+          </div>
+        </div>
+      </section>
+      
+     <!-- cards -->
+    <section id="themes" class="bg-light mt-5">
+        <div class="container-lg">
+            <div class="text-center">
+                <h2>Themes</h2>
+                <p class="lead text-muted">Some text justifying the exhibition is grouped amongst several themes that structure the visit.</p>
+            </div>
+
+            <div class="row my-5 align-items-center align-items-top justify-content-center">
+                <div class="col-8 col-lg-3 col-xl-3">
+                    <div class="card h-100 border-0">
+                        <img src="Far-FroMM-HoMMe/resources/img/breakfast_piece.jpg" class="card-img-top" alt="breakfast piece Pieter Claesz">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Around the Kitchen Table</h4>
+                            <p class="lead card-subtitle">What do we define as our home?</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-outline-secondary btn-lg mt-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 col-lg-3 col-xl-3">
+                    <div class="card h-100 border-0">
+                        <img src="Far-FroMM-HoMMe/resources/img/posthumous_mary.jpg" class="card-img-top" alt="Posthumous Mary Stuart-II">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Taken a Flight</h4>
+                            <p class="lead card-subtitle">Who tells you where your home is?</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-outline-secondary btn-lg mt-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9 col-lg-3 col-xl-3">
+                    <div class="card h-100 border-0">
+                        <img src="Far-FroMM-HoMMe/resources/img/the_earthquake_of_1855.jpg" class="card-img-top" alt="earthquake of 1855">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Against Nature</h4>
+                            <p class="lead card-subtitle">Where do our homes go?</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-outline-secondary btn-lg mt-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 col-lg-3 col-xl-3">
+                    <div class="card h-100 border-0">
+                        <img src="Far-FroMM-HoMMe/resources/img/stone_age_computer_1.jpg" class="card-img-top" alt="Stone age computer">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Traveling Through Time</h4>
+                            <p class="lead card-subtitle">When have our homes gone missing?</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-outline-secondary btn-lg mt-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+     <!-- topics at a glance -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>

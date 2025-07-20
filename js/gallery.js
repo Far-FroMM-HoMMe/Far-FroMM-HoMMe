@@ -13,10 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //get skeleton doc to access its elements
     getSkeleton();
     
-    //get the selected narrative 
-    // let narValue = localStorage.getItem('narValue') || null;
-    // console.log(narValue);
-    // localStorage.removeItem('narValue');
     populate();
 
     //create asynchronous function to run fetch()
@@ -68,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         //clone card node to add to current doc
         const newCard = document.importNode(card, true);
         newCard.classList.add("h-100");
+        newCard.classList.remove("py-3");
+        newCard.classList.add("py-1");
 
         //clear accordions from card
         newCard.querySelector("#narrative").remove();
@@ -77,6 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardRow = newCard.querySelector(".row");
         cardRow.querySelector(".col-xl-7").classList.remove("col-xl-7");
         cardRow.querySelector(".col-xl-5").classList.remove("col-xl-5");
+
+        //add theme class
+        const theme = art.theme;
+        newCard.classList.add(theme.replaceAll(" ", "-").toLowerCase());
 
 
         //select elements to set attributes and text
@@ -225,3 +227,7 @@ allArtLink.addEventListener("click", () => {
         col.classList.remove("d-none"); // show everything again
     }
 });
+
+function switchStyle(sheet) {
+  document.getElementById("themeStylesheet").setAttribute("href", sheet);
+}

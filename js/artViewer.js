@@ -11,8 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let card;
     let metaAccordion;
     let narAccordion;
-    let narValue = null;
-
+    
+    //get the selected narrative 
+    let narValue = localStorage.getItem('narValue') || null;
+    console.log(narValue);
+    localStorage.removeItem('narValue');
     populate();
 
     //create asynchronous function to run fetch()
@@ -58,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let narrative;
         if (narValue !== null) {
             for (nar of narratives) {
-                if (narValue === nar.name) {
+                if (narValue === nar.id) {
                     narrative = nar;
                 }
             }
@@ -139,8 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
         //check if there is an embedded video 
         if (art.embedURL) {
             lbAnchor.setAttribute("href", art.embedURL);
-            if (arguments.allow) {
+            if (art.allow) {
                 lbAnchor.setAttribute("allow", art.allow);
+            }
+            if (art.referrerpolicy) {
+                lbAnchor.setAttribute("referrerpolicy", art.referrerpolicy);
             }
         }
         else {
@@ -156,14 +162,20 @@ document.addEventListener('DOMContentLoaded', () => {
         
         lbImg.setAttribute("src", art.relativePath);
 
+
+        //add event listener to initialise lightbox when image is clicked
         lbAnchor.addEventListener("click", function (e) {
             e.preventDefault();
             const lightbox = new Lightbox(lbAnchor, options);
             lightbox.show();
         });
 
-        //add text 
-        cardBody.querySelector("h5").textContent = art.title;
+        //add text
+        const artTitle = cardBody.querySelector("h5");
+        const creationYear = document.createElement("span");
+        artTitle.textContent = art.title;
+        creationYear.textContent = ` (${art.creationDate})`;
+        artTitle.appendChild(creationYear);
         cardBody.querySelector("h6").textContent = art.creator;
         cardBody.querySelector("p").textContent = art.label;
 
@@ -258,4 +270,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// Switching Layout button
+function switchStyle(sheet) {
+    document.getElementById("themeStylesheet").setAttribute("href", sheet);
+}
 

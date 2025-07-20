@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exhibition title="Far From Home">
+     <artwork id="1">
+        <artist>Pieter Claesz</artist>
+        <title>Breakfast Piece</title>
+        <date>1636</date>
+        <medium>Oil on panel</medium>
+        <type>Painting</type>
+        <dimensions>49cmx36cm</dimensions>
+        <origin>Northern Netherlands</origin>
+        <location>Rotterdam</location>
+        <owner>Museum Boijmans van Beuningen</owner>
+        <genre>Still life</genre>
+        <label>This panel is a masterpiece from Pieter Claesz' monochrome period. 
+        The soft light and finely tuned colour palette in this balanced composition 
+        produces an atmosphere of calm. With its great simplicity, with only a single
+        glass of beer, a knife, a herring, a bread and the cracked shell of a single hazelnut, 
+        this panel sings the praises of 'our daily bread'.</objectlabel>
+        <theme>Around the Kitchen Table</theme>
+        <narrative>
+            <narrativeName></narrativeName>
+            <narrativeDescription></narrativeDescription>
+        <narrative>
+    </artwork>
+
+    <artwork id="2">
+        <artist>Edward Hopper</artist>
+        <title>Nighthawks</title>
+        <date>1942</date>
+        <medium>Oil on canvas</medium>
+        <type>Painting</type>
+        <dimensions>84.1cmx152.4cm</dimensions>
+        <origin>United States</origin>
+        <location>Chicago</location>
+        <owner>Art Institute Chicago</owner>
+        <genre>Realism</genre>
+        <description>Hopper's urban tableau captures metropolitan solitude through four 
+        isolated figures within a glowing nocturnal refuge. The artist constructs a 
+        paradox—physical proximity yet emotional distance—where shared space cannot bridge 
+        human disconnection. This precisely composed scene transforms an ordinary diner 
+        into theater, questioning whether true belonging exists within the modern 
+        cityscape's anonymous embrace.</description>
+    </artwork>
+
+    <artwork id="3">
+        <artist>Yinka Shonibare CBE</artist>
+        <title>Refugee Astronaut VIII</title>
+        <date>2024</date>
+        <medium>Fibreglass mannequin, Dutch wax printed cotton textile, net, possessions, astronaut helmet, moon boots and steel baseplate</medium>
+        <genre>Contemporary sculpture</genre>
+        <description>Shonibare's life-sized astronaut figure, adorned in vibrant "African" 
+        fabric and carrying worldly possessions, embodies contemporary displacement and 
+        environmental crisis. This powerful sculpture envisions space as humanity's ultimate
+         refuge, confronting viewers with urgent questions about climate change, migration, 
+         and the search for sanctuary in an uncertain future.</description>
+    </artwork>
+
+    <artwork id="4">
+        <artist>Michel Anguier</artist>
+        <title>The Flood</title>
+        <date>1648-1649</date>
+        <medium>Stone relief</medium>
+        <genre>Religious/Historical relief</genre>
+        <description>Anguier's dramatic relief depicts humanity's ultimate displacement—the 
+        biblical deluge that destroys all earthly homes. Figures cling desperately to 
+        remnants of their world as waters rise, embodying the universal fear of losing 
+        everything familiar. This baroque masterpiece transforms catastrophic homelessness 
+        into a meditation on survival and divine judgment.</description>
+    </artwork>
+
+    <artwork id="5">
+        <artist>Mathilde Mupe</artist>
+        <title>The Stone Age Computer</title>
+        <date>1993</date>
+        <medium>Mixed media/Digital art</medium>
+        <genre>Conceptual/Digital art</genre>
+        <description>This conceptual work bridges ancient and digital realms, 
+        suggesting technology as both connector and alienator from authentic human 
+        experience. The primitive computer metaphor explores how modern digital 
+        tools can simult </description>
+    </artwork>
+</exhibition>
+
+
+
