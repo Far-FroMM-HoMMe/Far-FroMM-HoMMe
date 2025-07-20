@@ -2,9 +2,6 @@
 # global
 --------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
 
 
@@ -14,6 +11,13 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+    font-family: 'GoudyDropcap';
+    src: url('../fonts/GoudyInitialen.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
 
 /* custom properties you can call with var() */
 /* The dark-theme will be the default */
@@ -28,13 +32,23 @@
 }
 
 body {
-    background-color: var(--black);
-    color: var(--white);
-    font-family: "Cormorant Garamond", serif;
+    background-color: #e4dec6;
+    background-image: url('../resources/img/old-parchmentpaper.jpg');
+    background-position: start;
+    background-size: 110vh;
+    background-repeat: stretch;
+    color: #574d38;
+    font-family: "Cardo", serif;
     font-weight: 400;
-    font-style: normal;
-    font-size: 18px;
+    font-style: italic;
+    font-size: 12pt;
     line-height: 1.5;
+}
+
+@media (max-width: 568px) {
+    body {
+        background-size: 70vh;
+    }
 }
 
 p { 
@@ -57,8 +71,8 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
   color: var(#EDEDED);
 }
 
@@ -71,20 +85,33 @@ a:hover {
 }
 /* According to dark theme */
 .navbar {
-  background-color: #12121258;
+  background-color: #574d387d;
   color: var(--white);
   position: fixed;
 }
 
+.navbar-brand img {
+  display: none;
+}
+
+.navbar-brand {
+  display: inline-block;
+  background-image: url('../resources/img/1ac47615-e26a-4cd5-a187-2751a5e95c08.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  z-index: 1000;
+}
+
 @media (max-width: 578px) {
   .navbar {
-    background-color: #121212c4;
+    background-color: #574d387d;
   }
 }
 
 #navbartext {
-  margin-left: 20px; 
-  font-family: 'Libertinus Mono', monospace; 
+  margin-left: 60px; 
+  font-family: 'Carbo', 'serif'; 
   font-size: clamp(0.75rem, 1vw, 1rem);
 }
 
@@ -95,28 +122,28 @@ a:hover {
 }
 
 .nav-link:hover {
-  color: var(--primary-color) !important;
+  color: var(--accent-color-dark) !important;
 }
 
 .active {
-  color: var(--primary-color-dark) !important;
+  color: var(--accent-color-dark) !important;
 }
 
 #chooseLayout {
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
   color: var(--white);
 }
 
 /* According to dark theme */
 .offcanvas {
-  background-color: var(--black);
-  color: var(--white);
+  background-image: url('../resources/img/old-parchmentpaper.jpg');
+  color: #574d38;
 }
 
 #layout-buttons .btn {
   margin-bottom: 1.618rem;
   padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
 }
 
 #default-title {
@@ -177,7 +204,6 @@ footer {
 
 /* index.global classes */
 .text-box {
-  background-color: rgba(248, 249, 250, 0);
   padding: 1.618rem;
 }
 
@@ -188,77 +214,43 @@ footer {
   }
 }
 
-/* Animations blocks sliding in from left-side into screen */
-/*  Slide for mobile is from down up */
-.hidden {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: all 2s;
-}
-
-.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* works better for smaller screens, when scrolling down the blocks move up slowly */
-@media (max-width: 768px) {
-  .hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1.5s ease;
-  }
-  
-  .show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* hero/thumbnail section */
 /* --------------------------------------------------------------*/
-.hero-section {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    transition: opacity 0.5s ease;
+#carouselHeaderImages img {
+  display: none;
 }
 
-#carouselHeaderImages.carousel,
-.carousel-inner,
-.carousel-item {
-  height: 100%;
-}
-
-.carousel-item img {
-  object-fit: cover;
-  object-position: center 30%;
-  height: 100%;
-  width: 100%;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(84, 83, 83, 0.2), rgba(0, 0, 0, 0.898));
+#hero {
+  background-image: url('../resources/img/1ac47615-e26a-4cd5-a187-2751a5e95c08.png');
+  background-size: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 600px;
+  height: 100vh;
+  width: 50%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .hero-text {
-    font-family: "Libertinus Mono", monospace;
+    font-family: "Carbo", "serif";
     font-optical-sizing: auto;
-    font-weight: 100;
+    font-weight: 50;
     font-style: normal;
-    font-size: clamp(7rem, 12vw, 11rem);
-    color: rgb(247, 247, 247);
-    text-align: start;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    line-height: 1;
+    text-transform: uppercase;
+    font-size: clamp(30pt, 3vw, 40pt);
+    color: #574d38;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.75rem;
     
     position: absolute;
-    top: 60%;
+    top: 20%;
     left: 0;
     right: 0;
     transform: translateY(-50%);
@@ -266,23 +258,20 @@ footer {
     box-sizing: border-box;
 }
 
-.hero-text span {
-    color: var(--primary-color);
-}
-
 .hero-subtitle {
-    font-family: "Libertinus Mono", monospace;
+    font-family: "Carbo", "serif";
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 100;
     font-style: normal;
-    font-size: clamp(1.5rem, 3vw, 5rem);
-    color: #82994B;
-    text-align: end;
-    text-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772);
-    line-height: 1;
+    text-transform: uppercase;
+    font-size: clamp(12pt, 3vw, 12pt);
+    color: #574d38;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.5rem;
     
     position: absolute;
-    top: clamp(95%, 81vw, 89%);
+    top: 80%;
     left: 0;
     right: 0;
     transform: translateY(-50%);
@@ -294,20 +283,57 @@ footer {
 /* Abstract section */
 /* --------------------------------------------------------------*/
 #abstract {
-  margin-top: 1.618rem;
+  float: left;
+  width: 50vw;
+  height: 100vh;
+  padding: 6vh 4vw 12vh 6vw; 
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.618rem;
+}
+
+#abstract::after {
+  content: "";
+  position: absolute;
+  display: block;
+  clear: both;
+}
+
+section:not(#hero):not(#abstract) {
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  #hero {
+      float: none;
+      width: 100vw;
+      height: auto;
+  }
+  #abstract {
+      float: none;
+      width: 100vw;
+      height: auto;
+      padding: 6vh 4vw 12vh 1vw;
+  }
+  .hero-subtitle {
+      top: 85%;
+  }
 }
 
 .has-dropcap {
   overflow: hidden;
-  font-size: 2rem;
+  font-size: 12pt;
 }
 
+/* source: https://www.1001fonts.com/ancient+drop-caps-fonts.html */
 .dropcap {
   float: left;
-  font-size: clamp(18rem, 6vw, 8.5rem);
+  font-size: 100pt;
+  font-style: normal;
   line-height: 0.70;
   margin: 0.1em 0.1em 0em 0;
-  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-family: "GoudyDropcap", serif;
   padding-right: 0.15rem;
 }
 
@@ -315,108 +341,267 @@ footer {
 /* they inherit most properties from the text-box class but need specific properties as well  */
 /* --------------------------------------------------------------*/
 #themes-info {
-    margin-top: 1.618rem;
+    position: relative;
+}
+
+#themes-info .row,
+#themes-info .col-lg-6 {
+    height: 50vh;
 }
 
 #theme-text-box {
-    background-color: var(--primary-color) !important;
+  float: left;
+  width: 50vw;
+  height: 80vh;
+  padding: 6vh 4vw 12vh 6vw; 
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
 }
 
 #narratives-text-box {
-  background-color: var(--accent-color) !important;
+  float: left;
+  width: 50vw;
+  height: 80vh;
+  padding: 6vh 4vw 12vh 6vw; 
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .infoboxes-title {
-  font-size: clamp(6vw, 6vw, 7vw) !important;
+  font-size: clamp(20pt, 3vw, 30pt) !important;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.75rem;
 }
 
 .infoboxes-text {
   font-size: clamp(1rem, 0.75rem, 1.2rem);
   line-height: 1.6;
   margin-top: 1rem;
-  color: var(--white) !important;
-}
-
-.infoboxes-text a {
-color: var(--white);
+  color: #574d38 !important;
 }
 
 /* Image tiles in the themes-info and narratives-info section */
-.img-card {
-    border-radius: 0; 
-    border: none;
-    max-width: 83.3%;
-    max-height: 500px;
-    min-height: 500px;
+/* Carousel right side vw, aldine pargins */
+#theme-carousel-wrapper,
+#narrative-carousel-wrapper {
+  width: 50vw;
+  padding: 6vh 4vw 12vh 6vw;
+  box-sizing: border-box;
+  background: transparent;
+  height: 100%;
+  max-height: 50vh;
 }
 
+.img-card,
+#collections-image-wrapper .card,
+#collections-image-wrapper img {
+  border-radius: 0; 
+  border: none;
+}
+
+/* images are sized to fit  */
 #carouselThemeImages .card-img,
 #carouselNarrativeImages .card-img,
 #collections-info .card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 0;
-    min-height: 500px;
-    max-height: 500px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+  object-position: center;
+  display: block;
+  border: #574d38 solid 1px;
 }
 
+/* crop photo image height */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.carousel-item {
+  height: 100%;
+  max-height: 50vh;
+}
+
+/* image carousels fit whole viewport */
+@media (max-width: 768px) {
+  #theme-carousel-wrapper,
+  #narrative-carousel-wrapper {
+    width: 100vw;
+    padding-bottom: 6vh;
+    max-height: none;
+    height: auto;
+    float: none;
+  }
+
+  #theme-text-box,
+  #narratives-text-box {
+    width: 100vw;
+    padding: 1rem; 
+    float: none;
+    height: auto;
+  }
+
+  #carouselThemeImages .card-img,
+  #carouselNarrativeImages .card-img {
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+  }
+
+  .carousel-item img,
+  .carousel-item .card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  #carouselThemeImages .card-img-overlay,
+  #carouselNarrativeImages .card-img-overlay {
+    padding: 6vh 4vw 12vh 6vw;
+  }
+}
+  
+/* carousel overlays */
 #carouselThemeImages .card-img-overlay,
 #carouselNarrativeImages .card-img-overlay {
-    background: #121212a9;
-    border-radius: 0;
+  background: #121212a9;
+  border-radius: 0;
 }
 
 #carouselThemeImages .card-title-carousel,
 #carouselNarrativeImages .card-title-carousel {
-    font-size: clamp(2.8rem, 2.5vw, 3rem);
-    color: var(--white);
+  font-size: clamp(12pt, 3vw, 12pt) !important;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.75rem;
+  color: var(--white);
 }
 
 #carouselThemeImages .card-text-carousel,
 #carouselNarrativeImages .card-text-carousel {
-    color: var(--white);
+  font-size: clamp(10.5pt, 3vw, 10.5pt) !important;
+  color: var(--white);
 }
 #carouselThemeImages .card-text-carousel a,
 #carouselNarrativeImages .card-text-carousel a {
-    font-size: 1.5rem;
-    font-weight: 500;
-    position: absolute;
-    top: 75%;
+  font-size: clamp(12pt, 3vw, 12pt) !important;
+  font-weight: 500;
+  position: absolute;
 }
 
-<<<<<<< HEAD
-.carousel-control-prev-icon {
-    width: 24px;
-    height: 24px;
+/* Collections info section */
+/* --------------------------------------------------------------*/
+#collections-info {
+  position: relative;
 }
-    
-.carousel-control-next-icon {
-    width: 24px;
-    height: 24px;
+
+#collections-info .row,
+#collections-info .col-lg-6 {
+  height: 50vh;
+}
+
+#collections-text-box {
+  float: left;
+  width: 50vw;
+  height: 80vh;
+  padding: 6vh 4vw 12vh 6vw; 
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
-    .carousel-control-next-icon,
-    .carousel-control-prev-icon {
-      width: 5vw;
-      height: 5vw;
+  #collections-text-box,
+  #collections-image-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    padding: 1rem !important;
+    float: none !important;
+    display: block !important;
+  }
+
+  #collectionsImageCard {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  #collectionsImage {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    display: block;
+  }
+
+  #collections-info .row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #collections-info .col-lg-6,
+  #collections-info .col-md-5,
+  #collections-info .col-sm-10 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
 
-.infoboxes-title {
-    font-size: clamp(6vw, 6vw, 7vw) !important;
-}
-=======
-/* About info section */
+/* About section */
 /* --------------------------------------------------------------*/
->>>>>>> landingpage
 
-#about-info {
-    margin-top: 1.618rem;
+/* Fix the overall layout */
+/* Make the two rows behave like columns */
+#about-info .container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  padding: 6vh 4vw 12vh 6vw;
 }
 
+/* Force both .row blocks to take 50% width on large screens */
+#about-info .row {
+  width: 48%;
+  margin: 0;
+}
+
+/* Keep heading visually centered */
+#about-info h1.infoboxes-title {
+  font-size: clamp(20pt, 3vw, 30pt);
+  letter-spacing: 0.75rem;
+  text-transform: uppercase;
+  color: #574d38;
+  margin: 0;
+  padding-top: 1rem;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 768px) {
+  #about-info .container-fluid {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  #about-info .row {
+    width: 100%;
+  }
+
+  #about-info h1.infoboxes-title {
+    text-align: start;
+    margin-top: 2rem;
+  }
+}
+
+
+
+/* flip cards */
+/* --------------------------------------------------------------*/
 .flip-card {
   background-color: transparent;
   width: 300px;
