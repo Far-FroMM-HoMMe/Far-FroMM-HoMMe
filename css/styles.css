@@ -342,7 +342,8 @@ footer {
 /* Themes-info and Narratives-info sections */
 /* they inherit most properties from the text-box class but need specific properties as well  */
 /* --------------------------------------------------------------*/
-#themes-info {
+#themes-info,
+#narratives-info {
     margin-top: 1.618rem;
 }
 
@@ -414,6 +415,18 @@ color: var(--white);
     top: 75%;
 }
 
+<<<<<<< HEAD
+=======
+.infoboxes-title {
+    font-size: clamp(6vw, 6vw, 7vw) !important;
+}
+
+#collectionsImageCard {
+    border-radius: 0;
+    border: none;
+}
+
+>>>>>>> fde912b1064f60e9a27ed09ae295e6650fcbec91
 /* About info section */
 /* --------------------------------------------------------------*/
 
@@ -483,6 +496,16 @@ color: var(--white);
     padding: 80px 50px;  
 }
 
+#answer-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* bring it to the back */
+  pointer-events: none;
+}
+
 .floating-answer {
     position: absolute;
     font-style: italic;
@@ -492,6 +515,14 @@ color: var(--white);
     max-width: 200px;
     pointer-events: none;
     animation: float 8s ease-in-out infinite;
+    z-index: 10;
+}
+
+.main-heading,
+.description,
+.action-area {
+  position: relative;
+  z-index: 2; 
 }
 
 @keyframes float {
@@ -520,7 +551,6 @@ color: var(--white);
     max-width: 300px;
     padding: 1em 1.5em;
     background: #fff;
-    border-radius: 1.5em;
     box-shadow: 2px 2px 8px rgba(0,0,0,.15);
     font-size: 14px;
     z-index: 10;
