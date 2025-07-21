@@ -174,8 +174,21 @@ a:hover {
 }
 
 #stijl-button {
-  font-family: "DeStijl", "sans-serif" !important;
+  font-family: "Destijl", "sans-serif" !important;
+  border-radius: 0 !important;
+  box-shadow: inset -0.5em -0.5em #FDDE06;;
+  background-color: white !important ;
+  border: 2px solid black !important;
 }
+
+#stijl-button:hover {
+  color: white!important;;
+  box-shadow: inset -0.5em -0.5em#0300AD ;
+  background-color: black ! important;
+
+}
+
+
 
 #beall-button {
   /* To be decided */
