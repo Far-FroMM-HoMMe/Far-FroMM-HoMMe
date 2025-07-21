@@ -47,10 +47,10 @@
   --n-green: #A8B162;
 
   /* Theme colours */
-  --kitchen: #D19FCB;
-  --flight: #9D3617;
-  --nature: #DAF7DC;
-  --time: #ABC8C0;
+  --kitchen: #F4BBD3;
+  --flight: #a10625;
+  --nature: #87B38D;
+  --time: #326273;
 }
 
 body {
@@ -846,10 +846,25 @@ color: var(--n-black);
 # Gallery
 --------------------------------------------------------------*/
 
+#gallery h1 {
+  font-family: 'ArtNouveauCaps';
+  color: var(--n-black);
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(1.5rem, 5vw, 10rem);
+}
+
+#themes {
+  font-size: 25px;
+}
+
 .gallery-card .card {
-  background: var(--black);
-  /* border: none; */
-  border-radius: 0;
+  background-color: color-mix(in srgb, var(--n-blue), transparent 40%);
+  border: 5px solid var(--n-blue);
+  border-radius: 30px;
+  padding: 20px !important;
+  margin-bottom: 20px;
 }
 
 .gallery-card .card-body h5 {
@@ -978,21 +993,36 @@ color: var(--n-black);
 }
 
 .nature-interferes {
-  /* border-color: var(--nature); */
-  border-left: 3px solid var(--nature);
+  border: 5px solid var(--nature) !important;
   
 }
 
 .travelling-through-time {
-  border-left: 3px solid var(--time);
+  border: 5px solid var(--time) !important;
 }
 
 .taking-flight {
-  border-left: 3px solid var(--flight);
+  border: 5px solid var(--flight) !important;
 }
 
 .around-the-kitchen-table {
-  border-left: 3px solid var(--kitchen);
+  border: 5px solid var(--kitchen) !important;
 
+}
+
+#Around-the-Kitchen-Table {
+ color: var(--kitchen);
+}
+
+#Taking-Flight {
+  color: var(--flight);
+}
+
+#Nature-Interferes {
+  color: var(--nature);
+}
+
+#Travelling-Through-Time {
+  color: var(--time);
 }
 
