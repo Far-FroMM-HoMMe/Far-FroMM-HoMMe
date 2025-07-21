@@ -16,7 +16,13 @@
     src: url('../fonts/GoudyInitialen.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
-  }
+}
+
+@font-face {
+  font-family: 'ArtNouveauCaps';
+  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
+  font-weight: 200;
+}
 
 /* custom properties you can call with var() */
 /* The dark-theme will be the default */
@@ -169,8 +175,17 @@ a:hover {
  }
 
  #artnouveau-button {
-  /* To be decided */
+  background-color: #74918A !important;
+  border-color: #A8B162 !important;
+  color: #FBFDF7 !important;
+  font-family: 'ArtNouveauCaps', 'serif' !important;
+  font-style: italic;
  }
+
+#artnouveau-button:hover {
+  background-color: #574B60 !important;
+  color: #FBFDF7 !important;
+}
 
 #stijl-button {
   font-family: "DeStijl", "sans-serif" !important;
