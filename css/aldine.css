@@ -32,7 +32,7 @@
 
 body {
     background-color: #e4dec6;
-    background-image: url('../resources/img/old-parchmentpaper.jpg');
+    background-image: url('../resources/img/aldine/old-parchmentpaper.jpg');
     background-position: start;
     background-size: 100vw 100vh;
     background-repeat: stretch;
@@ -97,7 +97,7 @@ a:hover {
 
 .navbar-brand {
   display: inline-block;
-  background-image: url('../resources/img/premodern-compas.png');
+  background-image: url('../resources/img/aldine/premodern-compas.png');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: contain;
@@ -137,7 +137,7 @@ a:hover {
 }
 
 .offcanvas {
-  background-image: url('../resources/img/old-parchmentpaper.jpg');
+  background-image: url('../resources/img/aldine/old-parchmentpaper.jpg');
   color: #574d38;
 }
 
@@ -213,7 +213,7 @@ footer {
 
 /* Change entire positioning to a two page division, mimicking the layout of a Aldine Press book */
 #hero {
-  background-image: url('../resources/img/premodern-compas.png');
+  background-image: url('../resources/img/aldine/premodern-compas.png');
   background-size: 250px;
   background-position: center;
   background-repeat: no-repeat;
@@ -770,7 +770,7 @@ h1.mb-5.fw-bold {
     width: 50% ;            /* this is controlled with JS */
     max-width: 300px;
     padding: 1em 1.5em;
-    background-image: url('../resources/img/old-parchmentpaper.jpg');
+    background-image: url('../resources/img/aldine/old-parchmentpaper.jpg');
     border-radius: none;
     border: double 5px !important;
     border-color:  #574d38 !important;
@@ -831,10 +831,6 @@ h1.mb-5.fw-bold {
 /* === Card === */
 
 #artCarousel .card {
-  /* background-image: url('../resources/img/old-parchmentpaper.jpg');
-  background-position: start;
-  background-size: 100vw 100vh;
-  background-repeat: stretch; */
   background-color: transparent;
   border: double 5px !important;
   border-radius: 0;
