@@ -489,7 +489,7 @@ a:hover {
 }
 
 #theme-text-box {
-    background-color: var(--primary-color) !important;
+    background-color: var(--blue) !important;
 }
 
 #narratives-text-box {
@@ -497,13 +497,17 @@ a:hover {
 }
 
 .infoboxes-title {
-  font-size: clamp(6vw, 6vw, 7vw) !important;
+  font-size: clamp(5vw, 5vw, 6vw) !important;
+  font-family: "Destijl";
+  color: white;
 }
 
 .infoboxes-text {
   font-size: clamp(1rem, 0.75rem, 1.2rem);
   line-height: 1.6;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  text-align: justify;
   color: var(--white) !important;
 }
 
@@ -554,6 +558,7 @@ color: var(--white);
     font-weight: 500;
     position: absolute;
     top: 75%;
+    color: white;
 }
 
 
