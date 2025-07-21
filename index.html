@@ -48,10 +48,10 @@
                         <a href="exhibition.html#choose-narrative" class="nav-link">Stories</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#themes" class="nav-link">Themes</a>
+                        <a href="index.html#theme-info" class="nav-link">Themes</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#collection" class="nav-link">The collection</a>
+                        <a href="gallery.html" class="nav-link">The collection</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="aboutDropdown">About</a>
@@ -429,14 +429,15 @@
     <!-- custom javascript -->
     <script src="js/landing.js"></script>
 
-      <!-- set narrative value and start story -->
+      <!-- set theme to launch gallery page and filter -->
     <script>
         const themeLinks = document.querySelectorAll(".select-theme");
         themeLinks.forEach(link => {
             link.addEventListener("click", () => {
                 const theme = link.getAttribute("id");
-                console.log("Setting themeValue:", theme);
+                // console.log("Setting themeValue:", theme);
                 localStorage.setItem("themeValue", theme);
+                console.log(localStorage.getItem("themeValue"));
             });
         });
     </script>

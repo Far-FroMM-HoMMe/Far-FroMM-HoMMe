@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         keyboard: true,
         size: 'fullscreen'
     };
+
+    console.log(localStorage.getItem("themeValue"));
     
     //store global variables
     //get skeleton doc to access its elements
@@ -199,7 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const themeSelect = document.querySelector("#themes").querySelector("p").querySelectorAll("a");
 const allArtLink = document.querySelector("#all-art"); // your "show all" anchor
-console.log(globalArt);
 for (const theme of themeSelect) {
     theme.addEventListener("click", () => {
         const themeName = theme.getAttribute("id").replaceAll("-", " ");
