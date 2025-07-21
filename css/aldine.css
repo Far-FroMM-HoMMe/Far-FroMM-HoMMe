@@ -656,14 +656,6 @@ footer {
     padding: 80px 50px;  
 }
 
-.main-heading :first-child {
-  font-style: normal;
-  text-transform: uppercase;
-  font-weight: 50;
-  letter-spacing: 0.75rem;
-  color: #574d38;
-}
-
 .floating-answer {
     position: absolute;
     font-style: italic;
@@ -673,6 +665,18 @@ footer {
     max-width: 200px;
     pointer-events: none;
     animation: float 8s ease-in-out infinite;
+}
+
+/* Change the headings to Aldine font-style, color and weight */
+h1.display-5.fw-bold,
+h1.mb-3.fw-bold,
+h1.mb-5.fw-bold {
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.75rem;
+  color: #574d38;
+  font-size: clamp(20pt, 3vw, 30pt);
+  font-weight: normal !important;
 }
 
 @keyframes float {
