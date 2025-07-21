@@ -16,13 +16,7 @@
     src: url('../fonts/GoudyInitialen.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
-}
-
-@font-face {
-  font-family: 'ArtNouveauCaps';
-  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
-  font-weight: 200;
-}
+  }
 
 /* custom properties you can call with var() */
 /* The dark-theme will be the default */
@@ -38,9 +32,9 @@
 
 body {
     background-color: #e4dec6;
-    background-image: url('../resources/img/old-parchmentpaper.jpg');
+    background-image: url('../resources/img/aldine/old-parchmentpaper.jpg');
     background-position: start;
-    background-size: 100vw 80vh;
+    background-size: 100vw 100vh;
     background-repeat: stretch;
     color: #574d38;
     font-family: "Cardo", serif;
@@ -48,6 +42,7 @@ body {
     font-style: italic;
     font-size: 12pt;
     line-height: 1.5;
+    padding-top: 20px;
 }
 
 @media (max-width: 568px) {
@@ -84,8 +79,8 @@ a:hover {
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
-  background-color: var(--primary-color-dark) !important;  /*added !important because sometimes the bootstrap default color shows up */
-  border-color: var(--primary-color-dark) !important;
+  background-color: var(--accent-color-dark) !important;  /*added !important because sometimes the bootstrap default color shows up */
+  border-color: var(--accent-color-dark) !important;
 
 }
 
@@ -102,7 +97,7 @@ a:hover {
 
 .navbar-brand {
   display: inline-block;
-  background-image: url('../resources/img/premodern-compas.png');
+  background-image: url('../resources/img/aldine/premodern-compas.png');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: contain;
@@ -142,7 +137,7 @@ a:hover {
 }
 
 .offcanvas {
-  background-image: url('../resources/img/old-parchmentpaper.jpg');
+  background-image: url('../resources/img/aldine/old-parchmentpaper.jpg');
   color: #574d38;
 }
 
@@ -175,17 +170,8 @@ a:hover {
  }
 
  #artnouveau-button {
-  background-color: #74918A !important;
-  border-color: #A8B162 !important;
-  color: #FBFDF7 !important;
-  font-family: 'ArtNouveauCaps', 'serif' !important;
-  font-style: italic;
+  /* To be decided */
  }
-
-#artnouveau-button:hover {
-  background-color: #574B60 !important;
-  color: #FBFDF7 !important;
-}
 
 #stijl-button {
   font-family: "DeStijl", "sans-serif" !important;
@@ -227,12 +213,12 @@ footer {
 
 /* Change entire positioning to a two page division, mimicking the layout of a Aldine Press book */
 #hero {
-  background-image: url('../resources/img/premodern-compas.png');
+  background-image: url('../resources/img/aldine/premodern-compas.png');
   background-size: 250px;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 600px;
-  height: 100vh;
+  height: 80vh;
   width: 50%;
   float: left;
   position: relative;
@@ -277,7 +263,7 @@ footer {
     letter-spacing: 0.5rem;
     
     position: absolute;
-    top: 70%;
+    top: 80%;
     left: 0;
     right: 0;
     padding: 0 40px;
@@ -290,12 +276,23 @@ footer {
 #abstract {
   float: left;
   width: 50vw;
-  height: 100vh;
+  height: 80vh;
   padding: 6vh 4vw 12vh 6vw; 
   overflow-y: auto;
   position: relative;
   z-index: 1;
   margin-bottom: 1.618rem;
+}
+
+/* Clear float for all following content */
+#abstract::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+section:not(#hero):not(#abstract) {
+  clear: both;
 }
 
 @media (max-width: 768px) {
@@ -330,6 +327,29 @@ footer {
   font-size: 12pt;
 }
 
+@media (max-width: 768px) {
+  #hero {
+      float: none;
+      width: 100vw;
+      height: 80vh;
+  }
+  #abstract {
+      float: none;
+      width: 100vw;
+      height: 80vh;
+      padding: 6vh 4vw 12vh 1vw;
+      margin-top: 20%;
+  }
+
+  #abstract .textbox {
+    overflow: auto;
+  }
+
+  .hero-subtitle {
+      top: 85%;
+  }
+}
+
 /* source: https://www.1001fonts.com/ancient+drop-caps-fonts.html */
 .dropcap {
   float: left;
@@ -342,6 +362,7 @@ footer {
 }
 
 
+
 /* --------------------------------------------
    THEMES AND NARRATIVES SECTION LAYOUT
 --------------------------------------------- */
@@ -349,7 +370,7 @@ footer {
 #narratives-info {
   display: flex;
   flex-wrap: nowrap;
-  height: 80vh;
+  height: 100vh;
 }
 
 /* Neutralize Bootstrap column behavior */
@@ -371,7 +392,7 @@ footer {
 #themes-text-box,
 #narratives-text-box {
   width: 50vw;
-  padding: 6vh 8vw 12vh 8vw;
+  padding: 6vh 6vw 12vh 8vw;
   box-sizing: border-box;
 }
 
@@ -652,57 +673,11 @@ footer {
 }
 
 
-
-/* flip cards */
-/* --------------------------------------------------------------*/
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-.flip-card-back {
-  background-color: var(--primary-color);
-  color: white;
-  transform: rotateY(180deg);
-}
-
 /*--------------------------------------------------------------
 # exhibition page
 --------------------------------------------------------------*/
 
 /*floating answers styles*/
-#floating{
-    background-color: #fff;
-}
 
 .floating-answers-container {
     position: relative;
@@ -728,6 +703,48 @@ footer {
     animation: float 8s ease-in-out infinite;
 }
 
+/* Change the headings to Aldine font-style, color and weight */
+h1.display-5.fw-bold,
+h1.mb-3.fw-bold,
+h1.mb-5.fw-bold {
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.75rem;
+  color: #574d38;
+  font-size: clamp(20pt, 3vw, 30pt);
+  font-weight: normal !important;
+}
+
+.lead {
+    color: #574d38;
+    font-family: "Cardo", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 12pt;
+    line-height: 1.5;
+}
+
+#choose-narrative .card {
+  border: double 5px !important;
+  border-radius: 0;
+  background: transparent;
+  border-color:  #574d38 !important;
+  color:  #574d38 !important;
+}
+
+#choose-narrative .card:hover {
+  border: double 5px !important;
+  border-radius: 0;
+  background: #574d3868;
+  border-color:  #574d38 !important;
+  color: var(--white) !important;
+}
+
+#collections,
+#rooms {
+  margin-top: 15% !important;
+}
+
 @keyframes float {
 0% { transform: translateY(0px); }
 50% { transform: translateY(-20px); }
@@ -744,7 +761,7 @@ footer {
 
 /*  interactive map styles */
 /* change color with hover */
-.room:hover { fill: var(--primary-color); }
+.room:hover { fill: var(--accent-color); }
 
   /* pop up style */
 .popup {
@@ -753,11 +770,43 @@ footer {
     width: 50% ;            /* this is controlled with JS */
     max-width: 300px;
     padding: 1em 1.5em;
-    background: #fff;
-    border-radius: 1.5em;
+    background-image: url('../resources/img/aldine/old-parchmentpaper.jpg');
+    border-radius: none;
+    border: double 5px !important;
+    border-color:  #574d38 !important;
     box-shadow: 2px 2px 8px rgba(0,0,0,.15);
     font-size: 14px;
     z-index: 10;
+}
+
+#intro .btn,
+#collections .btn {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--white);
+  font-style: italic;
+}
+
+#collections .btn:hover,
+#collections .btn:active,
+#collections .btn:focus {
+  background-color: var(--accent-color-dark) !important;  /*added !important because sometimes the bootstrap default color shows up */
+  border-color: var(--accent-color-dark) !important;
+}
+
+/* Responsiveness */
+@media (max-width: 440px) {
+  #collections{
+    margin-top: 50% !important;
+  }
+
+  #choose-narrative {
+    margin-top: 30% !important;
+  }
+
+  #rooms {
+    margin-top: 30% !important;
+  }
 }
 
 
@@ -782,9 +831,10 @@ footer {
 /* === Card === */
 
 #artCarousel .card {
-  background: var(--black);
-  border: none;
+  background-color: transparent;
+  border: double 5px !important;
   border-radius: 0;
+  border-color:  #574d38 !important;
 }
 
 #artCarousel .card-body h5 {
@@ -807,15 +857,18 @@ footer {
 #artCarousel .card img{
   object-fit: contain;
   object-position: 50% 50%;
+  border: double 5px !important;
+  border-radius: 0;
+  border-color:  #574d38 !important;
 }
 
 /* --- Accordion --- */
 
 #artCarousel .accordion-button {
-  background-color: var(--black);
+  background-color: #574d388f;
   color: var(--white);
   border: none;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
   border-radius: 0;
   box-shadow: none; /* removes default focus shadow */
   outline: none; /* removes focus outline */
@@ -833,23 +886,23 @@ footer {
   border: none;
 }
 
-#artCarousel .accordion-button:not(.collapsed) {
-  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
-  background-color: var(--black);
-  color: var(--white);
+#artCarousel .accordion-button.collapsed {
+    border-bottom: 2px solid var(--accent-color);
+    background-color: #574d388f;
+    color: var(--white);
 }
 
 /* When accordion is collapsed */
 #artCarousel .accordion-button.collapsed {
-  border-bottom: 2px solid var(--primary-color);
-  background-color: var(--black);
+  border-bottom: 2px solid var(--accent-color);
+  background-color: #574d388f;
   color: var(--white);
 }
 
 #artCarousel .accordion-body {
-  background-color: var(--black);
+  background-color: #574d3868;
   color: var(--white);
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
   border-radius: 0;
 }
 
@@ -898,7 +951,7 @@ footer {
 /* Optional: spacing between first and second column */
 #artCarousel .accordion-body td:first-child {
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--accent-color);
   width: 30%;
   padding-left: 0px;
 }
