@@ -62,7 +62,7 @@ body {
     font-size: 18px;
     line-height: 1.5;
     border: 50px solid transparent; /* Required for border-image to work */
-    border-image-source: url('/resources/img/artnouveau/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
+    border-image-source: url('../resources/img/artnouveau/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
     border-image-slice: 165 65 220; /* Adjust as needed for thickness */
     border-image-width: 50px;
     border-image-repeat: round; /* Options: stretch | repeat | round | space */
@@ -75,8 +75,8 @@ p {
 
 /* For light-theme pages, add class="light" to body to reverse bg and text colors */
 body.light {
-    background-color:  #EDEDED;           /*Anti Flash White*/
-    color: #1A1A1A;                       /*Eerie Black*/
+    background-color:  var(--n-white);           /*Anti Flash White*/
+    color: var(--n-black);                       /*Eerie Black*/
 }
 
 /* links and buttons */
@@ -233,7 +233,7 @@ footer {
   background-size:contain;
   padding: 100px 0;
   min-height: 100px; */
-  background-image: url("/resources/img/artnouveau/Alfons_Mucha_border-1.jpg");
+  background-image: url("../resources/img/artnouveau/Alfons_Mucha_border-1.jpg");
   min-height: 150px;
 }
 
@@ -289,7 +289,7 @@ footer {
 /* hero/thumbnail section */
 /* --------------------------------------------------------------*/
 #hero {
-  background-image: url('/resources/img/artnouveau/36_mucha_documentsdecoratifs_1901-4.jpg');
+  background-image: url('../resources/img/artnouveau/36_mucha_documentsdecoratifs_1901-4.jpg');
   
 }
 
@@ -444,10 +444,6 @@ color: var(--n-black);
   margin-bottom: 20px;
 }
 
-#collections-info {
-
-}
-
 #collectionsImageCard {
   border: 5px solid var(--n-blue);
   border-radius: 30px;
@@ -548,7 +544,28 @@ color: var(--n-black);
 
 /*floating answers styles*/
 #floating{
-    background-color: #fff;
+  background-color: var(--n-white);
+  padding: 0;
+  /* border: 5px solid var(--n-blue);
+  border-radius: 30px;
+  margin-bottom: 20px; */
+}
+
+.main-heading h1 {
+  font-family: 'ArtNouveauCaps', 'serif';
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(6rem, 1vw, 10rem);
+  color: var(--n-blue);
+  text-align: center;
+  /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
+  line-height: 1;
+}
+
+.description p {
+  font-size: 30px !important;
+  color: var(--n-purple) !important;
 }
 
 .floating-answers-container {
@@ -567,7 +584,8 @@ color: var(--n-black);
 .floating-answer {
     position: absolute;
     font-style: italic;
-    color: #6c757d;
+    font-size: 20px;
+    color: var(--n-purple);
     padding: 5px 10px;
     border-radius: 8px;
     max-width: 200px;
@@ -585,13 +603,13 @@ color: var(--n-black);
 .link-card:hover,
 .link-card:focus,
 .link-card:active {
-    background-color: #EDEDED; /* hovering background color */
+    background-color: var(--n-white); /* hovering background color */
     transition: background-color 0.2s ease;
 }
 
 /*  interactive map styles */
 /* change color with hover */
-.room:hover { fill: var(--primary-color); }
+.room:hover { fill: var(--n-green); }
 
   /* pop up style */
 .popup {
@@ -600,11 +618,23 @@ color: var(--n-black);
     width: 50% ;            /* this is controlled with JS */
     max-width: 300px;
     padding: 1em 1.5em;
-    background: #fff;
+    background: var(--n-blue);
     border-radius: 1.5em;
     box-shadow: 2px 2px 8px rgba(0,0,0,.15);
     font-size: 14px;
     z-index: 10;
+}
+
+#choose-narrative {
+  text-align: center;
+}
+
+#choose-narrative .card {
+  background-color: var(--n-blue);
+  border: 5px solid var(--n-blue);
+  border-radius: 30px;
+  padding: 40px;
+  margin-bottom: 20px;
 }
 
 
@@ -615,7 +645,7 @@ color: var(--n-black);
 #viewer {
     margin-top: 6rem !important;
     border: 50px solid transparent; /* Required for border-image to work */
-    border-image-source: url('/resources/img/artnouveau/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
+    border-image-source: url('../resources/img/artnouveau/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
     border-image-slice: 165 65 220; /* Adjust as needed for thickness */
     border-image-width: 50px;
     border-image-repeat: round; /* Options: stretch | repeat | round | space */
