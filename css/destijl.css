@@ -484,8 +484,9 @@ a:hover {
 /* --------------------------------------------------------------*/
 
 #theme-info,
-#narratives-info {
-    margin-top: 1.5rem;
+#narrative-info {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 #theme-text-box {
@@ -493,8 +494,9 @@ a:hover {
 }
 
 #narratives-text-box {
-  background-color: var(--accent-color) !important;
+  background-color: var(--yellow) !important;
 }
+
 
 .infoboxes-title {
   font-size: clamp(5vw, 5vw, 6vw) !important;
@@ -511,8 +513,18 @@ a:hover {
   color: var(--white) !important;
 }
 
+#narratives-text-box .infoboxes-title,
+#narratives-text-box .infoboxes-text,
+#narratives-text-box .infoboxes-text a {
+  color: var(--black) !important;
+}
+
 .infoboxes-text a {
 color: var(--white);
+}
+
+#narratives-text-box .infoboxes-text a:hover{
+  color: var(--red) !important;
 }
 
 /* Image tiles in the themes-info and narratives-info section */
@@ -552,14 +564,36 @@ color: var(--white);
 #carouselNarrativeImages .card-text-carousel {
     color: var(--white);
 }
+
+#carouselThemeImages .card-title-carousel{
+ text-align: right;
+}
+
+#carouselThemeImages .card-text-carousel{
+ text-align: right;
+}
+
 #carouselThemeImages .card-text-carousel a,
 #carouselNarrativeImages .card-text-carousel a {
     font-size: 1.5rem;
     font-weight: 500;
-    position: absolute;
+    position: absolute; ;
+    left: 50%;
     top: 75%;
     color: white;
 }
+
+
+/*Browse the collections section*/
+#collections-info {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+#collections-text-box {
+    background-color: var(--black) !important;
+}
+
 
 
 
@@ -568,6 +602,29 @@ color: var(--white);
 
 #about-info {
     margin-top: 1.618rem;
+    margin-bottom: 1.618rem;
+}
+
+#about-info .has-dropcap .dropcap  {
+  position: relative;
+  font-size: clamp(13rem, 6vw, 8.5rem);
+  z-index: 0;
+}
+
+#about-info .has-dropcap .dropcap::before {
+  content: "";
+  position: absolute;
+  top: -4rem;
+  left: -2rem;
+  right: 2rem;
+  bottom: 3.5rem;
+  background-color:var(--red);
+  z-index: -1;
+}
+
+#about-info p{
+  font-size: 1.5rem;
+  text-align: justify;
 }
 
 .flip-card {
@@ -927,17 +984,17 @@ color: var(--white);
     z-index: 10;
 }
 
-.popup:nth-of-type(4n+1) {
+.popup:nth-of-type(n+1) {
   border-right: 4px solid var(--red) !important;
   border-bottom: 4px solid var(--red) !important;
 }
 
-.popup:nth-of-type(4n+2) {
+.popup:nth-of-type(n+2) {
   border-right: 4px solid var(--blue) !important;
   border-bottom: 4px solid var(--blue) !important;
 }
 
-.popup:nth-of-type(4n+3) {
+.popup:nth-of-type(n+3) {
   border-right: 4px solid var(--yellow) !important;
   border-bottom: 4px solid var(--yellow) !important;
 }
@@ -999,3 +1056,40 @@ color: var(--white);
   margin: 0;
 
 } 
+
+/* Footer styles */
+/* フッター全体のスタイル */
+footer {
+  padding: 0.5rem;
+  margin-top: 0;
+  border-top: 4px solid var(--black);
+  border-bottom: 4px solid var(--black);
+  background-color: var(--black);
+}
+
+/* フッター内の各セクションをグリッド風に装飾 */
+footer .footer .col-md-3,
+footer .footer .col-md-6 {
+  padding-top: 15px;
+}
+
+footer .footer .col-md-6 {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+footer .footer .col-md-3 {
+  background-color: white;
+  color: var(--black);
+}
+
+/* フッターの下部（著作権部分） */
+footer .text-center {
+  background-color: var(--yellow);
+  padding: 0.5rem;
+  color: var(--black);
+  font-size: 0.9rem;
+  text-align: center;
+  justify-content: center;
+}
+
