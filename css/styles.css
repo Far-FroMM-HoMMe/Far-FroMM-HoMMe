@@ -415,18 +415,6 @@ color: var(--white);
     top: 75%;
 }
 
-<<<<<<< HEAD
-=======
-.infoboxes-title {
-    font-size: clamp(6vw, 6vw, 7vw) !important;
-}
-
-#collectionsImageCard {
-    border-radius: 0;
-    border: none;
-}
-
->>>>>>> fde912b1064f60e9a27ed09ae295e6650fcbec91
 /* About info section */
 /* --------------------------------------------------------------*/
 
@@ -532,6 +520,9 @@ color: var(--white);
 }
 
 /* card link styles */
+.card-group .card{
+  border-radius: 0;
+}
 .link-card:hover,
 .link-card:focus,
 .link-card:active {
