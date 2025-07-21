@@ -57,13 +57,13 @@ p {
     font-family: "Oxanium", serif;
   }
 
-body {
+.light{
   /*background-image: url("destijl_bg.png") ;*/
   background-size: 50%;
   background-repeat: repeat;
   background-attachment: fixed;
   color: #000000;
-  font-family: 'DeStijl', sans-serif;
+  font-family: 'Oxanium', sans-serif;
   margin: 0;
   padding: 0;
   background: repeating-linear-gradient(
@@ -76,44 +76,103 @@ body {
 
 }
 
-/* According to dark theme */
-.navbar {
-  background-color: #12121258;
-  color: var(--white);
-  position: fixed;
+.dark{
+  background-color: white;
+  font-family: 'Oxanium', sans-serif;
 }
+
+/* According to dark theme */
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 50%;
+  z-index: -1;
+  background-color: var(--red); /* 1つ目の四角 */
+  box-shadow: 
+    1em 30px var(--yellow);
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--black);
+  position: relative fixed;
+  height: 4rem;
+  border-bottom: var(--black) 2px solid;
+  z-index: 1;
+}
+
 
 @media (max-width: 578px) {
   .navbar {
-    background-color: #121212c4;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--black);
+    z-index: 12;
   }
+
+  .nav-link {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+  
+#main-nav{
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+}
+
 }
 
 #navbartext {
   margin-left: 20px; 
-  font-family: 'Libertinus Mono', monospace; 
   font-size: clamp(0.75rem, 1vw, 1rem);
+  color: var(--black);
+  z-index: 1;
 }
 
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22' /%3e%3c/svg%3e");
+}
+
+
 .nav-link {
-  color: var(--white) !important;
+  color: var(--black) !important;
   font-weight: 500;
+  font-size: 0.9rem;
   transition: color 0.3s;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  margin-left: 1rem;
+}
+
+.nav-item  .btn{
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  margin-left: 1rem;
 }
 
 .nav-link:hover {
-  color: var(--primary-color) !important;
+  color: var(--red) !important;
 }
+
 
 .active {
   color: var(--primary-color-dark) !important;
 }
 
-#chooseLayout {
-  background-color: var(--primary-color);
-  color: var(--white);
-}
 
+
+.offcanvas-end   {
+  background-image: url("../resources/img/mondrian_frame2.png"); /* 画像のパスに置き換えてください */
+  background-size: 80%; /* 画面にフィットさせる */
+  background-position: right top; /* 右上に配置 */
+  background-repeat: no-repeat;
+  padding-right: 1rem;
+
+}
 
 /* button */
 .btn {
@@ -199,7 +258,7 @@ a:hover {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 10fr 1fr;
   gap: 0;
-  padding: 0.5rem;
+  padding: 0;
   background-color: white;
   box-sizing: border-box;
   position: relative;
@@ -225,7 +284,6 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Helvetica', sans-serif;
   font-size: 2em;
   font-weight: bold;
   text-align: center;
@@ -239,7 +297,7 @@ a:hover {
   left: 0%;
   width: 50%;    /* お好みで調整 */
   height: 50%;   /* お好みで調整 */
-  background-color: var(--yellow); /* 例えばオレンジっぽい色 */
+  background-color: var(--yellow); /* */
   box-sizing: border-box;
   z-index: 0; /* テキストの背面に配置 */
   border-radius: 0; /* 四角形 */
@@ -302,6 +360,49 @@ a:hover {
   min-height: 100%
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  .hero-overlay {
+    padding-top: 1rem;
+    order: 1;
+    width: 100%;
+    height: auto;
+  }
+
+  #carouselHeaderImages {
+    order: 2;
+    width: 100%;
+    height: auto;
+  }
+
+  /* 赤い塗りつぶし → 最下部に移動 */
+  .hero-section::before {
+    order: 3;
+    content: "";
+    width: 100%;
+    height: 3rem; /* 高さは調整可能 */
+    background-color: var(--red);
+    border-top: 4px solid var(--black);
+    border-bottom: 4px solid var(--black);
+    border-left: 4px solid var(--black);
+    border-right: 4px solid var(--black);
+    display: block;
+    position: static;
+  }
+
+  /* 黒い塗りつぶしは非表示 */
+  .hero-section::after {
+    display: none;
+  }
+}
+
 
 
 /* Abstract section */
@@ -320,16 +421,71 @@ a:hover {
   font-size: clamp(18rem, 6vw, 8.5rem);
   line-height: 0.70;
   margin: 0.1em 0.1em 0em 0;
-  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   padding-right: 0.15rem;
 }
+
+#abstract .text-box {
+  display: grid;
+  grid-template-columns:repeat(2, 1fr);
+  grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
+  grid-gap: 0;
+  border: 6px solid black;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  max-width: 1500px;
+}
+
+/* div1: <p class="has-dropcap hidden"> */
+#abstract .text-box p.has-dropcap {
+  grid-area: 1 / 1 / 4 / 2  ;
+  background-color: var(--blue);
+  color: var(--white); /* 青背景 */
+  border: 0;
+  padding: 5rem;
+  font-size: 1.5rem;
+  text-align: justify;
+  align-content: center;
+  margin:0;
+}
+
+/* div2: <p class="hidden">（2番目の） */
+#abstract .text-box p.hidden:not(.has-dropcap) {
+  grid-area: 2 / 2 / 5 / 3;
+  background-color: white; 
+  border-left: 4px solid black  ;
+  padding: 5rem;
+  text-align: justify;
+  justify-content: center;
+  margin: 0;
+}
+
+/* div3〜div6: 色だけの領域（白/赤/黄色）を::beforeで生成 */
+#abstract .text-box::before {
+  content: "";
+  grid-area: 1 / 2 / 2 / 3; /* div3 */
+  background-color: var(--red);
+  border-left: 4px solid black;
+  border-bottom: 4px solid black; 
+}
+
+
+#abstract .text-box::after {
+  content: "";
+  grid-area: 4 / 1 / 5 / 2; /* div3 */
+  background-color: var(--yellow);
+ 
+}
+
+
 
 /* Themes-info and Narratives-info sections */
 /* they inherit most properties from the text-box class but need specific properties as well  */
 /* --------------------------------------------------------------*/
-#themes-info,
+
+#theme-info,
 #narratives-info {
-    margin-top: 1.618rem;
+    margin-top: 1.5rem;
 }
 
 #theme-text-box {
@@ -400,6 +556,8 @@ color: var(--white);
     top: 75%;
 }
 
+
+
 /* About info section */
 /* --------------------------------------------------------------*/
 
@@ -452,6 +610,10 @@ color: var(--white);
 # exhibition page
 --------------------------------------------------------------*/
 
+#intro{
+  padding-top: 2rem;
+}
+
 /*floating answers styles*/
 
 .floating-answer {
@@ -463,6 +625,7 @@ color: var(--white);
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   animation: float 4s ease-in-out infinite;
 } 
+
 
 
 #floating-answers-container {
@@ -508,7 +671,7 @@ color: var(--white);
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* bring it to the back */
+  z-index: 0; /* bring it to the back */
   pointer-events: none;
   background-color: white;
 }
@@ -549,7 +712,7 @@ color: var(--white);
 #choose-narrative .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: 1fr auto;
   align-items: start;
   width: 100%;
   max-width: 1200px;
@@ -562,36 +725,45 @@ color: var(--white);
 
 }
 
-/* h1 */
-#choose-narrative h1 {
-  grid-column: 1/2;
+/* narrative title */
+#choose-narrative .nar-title {
+  grid-column: 1/3;
   grid-row: 1/2;
   margin: 0;
+  height: 5em;
   background-color: var(--yellow);
   padding: 1rem;
-  min-height: 100px;
   border-right: solid 3px ;
   border-bottom: solid 6px ;
+  display: flex;
+  flex-wrap: wrap;
 } 
 
-/* p */
-#choose-narrative .lead {
-  grid-column: 2/2;
+/* narrative text */
+#choose-narrative .nar-text {
+  grid-column: 3/4;
   grid-row: 1/2;
   margin: 0;
+  height: 5em;
   background-color: var(--blue);
-  color: var(--white) !important;
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: right; 
-  min-height: 100px; 
   border-bottom: solid 6px var(--black);
   border-left: solid 3px var(--black);
   
 }
 
+#choose-narrative .nar-text p{ 
+  color: var(--white) !important;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+
 /* cards */
 #choose-narrative .card-group {
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
   grid-row: 2/3;
   display: flex;
   flex-wrap: wrap;
@@ -604,13 +776,49 @@ color: var(--white);
   border-radius: 0 !important;
 }
 
+@media (max-width: 768px) {
+  #choose-narrative .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  #choose-narrative .nar-title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    height: auto;
+    border-right: none;
+    border-bottom: solid 3px var(--black);
+  }
+
+  #choose-narrative .nar-text {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    height: auto;
+    border-left: none;
+    border-top: none;
+    border-bottom: solid 6px var(--black);
+    padding: 1rem;
+  }
+
+  #choose-narrative .card-group {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 1rem;
+  }
+
+  #choose-narrative .card-group .card {
+    width: 100%;
+  }
+}
+
 /* set random-like border color for cards */
 .card:nth-of-type(4n+1) {
   border-right: 6px solid var(--red) !important;
   border-bottom: 6px solid var(--red) !important;
   
 }
-
 
 .card:nth-of-type(4n+2) {
   border-right: 6px solid var(--blue) !important;
@@ -644,7 +852,7 @@ color: var(--white);
 /*  interactive map styles */
 #rooms .container {
   display: grid;
-  grid-template-columns: 3fr;
+  grid-template-columns: 4fr;
   grid-template-rows: auto 1fr;
   width: 100%;
   max-width: 1200px;
@@ -655,7 +863,7 @@ color: var(--white);
 }
 
 #rooms h1 {
-  grid-column: 1/2;
+  grid-column: 1;
   grid-row: 1/2;
   margin: 0 !important;
   padding: 1em;
@@ -667,29 +875,32 @@ color: var(--white);
   border-bottom: 6px solid var(--black);
 } 
 
-#rooms p.lead{
-  grid-column: 2/3;
-  grid-row: 1/3;
-  display: flex;
+#rooms .lead{
+  grid-column: 3/4;
+  grid-row: 2/3;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 1em;
   background-color: var(--blue);
   color: var(--white) !important;
   margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+
 } 
 
 #rooms svg {
-  grid-column: 1/2;
-  grid-row: 2/3;
+  grid-column: 1/3;
+  grid-row: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem;
+  padding: 1rem;
   background-color: var(--white);
   align-self: start;
   margin: 0;
-  border-right: solid 6px var(--black);
+
 } 
 
 
@@ -767,6 +978,8 @@ color: var(--white);
   color: var(--white) !important;
   margin: 0;
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
 } 
 
 #collections img {
@@ -779,5 +992,5 @@ color: var(--white);
   background-color: var(--white);
   align-self: start;
   margin: 0;
-  border-left: solid 6px var(--black);
+
 } 

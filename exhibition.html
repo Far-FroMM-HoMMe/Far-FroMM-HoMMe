@@ -19,50 +19,50 @@
 <!--add class="light" for light themed pages-->
 <body class="light">
   <!-- navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-    <div class="container-xxl">
-        <a href="#intro" class="navbar-brand">
-            <span class="text-light">
-                <img src="resources/img/suitcase-favicon-white.png" style="max-width: 50px; color: white;"><span id="navbartext">To have, to lose, to find</span>
-            </span>
-        </a>
-        <!-- toggle button for mobile nav -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container-xxl">
+          <a href="#intro" class="navbar-brand">
+              <span class="text-light">
+                  <img src="resources/img/compass-modern-white.png" style="max-width: 50px; color: white;"><span id="navbartext">To have, to lose, to find</span>
+              </span>
+          </a>
+          <!-- toggle button for mobile nav -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <!-- navbar links -->
-        <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="exhibition.html#choose-narrative" class="nav-link">Stories</a>
-            </li>
-            <li class="nav-item">
-                <a href="#themes" class="nav-link">Themes</a>
-            </li>
-            <li class="nav-item">
-                <a href="#collection" class="nav-link">The collection</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="aboutDropdown">About</a>
-                <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                    <li><a class="dropdown-item" href="documentation.html">General scope and design choices</a></li>
-                    <li><a class="dropdown-item" href="disclaimer.html">Disclaimer</a></li>
-                    <li><a class="dropdown-item" href="about-creators.html">About the creators</a></li>
-                </ul>
-            </li>
-            <li class="nav-item ms-2">
-                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                    Choose your layout
-                </a>
-            </li>
-          </ul>
-        </div>
-    </div>
-  </nav> 
+          <!-- navbar links -->
+          <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a href="exhibition.html#choose-narrative" class="nav-link">Stories</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#themes" class="nav-link">Themes</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#collection" class="nav-link">The collection</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="aboutDropdown">About</a>
+                  <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                      <li><a class="dropdown-item" href="documentation.html">General scope and design choices</a></li>
+                      <li><a class="dropdown-item" href="disclaimer.html">Disclaimer</a></li>
+                      <li><a class="dropdown-item" href="about-creators.html">About the creators</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item ms-2">
+                  <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                      Choose your layout
+                  </a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav> 
 
 
   <!-- Intro Section -->
@@ -127,10 +127,9 @@
   <!--Narrative Section-->
   <section id="choose-narrative" class="m-5 p-2">
     <div class="container text-left">
-      <h1 class="mb-3 fw-bold">CHOOSE YOUR NARRATIVE</h1>
-
-      <p class="lead text-muted mb-4">Explore different perspectives on what home means.</p>
-      <div class="card-group gap-3 rounded-0">
+      <div class="nar-title"><h1 class="mb-3 fw-bold">CHOOSE YOUR NARRATIVE</h1></div>
+      <div class="nar-text"><p class="xt-muted mb-4">Explore different perspectives on what home means.</p></div>
+      <div class="card-group gap-3">
         <a href="artViewer.html" id="teacher" class="card border-0 text-decoration-none link-dark link-card start-story">
             <div class="card-header bg-transparent border-0">
             <h4 class="card-title text-center">Children's Scavenger's Hunt</h4></div>
@@ -173,7 +172,7 @@
       <h1 class="mb-5 fw-bold">DISCOVER THE ROOMS</h1>
         <div class="row g-5">
           <!--svg image of the floorplan-->
-          <div class="col-12 col-md-7 svg">
+          <div class="col-12 col-md-7">
             <!--svg comes here: set width to 100% and height to auto when copy & pasting. add ids according to the rooms-->
             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" fill="none" viewBox="0 0 1491 982">
               <g class="floor-plan">
