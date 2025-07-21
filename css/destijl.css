@@ -73,10 +73,46 @@ body {
     #fafafa 10px,
     #fafafa 20px
   );
+
 }
 
+/* According to dark theme */
+.navbar {
+  background-color: #12121258;
+  color: var(--white);
+  position: fixed;
+}
 
-/* Containers */
+@media (max-width: 578px) {
+  .navbar {
+    background-color: #121212c4;
+  }
+}
+
+#navbartext {
+  margin-left: 20px; 
+  font-family: 'Libertinus Mono', monospace; 
+  font-size: clamp(0.75rem, 1vw, 1rem);
+}
+
+.nav-link {
+  color: var(--white) !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.active {
+  color: var(--primary-color-dark) !important;
+}
+
+#chooseLayout {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
 
 
 /* button */
@@ -104,6 +140,311 @@ a {
 }
 a:hover {
   color: var(--red) !important;
+}
+
+
+/*--------------------------------------------------------------
+# index page
+--------------------------------------------------------------*/
+
+/* index.global classes */
+.text-box {
+  background-color: rgba(248, 249, 250, 0);
+  padding: 1.618rem;
+}
+
+/* Smaller screens lose the margins to fit the whole screen */
+@media (max-width: 768px) {
+  .text-box {
+    padding: 1rem;
+  }
+}
+
+/* Animations blocks sliding in from left-side into screen */
+/*  Slide for mobile is from down up */
+/*.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* works better for smaller screens, when scrolling down the blocks move up slowly */
+@media (max-width: 768px) {
+  .hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.5s ease;
+  }
+  
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* hero/thumbnail section */
+/* --------------------------------------------------------------*/
+/* HERO SECTION 全体レイアウト */
+.hero-section {
+  width: calc(100vw);  /* padding + gap + borderを考慮 */
+  max-width: 100%;
+  height: calc(100vh - 50px); /* ナビバーの分を除く */
+  margin: 80px auto 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 10fr 1fr;
+  gap: 0;
+  padding: 0.5rem;
+  background-color: white;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 共通枠線 */
+.hero-section > * {
+  box-sizing: border-box;
+  border: 4px solid black;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* タイトル配置：左2セル */
+.hero-overlay {
+  position: relative; /* 疑似要素の基準に */
+  grid-column: 1 / 3; /* 列1〜2 */
+  grid-row: 1 / 2;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  overflow: visible; /* はみ出してもOK */
+}
+
+.hero-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 50%;    /* お好みで調整 */
+  height: 50%;   /* お好みで調整 */
+  background-color: var(--yellow); /* 例えばオレンジっぽい色 */
+  box-sizing: border-box;
+  z-index: 0; /* テキストの背面に配置 */
+  border-radius: 0; /* 四角形 */
+}
+
+.hero-text {
+  color: var(--black);
+  margin: 0;
+  font-size: larger;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-text span {
+  color: var(--red);
+}
+
+.hero-subtitle{
+  margin-top: 2rem;
+  font-size: smaller;
+  color: var(--blue);
+  position: relative;
+  z-index: 10;
+}
+/* カルーセル：中央5セル */
+#carouselHeaderImages {
+  grid-column: 3 / 8; /* 列3〜7 */
+  grid-row: 1 / 2;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-inner,
+.carousel-item,
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 右端：赤の塗りつぶし */
+.hero-section::before {
+  content: "";
+  grid-column: 8 / 9;
+  grid-row: 1 / 2;
+  background-color:var(--red);
+  display: block;
+  border-right: 4px solid var(--black);
+  border-top: 4px solid var(--black);
+  border-bottom: 4px solid var(--black);
+}
+
+/* 下段すべて：黄色の塗りつぶし */
+.hero-section::after {
+  content: "";
+  grid-column: 1 / 9;
+  grid-row: 2 / 3;
+  background-color: var(--black);
+  display: block;
+  min-height: 100%
+}
+
+
+
+/* Abstract section */
+/* --------------------------------------------------------------*/
+#abstract {
+  margin-top: 1.618rem;
+}
+
+.has-dropcap {
+  overflow: hidden;
+  font-size: 2rem;
+}
+
+.dropcap {
+  float: left;
+  font-size: clamp(18rem, 6vw, 8.5rem);
+  line-height: 0.70;
+  margin: 0.1em 0.1em 0em 0;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  padding-right: 0.15rem;
+}
+
+/* Themes-info and Narratives-info sections */
+/* they inherit most properties from the text-box class but need specific properties as well  */
+/* --------------------------------------------------------------*/
+#themes-info,
+#narratives-info {
+    margin-top: 1.618rem;
+}
+
+#theme-text-box {
+    background-color: var(--primary-color) !important;
+}
+
+#narratives-text-box {
+  background-color: var(--accent-color) !important;
+}
+
+.infoboxes-title {
+  font-size: clamp(6vw, 6vw, 7vw) !important;
+}
+
+.infoboxes-text {
+  font-size: clamp(1rem, 0.75rem, 1.2rem);
+  line-height: 1.6;
+  margin-top: 1rem;
+  color: var(--white) !important;
+}
+
+.infoboxes-text a {
+color: var(--white);
+}
+
+/* Image tiles in the themes-info and narratives-info section */
+.img-card {
+    border-radius: 0; 
+    border: none;
+    max-width: 83.3%;
+    max-height: 500px;
+    min-height: 500px;
+}
+
+#carouselThemeImages .card-img,
+#carouselNarrativeImages .card-img,
+#collections-info .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    min-height: 500px;
+    max-height: 500px;
+}
+
+#carouselThemeImages .card-img-overlay,
+#carouselNarrativeImages .card-img-overlay {
+    background: #121212a9;
+    border-radius: 0;
+}
+
+#carouselThemeImages .card-title-carousel,
+#carouselNarrativeImages .card-title-carousel {
+    font-size: clamp(2.8rem, 2.5vw, 3rem);
+    color: var(--white);
+}
+
+#carouselThemeImages .card-text-carousel,
+#carouselNarrativeImages .card-text-carousel {
+    color: var(--white);
+}
+#carouselThemeImages .card-text-carousel a,
+#carouselNarrativeImages .card-text-carousel a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: absolute;
+    top: 75%;
+}
+
+/* About info section */
+/* --------------------------------------------------------------*/
+
+#about-info {
+    margin-top: 1.618rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: var(--primary-color);
+  color: white;
+  transform: rotateY(180deg);
 }
 
 
