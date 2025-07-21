@@ -231,3 +231,8 @@ allArtLink.addEventListener("click", () => {
         col.classList.remove("d-none"); // show everything again
     }
 });
+
+//function to switch styles
+function switchStyle(sheet) {
+    document.getElementById("themeStylesheet").setAttribute("href", sheet);
+}

@@ -40,10 +40,10 @@
   --accent-color-dark: #952215;     /*darker persian red*/
 
   /* Theme colours */
-  --kitchen: #D19FCB;
-  --flight: #9D3617;
-  --nature: #DAF7DC;
-  --time: #ABC8C0;
+  --kitchen: #F4BBD3;
+  --flight: #a10625;
+  --nature: #87B38D;
+  --time: #326273;
 }
 
 body {
@@ -711,6 +711,17 @@ color: var(--white);
 # Gallery
 --------------------------------------------------------------*/
 
+#gallery h1 {
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(1.5rem, 5vw, 10rem);
+}
+
+#themes {
+  font-size: 25px;
+}
+
 .gallery-card .card {
   background: var(--black);
   /* border: none; */
@@ -859,5 +870,21 @@ color: var(--white);
 .around-the-kitchen-table {
   border-left: 3px solid var(--kitchen);
 
+}
+
+#Around-the-Kitchen-Table {
+ color: var(--kitchen);
+}
+
+#Taking-Flight {
+  color: var(--flight);
+}
+
+#Nature-Interferes {
+  color: var(--nature);
+}
+
+#Travelling-Through-Time {
+  color: var(--time);
 }
 
