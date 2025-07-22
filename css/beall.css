@@ -1,4 +1,3 @@
-/* EXAMPLE* Lester Beall */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
@@ -71,8 +70,10 @@ body {
 
 @media (max-width: 768px) {
   body {
-    background-size: auto 100%;          /* 幅は自動、高さ100%に合わせる */
-    background-position: right center;   /* 画像の右側を表示 */
+    background-size: auto 100%;            /* 幅は自動、高さ100%に合わせる */
+    background-position: 60% center;       /* 中心よりやや右に表示 */
+    background-attachment: fixed;          /* 背景を固定 */
+    background-repeat: no-repeat;          /* 繰り返しなし（必要であれば） */
   }
 }
 
@@ -120,7 +121,7 @@ a:hover {
 --------------------------------------------------------------*/
 /* According to dark theme */
 .navbar {
-  background-color: #12121258;
+  background-color: rgba(18, 18, 18, 0.345);
   color: var(--white);
   position: fixed;
   height: 3rem;
@@ -128,8 +129,20 @@ a:hover {
 
 @media (max-width: 578px) {
   .navbar {
-    background-color: #121212c4;
+    background-color: rgba(18, 18, 18, 0.345);
+    color: var(--black);
+    z-index: 12;
   }
+
+  .nav-link {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+  
+#main-nav{
+  background-color:rgba(18, 18, 18, 0.345);
+  padding: 0.5rem;
+}
 }
 
 #navbartext {
@@ -159,7 +172,7 @@ a:hover {
 }
 
 #chooseLayout {
-  background-color: var(--primary-color);
+  background-color: var(--black);
   color: var(--white);
 }
 
@@ -601,11 +614,17 @@ footer {
 /*--------------------------------------------------------------
 # exhibition page
 --------------------------------------------------------------*/
-
-
+#intro .text-center {
+  padding: 0;
+  background-color: var(--blue);
+  margin: 0!important;
+}
 
 #floating{
-    background-color: #fff;
+  background-color: #fff;
+  padding-left: 0;
+  padding-right: 0;
+    
 }
 
 .floating-answers-container {
@@ -656,6 +675,7 @@ footer {
   padding-left: 2rem;
   padding-right: 2rem;
   transform: rotate(-3.2deg);
+  font-weight: lighter !important;
 }
 
 .description,
@@ -682,6 +702,7 @@ footer {
   background-color: var(--black);
   color: white;
   padding: 0.5rem;
+  font-weight: lighter !important;
 }
 
 /* card link styles */
@@ -699,7 +720,7 @@ footer {
 
 /*  interactive map styles */
 /* change color with hover */
-.room:hover { fill: var(--yellow); }
+.room:hover { fill: var(--red); }
 
   /* pop up style */
 .popup {
@@ -720,13 +741,15 @@ footer {
     margin-top: 1.618rem;
     padding: 2% !important;
     padding-bottom: 5% !important;
-    background-color: var(--blue);
+    background-color: var(--yellow);
 }
 
 #rooms h1{
   background-color: var(--black);
   color: white;
   padding: 0.5rem;
+  font-weight: lighter !important;
+
 }
 
 /* browse the collections */
@@ -734,13 +757,15 @@ footer {
 #collections {
     margin-top: 1.618rem;
     padding-left: 2% !important;
-    background-color: var(--yellow);
+    background-color: var(--white);
 }
 
 #collections h1{
   background-color: var(--black);
   color: white;
   padding: 0.5rem;
+  font-weight: lighter !important;
+
 }
 
 #collections .btn-outline-secondary {
