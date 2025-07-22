@@ -1,5 +1,39 @@
 /* EXAMPLE* Lester Beall */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@font-face {
+  font-family: 'DeStijl';
+  src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ArtNouveauCaps';
+  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Glass Antiqua';
+  src: url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'University';
+  src: url('../fonts/University.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'University';
   src: url('../fonts/University.ttf') format('truetype');
@@ -7,6 +41,40 @@
 }
 
 
+
+/*--------------------------------------------------------------
+# global
+--------------------------------------------------------------*/
+
+:root {
+  --black: rgb(13, 0, 0);
+  --lightblack: rgb(44, 42, 42);
+  --white: #ECE2D0;
+  --red: #DC4F34;
+  --lightred: #e07a66;
+  --yellow: oklch(84.173% 0.15235 99.065);
+  --lightyellow: #efde81;
+  --blue: #569DC9;
+  --lightblue: #8ec0df;
+  --primary: #F93A2A;
+  --brightblue: #00A9E0;
+  --brightyellow: #FEEF1D;
+  --brightwhite: #F8F4F3;
+}
+body {
+  background-image: url("../resources/img/beall/beall_bg2.png");
+  background-attachment: fixed;
+  background-size: cover; /* PC用 */
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: auto 100%;          /* 幅は自動、高さ100%に合わせる */
+    background-position: right center;   /* 画像の右側を表示 */
+  }
+}
 
 h1,h2,h3 {
   font-family: 'University', sans-serif;
@@ -16,90 +84,806 @@ h1,h2,h3 {
   letter-spacing: 0.05em;          /* 文字間隔を少し広げる */
 }
 
-p{
- font-family: 'Roboto', sans-serif; 
- letter-spacing: 0.02em;
- font-size: 1.2rem;}
-
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  border-left: 10px solid red;
-  border-right: 10px solid blue;
-  background-color: #ffffff;
+h4,h5,h6,p, a,.btn{
+ font-family: 'Roboto Condensed', sans-serif; 
+ letter-spacing: 0.02rem;
 }
 
-/* Main title */
-.main-title {
-  font-size: 3rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #000;
-  border-bottom: 4px solid red;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-/* Buttons */
-.btn-primary {
-  background-color:#82994B;
-  border-color: #82994B;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.btn-primary:hover {
-  background-color: #597021;
-  border-color: #597021;
-}
-
-/* Cards */
-.card {
-  background-color: #f0f0f0;
-  border: 3px solid #000;
-  border-radius: 0;
-  padding: 1.5rem;
-  box-shadow: 5px 5px 0 red;
-}
-
-/* Diagonal lines：graphical effects for Beall-like
-body::before {
-  content: '';
-  position: fixed;
-  top: -100px;
-  left: -100px;
-  width: 300%;
-  height: 300%;
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 48px,
-    rgba(255, 0, 0, 0.05) 48px,
-    rgba(255, 0, 0, 0.05) 96px
-  );
-  z-index: -1;
-}
-
-/* Links */
 a {
-  color: #0033cc;
-  text-decoration: underline;
-  font-weight: bold;
-}
-a:hover {
-  color: #ff0000;
+ font-family: 'Roboto Condensed', sans-serif; 
+ letter-spacing: 0.02rem;
+ text-decoration: none;
+  color: var(--blue);
 }
 
-/* Section headings */
-h2, h3 {
+a:hover {
+  color: var(--primary);
+}
+
+.btn, .btn-primary {
+  background-color: var(--blue) !important;  /*added !important because sometimes the bootstrap default color shows up */
+  border-color: var(--primary-color-dark) !important;
+  border: none !important;
+
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--red) !important;  /*added !important because sometimes the bootstrap default color shows up */
+  border:none !important;
+
+}
+
+/*--------------------------------------------------------------
+# navbar
+--------------------------------------------------------------*/
+/* According to dark theme */
+.navbar {
+  background-color: #12121258;
+  color: var(--white);
+  position: fixed;
+  height: 3rem;
+}
+
+@media (max-width: 578px) {
+  .navbar {
+    background-color: #121212c4;
+  }
+}
+
+#navbartext {
+  margin-left: 20px; 
+  font-family: 'Libertinus Mono', monospace; 
+  font-size: clamp(0.75rem, 1vw, 1rem);
+}
+
+.nav-link {
+  color: var(--white) !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+}
+
+.active {
+  color: var(--primary-color-dark) !important;
+}
+
+.navbar img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 10px;
+}
+
+#chooseLayout {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/*--------------------------------------------------------------
+# off canvas
+--------------------------------------------------------------*/
+/* According to dark theme */
+.offcanvas {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: var(--white);
+}
+
+#layout-buttons .btn {
+  margin-bottom: 1.618rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+}
+
+#default-title {
+  color: var(--white);
+  margin-top: 1.618rem;
+}
+
+#default-button {
+  background-color: rgb(118, 118, 118) !important;
+}
+
+#aldine-button {
+  background-color: #e4dec6 !important;
+  border-color: #e4dec6 !important;
+  color: #574d38 !important;
+  font-family: "Cardo", 'serif' !important;
+  font-style: italic;
+ }
+
+ #aldine-button:hover {
+  background-color: #574d38 !important;
+  color: #e4dec6 !important;
+ }
+
+ #artnouveau-button {
+  background-color: #74918A !important;
+  border-color: #A8B162 !important;
+  color: #FBFDF7 !important;
+  font-family: 'ArtNouveauCaps', 'serif' !important;
+  font-style: italic;
+ }
+
+#artnouveau-button:hover {
+  background-color: #574B60 !important;
+  color: #FBFDF7 !important;
+}
+
+#stijl-button {
+  font-family: "Destijl", "sans-serif" !important;
+  border-radius: 0 !important;
+  color: black !important;
+  box-shadow: inset -0.5em -0.5em #FDDE06;;
+  background-color: white !important ;
+  border: 2px solid black !important;
+}
+
+#stijl-button:hover {
+  color: white!important;;
+  box-shadow: inset -0.5em -0.5em#0300AD ;
+  background-color: black ! important;
+
+}
+
+#beall-button {
+  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+#beall-button:hover {
+  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# index page
+--------------------------------------------------------------*/
+/* Smaller screens lose the margins to fit the whole screen */
+@media (max-width: 768px) {
+  .text-box {
+    padding: 1rem;
+  }
+}
+
+/* Animations blocks sliding in from left-side into screen */
+/*  Slide for mobile is from down up */
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* works better for smaller screens, when scrolling down the blocks move up slowly */
+@media (max-width: 768px) {
+  .hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.5s ease;
+  }
+  
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#hero{
+  margin-top: 0;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+
+#carouselHeaderImages.carousel,
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  object-position: center 30%;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;}
+
+/* diagonal banner */
+.hero-overlay::before {
+  content: "";
+  font-family: "University", sans-serif;
+  position: absolute;
+  top: -30%;
+  left: -40%;
+  width: 150%;
+  height: 50%;
+  padding: 1rem 0;
+  background-color: rgba(220, 79, 52, 0.9); 
+  color: white;
+  font-size: 3rem;
   font-weight: bold;
-  color: #000;
-  text-transform: uppercase;
-  border-left: 5px solid #ff0000;
-  padding-left: 0.5rem;
-  margin-top: 2rem;
+  transform: rotate(-12deg);
+  z-index: 10;
+  white-space: nowrap;
+  display: flex;
+  align-items: flex-end;   /* ← align text to bottom */
+  justify-content: flex-end;   /* ← to the left */
+  padding-right: 50%;    /*  adjust */
+  padding-bottom: 20px;
+  letter-spacing: 0.05em;         
+
+}
+.hero-text {
+  font-family: "University", sans-serif;
+  position: absolute;
+  top: 10%;
+  left: -50%;
+  width: 150%;
+  transform: rotate(-12deg);
+  font-size: clamp(4rem, 2vw, 2rem);
+  color: black;
+  z-index: 20; /* above banner */
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: 0.05em;     
+}
+
+.hero-text span {
+  color: white;
+}
+
+.hero-overlay::after {
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  left: -30%;
+  width: 160%;
+  height: 30%;
+  background-color:rgba(228, 204, 67, 0.9);
+  transform: rotate(12deg);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-subtitle {
+  position: absolute;
+  font-family: "University", sans-serif;
+  bottom: 9%;
+  left: -55%;
+  width: 150%;
+  transform: rotate(12deg);
+  font-size: 1.4rem;
+  color: white;
+  text-align: center;
+  z-index: 20; /* 帯より上 */
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: 0.05em;     
+
+}
+
+@media (max-width: 768px) {
+  .hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.5s ease;
+  }
+  
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero-text {
+  font-family: "University", sans-serif;
+  position: absolute;
+  top: 12%;
+  left: -50%;
+  width: 150%;
+  transform: rotate(-12deg);
+  font-size: 2rem;
+  color: black;
+  z-index: 20; /* 帯より上に表示 */
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: 0.05em;     
+}
+
+.hero-subtitle {
+  position: absolute;
+  font-family: "University", sans-serif;
+  bottom: 4%;
+  left: -35%;
+  width: 150%;
+  transform: rotate(12deg);
+  font-size: 1.4rem;
+  color: white;
+  text-align: center;
+  z-index: 20; /* 帯より上 */
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: 0.05em;     
+
+}
+  .hero-overlay::before {
+    left: -30%;
+    padding-right: 40%;
+  }
+  
+  .hero-overlay::after {
+    left: -35%;
+  }
+  
+  .hero-text {
+    left: -30%;
+  }
+
+}
+
+/* Abstract section */
+/* --------------------------------------------------------------*/
+#abstract {
+  margin-top: 1.8rem ;
+  margin-bottom: 1.8rem ;
+  padding-top: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#abstract h1 {
+  font-family: 'University', sans-serif;
+  font-size: clamp(4rem, 3.5vw, 3rem);
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+.dropcap {
+  float: left;
+  font-size: clamp(18rem, 6vw, 8.5rem);
+  line-height: 0.70;
+  margin: 0.1em 0.1em 0em 0;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  padding-right: 0.15rem;
+
+}
+
+
+/* Themes-info and Narratives-info sections */
+/* they inherit most properties from the text-box class but need specific properties as well  */
+/* --------------------------------------------------------------*/
+#themes-info,
+#narratives-info {
+    margin-top: 1.618rem;
+}
+
+#theme-text-box {
+    background-color: var(--white) !important;
+}
+
+#narratives-text-box {
+  background-color: var(--white) !important;
+}
+
+.infoboxes-title {
+  font-family: 'University';
+  font-size: clamp(4vw, 4vw, 5vw) !important;
+  
+}
+
+.infoboxes-text {
+  font-size: clamp(1rem, 0.75rem, 1.2rem);
+  line-height: 1.6;
+  margin-top: 1rem;
+  color: var(--black) !important;
+}
+
+.infoboxes-text a {
+color: var(--white);
+}
+
+/* Image tiles in the themes-info and narratives-info section */
+.img-card {
+    border-radius: 0; 
+    border: none;
+    max-width: 83.3%;
+    max-height: 500px;
+    min-height: 500px;
+}
+
+#carouselThemeImages .card-img,
+#carouselNarrativeImages .card-img,
+#collections-info .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    min-height: 500px;
+    max-height: 500px;
+}
+
+#carouselThemeImages .card-img-overlay,
+#carouselNarrativeImages .card-img-overlay {
+    background: #121212a9;
+    border-radius: 0;
+}
+
+#carouselThemeImages .card-title-carousel,
+#carouselNarrativeImages .card-title-carousel {
+    font-size: clamp(2.8rem, 2.5vw, 3rem);
+    color: var(--white);
+    font-family: 'University', sans-serif;
+}
+
+#carouselThemeImages .card-text-carousel,
+#carouselNarrativeImages .card-text-carousel {
+    color: var(--white);
+}
+#carouselThemeImages .card-text-carousel a,
+#carouselNarrativeImages .card-text-carousel a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: absolute;
+    top: 75%;
+}
+
+/* About info section */
+/* --------------------------------------------------------------*/
+
+#about-info {
+    margin-top: 1.618rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.6);
+
+}
+
+#about-info .has-dropcap .dropcap  {
+  font-family: 'University', sans-serif;
+  position: relative;
+  font-size: clamp(8rem, 6vw, 8.5rem);
+  z-index: 0;
+}
+
+
+#about-info p{
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+
+/* Footer */
+/* --------------------------------------------------------------*/
+
+footer {
+  background-color: var(--black);
+  color: white;
+  padding: 30px 0;
+  font-size: 0.9rem;
+  margin-top: 5rem;
+}
+
+/*--------------------------------------------------------------
+# exhibition page
+--------------------------------------------------------------*/
+
+
+
+#floating{
+    background-color: #fff;
+}
+
+.floating-answers-container {
+    position: relative;
+    min-height: 600px;
+    background-color: var(--text-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;      
+    padding: 80px 50px;  
+}
+
+#answer-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* bring it to the back */
+  pointer-events: none;
+  background-image: url("../resources/img/beall/beall_bg.png");
+  background-position: 0%;
+  background-size: cover;
+}
+
+.floating-answer {
+    position: absolute;
+    color: #816e67;
+    padding: 5px 10px;
+    border-radius: 8px;
+    max-width: 200px;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+    z-index: 10;
+    font-family: "University";
+}
+
+.main-heading .fw-bold{
+  position: relative;
+  z-index: 2;
+  background-color: var(--red);
+  letter-spacing: 0.2rem;
+  color: white;
+  text-align: center; 
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transform: rotate(-3.2deg);
+}
+
+.description,
+.action-area {
+  position: relative;
+  z-index: 2; 
+}
+
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
+100% { transform: translateY(0); }
+}
+
+/* narrative */
+
+#choose-narrative {
+  margin-top: 1.618rem !important;
+  padding: 2% !important;
+  background-color: var(--white);
+}
+
+#choose-narrative h1{
+  background-color: var(--black);
+  color: white;
+  padding: 0.5rem;
+}
+
+/* card link styles */
+.card-group .card{
+  border-radius: 0;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover,
+.link-card:focus,
+.link-card:active {
+    transform: translate(-5px, -5px);
+}
+
+/*  interactive map styles */
+/* change color with hover */
+.room:hover { fill: var(--yellow); }
+
+  /* pop up style */
+.popup {
+    position: absolute;
+    display: none;
+    width: 50% ;            /* this is controlled with JS */
+    max-width: 300px;
+    padding: 1em 1.5em;
+    background: #fff;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+    font-size: 14px;
+    z-index: 10;
+}
+
+  /* Discover the rooms */
+
+#rooms {
+    margin-top: 1.618rem;
+    padding: 2% !important;
+    padding-bottom: 5% !important;
+    background-color: var(--blue);
+}
+
+#rooms h1{
+  background-color: var(--black);
+  color: white;
+  padding: 0.5rem;
+}
+
+/* browse the collections */
+
+#collections {
+    margin-top: 1.618rem;
+    padding-left: 2% !important;
+    background-color: var(--yellow);
+}
+
+#collections h1{
+  background-color: var(--black);
+  color: white;
+  padding: 0.5rem;
+}
+
+#collections .btn-outline-secondary {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+#collections .btn-outline-secondary:hover {
+  background-color: var(--red) !important;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# gallery
+--------------------------------------------------------------*/
+#gallery {
+  background-color: var(--white);
+}
+
+#gallery h1{
+  font-weight: 600;
+  font-size: clamp(4rem, 3.5vw, 3rem);
+  letter-spacing: 0.2rem;
+  align-items: center;
+}
+
+#gallery .gallery-card {
+  padding: 1rem 1rem 2.5rem 1rem; /* add */
+  border-radius: none;
+  margin: 0 !important;
+}
+
+#gallery .card {
+  padding: 1rem !important;
+  border: none !important; /* Bootstrapのデフォルト維持でもOK */
+}
+
+
+#gallery .accordion-button {
+  border: none !important;
+}
+
+#gallery .accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+
+/* 1番目、5番目、9番目... */
+#gallery .gallery-card:nth-child(4n+1) {
+  background: linear-gradient(135deg, var(--red) 50%, var(--lightred) 50%);
+}
+
+/* 2番目、6番目、10番目... */
+#gallery .gallery-card:nth-child(4n+2) {
+  background: linear-gradient(135deg, var(--blue) 50%, var(--lightblue) 50%);
+}
+
+/* 3番目、7番目、11番目... */
+#gallery .gallery-card:nth-child(4n+3)  {
+  background: linear-gradient(135deg, var(--yellow) 50%, var(--lightyellow) 50%);
+}
+
+/* 4番目、8番目、12番目... */
+#gallery .gallery-card:nth-child(4n)  {
+  background: linear-gradient(135deg, var(--black) 50%, var(--lightblack) 50%);
+}
+
+
+/*--------------------------------------------------------------
+# artViewer
+--------------------------------------------------------------*/
+
+
+#artCarousel .carousel-inner {
+  margin: 1rem;
+  
+}
+
+#artCarousel .card {
+  margin: 1rem;
+  background-color: rgba(255, 255, 255, 0.8) !important; /* R,G,B,Alpha(0〜1) */
+  border: none; 
+  border-radius: 0 !important;
+}
+
+
+
+#artCarousel .card-title {
+  font-size: clamp(2rem, 1.5vw, 2rem);
+  color: var(--black);
+  font-weight: light;
+  font-family: 'University', sans-serif;
+} 
+
+#artCarousel .text-muted {
+  font-size: clamp(1.1rem, 1vw, 1rem);
+  margin-top: 1rem;
+  font-weight: 500;
+  font-family: "Roboto Condensed", sans-serif;
+} 
+
+
+#artCarousel .accordion-button {
+  color: var(--black);
+  border: none;
+  border-radius: 0;
+  box-shadow: none; /* removes default focus shadow */
+  outline: none; /* removes focus outline */
+  font-weight: bold; 
+  font-size: 18px;
+  text-transform: capitalize;
+  margin: 0;
+  
+}
+
+#artCarousel .accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+#artCarousel .accordion-body td {
+  padding: 0.5rem 1rem; /* Padding inside cells */
+  vertical-align: top;
+  color: var(--black);
+  text-transform: capitalize;
+  font-family: Roboto Condensed, sans-serif;
+}
+
+#artCarousel h2,h3,p {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*--------------------------------------------------------------
+# disclaimer
+--------------------------------------------------------------*/
+
+#disclaimer {
+  background-color: rgba(255, 255, 255, 0.8);
 }
