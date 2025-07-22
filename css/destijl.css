@@ -1,4 +1,3 @@
-/* De Stijl STILL UNDER CONSTRUCTION */
 @import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
@@ -104,6 +103,20 @@ body{
   font-family: "Oxanium", sans-serif;
 }
 
+/* Links */
+a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  color: var(--red) !important;
+}
+
+/*--------------------------------------------------------------
+# navbar
+--------------------------------------------------------------*/
+
 /* According to dark theme */
 .navbar::before {
   content: "";
@@ -186,12 +199,14 @@ body{
   color: var(--primary-color-dark) !important;
 }
 
-
+/*--------------------------------------------------------------
+# off canvas
+--------------------------------------------------------------*/
 
 .offcanvas-end   {
-  background-image: url("../resources/img/destijl/mondrian_frame2.png"); /* 画像のパスに置き換えてください */
-  background-size: 80%; /* 画面にフィットさせる */
-  background-position: right top; /* 右上に配置 */
+  background-image: url("../resources/img/destijl/mondrian_frame2.png"); 
+  background-size: 80%; 
+  background-position: right top; 
   background-repeat: no-repeat;
   padding-right: 1rem;
 
@@ -210,18 +225,6 @@ body{
 .btn:hover {
   background-color: var(--red);
   color:white !important  ;
-}
-
-
-
-/* Links */
-a {
-  color: var(--blue);
-  text-decoration: none;
-  font-weight: bold;
-}
-a:hover {
-  color: var(--red) !important;
 }
 
 
@@ -269,9 +272,8 @@ a:hover {
   }
 }
 
-/* hero/thumbnail section */
-/* --------------------------------------------------------------*/
-/* HERO SECTION 全体レイアウト */
+/*------ hero/thumbnail section --------*/
+
 .hero-section {
   width: calc(100vw);  /* padding + gap + borderを考慮 */
   max-width: 100%;
@@ -288,7 +290,7 @@ a:hover {
   overflow: hidden;
 }
 
-/* 共通枠線 */
+/* hero-section common */
 .hero-section > * {
   box-sizing: border-box;
   border: 4px solid black;
@@ -298,10 +300,10 @@ a:hover {
   overflow: hidden;
 }
 
-/* タイトル配置：左2セル */
+/* position overlay */
 .hero-overlay {
-  position: relative; /* 疑似要素の基準に */
-  grid-column: 1 / 3; /* 列1〜2 */
+  position: relative; /* must */
+  grid-column: 1 / 3; /* rows1〜2 */
   grid-row: 1 / 2;
   background-color: white;
   display: flex;
@@ -310,7 +312,7 @@ a:hover {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
-  overflow: visible; /* はみ出してもOK */
+  overflow: visible; /* OK for overflow */
 }
 
 .hero-overlay::before {
@@ -318,12 +320,12 @@ a:hover {
   position: absolute;
   top: 0%;
   left: 0%;
-  width: 50%;    /* お好みで調整 */
-  height: 50%;   /* お好みで調整 */
+  width: 50%;    
+  height: 50%;  
   background-color: var(--yellow); /* */
   box-sizing: border-box;
-  z-index: 0; /* テキストの背面に配置 */
-  border-radius: 0; /* 四角形 */
+  z-index: 0; /* below the text */
+  border-radius: 0; 
 }
 
 .hero-text {
@@ -345,9 +347,9 @@ a:hover {
   position: relative;
   z-index: 10;
 }
-/* カルーセル：中央5セル */
+
 #carouselHeaderImages {
-  grid-column: 3 / 8; /* 列3〜7 */
+  grid-column: 3 / 8;
   grid-row: 1 / 2;
   width: 100%;
   height: 100%;
@@ -361,7 +363,7 @@ a:hover {
   object-fit: cover;
 }
 
-/* 右端：赤の塗りつぶし */
+/* ：赤の塗りつぶし */
 .hero-section::before {
   content: "";
   grid-column: 8 / 9;
@@ -426,10 +428,7 @@ a:hover {
   }
 }
 
-
-
-/* Abstract section */
-/* --------------------------------------------------------------*/
+/*------ abstract section --------*/
 #abstract {
   margin-top: 1.618rem;
 }
@@ -500,11 +499,60 @@ a:hover {
  
 }
 
+@media screen and (max-width: 768px) {
+
+  /* position vertically */
+  #abstract .text-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: 6px solid black;
+    position: relative;
+  }
+
+  /* first paragraph */
+  #abstract .text-box p.has-dropcap {
+    order: 1;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+
+  /* second paragraph */
+  #abstract .text-box p.hidden:not(.has-dropcap) {
+    order: 2;
+    padding: 2rem;
+    border-left: none;
+    border-top: 4px solid black;
+  }
+
+  /* don't show empty grid */
+  #abstract .text-box::before {
+    display: none;
+  }
+
+  /* show the last empty grid but low height */
+  #abstract .text-box::after {
+    order: 3;
+    content: "";
+    display: block;
+    height: 50px;
+    background-color: var(--yellow);
+    border-top: 4px solid black;
+  }
+
+  /* make dropcap smaller */
+  .dropcap {
+    font-size: 4rem;
+    line-height: 1;
+    margin-right: 0.5rem;
+  }
+}
 
 
+/*------ hero/thumbnail section --------*/
 /* Themes-info and Narratives-info sections */
 /* they inherit most properties from the text-box class but need specific properties as well  */
-/* --------------------------------------------------------------*/
+
 
 #theme-info,
 #narrative-info {
@@ -606,8 +654,8 @@ color: var(--white);
     color: white;
 }
 
+/*------ Browse the collections section* --------*/
 
-/*Browse the collections section*/
 #collections-info {
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -619,9 +667,7 @@ color: var(--white);
 
 
 
-
-/* About info section */
-/* --------------------------------------------------------------*/
+/*------ About info section --------*/
 
 #about-info {
     margin-top: 1.618rem;
@@ -710,8 +756,6 @@ color: var(--white);
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   animation: float 4s ease-in-out infinite;
 } 
-
-
 
 #floating-answers-container {
   display: grid;

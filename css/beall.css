@@ -1,13 +1,26 @@
 /* EXAMPLE* Lester Beall */
 
-body {
-  background-color: #EDEDED;
-  color: #1A1A1A;
-  font-family: 'Cormorant Garamond', serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: 'University';
+  src: url('../fonts/University.ttf') format('truetype');
+  font-style: normal;
 }
+
+
+
+h1,h2,h3 {
+  font-family: 'University', sans-serif;
+  display: inline-block;
+  transform: scaleX(0.8);         /* 横幅を少し縮める */
+  transform-origin: left;
+  letter-spacing: 0.05em;          /* 文字間隔を少し広げる */
+}
+
+p{
+ font-family: 'Roboto', sans-serif; 
+ letter-spacing: 0.02em;
+ font-size: 1.2rem;}
+
 
 .container {
   max-width: 900px;
