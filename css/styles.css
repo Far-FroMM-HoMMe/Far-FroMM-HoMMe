@@ -604,19 +604,22 @@ color: var(--white);
 }
 
 #artCarousel .card-body h5 {
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
   font-weight: 600;
   padding-bottom: 8px;
 
 }
 
 #artCarousel .card-body h6 {
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
   font-weight: 600;
 }
 
 #artCarousel .card-body p {
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
   
 }
 
@@ -624,6 +627,17 @@ color: var(--white);
   object-fit: contain;
   object-position: 50% 50%;
   max-height: 550px;
+}
+
+@media (max-width: 375px) {
+  #artCarousel .card img {
+    max-width: 220px;
+  }
+}
+
+#artCarousel .card-text{
+  color: var(--white);
+  
 }
 
 /* --- Accordion --- */
@@ -639,7 +653,8 @@ color: var(--white);
   padding-left: 2px;
   padding-bottom: 20px;
   /* font-weight: bold; */
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
   text-transform: capitalize;
   
 }
@@ -698,6 +713,7 @@ color: var(--white);
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
+  font-size: clamp(0.75rem, 0.2813rem + 1.5vw, 1.125rem);
 }
 
 #artCarousel .accordion-body td {
@@ -726,7 +742,8 @@ color: var(--white);
 }
 
 #artCarousel .accordion-body p {
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
 }
 
 /*--------------------------------------------------------------

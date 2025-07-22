@@ -6,7 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Encode+Sans:wght@100..900&family=Forum&family=Glass+Antiqua&family=Metamorphous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 @font-face {
   font-family: 'DeStijl';
@@ -35,6 +36,13 @@
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'Pixelify';
+    src: url('../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* custom properties you can call with var() */
 /* The dark-theme will be the default */
 
@@ -46,34 +54,36 @@
   --accent-color: #B14236;          /*Persian Red*/
   --accent-color-dark: #952215;     /*darker persian red*/
 
-  --n-black: #211B29;
-  --n-white: #FDFBEB;
-  --n-purple: #3F334D;
-  --n-purple-light: #7D8491;
-  --n-blue: #ABC8C0;
-  --n-green: #A8B162;
-
   /* Theme colours */
   --kitchen: #F4BBD3;
   --flight: #a10625;
   --nature: #87B38D;
   --time: #326273;
+
+  --crt-black: hsl(154 50% 5%);
+  --crt-green: hsl(154, 52%, 56%);
 }
 
 body {
-    background-color: var(--n-white);
-    color: var(--n-black);
-    font-family: 'Glass Antiqua', serif;
+    /* padding: 50px; */
+    /* background-image: url(../resources/img/2035/lain_room.jpg);
+    background-color: var(--crt-black); */
+    background: 
+    linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--crt-black) 80%, transparent),
+        color-mix(in srgb, var(--crt-black) 80%, transparent)
+    ),
+    url(../resources/img/2035/lain_room.jpg);
+    background-size: contain;
+    color: var(--crt-green);
+    text-shadow: 0 0 6px hsl(154, 52%, 56%);
+    font-family: 'Pixelify', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
     line-height: 1.5;
-    border: 50px solid transparent; /* Required for border-image to work */
-    border-image-source: url('../resources/img/artnouveau/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
-    border-image-slice: 165 65 220; /* Adjust as needed for thickness */
-    border-image-width: 50px;
-    border-image-repeat: round; /* Options: stretch | repeat | round | space */
-    border-image-outset: 0;
+    padding-inline: 30px;
 }
 
 p { 
@@ -82,23 +92,23 @@ p {
 
 /* For light-theme pages, add class="light" to body to reverse bg and text colors */
 body.light {
-    background-color:  var(--n-white);           /*Anti Flash White*/
-    color: var(--n-black);                       /*Eerie Black*/
+    background-color:  #EDEDED;           /*Anti Flash White*/
+    color: #1A1A1A;                       /*Eerie Black*/
 }
 
 /* links and buttons */
 a {
-  color: var(--n-purple-light);
+  color: var(--accent-color);
 }
 
 a:hover {
-  color: var(--n-purple);
+  color: var(--accent-color-dark);
 }
 
 .btn-primary {
-  background-color: var(--n-green);
-  border-color: var(--n-green);
-  color: var(--n-white);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(#EDEDED);
 }
 
 .btn-primary:hover,
@@ -110,37 +120,31 @@ a:hover {
 }
 /* According to dark theme */
 .navbar {
-  background-color: color-mix(in srgb, var(--n-blue), transparent 60%);
-  color: var(--n-white);
+  background-color: #12121258;
+  /* color: var(--white); */
   position: fixed;
-  border-bottom: 5px solid var(--n-green);
-  /* border-radius: 5px; */
-  margin-inline: 50px;
-  /* margin-top: 50px; */
-  font-size: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 @media (max-width: 578px) {
   .navbar {
-    background-color: color-mix(in srgb, var(--n-blue), transparent 60%);
+    background-color: #121212c4;
   }
 }
 
 #navbartext {
-  margin-left: 20px; 
-  /* font-family: 'Libertinus Mono', monospace;  */
+  /* margin-left: 20px; 
+  font-family: 'Libertinus Mono', monospace;  */
   font-size: clamp(0.75rem, 1vw, 1rem);
 }
 
 .nav-link {
-  color: var(--white) !important;
+  /* color: var(--white) !important; */
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-link:hover {
-  color: var(--n-green) !important;
+  color: var(--primary-color) !important;
 }
 
 .active {
@@ -148,30 +152,20 @@ a:hover {
 }
 
 #chooseLayout {
-  background-color: var(--n-green);
+  background-color: var(--primary-color);
   color: var(--white);
 }
 
 /* According to dark theme */
 .offcanvas {
-  background-color: var(--n-white);
-  color: var(--n-black);
-  border-radius: 30px;
-  padding: 5px;
+  background-color: var(--black);
+  color: var(--white);
 }
-
-.offcanvas-body {
-  border: 5px solid var(--n-blue);
-  /* padding: 40px; */
-  border-radius: 30px;
-}
-
-
 
 #layout-buttons .btn {
   margin-bottom: 1.618rem;
   padding: 0.5rem 1rem;
-  background-color: var(--n-green);
+  background-color: var(--primary-color);
 }
 
 #default-title {
@@ -197,16 +191,16 @@ a:hover {
  }
 
  #artnouveau-button {
-  background-color: #ABC8C0 !important;
-  color: #FDFBEB !important;
+  background-color: #74918A !important;
+  border-color: #A8B162 !important;
+  color: #FBFDF7 !important;
   font-family: 'ArtNouveauCaps', 'serif' !important;
   font-style: italic;
  }
 
 #artnouveau-button:hover {
-  background-color: #3F334D !important;
-  border-color: #A8B162 !important;
-  color: #FDFBEB !important;
+  background-color: #574B60 !important;
+  color: #FBFDF7 !important;
 }
 
 #stijl-button {
@@ -225,6 +219,7 @@ a:hover {
 
 }
 
+
 #beall-button {
   /* To be decided */
  }
@@ -238,22 +233,41 @@ a:hover {
  }
 
 
-
 footer {
-  background-color: var(--n-blue);
+  background-color: #20202097;
   color: white;
   padding: 30px 0;
   font-size: 0.9rem;
-  /* margin-top: 5rem; */
+  margin-top: 5rem;
 }
 
-.background-decoratif1 {
-  /* background: linear-gradient(rgba(250, 250, 250, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/img/artnouveau/36_mucha_documentsdecoratifs_1901-4.jpg") fixed center center;
-  background-size:contain;
-  padding: 100px 0;
-  min-height: 100px; */
-  background-image: url("../resources/img/artnouveau/Alfons_Mucha_border-1.jpg");
-  min-height: 150px;
+/* #glare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; 
+    background: radial-gradient(hsl(154 5% 15%) 0%, hsl(154 50% 5%) 70%);
+} */
+
+#interlaced {
+    position: fixed;
+    background: repeating-linear-gradient(transparent 0px 1px, hsl(154 0% 0%/.3) 3px 4px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+    animation: lines 0.066666666s linear infinite;
+}
+
+@keyframes lines {
+    0% {background-position: 0px 0px}
+    50% {background-position: 0px 0px}
+    51% {background-position: 0px 2px}
+    100% {background-position: 0px 2px}
 }
 
 /*--------------------------------------------------------------
@@ -307,72 +321,66 @@ footer {
 
 /* hero/thumbnail section */
 /* --------------------------------------------------------------*/
-#hero {
-  background-image: url('../resources/img/artnouveau/36_mucha_documentsdecoratifs_1901-4.jpg');
-  
-}
-
 .hero-section {
-  position: relative;
-  height: 70vh;
-  overflow: hidden;
-  transition: opacity 0.5s ease;
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
 }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(84, 83, 83, 0.2), rgba(0, 0, 0, 0.898));
-}
+/* .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(84, 83, 83, 0.2), rgba(0, 0, 0, 0.898));
+} */
 
 .hero-text {
-  font-family: 'ArtNouveauCaps', 'serif';
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-  font-size: clamp(7rem, 12vw, 11rem);
-  color: var(--n-white);
-  text-align: center;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  line-height: 1;
-  
-  position: absolute;
-  top: 60%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  padding: 0 40px;
-  box-sizing: border-box;
+    /* font-family: "Libertinus Mono", monospace; */
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size: clamp(7rem, 12vw, 11rem);
+    /* color: rgb(247, 247, 247); */
+    text-align: start;
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
+    line-height: 1;
+    
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
-.hero-text span {
-    color: var(--n-green);
-}
+/* .hero-text span {
+    color: var(--primary-color);
+} */
 
 .hero-subtitle {
-  font-family: 'Glass Antiqua', serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: clamp(1.5rem, 3vw, 5rem);
-  color: var(--n-green);
-  text-align: center;
-  text-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772);
-  text-transform: uppercase;
-  line-height: 1;
-  
-  position: absolute;
-  top: clamp(95%, 81vw, 89%);
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  padding: 0 40px;
-  box-sizing: border-box;
-  margin-top: 0.15rem;
-  padding-bottom: 30px;
+    /* font-family: "Libertinus Mono", monospace; */
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(1.5rem, 3vw, 5rem);
+    /* color: #82994B; */
+    text-align: start;
+    /* text-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772); */
+    line-height: 1;
+    
+    position: absolute;
+    top: clamp(95%, 81vw, 89%);
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin-top: 0.15rem;
+    padding-bottom: 30px;
 }
 
 /* Abstract section */
@@ -381,7 +389,7 @@ footer {
   margin-top: 1.618rem;
 }
 
-.has-dropcap {
+/* .has-dropcap {
   overflow: hidden;
   font-size: 2rem;
 }
@@ -391,83 +399,49 @@ footer {
   font-size: clamp(18rem, 6vw, 8.5rem);
   line-height: 0.70;
   margin: 0.1em 0.1em 0em 0;
-  font-family: 'ArtNouveauCaps', Georgia, 'Times New Roman', Times, serif;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   padding-right: 0.15rem;
-  padding-top: 20px;
-  color: var(--n-purple);
-}
-
-#abstract .text-box {
-  border: 5px solid var(--n-blue);
-  border-radius: 30px;
-  padding: 40px;
-  margin-bottom: 20px;
-}
-
-.card-carousel {
-  background-color: var(--n-white);
-}
+} */
 
 /* Themes-info and Narratives-info sections */
 /* they inherit most properties from the text-box class but need specific properties as well  */
 /* --------------------------------------------------------------*/
-#themes-info {
+#themes-info,
+#narratives-info {
     margin-top: 1.618rem;
 }
 
 #theme-text-box {
-  /* background-color: var(--primary-color) !important; */
-  border: 5px solid var(--n-blue);
-  border-radius: 30px;
-  padding: 40px;
-  margin-bottom: 20px;
+    background-color: var(--primary-color) !important;
 }
 
 #narratives-text-box {
-  /* background-color: var(--accent-color) !important; */
-  border: 5px solid var(--n-blue);
-  border-radius: 30px;
-  padding: 40px;
-  margin-bottom: 20px;
+  background-color: var(--accent-color) !important;
 }
 
 .infoboxes-title {
   font-size: clamp(6vw, 6vw, 7vw) !important;
-  color: var(--n-purple);
 }
 
 .infoboxes-text {
   font-size: clamp(1rem, 0.75rem, 1.2rem);
   line-height: 1.6;
   margin-top: 1rem;
-  color: var(--n-black) !important;
+  color: var(--white) !important;
 }
 
 .infoboxes-text a {
-color: var(--n-black);
+color: var(--white);
 }
 
 /* Image tiles in the themes-info and narratives-info section */
 .img-card {
-    border-radius: 30px; 
+    border-radius: 0; 
     border: none;
     max-width: 83.3%;
     max-height: 500px;
     min-height: 500px;
 }
-
-#carouselThemeImages,
-#carouselNarrativeImages {
-  border: 5px solid var(--n-blue);
-  border-radius: 30px;
-  margin-bottom: 20px;
-}
-
-#collectionsImageCard {
-  border: 5px solid var(--n-blue);
-  border-radius: 30px;
-}
-
 
 #carouselThemeImages .card-img,
 #carouselNarrativeImages .card-img,
@@ -476,15 +450,15 @@ color: var(--n-black);
     height: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 25px;
+    border-radius: 0;
     min-height: 500px;
     max-height: 500px;
 }
 
 #carouselThemeImages .card-img-overlay,
 #carouselNarrativeImages .card-img-overlay {
-    background: #574b60ab;
-    border-radius: 25px;
+    background: #121212a9;
+    border-radius: 0;
 }
 
 #carouselThemeImages .card-title-carousel,
@@ -503,13 +477,8 @@ color: var(--n-black);
     font-weight: 500;
     position: absolute;
     top: 75%;
-    color: var(--n-green);
 }
 
-
-.infoboxes-title {
-    font-size: clamp(6vw, 6vw, 7vw) !important;
-}
 /* About info section */
 /* --------------------------------------------------------------*/
 
@@ -563,28 +532,7 @@ color: var(--n-black);
 
 /*floating answers styles*/
 #floating{
-  background-color: var(--n-white);
-  padding: 0;
-  /* border: 5px solid var(--n-blue);
-  border-radius: 30px;
-  margin-bottom: 20px; */
-}
-
-.main-heading h1 {
-  font-family: 'ArtNouveauCaps', 'serif';
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-  font-size: clamp(6rem, 1vw, 10rem);
-  color: var(--n-blue);
-  text-align: center;
-  /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
-  line-height: 1;
-}
-
-.description p {
-  font-size: 30px !important;
-  color: var(--n-purple) !important;
+    background-color: #fff;
 }
 
 .floating-answers-container {
@@ -600,16 +548,33 @@ color: var(--n-black);
     padding: 80px 50px;  
 }
 
+#answer-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* bring it to the back */
+  pointer-events: none;
+}
+
 .floating-answer {
     position: absolute;
     font-style: italic;
-    font-size: 20px;
-    color: var(--n-purple);
+    color: #6c757d;
     padding: 5px 10px;
     border-radius: 8px;
     max-width: 200px;
     pointer-events: none;
     animation: float 8s ease-in-out infinite;
+    z-index: 10;
+}
+
+.main-heading,
+.description,
+.action-area {
+  position: relative;
+  z-index: 2; 
 }
 
 @keyframes float {
@@ -619,16 +584,19 @@ color: var(--n-black);
 }
 
 /* card link styles */
+.card-group .card{
+  border-radius: 0;
+}
 .link-card:hover,
 .link-card:focus,
 .link-card:active {
-    background-color: var(--n-white); /* hovering background color */
+    background-color: #EDEDED; /* hovering background color */
     transition: background-color 0.2s ease;
 }
 
 /*  interactive map styles */
 /* change color with hover */
-.room:hover { fill: var(--n-green); }
+.room:hover { fill: var(--primary-color); }
 
   /* pop up style */
 .popup {
@@ -637,23 +605,10 @@ color: var(--n-black);
     width: 50% ;            /* this is controlled with JS */
     max-width: 300px;
     padding: 1em 1.5em;
-    background: var(--n-blue);
-    border-radius: 1.5em;
+    background: #fff;
     box-shadow: 2px 2px 8px rgba(0,0,0,.15);
     font-size: 14px;
     z-index: 10;
-}
-
-#choose-narrative {
-  text-align: center;
-}
-
-#choose-narrative .card {
-  background-color: var(--n-blue);
-  border: 5px solid var(--n-blue);
-  border-radius: 30px;
-  padding: 40px;
-  margin-bottom: 20px;
 }
 
 
@@ -662,25 +617,10 @@ color: var(--n-black);
 --------------------------------------------------------------*/
 
 #viewer {
-    /* margin-top: 6rem !important;
-    border: 50px solid transparent; 
-    border-image-source: url('../resources/img/artnouveau/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
-    border-image-slice: 165 65 220; 
-    border-image-width: 50px;
-    border-image-repeat: round; 
-    border-image-outset: 0; */
-    /* padding: 6px 3px; */
-    /* height: 100%; */
-    /* padding-top: 60px;
-    padding-bottom: 80px;
-    padding-inline: 5px; */
-
-    height: 90vh; /* Fixed height relative to screen */
-    width: 100%;
-    overflow-y: scroll;
-    margin-top: 0 !important;
-    
-    
+  margin-top: 5rem !important;
+  height: 90vh; /* Fixed height relative to screen */
+  width: 100%;
+  overflow-y: scroll;
 }
 
 /* === Carousel === */
@@ -689,56 +629,27 @@ color: var(--n-black);
   width: 3%;
 }
 
-#artCarousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 0 !important;
-  height: 100%;
-  
-}
-
 /* Make carousel-inner scrollable if content grows */
 #artCarousel .carousel-inner {
-  background: var(--n-purple-light);
-  height: 100%;
+  height: 100vh;
   overflow-y: auto;
   scroll-behavior: smooth;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0px !important;
-  /* margin: 5px;
-  margin-top: 50px;
-  margin-bottom: 80px; */
-  /* border-radius: 5px; */
-}
-
-#artCarousel .carousel-item {
-  background: var(--n-purple-light);
-  height: 100%; /* Ensures uniform height */
-  padding: 0 !important;
-  margin-top: 30px;
-  
 }
 
 
 /* === Card === */
 
 #artCarousel .card {
-  background: var(--n-purple-light);
+  background: var(--black);
   border: none;
-  /* border-radius: 2px; */
-  /* width: 100%; */
-  height: 100%; /* FIXED HEIGHT */
+  border-radius: 0;
 }
 
 #artCarousel .card-body h5 {
-  font-family: 'ArtNouveauCaps';
   /* font-size: 30px; */
   font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
   font-weight: 600;
   padding-bottom: 8px;
-  color: var(--n-white);
 
 }
 
@@ -746,7 +657,6 @@ color: var(--n-black);
   /* font-size: 24px; */
   font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
   font-weight: 600;
-  color: var(--n-black) !important;
 }
 
 #artCarousel .card-body p {
@@ -759,7 +669,6 @@ color: var(--n-black);
   object-fit: contain;
   object-position: 50% 50%;
   max-height: 550px;
-  
 }
 
 @media (max-width: 375px) {
@@ -769,17 +678,17 @@ color: var(--n-black);
 }
 
 #artCarousel .card-text{
-  color: var(--n-white);
+  color: var(--white);
   
 }
 
 /* --- Accordion --- */
 
 #artCarousel .accordion-button {
-  background: var(--n-purple-light);
-  color: var(--n-white);
+  background-color: var(--black);
+  color: var(--white);
   border: none;
-  border-bottom: 2px solid var(--n-green);
+  border-bottom: 2px solid var(--primary-color);
   border-radius: 0;
   box-shadow: none; /* removes default focus shadow */
   outline: none; /* removes focus outline */
@@ -799,22 +708,22 @@ color: var(--n-black);
 }
 
 #artCarousel .accordion-button:not(.collapsed) {
-  border-bottom: 2px solid color-mix(in srgb, var(--n-white), transparent 80%);
-  background: var(--n-purple-light);
-  color: var(--n-white);
+  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
+  background-color: var(--black);
+  color: var(--white);
 }
 
 /* When accordion is collapsed */
 #artCarousel .accordion-button.collapsed {
-  border-bottom: 2px solid var(--n-green);
-  background: var(--n-purple-light);
-  color: var(--n-white);
+  border-bottom: 2px solid var(--primary-color);
+  background-color: var(--black);
+  color: var(--white);
 }
 
 #artCarousel .accordion-body {
-  background: var(--n-purple-light);
-  color: var(--n-white);
-  border-bottom: 2px solid var(--n-green);
+  background-color: var(--black);
+  color: var(--white);
+  border-bottom: 2px solid var(--primary-color);
   border-radius: 0;
 }
 
@@ -832,13 +741,13 @@ color: var(--n-black);
   background-repeat: no-repeat;
   background-size: 1.25rem;
   background-position: center;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23A8B162' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2382994B' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
   transition: all 0.3s ease;
 }
 
 /* When accordion is open */
 #artCarousel .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23A8B162' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23BEBEBECC' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
 }
 
 /* === Metadata Table === */
@@ -852,7 +761,7 @@ color: var(--n-black);
 #artCarousel .accordion-body td {
   padding: 0.5rem 1rem; /* Padding inside cells */
   vertical-align: top;
-  color: var(--n-white);
+  color: var(--white);
   text-transform: capitalize;
 }
 
@@ -864,7 +773,7 @@ color: var(--n-black);
 /* Optional: spacing between first and second column */
 #artCarousel .accordion-body td:first-child {
   font-weight: bold;
-  color: var(--n-green);
+  color: var(--primary-color);
   width: 30%;
   padding-left: 0px;
 }
@@ -884,8 +793,6 @@ color: var(--n-black);
 --------------------------------------------------------------*/
 
 #gallery h1 {
-  font-family: 'ArtNouveauCaps';
-  color: var(--n-black);
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
@@ -897,11 +804,9 @@ color: var(--n-black);
 }
 
 .gallery-card .card {
-  background-color: color-mix(in srgb, var(--n-blue), transparent 40%);
-  border: 5px solid var(--n-blue);
-  border-radius: 30px;
-  padding: 20px !important;
-  margin-bottom: 20px;
+  background: var(--black);
+  /* border: none; */
+  border-radius: 0;
 }
 
 .gallery-card .card-body h5 {
@@ -1030,20 +935,21 @@ color: var(--n-black);
 }
 
 .nature-interferes {
-  border: 5px solid var(--nature) !important;
+  /* border-color: var(--nature); */
+  border-left: 3px solid var(--nature);
   
 }
 
 .travelling-through-time {
-  border: 5px solid var(--time) !important;
+  border-left: 3px solid var(--time);
 }
 
 .taking-flight {
-  border: 5px solid var(--flight) !important;
+  border-left: 3px solid var(--flight);
 }
 
 .around-the-kitchen-table {
-  border: 5px solid var(--kitchen) !important;
+  border-left: 3px solid var(--kitchen);
 
 }
 

@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
         keyboard: true,
         size: 'fullscreen'
     };
-
-    console.log(localStorage.getItem("themeValue"));
     
     //store global variables
     //get skeleton doc to access its elements
@@ -39,6 +37,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //take the retrieved json and it pass into the functions to handle populating the html
         addArt(artworksJson);
+
+        const storedTheme = localStorage.getItem("themeValue");
+        console.log(storedTheme);
+        if (storedTheme) {
+            const themeName = storedTheme.replaceAll("-", " ");
+
+            const themeArtIDs = globalArt
+                .filter(art => art.theme === themeName)
+                .map(art => art.id);
+
+            const artColumns = document.querySelectorAll(".gallery-card");
+
+            for (const col of artColumns) {
+                const cardId = col.querySelector(".card").getAttribute("id");
+
+                if (themeArtIDs.includes(cardId)) {
+                    col.classList.remove("d-none");
+                } else {
+                    col.classList.add("d-none");
+                }
+            }
+
+            // Optional: clear it so it's only used once
+            localStorage.removeItem("themeValue");
+        }
     }
 
     async function getSkeleton() {
