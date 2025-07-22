@@ -662,13 +662,13 @@ color: var(--n-black);
 --------------------------------------------------------------*/
 
 #viewer {
-    margin-top: 6rem !important;
-    border: 50px solid transparent; /* Required for border-image to work */
+    /* margin-top: 6rem !important;
+    border: 50px solid transparent; 
     border-image-source: url('../resources/img/artnouveau/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
-    border-image-slice: 165 65 220; /* Adjust as needed for thickness */
+    border-image-slice: 165 65 220; 
     border-image-width: 50px;
-    border-image-repeat: round; /* Options: stretch | repeat | round | space */
-    border-image-outset: 0;
+    border-image-repeat: round; 
+    border-image-outset: 0; */
     /* padding: 6px 3px; */
     /* height: 100%; */
     /* padding-top: 60px;
@@ -678,6 +678,7 @@ color: var(--n-black);
     height: 90vh; /* Fixed height relative to screen */
     width: 100%;
     overflow-y: scroll;
+    margin-top: 0 !important;
     
     
 }
@@ -699,7 +700,7 @@ color: var(--n-black);
 
 /* Make carousel-inner scrollable if content grows */
 #artCarousel .carousel-inner {
-  background: var(--n-purple);
+  background: var(--n-purple-light);
   height: 100%;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -709,14 +710,14 @@ color: var(--n-black);
   /* margin: 5px;
   margin-top: 50px;
   margin-bottom: 80px; */
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 #artCarousel .carousel-item {
-  background: var(--n-purple);
+  background: var(--n-purple-light);
   height: 100%; /* Ensures uniform height */
   padding: 0 !important;
-
+  margin-top: 30px;
   
 }
 
@@ -724,16 +725,17 @@ color: var(--n-black);
 /* === Card === */
 
 #artCarousel .card {
-  background: var(--n-purple);
+  background: var(--n-purple-light);
   border: none;
-  border-radius: 2px;
-  width: 100%;
+  /* border-radius: 2px; */
+  /* width: 100%; */
   height: 100%; /* FIXED HEIGHT */
 }
 
 #artCarousel .card-body h5 {
   font-family: 'ArtNouveauCaps';
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
   font-weight: 600;
   padding-bottom: 8px;
   color: var(--n-white);
@@ -741,13 +743,15 @@ color: var(--n-black);
 }
 
 #artCarousel .card-body h6 {
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
   font-weight: 600;
   color: var(--n-black) !important;
 }
 
 #artCarousel .card-body p {
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
   
 }
 
@@ -758,11 +762,22 @@ color: var(--n-black);
   
 }
 
+@media (max-width: 375px) {
+  #artCarousel .card img {
+    max-width: 220px;
+  }
+}
+
+#artCarousel .card-text{
+  color: var(--n-white);
+  
+}
+
 /* --- Accordion --- */
 
 #artCarousel .accordion-button {
-  background: var(--n-purple);
-  color: var(--white);
+  background: var(--n-purple-light);
+  color: var(--n-white);
   border: none;
   border-bottom: 2px solid var(--n-green);
   border-radius: 0;
@@ -771,7 +786,8 @@ color: var(--n-black);
   padding-left: 2px;
   padding-bottom: 20px;
   /* font-weight: bold; */
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
   text-transform: capitalize;
   
 }
@@ -783,21 +799,21 @@ color: var(--n-black);
 }
 
 #artCarousel .accordion-button:not(.collapsed) {
-  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
-  background: var(--n-purple);
-  color: var(--white);
+  border-bottom: 2px solid color-mix(in srgb, var(--n-white), transparent 80%);
+  background: var(--n-purple-light);
+  color: var(--n-white);
 }
 
 /* When accordion is collapsed */
 #artCarousel .accordion-button.collapsed {
   border-bottom: 2px solid var(--n-green);
-  background: var(--n-purple);
-  color: var(--white);
+  background: var(--n-purple-light);
+  color: var(--n-white);
 }
 
 #artCarousel .accordion-body {
-  background: var(--n-purple);
-  color: var(--white);
+  background: var(--n-purple-light);
+  color: var(--n-white);
   border-bottom: 2px solid var(--n-green);
   border-radius: 0;
 }
@@ -830,12 +846,13 @@ color: var(--n-black);
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
+  font-size: clamp(0.75rem, 0.2813rem + 1.5vw, 1.125rem);
 }
 
 #artCarousel .accordion-body td {
   padding: 0.5rem 1rem; /* Padding inside cells */
   vertical-align: top;
-  color: var(--white);
+  color: var(--n-white);
   text-transform: capitalize;
 }
 
@@ -858,7 +875,8 @@ color: var(--n-black);
 }
 
 #artCarousel .accordion-body p {
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
 }
 
 /*--------------------------------------------------------------
