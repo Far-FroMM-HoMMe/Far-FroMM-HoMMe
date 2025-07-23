@@ -1,3 +1,8 @@
+// LANDING PAGE SCRIPT //
+
+// -----------------------------------------//
+// Animation of the landing page elements
+
 document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -23,7 +28,63 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// --------------------------------------- //
+// Save the current style in localStorage
+let currentStyle = "";
 
 function switchStyle(sheet) {
   document.getElementById("themeStylesheet").setAttribute("href", sheet);
+  currentStyle = sheet;
+
+  localStorage.setItem("currentStyle", sheet);
 }
+
+// --------------------------------------- //
+// Offcanvas behavior for the landing page
+// ----------------------------------------//
+document.addEventListener("DOMContentLoaded", function () {
+  const offcanvas = document.getElementById("offcanvasExample");
+  const chooseLayoutBtn = document.getElementById("chooseLayout");
+  const windowsButton = document.getElementById("windows-button");
+  let bsOffcanvas;
+
+  let currentStyle = localStorage.getItem("currentStyle") || "css/styles.css";
+
+  // Always initialize the Bootstrap Offcanvas instance
+  if (bootstrap && bootstrap.Offcanvas) {
+    bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas) || new bootstrap.Offcanvas(offcanvas);
+  }
+
+  chooseLayoutBtn.addEventListener("click", function () {
+    currentStyle = localStorage.getItem("currentStyle") || "css/styles.css";
+
+    if (currentStyle === "css/windows.css") {
+      if (window.innerWidth <= 440) {
+        bsOffcanvas.show();
+      }
+    } else {
+      bsOffcanvas.show(); // fallback for non-Windows themes
+    }
+  });
+
+  // ✅ Switch to Windows style WITHOUT opening offcanvas
+  windowsButton.addEventListener("click", function () {
+    switchStyle("css/windows.css");
+
+    // Optional: If you ever want to close it manually after switch
+    bsOffcanvas.hide();
+  });
+
+  // Optional: wrap scrollable area
+  const target = document.querySelector(".scrollable-area");
+  if (target && !target.closest('.custom-scroll-wrapper')) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "custom-scroll-wrapper";
+    target.parentNode.insertBefore(wrapper, target);
+    wrapper.appendChild(target);
+  }
+});
+
+
+
+

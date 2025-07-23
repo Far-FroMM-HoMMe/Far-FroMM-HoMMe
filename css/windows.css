@@ -5,7 +5,6 @@
 /* GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Amarante&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libertinus+Mono&family=Oxanium:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 @font-face {
   font-family: 'ArtNouveauCaps';
   src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
@@ -58,9 +57,6 @@
 # global
 --------------------------------------------------------------*/
 
-/* custom properties you can call with var() */
-/* The dark-theme will be the default */
-
 :root {
   --black: #1A1A1A;
   --white: #EDEDED;
@@ -70,20 +66,21 @@
   --accent-color-dark: #952215;     /*darker persian red*/
 
   /* Theme colours */
-  --kitchen: #F4BBD3;
-  --flight: #a10625;
-  --nature: #87B38D;
-  --time: #326273;
+  --kitchen: #D19FCB;
+  --flight: #9D3617;
+  --nature: #DAF7DC;
+  --time: #ABC8C0;
 }
 
 body {
-    background-color: var(--black);
-    color: var(--white);
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 1.5;
+    /* push main content to the right */
+    margin-left: 240px; /* sidebar width + spacing */
+    margin-bottom: 60px;
+    background: #c0c0c0;
+    color: #222;
+    font-family: Arial;
+    font-size: 12px;
+    display: block;
 }
 
 p { 
@@ -105,84 +102,228 @@ a:hover {
   color: var(--accent-color-dark);
 }
 
+
+
+
+/* BUTTONS */
+/* --------------------------------------------------------------*/
 .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: var(#EDEDED);
+  width: 100%;
+  background: none;
+  text-align: left;
+  font-family: "Pixelated MS Sans Serif", Arial;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  box-sizing: border-box;
+  min-height: 23px;
+  min-width: 75px;
+  padding: 1 12px !important;
+  text-shadow: 0 0 #222;
+  color: black;
 }
 
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:focus {
-  background-color: var(--primary-color-dark) !important;  /*added !important because sometimes the bootstrap default color shows up */
-  border-color: var(--primary-color-dark) !important;
 
-}
-/* According to dark theme */
-.navbar {
-  background-color: #12121258;
-  color: var(--white);
-  position: fixed;
-}
-
-@media (max-width: 578px) {
-  .navbar {
-    background-color: #121212c4;
-  }
+/* NAVBAR */
+/* --------------------------------------------------------------*/
+.navbar.fixed-top {
+    top: 5px;
+    left: 205px;
+    width: calc(100% - 205px);
+    background: #c0c0c0 !important;
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a;
+    border-bottom: 2px solid #000;
+    padding: 0;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    font-size: 11px;
 }
 
+@media (max-width: 440px) {
+    .navbar.fixed-top {
+        left: 0;
+        width: 100%;
+    }
+}
+
+/* 'To have, to lose, to find' */
 #navbartext {
-  margin-left: 20px; 
-  font-family: 'Libertinus Mono', monospace; 
-  font-size: clamp(0.75rem, 1vw, 1rem);
+    color: rgb(0 0 0) !important;
+    font-size: clamp(8pt, 2vw, 10pt);
+    position: absolute;
+    top: 15px;
+    left: 70px;
 }
 
-.nav-link {
-  color: var(--white) !important;
-  font-weight: 500;
-  transition: color 0.3s;
+/* Switching compass light image to dark */
+.navbar-brand img {
+    display: none;
+  }
+  
+.navbar-brand {
+    display: inline-block;
+    background-image: url('../resources/img/compass-modern.png');
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* hiding the original image */
+    content: '';
+    color: transparent;
+    font-size: 0;
+    border: none;
 }
 
-.nav-link:hover {
-  color: var(--primary-color) !important;
+/* Navbar buttons and dropdown */
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
 }
 
-.active {
-  color: var(--primary-color-dark) !important;
+.navbar-nav .nav-link {
+    background: #c0c0c0;
+    padding: 4px 10px;
+    margin: 4px 2px 0 0;
+    box-shadow: inset -1px -1px #808080, inset 1px 1px #fff;
+    text-decoration: none;
 }
 
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.btn-primary:hover,
+.btn-primary:focus {
+    background: #c0c0c0;
+    box-shadow: inset -1px -1px #000, inset 1px 1px #fff;
+    outline: none;
+}
+
+.navbar-nav .nav-link.active,
+.btn-primary:active {
+    background: #c0c0c0;
+    box-shadow: inset 2px 2px #808080, inset -2px -2px #fff;
+    font-weight: bold;
+}
+
+.navbar .dropdown-menu {
+    background: #dfdfdf;
+    border: 2px solid #808080;
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #000;
+    font-size: 11px;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    border-radius: 0;
+}
+
+.navbar .dropdown-item {
+background: none;
+color: black;
+padding: 4px 8px;
+}
+
+.navbar .dropdown-item:hover {
+background: #c0c0c0;
+}
+
+/* Navbar dropdown icon */
+.navbar-toggler-icon {
+  /* create block space for new icon */
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+
+  /* remove the bootstrap icon */
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
+
+/* source: https://github.com/AlexBSoft/win95.css/blob/master/assets/icons/directory_open_cool-5.png */
+.navbar-dark .navbar-toggler .navbar-toggler-icon {
+  width: 32px;
+  background: url('../resources/img/windows/directory_open_cool-5.png');
+}
+
+
+
+
+/* OFFCANVAS */
+/* --------------------------------------------------------------*/
+/* Button to open offcanvas */
 #chooseLayout {
-  background-color: var(--primary-color);
-  color: var(--white);
+    background: #c0c0c0;
+    padding: 4px 10px;
+    margin: 4px 2px 0 0;
+    box-shadow: inset -1px -1px #808080, inset 1px 1px #fff;
+    text-decoration: none;
+    outline: 1px dotted #000000;
+    outline-offset: -4px;
+    border-radius: 0;
 }
 
 
-/* According to dark theme */
-.offcanvas {
-  background-color: var(--black);
-  color: var(--white);
-  z-index: 1055;
+#offcanvasExample {
+    width: 200px !important;
+    max-width: 200px;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    /* offcanvas stays visible at the left of the screen > 440px vw */
+    /* using also javascript to change bootstrap behavior */
+    right: auto;
+    transform: translateX(0%) !important;
+    visibility: visible !important;
+    position: fixed !important;
+    background-color: #fff;
+    box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+    overflow-y: auto;
+    padding: 6px;
+    z-index: 1045;
 }
 
-#layout-buttons .btn {
-  margin-bottom: 1.618rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
+/* source: https://github.com/jdan/98.css/tree/main/fonts/src/ms-sans-serif */
+#offcanvasExample p {
+    font-family: "Pixelated MS Sans Serif", Arial;
+    font-size: 11px;
+}
+  
+/* hide offcanvas backdrop */
+.offcanvas-backdrop {
+  display: none !important;
+}
+
+/* tree-style link styling */
+#offcanvasExample ul,
+#layout-buttons {
+  padding-left: 0;
+  list-style: none;
+  font-family: "Pixelated MS Sans Serif", Arial;
+  font-size: 11px;
+  -webkit-font-smoothing: none;
 }
 
 /* Choose layout has same id as the button but align styling with headers in offcanvas */
-#offcanvasExample .offcanvas-title{
-    margin-top: 1em !important;
-    font-size: 20px !important;
+#offcanvasExample .offcanvas-title {
+  margin-top: 1em !important;
+  font-size: 20px !important;
+  font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+
     
-    background: none;
-    padding: none;
-    margin: none;
-    box-shadow: none;
-    text-decoration: none;
-    outline: none;
-    outline-offset: none;
-    border-radius: 0;
+  background: none;
+  padding: none;
+  margin: none;
+  box-shadow: none;
+  text-decoration: none;
+  outline: none;
+  outline-offset: none;
+  border-radius: 0;
+}
+
+#offcanvasExample h5 {
+  font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+  font-size: 12px;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
 
@@ -238,6 +379,7 @@ a:hover {
   box-shadow: inset -0.5em -0.5em #FDDE06;;
   background-color: white !important ;
   border: 2px solid black !important;
+  width: 100px;
 }
 
 #stijl-button:hover {
@@ -289,13 +431,106 @@ a:hover {
   color: white !important;
 }
 
+.offcanvas-header .btn-close {
+  display: none !important;
+}
+
+@media (max-width: 440px) {
+    #offcanvasExample {
+      display: none !important;
+      width: 100vw !important;
+      max-width: 100vw !important;
+      height: 100vh !important;
+      left: 0 !important;
+      top: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      margin: 0 !important;
+      padding: 1rem;
+      z-index: 9999;
+    }
+  
+    #offcanvasExample.show {
+      display: block !important;
+    }
+  
+    body {
+      margin-left: 0 !important;
+    }
+
+    .offcanvas-header .btn-close {
+        display: block !important;
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        z-index: 10000;
+        border: none;
+        font-size: 1rem;
+        color: black;
+      }
+  }
+  
+@media (min-width: 441px) {
+    #offcanvasExample {
+      display: block !important;
+    }
+  }
+  
+
+/* --------------------------------------------- */
+
+ /* Retro scrolling bar  */
+::-webkit-scrollbar-track {
+background-image: url("data:image/svg+xml,%3Csvg width='2' height='2' viewBox='0 0 2 2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='silver' d='M1 0H0v1h1v1h1V1H1V0z'/%3E%3Cpath fill='%23fff' d='M2 0H1v1H0v1h1V1h1V0z'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar-thumb {
+background-color: #dfdfdf;
+box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+.custom-scroll-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-right: 20px; /* leave space for fake scrollbar */
+}
+  
+.scrollable-area {
+    overflow-y: scroll;
+    height: 300px;
+}
+  
+/* Fake scrollbar area */
+.custom-scroll-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 100%;
+    background-image: url('data:image/svg+xml,%3Csvg ...checker pattern...%3E');
+    background-repeat: repeat;
+    border-left: 2px solid #808080;
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a;
+}
+
+/*--------------------------------------------------------------*/
 
 footer {
-  background-color: #20202097;
-  color: white;
-  padding: 30px 0;
-  font-size: 0.9rem;
-  margin-top: 5rem;
+  background: silver;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  padding: 3px;
+}
+
+footer h5 {
+  font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  color: black;
 }
 
 /*--------------------------------------------------------------
@@ -315,40 +550,14 @@ footer {
   }
 }
 
-/* Animations blocks sliding in from left-side into screen */
-/*  Slide for mobile is from down up */
-.hidden {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: all 2s;
-}
-
-.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* works better for smaller screens, when scrolling down the blocks move up slowly */
-@media (max-width: 768px) {
-  .hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1.5s ease;
-  }
-  
-  .show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* hero/thumbnail section */
 /* --------------------------------------------------------------*/
+#carouselHeaderImages img {
+    display: none;
+  }
+
 .hero-section {
     position: relative;
-    height: 100vh;
-    overflow: hidden;
-    transition: opacity 0.5s ease;
 }
 
 #carouselHeaderImages.carousel,
@@ -370,96 +579,168 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(84, 83, 83, 0.2), rgba(0, 0, 0, 0.898));
 }
 
 .hero-text {
-    font-family: "Libertinus Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-    font-size: clamp(7rem, 12vw, 11rem);
-    color: rgb(247, 247, 247);
-    text-align: start;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    line-height: 1;
-    
-    position: absolute;
-    top: 60%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    padding: 0 40px;
-    box-sizing: border-box;
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+  font-size: 5rem;
+  margin: 12px 0;
+  margin-top: 40px;
+}
+
+.hero-text::after {
+  content: "";
+  display: block;
+  margin-top: 10px;
+  margin-left: 10;
+  width: 400px;
+  height: 1px;
+  opacity: 0.5;
+  background: linear-gradient(
+      to right,
+      red 20%,
+      yellow 20%,
+      yellow 36%,
+      green 36%,
+      green 60%,
+      blue 60%,
+      blue 100%
+  );
 }
 
 .hero-text span {
-    color: var(--primary-color);
+    color: green;
 }
 
+
 .hero-subtitle {
-    font-family: "Libertinus Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    font-size: clamp(1.5rem, 3vw, 5rem);
-    color: #82994B;
-    text-align: end;
-    text-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772);
-    line-height: 1;
-    
-    position: absolute;
-    top: clamp(95%, 81vw, 89%);
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    padding: 0 40px;
-    box-sizing: border-box;
-    margin-top: 0.15rem;
+  font-style: normal;
+  text-align: start;
+  line-height: 1;
+  box-sizing: border-box;
 }
 
 /* Abstract section */
 /* --------------------------------------------------------------*/
 #abstract {
-  margin-top: 1.618rem;
+  margin-top: 200px;
 }
 
-.has-dropcap {
-  overflow: hidden;
-  font-size: 2rem;
+@media (max-width: 849px) {
+  #abstract {
+    margin-top: 300px;
+  }
+  
+  #abstract .col-lg-10,
+  #abstract .col-md-10,
+  #abstract .col-sm-10 {
+    margin-top: 1rem;
+  }
 }
 
-.dropcap {
-  float: left;
-  font-size: clamp(18rem, 6vw, 8.5rem);
-  line-height: 0.70;
-  margin: 0.1em 0.1em 0em 0;
-  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
-  padding-right: 0.15rem;
+@media (max-width: 440px) {
+  #abstract {
+    margin-top: 150px;
+  }
+  
+  #abstract .col-lg-10, 
+  #abstract .col-md-10, 
+  #abstract .col-sm-10 {
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    width: 90vw;
+  }
+
+  #abstract .justify-content-center {
+    justify-content: center !important;
+    width: 90vw !important;
+  }
+
+  .hero-text {
+    font-size: 3rem;
+    margin: 12px 0;
+    margin-top: 50px;
+    margin-left: 0.5rem;
+  }
+
+  .hero-subtitle {
+    margin-left: 0.5rem;
+  }
+
 }
 
-/* Themes-info and Narratives-info sections */
-/* they inherit most properties from the text-box class but need specific properties as well  */
-/* --------------------------------------------------------------*/
-#themes-info,
-#narratives-info {
-    margin-top: 1.618rem;
+#abstract .col-lg-10,
+#abstract .col-md-10,
+#abstract .col-sm-10 {
+  flex: 0 0 auto !important;
+  padding: 0 !important;
+  width: 90vw;
+  display: block;
+  margin-block-end: 1em;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
+#abstract .justify-content-center {
+  justify-content: start !important;
+  width: 70vw;
+}
+
+/* --------------------------------------------
+   THEMES AND NARRATIVES SECTION LAYOUT
+--------------------------------------------- */
+/* Neutralize Bootstrap column behavior */
+#themes-info .col-lg-6,
+#themes-info .col-md-5,
+#themes-info .col-sm-10,
+#narratives-info .col-lg-6,
+#narratives-info .col-md-5,
+#narratives-info .col-sm-10 {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+#theme-info .justify-content-center {
+  justify-content: start !important;
+  width: 80vw;
+}
+
+.justify-content-center {
+  justify-content: start !important;
+  width: 80vw;
+}
+
+#theme-info .p-4,
+#narratives-info .p-4 {
+  padding: 0.5rem !important;
 }
 
 #theme-text-box {
-    background-color: var(--primary-color) !important;
+  background-color: green;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  padding: 3px;
 }
 
 #narratives-text-box {
-  background-color: var(--accent-color) !important;
+  background-color: red;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  padding: 3px;
 }
 
 .infoboxes-title {
-  font-size: clamp(6vw, 6vw, 7vw) !important;
+  color: white;
+  font-family: 'Pixelated MS Sans Serif';
 }
 
 .infoboxes-text {
-  font-size: clamp(1rem, 0.75rem, 1.2rem);
   line-height: 1.6;
   margin-top: 1rem;
   color: var(--white) !important;
@@ -474,8 +755,8 @@ color: var(--white);
     border-radius: 0; 
     border: none;
     max-width: 83.3%;
-    max-height: 500px;
-    min-height: 500px;
+    max-height: 40vh;
+    min-height: 40vh;
 }
 
 #carouselThemeImages .card-img,
@@ -486,8 +767,8 @@ color: var(--white);
     object-fit: cover;
     object-position: center;
     border-radius: 0;
-    min-height: 500px;
-    max-height: 500px;
+    min-height: 40vh;
+    max-height: 40vh;
 }
 
 #carouselThemeImages .card-img-overlay,
@@ -498,8 +779,8 @@ color: var(--white);
 
 #carouselThemeImages .card-title-carousel,
 #carouselNarrativeImages .card-title-carousel {
-    font-size: clamp(2.8rem, 2.5vw, 3rem);
-    color: var(--white);
+  color: var(--white);
+  font-family: 'Pixelated MS Sans Serif';
 }
 
 #carouselThemeImages .card-text-carousel,
@@ -508,11 +789,83 @@ color: var(--white);
 }
 #carouselThemeImages .card-text-carousel a,
 #carouselNarrativeImages .card-text-carousel a {
-    font-size: 1.5rem;
-    font-weight: 500;
-    position: absolute;
-    top: 75%;
+  font-size: 1rem;
+  font-weight: 500;
+  position: absolute;
+  top: 70%;
+  font-family: 'Pixelated MS Sans Serif';
 }
+
+#collectionsImageCard {
+    border-radius: 0;
+    border: none;
+}
+
+#collections-info .infoboxes-text,
+#collections-info .infoboxes-title {
+  color: #0c0c0c !important;
+}
+
+/* RESPONSIVENESS */
+
+@media (min-width: 992px) {
+  #theme-info .col-lg-4,
+  #narratives-info .col-lg-4 {
+      flex: 0 0 auto;
+      width: 33.3333% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #theme-info .col-md-5,
+  #narratives-info  {
+      flex: 0 0 auto;
+      width: 41.6667% !important;
+  }
+}
+
+@media (max-width: 440px) {
+  #theme-text-box {
+    width: 100vw !important;
+  }
+
+  #theme-carousel-wrapper {
+    width: 100vw !important;
+  }
+
+  #carouselThemeImages.carousel, 
+  #carouselThemeImages.carousel-inner, 
+  #carouselThemeImages.carousel-item,
+  #carouselNarrativeImages.carousel, 
+  #carouselNarrativeImages.carousel-inner, 
+  #carouselNarrativeImages.carousel-item {
+    height: 40vh;
+    width: 100vw;
+  }
+
+  #theme-info .justify-content-center,
+  #narrative-info .justify-content-center {
+    justify-content: center !important;
+    width: 100vw !important;
+  }
+
+  #collections-info .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    min-height: 40vh;
+    max-height: 40vh;
+    width: 100vw !important;
+  }
+
+  #about-info .justify-content-center {
+    justify-content: center !important;
+    width: 90vw !important;
+  }
+}
+
 
 /* About info section */
 /* --------------------------------------------------------------*/
@@ -521,52 +874,12 @@ color: var(--white);
     margin-top: 1.618rem;
 }
 
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-.flip-card-back {
-  background-color: var(--primary-color);
-  color: white;
-  transform: rotateY(180deg);
-}
-
 /*--------------------------------------------------------------
 # exhibition page
 --------------------------------------------------------------*/
 
 /*floating answers styles*/
-#floating{
+#floating {
     background-color: #fff;
 }
 
@@ -583,16 +896,6 @@ color: var(--white);
     padding: 80px 50px;  
 }
 
-#answer-area {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* bring it to the back */
-  pointer-events: none;
-}
-
 .floating-answer {
     position: absolute;
     font-style: italic;
@@ -602,14 +905,6 @@ color: var(--white);
     max-width: 200px;
     pointer-events: none;
     animation: float 8s ease-in-out infinite;
-    z-index: 10;
-}
-
-.main-heading,
-.description,
-.action-area {
-  position: relative;
-  z-index: 2; 
 }
 
 @keyframes float {
@@ -619,9 +914,6 @@ color: var(--white);
 }
 
 /* card link styles */
-.card-group .card{
-  border-radius: 0;
-}
 .link-card:hover,
 .link-card:focus,
 .link-card:active {
@@ -641,6 +933,7 @@ color: var(--white);
     max-width: 300px;
     padding: 1em 1.5em;
     background: #fff;
+    border-radius: 1.5em;
     box-shadow: 2px 2px 8px rgba(0,0,0,.15);
     font-size: 14px;
     z-index: 10;
@@ -650,13 +943,6 @@ color: var(--white);
 /*--------------------------------------------------------------
 # art viewer
 --------------------------------------------------------------*/
-
-#viewer {
-  margin-top: 5rem !important;
-  height: 90vh; /* Fixed height relative to screen */
-  width: 100%;
-  overflow-y: scroll;
-}
 
 /* === Carousel === */
 
@@ -681,40 +967,25 @@ color: var(--white);
 }
 
 #artCarousel .card-body h5 {
-  /* font-size: 30px; */
-  font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
+  font-size: 30px;
   font-weight: 600;
   padding-bottom: 8px;
 
 }
 
 #artCarousel .card-body h6 {
-  /* font-size: 24px; */
-  font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
+  font-size: 24px;
   font-weight: 600;
 }
 
 #artCarousel .card-body p {
-  /* font-size: 20px; */
-  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
+  font-size: 20px;
   
 }
 
 #artCarousel .card img{
   object-fit: contain;
   object-position: 50% 50%;
-  max-height: 550px;
-}
-
-@media (max-width: 375px) {
-  #artCarousel .card img {
-    max-width: 220px;
-  }
-}
-
-#artCarousel .card-text{
-  color: var(--white);
-  
 }
 
 /* --- Accordion --- */
@@ -730,8 +1001,7 @@ color: var(--white);
   padding-left: 2px;
   padding-bottom: 20px;
   /* font-weight: bold; */
-  /* font-size: 18px; */
-  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
+  font-size: 18px;
   text-transform: capitalize;
   
 }
@@ -790,7 +1060,6 @@ color: var(--white);
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
-  font-size: clamp(0.75rem, 0.2813rem + 1.5vw, 1.125rem);
 }
 
 #artCarousel .accordion-body td {
@@ -819,24 +1088,12 @@ color: var(--white);
 }
 
 #artCarousel .accordion-body p {
-  /* font-size: 16px; */
-  font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
+  font-size: 16px;
 }
 
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
-
-#gallery h1 {
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-  font-size: clamp(1.5rem, 5vw, 10rem);
-}
-
-#themes {
-  font-size: 25px;
-}
 
 .gallery-card .card {
   background: var(--black);
@@ -986,21 +1243,5 @@ color: var(--white);
 .around-the-kitchen-table {
   border-left: 3px solid var(--kitchen);
 
-}
-
-#Around-the-Kitchen-Table {
- color: var(--kitchen);
-}
-
-#Taking-Flight {
-  color: var(--flight);
-}
-
-#Nature-Interferes {
-  color: var(--nature);
-}
-
-#Travelling-Through-Time {
-  color: var(--time);
 }
 

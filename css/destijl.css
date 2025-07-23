@@ -1,8 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap'); 
+/*--------------------------------------------------------------
+/* FONTS IN ALPHABETIC ORDER 
+--------------------------------------------------------------*/
 
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libertinus+Mono&family=Oxanium:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'ArtNouveauCaps';
+  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'DeStijl';
+  src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GoudyDropcap';
+  src: url('../fonts/GoudyInitialen.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Glass Antiqua';
+  src: url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family:"Pixelated MS Sans Serif";
+  src: url("../fonts/MS Sans Serif.ttf") format("truetype");
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: 'Pixelify';
+  src: url('../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'University';
+  src: url('../fonts/University.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
 /*--------------------------------------------------------------
 # global
@@ -41,13 +90,6 @@ $gradient-top-left: linear-gradient(225deg, #c32826ff, #ffe100ff, #3c4a99ff, #1a
 $gradient-bottom-left: linear-gradient(315deg, #c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
 $gradient-radial: radial-gradient(#c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
 */
-
-@font-face {
-  font-family: 'DeStijl';
-  src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
 
 h1 {
     font-family: "DeStijl";
@@ -209,7 +251,10 @@ a:hover {
   background-position: right top; 
   background-repeat: no-repeat;
   padding-right: 1rem;
+}
 
+.offcanvas {
+  z-index: 1055;
 }
 
 /* button */
@@ -227,6 +272,125 @@ a:hover {
   color:white !important  ;
 }
 
+/* Choose layout has same id as the button but align styling with headers in offcanvas */
+#offcanvasExample .offcanvas-title{
+  margin-top: 1em !important;
+  font-size: 20px !important;
+    
+  background: none;
+  padding: none;
+  margin: none;
+  box-shadow: none;
+  text-decoration: none;
+  outline: none;
+  outline-offset: none;
+  border-radius: 0;
+}
+
+
+#layout-buttons .btn {
+  margin-bottom: 1.618rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+}
+
+#default-title {
+  color: rgb(118, 118, 118);
+  margin-top: 1.618rem;
+}
+
+#default-button {
+  background-color: rgb(118, 118, 118) !important;
+  font-family: 'Cormorant Garamond';
+}
+
+#aldine-button {
+  background-color: #e4dec6 !important;
+  border-color: #574d38 !important;
+  color: #574d38 !important;
+  font-family: "Cardo", 'serif' !important;
+  font-style: italic !important;
+  text-transform: initial;
+  width: 150px !important;
+  box-shadow: none;
+  border-style: double;
+ }
+
+ #aldine-button:hover {
+  background-color: #574d38 !important;
+  color: #e4dec6 !important;
+ }
+
+ #artnouveau-button {
+  background-color: #74918A !important;
+  border-color: #A8B162 !important;
+  color: #FBFDF7 !important;
+  font-family: 'ArtNouveauCaps', 'serif' !important;
+  font-style: italic;
+ }
+
+#artnouveau-button:hover {
+  background-color: #574B60 !important;
+  color: #FBFDF7 !important;
+}
+
+#stijl-button {
+  font-family: "Destijl", "sans-serif" !important;
+  border-radius: 0 !important;
+  color: black !important;
+  box-shadow: inset -0.5em -0.5em #FDDE06;;
+  background-color: white !important ;
+  border: 2px solid black !important;
+}
+
+#stijl-button:hover {
+  color: white!important;;
+  box-shadow: inset -0.5em -0.5em#0300AD ;
+  background-color: black ! important;
+
+}
+
+#beall-button {
+  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+#beall-button:hover {
+  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+#windows-button {
+  width: 100%;
+  background: grey !important;
+  text-align: left;
+  font-family: "Pixelated MS Sans Serif", Arial;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  box-sizing: border-box;
+  min-height: 23px;
+  width: auto;
+  padding: 1 12px !important;
+  text-shadow: 0 0 #222;
+  color: black;
+}
+
+#cyberpunk-button {
+  background-color: hsl(154 50% 5%) !important;
+  border-color: hsl(154, 52%, 56%) !important;
+  color: hsl(154, 52%, 56%) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
+  font-family: 'Pixelify', sans-serif;
+  box-shadow: hsl(154, 52%, 56%) !important;
+}
+
+#cyberpunk-button:hover {
+  color: white !important;
+}
 
 /*--------------------------------------------------------------
 # index page
