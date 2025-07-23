@@ -1,10 +1,15 @@
+/*--------------------------------------------------------------
+/* FONTS IN ALPHABETIC ORDER 
+--------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap'); 
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libertinus+Mono&family=Oxanium:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
+@font-face {
+  font-family: 'ArtNouveauCaps';
+  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
+  font-weight: 200;
+}
 
 @font-face {
   font-family: 'DeStijl';
@@ -14,9 +19,10 @@
 }
 
 @font-face {
-  font-family: 'ArtNouveauCaps';
-  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
-  font-weight: 200;
+  font-family: 'GoudyDropcap';
+  src: url('../fonts/GoudyInitialen.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
@@ -26,9 +32,16 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family:"Pixelated MS Sans Serif";
+  src: url("../fonts/MS Sans Serif.ttf") format("truetype");
+  font-weight:normal;
+  font-style:normal;
+}
+
 @font-face {
-  font-family: 'University';
-  src: url('../fonts/University.ttf') format('truetype');
+  font-family: 'Pixelify';
+  src: url('../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf');
   font-weight: 400;
   font-style: normal;
 }
@@ -36,10 +49,9 @@
 @font-face {
   font-family: 'University';
   src: url('../fonts/University.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
 }
-
-
 
 /*--------------------------------------------------------------
 # global
@@ -188,6 +200,7 @@ a:hover {
 .offcanvas {
   background-color: rgba(0, 0, 0, 0.9);
   color: var(--white);
+  z-index: 1055;
 }
 
 @media (max-width: 768px) {
@@ -202,21 +215,47 @@ a:hover {
   background-color: var(--primary-color);
 }
 
+/* Choose layout has same id as the button but align styling with headers in offcanvas */
+#offcanvasExample .offcanvas-title{
+  margin-top: 1em !important;
+  font-size: 20px !important;
+    
+  background: none;
+  padding: none;
+  margin: none;
+  box-shadow: none;
+  text-decoration: none;
+  outline: none;
+  outline-offset: none;
+  border-radius: 0;
+}
+
+
+#layout-buttons .btn {
+  margin-bottom: 1.618rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+}
+
 #default-title {
-  color: var(--white);
+  color: rgb(118, 118, 118);
   margin-top: 1.618rem;
 }
 
 #default-button {
   background-color: rgb(118, 118, 118) !important;
+  font-family: 'Cormorant Garamond';
 }
 
 #aldine-button {
   background-color: #e4dec6 !important;
-  border-color: #e4dec6 !important;
+  border-color: #574d38 !important;
   color: #574d38 !important;
   font-family: "Cardo", 'serif' !important;
   font-style: italic;
+  width: 150px;
+  box-shadow: none;
+  border-style: double;
  }
 
  #aldine-button:hover {
@@ -263,6 +302,36 @@ a:hover {
   background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
   font-family: 'University', sans-serif !important;
   color: white;
+}
+
+#windows-button {
+  width: 100%;
+  background: grey !important;
+  text-align: left;
+  font-family: "Pixelated MS Sans Serif", Arial;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  box-sizing: border-box;
+  min-height: 23px;
+  width: auto;
+  padding: 1 12px !important;
+  text-shadow: 0 0 #222;
+  color: black;
+}
+
+#cyberpunk-button {
+  background-color: hsl(154 50% 5%) !important;
+  border-color: hsl(154, 52%, 56%) !important;
+  color: hsl(154, 52%, 56%) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
+  font-family: 'Pixelify', sans-serif;
+  box-shadow: hsl(154, 52%, 56%) !important;
+}
+
+#cyberpunk-button:hover {
+  color: white !important;
 }
 
 /*--------------------------------------------------------------
