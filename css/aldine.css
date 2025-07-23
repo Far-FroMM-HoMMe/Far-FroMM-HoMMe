@@ -927,7 +927,6 @@ h1.mb-5.fw-bold {
 /*--------------------------------------------------------------
 # art viewer
 --------------------------------------------------------------*/
-
 /* === Carousel === */
 
 #artCarousel .carousel-control-prev, .carousel-control-next {
@@ -1077,4 +1076,216 @@ h1.mb-5.fw-bold {
 
 #artCarousel .accordion-body p {
   font-size: 16px;
+}
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+
+.text-center {
+  text-align: start !important;
+}
+
+.gallery-card .card {
+  border: double 5px !important;
+  border-radius: 0;
+  background: transparent;
+  border-color: #574d38 !important;
+  color: #574d38 !important;
+}
+
+.gallery-card .card-body h5 {
+  font-size: 20px;
+  font-weight: 300;
+  padding-bottom: 8px;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #574d38;
+}
+
+.gallery-card .card-body h6 {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: start;
+}
+
+.gallery-card .card-body p {
+  font-size: 12px;
+}
+
+.gallery-card .card img{
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+/* --- Accordion --- */
+
+.accordion-button {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 0;
+  box-shadow: none; /* removes default focus shadow */
+  outline: none; /* removes focus outline */
+  padding-left: 2px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-family: 'cardo', 'serif';
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.accordion-button:not(.collapsed) {
+  align-items: center;
+  background: #574d38c4;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 2px 3px 3px;
+  color: var(--white);
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* When accordion is collapsed */
+.accordion-button.collapsed {
+  align-items: center;
+  background: #574d38c4;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 2px 3px 3px;
+  color: var(--white);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.accordion-body {
+  border: double 5px !important;
+  border-radius: 0;
+  background: transparent;
+  border-color: #574d38 !important;
+  color: #574d38 !important;
+}
+
+.accordion-item {
+  border: none; /* Removes the border around the item */
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2382994B' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  transition: all 0.3s ease;
+}
+
+/* When accordion is open */
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23BEBEBECC' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+}
+
+/* === Metadata Table === */
+.accordion-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
+  font-weight: italic;
+}
+
+.accordion-body td {
+  padding: 0.5rem 1rem; /* Padding inside cells */
+  vertical-align: top;
+  color: #574d38;
+  text-transform: capitalize;
+  font-size: 12px;
+}
+
+/* Row bottom border */
+/* .accordion-body tr td{
+  border-bottom: 1px solid color-mix(in srgb, var(--white), transparent 30%);;
+} */
+
+/* Optional: spacing between first and second column */
+.accordion-body td:first-child {
+  font-weight: bold;
+  color: var(--accent-color);
+  width: 30%;
+  padding-left: 0px;
+}
+
+.accordion-body td:last-child {
+  text-align: right;
+  word-break: break-word;
+}
+
+.accordion-body p {
+  font-size: 16px;
+}
+
+.nature-interferes {
+  /* border-color: var(--nature); */
+  border-left: 8px solid var(--nature);
+  
+}
+
+.travelling-through-time {
+  border-left: 8px solid var(--time);
+}
+
+.taking-flight {
+  border-left: 8px solid var(--flight);
+}
+
+.around-the-kitchen-table {
+  border-left: 8px solid var(--kitchen);
+
+}
+
+h1,
+.display-4 {
+  font-family: "Carbo", "serif";
+  font-optical-sizing: auto;
+  font-weight: 50;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: clamp(30pt, 3vw, 40pt);
+  text-align: start;
+  line-height: 1.5;
+  letter-spacing: 0.75rem;
+  color: #574d38;
+  position: relative;
+  transform: translateY(-50%);
+  box-sizing: content-box;
+}
+
+#documentation h2,
+#documentation h3 {
+  font-family: "Carbo", "serif";
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: clamp(12pt, 3vw, 12pt);
+  color: #574d38;
+  text-align: start;
+  line-height: 1.5;
+  letter-spacing: 0.5rem;
+  position: relative;
+  box-sizing: content-box;
+}
+
+#documentation p,
+#disclaimer p {
+  color: #574d38;
 }

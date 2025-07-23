@@ -88,14 +88,13 @@ p {
 }
 
 /* For light-theme pages, add class="light" to body to reverse bg and text colors */
-body.light {
-    background-color:  #EDEDED;           /*Anti Flash White*/
+body.light {       /*Anti Flash White*/
     color: #1A1A1A;                       /*Eerie Black*/
 }
 
 /* links and buttons */
 a {
-  color: var(--accent-color);
+  color: red;
 }
 
 a:hover {
@@ -879,21 +878,19 @@ color: var(--white);
 --------------------------------------------------------------*/
 
 /*floating answers styles*/
-#floating {
-    background-color: #fff;
-}
 
 .floating-answers-container {
-    position: relative;
-    min-height: 600px;
-    background-color: var(--text-color);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;     
-    text-align: center;      
-    padding: 80px 50px;  
+  position: relative;
+  min-height: 600px;
+  background-color: var(--text-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 50px;
+  background: #fff;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
 }
 
 .floating-answer {
@@ -905,6 +902,7 @@ color: var(--white);
     max-width: 200px;
     pointer-events: none;
     animation: float 8s ease-in-out infinite;
+    font-family: 'Pixelated MS Sans Serif';
 }
 
 @keyframes float {
@@ -925,26 +923,101 @@ color: var(--white);
 /* change color with hover */
 .room:hover { fill: var(--primary-color); }
 
-  /* pop up style */
 .popup {
-    position: absolute;
-    display: none;
-    width: 50% ;            /* this is controlled with JS */
-    max-width: 300px;
-    padding: 1em 1.5em;
-    background: #fff;
-    border-radius: 1.5em;
-    box-shadow: 2px 2px 8px rgba(0,0,0,.15);
-    font-size: 14px;
-    z-index: 10;
+  position: absolute;
+  display: none;
+  width: 50%;
+  max-width: 300px;
+  padding: 1em 1.5em;
+  background: #fff;
+  border-radius: 1.5em;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, .15);
+  font-size: 14px;
+  z-index: 10;
+  background: silver;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  border-radius: 0;
 }
 
+#popup h3,
+#popup a {
+  font-family: 'Pixelated MS Sans Serif';
+  font-size: 16px;
+  margin-bottom: 0.5em;
+}
+
+#popup p {
+  font-size: 11px;
+  margin: 0;
+}
+
+.display-5 {
+  font-family: 'Pixelated MS Sans Serif';
+  text-align: center;
+}
+
+.text-muted {
+  --bs-text-opacity: 1;
+  color: var(--bs-secondary-color) !important;
+  font-family: 'Pixelated MS Sans Serif';
+  text-align: center;
+}
+
+
+.lead {
+  font-size: 12px;
+}
+
+.cardheader {
+  font-family: 'Pixelated MS Sans Serif';
+}
+
+.card {
+  background: silver;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  padding: 3px;
+  border-radius: 0;
+}
+
+.card-header {
+  align-items: center;
+    background: linear-gradient(90deg, navy, #1084d0);
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 2px 3px 3px;
+}
+
+.card-title {
+  font-size: 12px;
+  font-family: 'Pixelated MS Sans Serif';
+  color: white;
+}
+
+.btn-outline-secondary {
+  width: 200px;
+  background: none;
+  text-align: left;
+  font-family: "Pixelated MS Sans Serif", Arial;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  box-sizing: border-box;
+  min-height: 23px;
+  padding: 1 12px !important;
+  text-shadow: 0 0 #222;
+  color: black;
+}
 
 /*--------------------------------------------------------------
 # art viewer
 --------------------------------------------------------------*/
 
 /* === Carousel === */
+
+#artCarousel .col-xl-5 {
+  width: 100vw !important;
+}
 
 #artCarousel .carousel-control-prev, .carousel-control-next {
   width: 3%;
@@ -957,116 +1030,37 @@ color: var(--white);
   scroll-behavior: smooth;
 }
 
+/* === Accordion === */
+#artCarousel .accordion-body td:first-child {
+  font-weight: bold;
+  color: green !important;
+  width: 30%;
+  padding-left: 0px;
+}
 
 /* === Card === */
 
-#artCarousel .card {
-  background: var(--black);
-  border: none;
-  border-radius: 0;
-}
-
 #artCarousel .card-body h5 {
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 300;
   padding-bottom: 8px;
-
+  font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+  color: black;
 }
 
 #artCarousel .card-body h6 {
-  font-size: 24px;
+  font-size: 12px;
   font-weight: 600;
+  text-align: start;
 }
 
 #artCarousel .card-body p {
   font-size: 20px;
-  
 }
 
 #artCarousel .card img{
   object-fit: contain;
   object-position: 50% 50%;
-}
-
-/* --- Accordion --- */
-
-#artCarousel .accordion-button {
-  background-color: var(--black);
-  color: var(--white);
-  border: none;
-  border-bottom: 2px solid var(--primary-color);
-  border-radius: 0;
-  box-shadow: none; /* removes default focus shadow */
-  outline: none; /* removes focus outline */
-  padding-left: 2px;
-  padding-bottom: 20px;
-  /* font-weight: bold; */
-  font-size: 18px;
-  text-transform: capitalize;
-  
-}
-
-#artCarousel .accordion-button:focus {
-  box-shadow: none;
-  outline: none;
-  border: none;
-}
-
-#artCarousel .accordion-button:not(.collapsed) {
-  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
-  background-color: var(--black);
-  color: var(--white);
-}
-
-/* When accordion is collapsed */
-#artCarousel .accordion-button.collapsed {
-  border-bottom: 2px solid var(--primary-color);
-  background-color: var(--black);
-  color: var(--white);
-}
-
-#artCarousel .accordion-body {
-  background-color: var(--black);
-  color: var(--white);
-  border-bottom: 2px solid var(--primary-color);
-  border-radius: 0;
-}
-
-#artCarousel .accordion-item {
-  border: none; /* Removes the border around the item */
-  border-radius: 0;
-  background-color: transparent;
-}
-
-#artCarousel .accordion-button::after {
-  flex-shrink: 0;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-left: auto;
-  background-repeat: no-repeat;
-  background-size: 1.25rem;
-  background-position: center;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2382994B' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
-  transition: all 0.3s ease;
-}
-
-/* When accordion is open */
-#artCarousel .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23BEBEBECC' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
-}
-
-/* === Metadata Table === */
-#artCarousel .accordion-body table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
-}
-
-#artCarousel .accordion-body td {
-  padding: 0.5rem 1rem; /* Padding inside cells */
-  vertical-align: top;
-  color: var(--white);
-  text-transform: capitalize;
 }
 
 /* Row bottom border */
@@ -1087,35 +1081,66 @@ color: var(--white);
   word-break: break-word;
 }
 
-#artCarousel .accordion-body p {
-  font-size: 16px;
+#artCarousel .card-body p {
+  font-size: 12px;
+  color: black;
 }
 
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
+#gallery h1 {
+  text-align: start !important;
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+  font-size: 3rem;
+  margin: 12px 0;
+  margin-top: 40px;
+}
+
+#gallery h1::after {
+  content: "";
+  display: block;
+  margin-top: 10px;
+  margin-left: 10;
+  width: 400px;
+  height: 1px;
+  opacity: 0.5;
+  background: linear-gradient(to right, red 20%, yellow 20%, yellow 36%, green 36%, green 60%, blue 60%, blue 100%);
+}
+
+.text-center {
+  text-align: start !important;
+}
 
 .gallery-card .card {
-  background: var(--black);
-  /* border: none; */
-  border-radius: 0;
+  background: silver;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  padding: 3px;
+   border-radius: 0;
 }
 
 .gallery-card .card-body h5 {
-  font-size: 25px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 300;
   padding-bottom: 8px;
-
+  font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+  color: black;
 }
 
 .gallery-card .card-body h6 {
-  font-size: 20px;
+  font-size: 12px;
   font-weight: 600;
+  text-align: start;
 }
 
 .gallery-card .card-body p {
-  font-size: 16px;
-  
+  font-size: 12px;
 }
 
 .gallery-card .card img{
@@ -1125,7 +1150,7 @@ color: var(--white);
 
 /* --- Accordion --- */
 
-.gallery-card .accordion-button {
+.accordion-button {
   background-color: var(--black);
   color: var(--white);
   border: none;
@@ -1141,39 +1166,51 @@ color: var(--white);
   
 }
 
-.gallery-card .accordion-button:focus {
+.accordion-button:focus {
   box-shadow: none;
   outline: none;
   border: none;
 }
 
-.gallery-card .accordion-button:not(.collapsed) {
-  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
-  background-color: var(--black);
+.accordion-button:not(.collapsed) {
+  align-items: center;
+  background: linear-gradient(90deg, navy, #1084d0);
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 2px 3px 3px;
   color: var(--white);
+  font-family: 'Pixelated MS Sans Serif';
+  font-size: 12px;
 }
 
 /* When accordion is collapsed */
-.gallery-card .accordion-button.collapsed {
-  border-bottom: 2px solid var(--primary-color);
-  background-color: var(--black);
+.accordion-button.collapsed {
+  align-items: center;
+  background: linear-gradient(90deg, navy, #1084d0);
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 2px 3px 3px;
   color: var(--white);
+  font-family: 'Pixelated MS Sans Serif';
+  font-size: 12px;
 }
 
-.gallery-card .accordion-body {
-  background-color: var(--black);
-  color: var(--white);
-  border-bottom: 2px solid var(--primary-color);
+.accordion-body {
+  background: silver;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  padding: 3px;
   border-radius: 0;
+  color: black;
+  border-bottom: 2px solid green;
 }
 
-.gallery-card .accordion-item {
+.accordion-item {
   border: none; /* Removes the border around the item */
   border-radius: 0;
   background-color: transparent;
 }
 
-.gallery-card .accordion-button::after {
+.accordion-button::after {
   flex-shrink: 0;
   width: 1.25rem;
   height: 1.25rem;
@@ -1186,21 +1223,21 @@ color: var(--white);
 }
 
 /* When accordion is open */
-.gallery-card .accordion-button:not(.collapsed)::after {
+.accordion-button:not(.collapsed)::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23BEBEBECC' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
 }
 
 /* === Metadata Table === */
-.gallery-card .accordion-body table {
+.accordion-body table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
 }
 
-.gallery-card .accordion-body td {
+.accordion-body td {
   padding: 0.5rem 1rem; /* Padding inside cells */
   vertical-align: top;
-  color: var(--white);
+  color: black;
   text-transform: capitalize;
 }
 
@@ -1210,38 +1247,109 @@ color: var(--white);
 } */
 
 /* Optional: spacing between first and second column */
-.gallery-card .accordion-body td:first-child {
+.accordion-body td:first-child {
   font-weight: bold;
-  color: var(--primary-color);
+  color: green;
   width: 30%;
   padding-left: 0px;
 }
 
-.gallery-card .accordion-body td:last-child {
+.accordion-body td:last-child {
   text-align: right;
   word-break: break-word;
 }
 
-.gallery-card .accordion-body p {
+.accordion-body p {
   font-size: 16px;
 }
 
 .nature-interferes {
   /* border-color: var(--nature); */
-  border-left: 3px solid var(--nature);
+  border-left: 8px solid var(--nature);
   
 }
 
 .travelling-through-time {
-  border-left: 3px solid var(--time);
+  border-left: 8px solid var(--time);
 }
 
 .taking-flight {
-  border-left: 3px solid var(--flight);
+  border-left: 8px solid var(--flight);
 }
 
 .around-the-kitchen-table {
-  border-left: 3px solid var(--kitchen);
+  border-left: 8px solid var(--kitchen);
 
 }
 
+/* --------------------------------- */
+/* DOCUMENTATION */
+/* --------------------------------- */
+
+h1,
+.display-4 {
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: calc(1.475rem + 2.7vw);
+  text-align: start !important;
+  margin-block-start: 0.67em;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+h1.display-4::after {
+  content: "";
+  display: block;
+  margin-top: 10px;
+  margin-left: 10;
+  width: 400px;
+  height: 1px;
+  opacity: 0.5;
+  background: linear-gradient(to right, red 20%, yellow 20%, yellow 36%, green 36%, green 60%, blue 60%, blue 100%);
+}
+
+h1::after {
+  content: "";
+  display: block;
+  margin-top: 10px;
+  margin-left: 10;
+  width: 400px;
+  height: 1px;
+  opacity: 0.5;
+  background: linear-gradient(to right, red 20%, yellow 20%, yellow 36%, green 36%, green 60%, blue 60%, blue 100%);
+}
+
+#documentation h2 {
+  font-family: 'Pixelated MS Sans Serif';
+  text-align: start;
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 30px;
+}
+
+#documentation h3 {
+  font-family: 'Pixelated MS Sans Serif';
+  text-align: start;
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: 16px;
+}
+
+#documentation .col-lg-10 {
+  padding: 0 !important
+}
+
+#documentation,
+#disclaimer,
+#creators {
+  margin: 20px !important;
+  padding: 5px !important;
+}
+
+@media (max-width: 440px) {
+  #documentation,
+  #disclaimer,
+  #creators {
+    margin-top: 20px !important;
+  }
+}
