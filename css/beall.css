@@ -69,14 +69,19 @@ body {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    height: 100vh;                         /* ビューポートの高さに合わせる */
+    margin: 0;                             /* 念のため余白リセット */
+    padding: 0;
+  }
+
   body {
-    background-size: auto 100%;            /* 幅は自動、高さ100%に合わせる */
-    background-position: 60% center;       /* 中心よりやや右に表示 */
+    background-size: auto 100vh;           /* 背景画像の高さを画面の高さに固定 */
+    background-position: 80% center;       /* 中心よりやや右 */
     background-attachment: fixed;          /* 背景を固定 */
-    background-repeat: no-repeat;          /* 繰り返しなし（必要であれば） */
+    background-repeat: no-repeat;          /* 背景繰り返しなし */
   }
 }
-
 h1,h2,h3 {
   font-family: 'University', sans-serif;
   display: inline-block;
@@ -172,7 +177,7 @@ a:hover {
 }
 
 #chooseLayout {
-  background-color: var(--black);
+  background-color: ar(--black);
   color: var(--white);
 }
 
@@ -185,6 +190,12 @@ a:hover {
   color: var(--white);
 }
 
+@media (max-width: 768px) {
+.offcanvas {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--white);
+}
+}
 #layout-buttons .btn {
   margin-bottom: 1.618rem;
   padding: 0.5rem 1rem;
@@ -616,7 +627,7 @@ footer {
 --------------------------------------------------------------*/
 #intro .text-center {
   padding: 0;
-  background-color: var(--blue);
+  background-color: #ffe000;
   margin: 0!important;
 }
 
@@ -689,6 +700,30 @@ footer {
 50% { transform: translateY(-20px); }
 100% { transform: translateY(0); }
 }
+
+@media (max-width: 768px) {
+  .floating-answers-container {
+    padding: 40px 20px; /* Adjust padding for smaller screens */
+  }
+  
+  .floating-answer {
+    max-width: 150px; /* Reduce max width for smaller screens */
+    font-size: 0.8rem; /* Adjust font size for smaller screens */
+  }
+  
+  .main-heading .fw-bold {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #floating p,
+  .action-area {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  } 
+  
+}
+
 
 /* narrative */
 
@@ -780,7 +815,12 @@ footer {
 }
 
 
-
+@media (max-width: 768px) {
+  #choose-narrative, #rooms, #collections {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
 
 /*--------------------------------------------------------------
 # gallery
@@ -910,5 +950,38 @@ footer {
 --------------------------------------------------------------*/
 
 #disclaimer {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.75);
 }
+
+/*--------------------------------------------------------------
+# Documentation
+--------------------------------------------------------------*/
+
+#documentation {
+  background-color: rgba(255, 255, 255, 0.75);
+  margin-left: 3rem!important;
+  margin-right: 3rem!important;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+#documentation h1 {
+  font-size: clamp(3rem, 3vw, 4rem);
+  color: var(--black);
+  padding: auto;
+}
+
+#documentation h2 {
+  font-family: 'University', sans-serif;
+  font-size: clamp(2.5rem, 2vw, 3rem);
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+
+#documentation h3 {
+  font-family: 'University', sans-serif;
+  font-size: clamp(2rem, 1.5vw, 2rem);
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+

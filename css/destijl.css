@@ -1124,7 +1124,12 @@ color: var(--white);
 
 } 
 
-
+@media (max-width: 768px) {
+  #choose-narrative, #rooms, #collections {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
 
 /*--------------------------------------------------------------
 # artviewer
@@ -1305,3 +1310,53 @@ footer .text-center {
   justify-content: center;
 }
 
+/*--------------------------------------------------------------
+# Documentation
+--------------------------------------------------------------*/
+
+#documentation {
+  padding: 2rem;
+  background: url("../resources/img/destijl/mondrian_frame5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 45vh;
+  background-position: right 120%;
+} 
+
+#documentation h1 {
+  font-size: clamp(3rem, 3vw, 4rem);
+
+  font-weight: bold;
+  color: var(--black);
+}
+
+#documentation h2 {
+  font-family: "Destijl";
+  font-size: clamp(2.5rem, 2vw, 3rem);
+  font-weight: bold;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+
+#documentation h3 {
+  font-family: "Destijl";
+  font-size: clamp(2rem, 1.5vw, 2rem);
+  font-weight: bold;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+/*--------------------------------------------------------------
+# Disclaimer  
+--------------------------------------------------------------*/
+
+
+#disclaimer {
+  padding: 2rem;
+  background: url("../resources/img/destijl/mondrian_frame5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 45vh;
+  background-position: right 100%;
+} 
