@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //get skeleton doc to access its elements
     getSkeleton();
     
+    //get the selected narrative 
+    // let narValue = localStorage.getItem('narValue') || null;
+    // console.log(narValue);
+    // localStorage.removeItem('narValue');
     populate();
 
     //create asynchronous function to run fetch()
@@ -33,6 +37,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //take the retrieved json and it pass into the functions to handle populating the html
         addArt(artworksJson);
+
+        const storedTheme = localStorage.getItem("themeValue");
+        console.log(storedTheme);
+        if (storedTheme) {
+            const themeName = storedTheme.replaceAll("-", " ");
+
+            const themeArtIDs = globalArt
+                .filter(art => art.theme === themeName)
+                .map(art => art.id);
+
+            const artColumns = document.querySelectorAll(".gallery-card");
+
+            for (const col of artColumns) {
+                const cardId = col.querySelector(".card").getAttribute("id");
+
+                if (themeArtIDs.includes(cardId)) {
+                    col.classList.remove("d-none");
+                } else {
+                    col.classList.add("d-none");
+                }
+            }
+
+            // Optional: clear it so it's only used once
+            localStorage.removeItem("themeValue");
+        }
     }
 
     async function getSkeleton() {
@@ -195,7 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const themeSelect = document.querySelector("#themes").querySelector("p").querySelectorAll("a");
 const allArtLink = document.querySelector("#all-art"); // your "show all" anchor
-console.log(globalArt);
 for (const theme of themeSelect) {
     theme.addEventListener("click", () => {
         const themeName = theme.getAttribute("id").replaceAll("-", " ");
@@ -228,6 +256,7 @@ allArtLink.addEventListener("click", () => {
     }
 });
 
+//function to switch styles
 function switchStyle(sheet) {
-  document.getElementById("themeStylesheet").setAttribute("href", sheet);
+    document.getElementById("themeStylesheet").setAttribute("href", sheet);
 }

@@ -1,14 +1,15 @@
 /*--------------------------------------------------------------
-# global
+/* FONTS IN ALPHABETIC ORDER 
 --------------------------------------------------------------*/
 
-/* FONTS */
-/* --------------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libertinus+Mono&family=Oxanium:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
+@font-face {
+  font-family: 'ArtNouveauCaps';
+  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
+  font-weight: 200;
+}
 
 @font-face {
   font-family: 'DeStijl';
@@ -17,16 +18,44 @@
   font-style: normal;
 }
 
-@font-face{
-    font-family:"Pixelated MS Sans Serif";
-    src:url("../fonts/MS Sans Serif.ttf") format("truetype");
-    font-weight:normal;
-    font-style:normal;
+@font-face {
+  font-family: 'GoudyDropcap';
+  src: url('../fonts/GoudyInitialen.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-/* CUSTOM PROPERTIES VAR() */
-/* --------------------------------------------------------------*/
-/* The dark-theme will be the default */
+@font-face {
+  font-family: 'Glass Antiqua';
+  src: url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family:"Pixelated MS Sans Serif";
+  src: url("../fonts/MS Sans Serif.ttf") format("truetype");
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: 'Pixelify';
+  src: url('../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'University';
+  src: url('../fonts/University.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*--------------------------------------------------------------
+# global
+--------------------------------------------------------------*/
 
 :root {
   --black: #1A1A1A;
@@ -79,27 +108,21 @@ a:hover {
 /* BUTTONS */
 /* --------------------------------------------------------------*/
 .btn-primary {
-    background: silver;
-    border: none;
-    border-radius: 0;
-    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-    box-sizing: border-box;
-    color: transparent;
-    min-height: 23px;
-    min-width: 75px;
-    padding: 0 12px;
-    text-shadow: 0 0 #222;
+  width: 100%;
+  background: none;
+  text-align: left;
+  font-family: "Pixelated MS Sans Serif", Arial;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  box-sizing: border-box;
+  min-height: 23px;
+  min-width: 75px;
+  padding: 1 12px !important;
+  text-shadow: 0 0 #222;
+  color: black;
 }
-
-.btn-primary:hover,
-.btn-primary:focus {
-  display: none;
-}
-
-.btn-primary:active {
-    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-}
-
 
 
 /* NAVBAR */
@@ -167,13 +190,16 @@ a:hover {
 }
 
 .navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
+.navbar-nav .nav-link:focus,
+.btn-primary:hover,
+.btn-primary:focus {
     background: #c0c0c0;
     box-shadow: inset -1px -1px #000, inset 1px 1px #fff;
     outline: none;
 }
 
-.navbar-nav .nav-link.active {
+.navbar-nav .nav-link.active,
+.btn-primary:active {
     background: #c0c0c0;
     box-shadow: inset 2px 2px #808080, inset -2px -2px #fff;
     font-weight: bold;
@@ -277,45 +303,29 @@ background: #c0c0c0;
 }
 
 /* Choose layout has same id as the button but align styling with headers in offcanvas */
-#offcanvasExample h5,
-#offcanvasExample .offcanvas-title{
-    margin-top: 1em !important;
-    font-size: 11px !important;
-    font-weight: bold !important;
-    text-transform: uppercase  !important;
-    font-family: "Pixelated MS Sans Serif", Arial;
-    
-    background: none;
-    padding: none;
-    margin: none;
-    box-shadow: none;
-    text-decoration: none;
-    outline: none;
-    outline-offset: none;
-    border-radius: 0;
-}
- 
-/* tree kind of structure  */
-#offcanvasExample button.btn {
-    display: block;
-    width: 100%;
-    background: none;
-    text-align: left;
-    font-family: "Pixelated MS Sans Serif", Arial;
-    font-size: 11px;
-    border: none;
-    border-radius: 0;
-    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-    box-sizing: border-box;
-    min-height: 23px;
-    min-width: 75px;
-    padding: 0 12px;
-    text-shadow: 0 0 #222;
-  }
+#offcanvasExample .offcanvas-title {
+  margin-top: 1em !important;
+  font-size: 20px !important;
+  font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
 
-#offcanvasExample button.btn:hover {
-    background-color: #c0c0c0;
+    
+  background: none;
+  padding: none;
+  margin: none;
+  box-shadow: none;
+  text-decoration: none;
+  outline: none;
+  outline-offset: none;
+  border-radius: 0;
 }
+
+#offcanvasExample h5 {
+  font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+  font-size: 12px;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
 
 #layout-buttons .btn {
   margin-bottom: 1.618rem;
@@ -330,14 +340,18 @@ background: #c0c0c0;
 
 #default-button {
   background-color: rgb(118, 118, 118) !important;
+  font-family: 'Cormorant Garamond';
 }
 
 #aldine-button {
   background-color: #e4dec6 !important;
-  border-color: #e4dec6 !important;
+  border-color: #574d38 !important;
   color: #574d38 !important;
   font-family: "Cardo", 'serif' !important;
   font-style: italic;
+  width: 150px;
+  box-shadow: none;
+  border-style: double;
  }
 
  #aldine-button:hover {
@@ -346,24 +360,76 @@ background: #c0c0c0;
  }
 
  #artnouveau-button {
-  /* To be decided */
+  background-color: #74918A !important;
+  border-color: #A8B162 !important;
+  color: #FBFDF7 !important;
+  font-family: 'ArtNouveauCaps', 'serif' !important;
+  font-style: italic;
  }
 
+#artnouveau-button:hover {
+  background-color: #574B60 !important;
+  color: #FBFDF7 !important;
+}
+
 #stijl-button {
-  font-family: "DeStijl", "sans-serif" !important;
+  font-family: "Destijl", "sans-serif" !important;
+  border-radius: 0 !important;
+  color: black !important;
+  box-shadow: inset -0.5em -0.5em #FDDE06;;
+  background-color: white !important ;
+  border: 2px solid black !important;
+  width: 100px;
+}
+
+#stijl-button:hover {
+  color: white!important;;
+  box-shadow: inset -0.5em -0.5em#0300AD ;
+  background-color: black ! important;
+
 }
 
 #beall-button {
-  /* To be decided */
- }
+  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
 
- #web90s-button {
-  /* To be decided */
- }
+#beall-button:hover {
+  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
 
- #cyberpunk-button {
-  /* To be decided */
- }
+#windows-button {
+  width: 100%;
+  background: grey !important;
+  text-align: left;
+  font-family: "Pixelated MS Sans Serif", Arial;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  box-sizing: border-box;
+  min-height: 23px;
+  width: auto;
+  padding: 1 12px !important;
+  text-shadow: 0 0 #222;
+  color: black;
+}
+
+#cyberpunk-button {
+  background-color: hsl(154 50% 5%) !important;
+  border-color: hsl(154, 52%, 56%) !important;
+  color: hsl(154, 52%, 56%) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
+  font-family: 'Pixelify', sans-serif;
+  box-shadow: hsl(154, 52%, 56%) !important;
+}
+
+#cyberpunk-button:hover {
+  color: white !important;
+}
 
 .offcanvas-header .btn-close {
   display: none !important;

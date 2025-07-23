@@ -12,11 +12,9 @@
         <source>https://www.artic.edu/artworks/28560/the-bedroom</source>
         <style>Post-Impressionism</style>
         <subject>The bedroom</subject>
-        <label/>
+        <label>This painting is the second of the three distinct versions of Van Gogh's bedroom in his 'Yellow House' in Arles, France; the place where he had a home of his own for the first time. As he wrote in a letter addressed to his brother Theo, the use of bright colors was meant to express 'absolute repose', reflecting his longing for tranquility during the instability brought on by his illness.</label>
         <theme>Around the Kitchen Table</theme>
         <creditLine/>
-        <narrativeName>businessman</narrativeName>
-        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/the_bedroom_aic.jpg</imageURL>
         <relativePath>resources/img/the_bedroom_aic.jpg</relativePath>
     </artwork>
 </objects>

@@ -1,0 +1,1128 @@
+/*--------------------------------------------------------------
+/* FONTS IN ALPHABETIC ORDER 
+--------------------------------------------------------------*/
+
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libertinus+Mono&family=Oxanium:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'ArtNouveauCaps';
+  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'DeStijl';
+  src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GoudyDropcap';
+  src: url('../fonts/GoudyInitialen.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Glass Antiqua';
+  src: url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family:"Pixelated MS Sans Serif";
+  src: url("../fonts/MS Sans Serif.ttf") format("truetype");
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: 'Pixelify';
+  src: url('../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'University';
+  src: url('../fonts/University.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*--------------------------------------------------------------
+# global
+--------------------------------------------------------------*/
+
+/* custom properties you can call with var() */
+/* The dark-theme will be the default */
+
+:root {
+  --black: #1A1A1A;
+  --white: #EDEDED;
+  --primary-color: #82994B;         /*Moss Green*/
+  --primary-color-dark:#556a27 ;    /*darker moss green*/
+  --accent-color: #B14236;          /*Persian Red*/
+  --accent-color-dark: #952215;     /*darker persian red*/
+
+  /* Theme colours */
+  --kitchen: #F4BBD3;
+  --flight: #a10625;
+  --nature: #87B38D;
+  --time: #326273;
+
+  --crt-black: hsl(154 50% 5%);
+  --crt-green: hsl(154, 52%, 56%);
+}
+
+body {
+    /* padding: 50px; */
+    /* background-image: url(../resources/img/2035/lain_room.jpg);
+    background-color: var(--crt-black); */
+    background: 
+    linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--crt-black) 80%, transparent),
+        color-mix(in srgb, var(--crt-black) 80%, transparent)
+    ),
+    url(../resources/img/2035/lain_room.jpg);
+    background-size: contain;
+    color: var(--white);
+    text-shadow: 0 0 6px hsl(154, 52%, 56%);
+    font-family: 'Pixelify', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.5;
+    padding-inline: 30px;
+}
+
+p { 
+    margin-bottom: 1.5em;
+}
+
+/* For light-theme pages, add class="light" to body to reverse bg and text colors */
+body.light {          /*Anti Flash White*/
+    color: var(--white);                       /*Eerie Black*/
+}
+
+/* links and buttons */
+a {
+  color: var(--white);
+}
+
+a:hover {
+  color: var(--crt-green);
+}
+
+.btn-primary,
+.btn-outline-secondary {
+  /* background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(#EDEDED); */
+  border: 1px solid var(--crt-green);
+  background-color: transparent;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-outline-secondary:hover,
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus {
+  background-color: transparent !important;  /*added !important because sometimes the bootstrap default color shows up */
+  border-color: var(--crt-green) !important;
+  color: var(--crt-green) !important;
+
+}
+/* According to dark theme */
+.navbar {
+  background-color: #12121258;
+  /* color: var(--white); */
+  position: fixed;
+}
+
+@media (max-width: 578px) {
+  .navbar {
+    background-color: #121212c4;
+  }
+}
+
+#navbartext {
+  /* margin-left: 20px; 
+  font-family: 'Libertinus Mono', monospace;  */
+  font-size: clamp(0.75rem, 1vw, 1rem);
+}
+
+.nav-link {
+  /* color: var(--white) !important; */
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--crt-green) !important;
+}
+
+.active {
+  color: var(--crt-green) !important;
+}
+
+#chooseLayout {
+  /* background-color: var(--primary-color);
+  color: var(--white); */
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+}
+
+/* According to dark theme */
+.offcanvas {
+  background-color: var(--black);
+  color: var(--white);
+  z-index: 1055;
+}
+
+#layout-buttons .btn {
+  margin-bottom: 1.618rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+}
+
+/* Choose layout has same id as the button but align styling with headers in offcanvas */
+#offcanvasExample .offcanvas-title{
+    margin-top: 1em !important;
+    font-size: 20px !important;
+    
+    background: none;
+    padding: none;
+    margin: none;
+    box-shadow: none;
+    text-decoration: none;
+    outline: none;
+    outline-offset: none;
+    border-radius: 0;
+}
+
+
+#layout-buttons .btn {
+  margin-bottom: 1.618rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+}
+
+#default-title {
+  color: rgb(118, 118, 118);
+  margin-top: 1.618rem;
+}
+
+#default-button {
+  background-color: rgb(118, 118, 118) !important;
+  font-family: 'Cormorant Garamond';
+}
+
+#aldine-button {
+  background-color: #e4dec6 !important;
+  border-color: #574d38 !important;
+  color: #574d38 !important;
+  font-family: "Cardo", 'serif' !important;
+  font-style: italic;
+  width: 150px;
+  box-shadow: none;
+  border-style: double;
+ }
+
+ #aldine-button:hover {
+  background-color: #574d38 !important;
+  color: #e4dec6 !important;
+ }
+
+ #artnouveau-button {
+  background-color: #74918A !important;
+  border-color: #A8B162 !important;
+  color: #FBFDF7 !important;
+  font-family: 'ArtNouveauCaps', 'serif' !important;
+  font-style: italic;
+ }
+
+#artnouveau-button:hover {
+  background-color: #574B60 !important;
+  color: #FBFDF7 !important;
+}
+
+#stijl-button {
+  font-family: "Destijl", "sans-serif" !important;
+  border-radius: 0 !important;
+  color: black !important;
+  box-shadow: inset -0.5em -0.5em #FDDE06;;
+  background-color: white !important ;
+  border: 2px solid black !important;
+}
+
+#stijl-button:hover {
+  color: white!important;;
+  box-shadow: inset -0.5em -0.5em#0300AD ;
+  background-color: black ! important;
+
+}
+
+#beall-button {
+  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+#beall-button:hover {
+  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+#windows-button {
+  width: 100%;
+  background: grey !important;
+  text-align: left;
+  font-family: "Pixelated MS Sans Serif", Arial;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  box-sizing: border-box;
+  min-height: 23px;
+  width: auto;
+  padding: 1 12px !important;
+  text-shadow: 0 0 #222;
+  color: black;
+}
+
+#cyberpunk-button {
+  background-color: hsl(154 50% 5%) !important;
+  border-color: hsl(154, 52%, 56%) !important;
+  color: hsl(154, 52%, 56%) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
+  font-family: 'Pixelify', sans-serif;
+  box-shadow: hsl(154, 52%, 56%) !important;
+}
+
+#cyberpunk-button:hover {
+  color: white !important;
+}
+
+
+footer {
+  background-color: #20202097;
+  color: white;
+  padding: 30px 0;
+  font-size: 0.9rem;
+  margin-top: 5rem;
+}
+
+#interlaced {
+    position: fixed;
+    background: repeating-linear-gradient(transparent 0px 1px, hsl(154 0% 0%/.3) 3px 4px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+    animation: lines 0.066666666s linear infinite;
+}
+
+@keyframes lines {
+    0% {background-position: 0px 0px}
+    50% {background-position: 0px 0px}
+    51% {background-position: 0px 2px}
+    100% {background-position: 0px 2px}
+}
+
+/*--------------------------------------------------------------
+# index page
+--------------------------------------------------------------*/
+
+/* Thumbnail carousel removed to make place for premodern compas logo */
+#carouselHeaderImages img {
+  display: none;
+}
+
+/* index.global classes */
+.text-box {
+  /* background-color: rgba(248, 249, 250, 0); */
+  padding: 1.618rem;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+}
+
+/* Smaller screens lose the margins to fit the whole screen */
+@media (max-width: 768px) {
+  .text-box {
+    padding: 1rem;
+  }
+}
+
+/* Animations blocks sliding in from left-side into screen */
+/*  Slide for mobile is from down up */
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* works better for smaller screens, when scrolling down the blocks move up slowly */
+@media (max-width: 768px) {
+  .hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.5s ease;
+  }
+  
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* hero/thumbnail section */
+/* --------------------------------------------------------------*/
+.hero-section {
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+}
+
+/* .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(84, 83, 83, 0.2), rgba(0, 0, 0, 0.898));
+} */
+
+.hero-text {
+    /* font-family: "Libertinus Mono", monospace; */
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    /* font-size: clamp(7rem, 12vw, 11rem); */
+    font-size: clamp(3.75rem, -0.9375rem + 15vw, 7.5rem);
+    /* color: rgb(247, 247, 247); */
+    text-align: start;
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
+    line-height: 1;
+    
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0 40px;
+    box-sizing: border-box;
+    padding-left: 90px;
+}
+
+/* .hero-text span {
+    color: var(--primary-color);
+} */
+
+.hero-subtitle {
+    /* font-family: "Libertinus Mono", monospace; */
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(1.5rem, 3vw, 5rem);
+    /* color: #82994B; */
+    text-align: start;
+    /* text-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772); */
+    line-height: 1;
+    
+    position: absolute;
+    top: clamp(95%, 81vw, 89%);
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin-top: 0.15rem;
+    padding-bottom: 30px;
+    padding-left: 90px;
+}
+
+@media (max-width: 375px) {
+  .hero-text,
+  .hero-subtitle  {
+    padding: 0;
+  }
+}
+
+/* Abstract section */
+/* --------------------------------------------------------------*/
+#abstract {
+  margin-top: 1.618rem;
+  margin-bottom: 20px;
+}
+
+/* .has-dropcap {
+  overflow: hidden;
+  font-size: 2rem;
+}
+
+.dropcap {
+  float: left;
+  font-size: clamp(18rem, 6vw, 8.5rem);
+  line-height: 0.70;
+  margin: 0.1em 0.1em 0em 0;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  padding-right: 0.15rem;
+} */
+
+/* Themes-info and Narratives-info sections */
+/* they inherit most properties from the text-box class but need specific properties as well  */
+/* --------------------------------------------------------------*/
+#carouselThemeImages,
+#carouselNarrativeImages,
+#collectionsImageCard {
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+}
+
+#themes-info,
+#narratives-info {
+    margin-top: 1.618rem;
+}
+
+#theme-text-box {
+  background-color: transparent !important;
+  border: 2px solid var(--crt-green);
+}
+
+#narratives-text-box {
+  background-color: transparent !important;
+  border: 2px solid var(--crt-green);
+}
+
+.infoboxes-title {
+  font-size: clamp(6vw, 6vw, 7vw) !important;
+}
+
+.infoboxes-text {
+  font-size: clamp(1rem, 0.75rem, 1.2rem);
+  line-height: 1.6;
+  margin-top: 1rem;
+  color: var(--white) !important;
+}
+
+.infoboxes-text a {
+color: var(--white);
+}
+
+/* Image tiles in the themes-info and narratives-info section */
+.img-card {
+    border-radius: 0; 
+    border: none;
+    max-width: 83.3%;
+    max-height: 500px;
+    min-height: 500px;
+}
+
+#carouselThemeImages .card-img,
+#carouselNarrativeImages .card-img,
+#collections-info .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    min-height: 500px;
+    max-height: 500px;
+}
+
+#carouselThemeImages .card-img-overlay,
+#carouselNarrativeImages .card-img-overlay {
+    background: #121212a9;
+    border-radius: 0;
+}
+
+#carouselThemeImages .card-title-carousel,
+#carouselNarrativeImages .card-title-carousel {
+    font-size: clamp(6vw, 6vw, 7vw);
+    color: var(--white);
+}
+
+#carouselThemeImages .card-text-carousel,
+#carouselNarrativeImages .card-text-carousel {
+    color: var(--white);
+}
+#carouselThemeImages .card-text-carousel a,
+#carouselNarrativeImages .card-text-carousel a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: absolute;
+    top: 75%;
+}
+
+/* About info section */
+/* --------------------------------------------------------------*/
+
+#about-info {
+    margin-top: 1.618rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: var(--primary-color);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/*--------------------------------------------------------------
+# exhibition page
+--------------------------------------------------------------*/
+
+/*floating answers styles*/
+#floating{
+  background: radial-gradient(hsl(154 5% 15%) 0%, hsl(154 50% 5%) 70%);
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+}
+
+.floating-answers-container {
+    position: relative;
+    min-height: 600px;
+    background-color: var(--text-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;      
+    padding: 80px 50px;  
+}
+
+#answer-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* bring it to the back */
+  pointer-events: none;
+}
+
+.floating-answer {
+    position: absolute;
+    font-style: italic;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    max-width: 200px;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+    z-index: 10;
+}
+
+.description p {
+  color: var(--crt-green) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
+}
+
+.main-heading,
+.description,
+.action-area {
+  position: relative;
+  z-index: 2; 
+}
+
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
+100% { transform: translateY(0); }
+}
+
+/* card link styles */
+.card-group .card{
+  border-radius: 0;
+  background-color: transparent;
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+  color: white !important;
+}
+.link-card:hover,
+.link-card:focus,
+.link-card:active {
+    background-color: hsla(157, 52%, 5%, 0.59); /* hovering background color */
+    transition: background-color 0.2s ease;
+}
+
+/*  interactive map styles */
+/* change color with hover */
+.room:hover { 
+  fill: var(--crt-green); 
+}
+
+  /* pop up style */
+.popup {
+    position: absolute;
+    display: none;
+    width: 50% ;            /* this is controlled with JS */
+    max-width: 300px;
+    padding: 1em 1.5em;
+    background-color: var(--crt-black);
+    border: 1px solid var(--crt-green);
+    box-shadow: 0 0 6px hsl(154, 52%, 56%);
+    font-size: 14px;
+    z-index: 10;
+}
+
+#inputyouridea .modal-content {
+  border-radius: 0 !important;
+  background-color: var(--crt-black) !important;
+  border: 1px solid var(--crt-green) !important;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%) !important;
+  color: var(--crt-green) !important;
+}
+
+#inputyouridea .modal-header {
+  border-bottom: 1px solid var(--crt-green) !important;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%) !important;
+}
+
+#inputyouridea p {
+  color: var(--crt-green) !important;
+}
+
+#inputyouridea .form-control {
+  border-radius: 0 !important;
+  background-color: var(--crt-black) !important;
+  border: 1px solid var(--crt-green) !important;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%) !important;
+  color: var(--crt-green) !important;
+}
+
+#inputyouridea .modal-footer {
+  border-width: 0;
+}
+
+#inputyouridea .btn {
+  background-color: transparent;
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+  color: white;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# art viewer
+--------------------------------------------------------------*/
+
+#viewer {
+  margin-top: 5rem !important;
+  height: 90vh; /* Fixed height relative to screen */
+  width: 100%;
+  overflow-y: scroll;
+  background-color: var(--crt-black);
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+  margin-bottom: 1rem !important;
+}
+
+/* === Carousel === */
+
+#artCarousel .carousel-control-prev, .carousel-control-next {
+  width: 3%;
+}
+
+/* Make carousel-inner scrollable if content grows */
+#artCarousel .carousel-inner {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+
+/* === Card === */
+
+#artCarousel .card {
+  background: radial-gradient(hsl(154 5% 15%) 0%, hsl(154 50% 5%) 70%);
+  border: none;
+  border-radius: 0;
+}
+
+#artCarousel .card-body h5 {
+  /* font-size: 30px; */
+  font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
+  font-weight: 600;
+  padding-bottom: 8px;
+
+}
+
+#artCarousel .card-body h6 {
+  /* font-size: 24px; */
+  font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
+  font-weight: 600;
+  color: white !important;
+}
+
+#artCarousel .card-body p {
+  /* font-size: 20px; */
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
+  
+}
+
+#artCarousel .card img{
+  object-fit: contain;
+  object-position: 50% 50%;
+  max-height: 550px;
+}
+
+@media (max-width: 375px) {
+  #artCarousel .card img {
+    max-width: 220px;
+  }
+}
+
+#artCarousel .card-text{
+  color: var(--white);
+  
+}
+
+/* --- Accordion --- */
+
+#artCarousel .accordion-button {
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+  border-bottom: 2px solid var(--crt-green);
+  border-radius: 0;
+  box-shadow: none; /* removes default focus shadow */
+  outline: none; /* removes focus outline */
+  padding-left: 2px;
+  padding-bottom: 20px;
+  /* font-weight: bold; */
+  /* font-size: 18px; */
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
+  text-transform: capitalize;
+  
+}
+
+#artCarousel .accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+#artCarousel .accordion-button:not(.collapsed) {
+  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
+  background-color: transparent;
+  color: var(--white);
+}
+
+/* When accordion is collapsed */
+#artCarousel .accordion-button.collapsed {
+  border-bottom: 2px solid var(--crt-green);
+  background-color: transparent;
+  color: var(--white);
+}
+
+#artCarousel .accordion-body {
+  background-color: transparent;
+  color: var(--white);
+  border: 2px solid var(--crt-green);
+  border-radius: 0;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+  padding-left: 15px !important;
+}
+
+#artCarousel .accordion-item {
+  border: none; /* Removes the border around the item */
+  border-radius: 0;
+  background-color: transparent;
+}
+
+#artCarousel .accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2354c997' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  transition: all 0.3s ease;
+}
+
+/* When accordion is open */
+#artCarousel .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2354c997' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+}
+
+/* === Metadata Table === */
+#artCarousel .accordion-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
+  font-size: clamp(0.75rem, 0.2813rem + 1.5vw, 1.125rem);
+}
+
+#artCarousel .accordion-body td {
+  padding: 0.5rem 1rem; /* Padding inside cells */
+  vertical-align: top;
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+/* Row bottom border */
+/* .accordion-body tr td{
+  border-bottom: 1px solid color-mix(in srgb, var(--white), transparent 30%);;
+} */
+
+/* Optional: spacing between first and second column */
+#artCarousel .accordion-body td:first-child {
+  font-weight: bold;
+  color: var(--crt-green);
+  width: 30%;
+  padding-left: 0px;
+}
+
+#artCarousel .accordion-body td:last-child {
+  text-align: right;
+  word-break: break-word;
+}
+
+#artCarousel .accordion-body p {
+  /* font-size: 16px; */
+  font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
+}
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+
+#gallery h1 {
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(1.5rem, 5vw, 10rem);
+}
+
+#themes {
+  font-size: 25px;
+}
+
+.gallery-card .card {
+  border-radius: 0 ;
+  background-color: transparent;
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+  color: var(--crt-green);
+  padding-top: 20px !important;
+}
+
+.gallery-card .card-body h5 {
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 8px;
+
+}
+
+.gallery-card .card-body h6 {
+  font-size: 20px;
+  font-weight: 600;
+  color: white !important;
+}
+
+.gallery-card .card-body p {
+  font-size: 16px;
+  
+}
+
+.gallery-card .card img{
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+/* --- Accordion --- */
+
+.gallery-card .accordion-button {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 0;
+  box-shadow: none; /* removes default focus shadow */
+  outline: none; /* removes focus outline */
+  padding-left: 2px;
+  padding-bottom: 20px;
+  /* font-weight: bold; */
+  font-size: 18px;
+  text-transform: capitalize;
+  
+}
+
+.gallery-card .accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.gallery-card .accordion-button:not(.collapsed) {
+  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* When accordion is collapsed */
+.gallery-card .accordion-button.collapsed {
+  border-bottom: 2px solid var(--primary-color);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.gallery-card .accordion-body {
+  background-color: var(--black);
+  color: var(--white);
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 0;
+}
+
+.gallery-card .accordion-item {
+  border: none; /* Removes the border around the item */
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.gallery-card .accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2354c997' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  transition: all 0.3s ease;
+}
+
+/* When accordion is open */
+.gallery-card .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2354c997' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+}
+
+/* === Metadata Table === */
+.gallery-card .accordion-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
+}
+
+.gallery-card .accordion-body td {
+  padding: 0.5rem 1rem; /* Padding inside cells */
+  vertical-align: top;
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+/* Row bottom border */
+/* .accordion-body tr td{
+  border-bottom: 1px solid color-mix(in srgb, var(--white), transparent 30%);;
+} */
+
+/* Optional: spacing between first and second column */
+.gallery-card .accordion-body td:first-child {
+  font-weight: bold;
+  color: var(--primary-color);
+  width: 30%;
+  padding-left: 0px;
+}
+
+.gallery-card .accordion-body td:last-child {
+  text-align: right;
+  word-break: break-word;
+}
+
+.gallery-card .accordion-body p {
+  font-size: 16px;
+}
+
+.nature-interferes {
+  /* border-color: var(--nature); */
+  border-left: 3px solid var(--nature);
+  
+}
+
+.travelling-through-time {
+  border-left: 3px solid var(--time);
+}
+
+.taking-flight {
+  border-left: 3px solid var(--flight);
+}
+
+.around-the-kitchen-table {
+  border-left: 3px solid var(--kitchen);
+
+}
+
+#Around-the-Kitchen-Table {
+ color: var(--kitchen);
+ text-shadow: none;
+}
+
+#Taking-Flight {
+  color: var(--flight);
+  text-shadow: none;
+}
+
+#Nature-Interferes {
+  color: var(--nature);
+  text-shadow: none;
+}
+
+#Travelling-Through-Time {
+  color: var(--time);
+  text-shadow: none;
+}
+

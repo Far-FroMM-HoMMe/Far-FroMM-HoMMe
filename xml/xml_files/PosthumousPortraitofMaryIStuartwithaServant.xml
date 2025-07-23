@@ -12,11 +12,9 @@
         <source>https://www.mauritshuis.nl/en/our-collection/artworks/429-posthumous-portrait-of-mary-i-stuart-1631-1660-with-a-servant</source>
         <style>Portrait</style>
         <subject>Mary I Stuart, slaves, royalty</subject>
-        <label/>
+        <label>The English princess Mary Stuart was married to the Dutch stadholder Willem II and died aged only 29. Hanneman painted this posthumous portrait a couple of years later. Mary is ready for a fancy-dress ball and wears a white dress, an ostrich feather turban and a Brazilian feathered cloak. Her servant is fastening a string of pearls, but Mary seems not to notice him. The black boy is reduced to an ‘exotic’ accessory, with which Hanneman emphasizes Mary’s white skin and elevated position. (Mauritshuis)</label>
         <theme>Taking Flight</theme>
         <creditLine>Mauritshuis, The Hague.</creditLine>
-        <narrativeName>teacher</narrativeName>
-        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/posthumous_mary.jpg</imageURL>
         <relativePath>resources/img/posthumous_mary.jpg</relativePath>
     </artwork>
 </objects>

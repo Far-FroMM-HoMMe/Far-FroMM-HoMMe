@@ -1,12 +1,15 @@
 /*--------------------------------------------------------------
-# global
+/* FONTS IN ALPHABETIC ORDER 
 --------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Encode+Sans:wght@100..900&family=Forum&family=Glass+Antiqua&family=Metamorphous&display=swap');
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libertinus+Mono&family=Oxanium:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'ArtNouveauCaps';
+  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
+  font-weight: 200;
+}
 
 @font-face {
   font-family: 'DeStijl';
@@ -16,14 +19,29 @@
 }
 
 @font-face {
-  font-family: 'ArtNouveauCaps';
-  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
-  font-weight: 200;
+  font-family: 'GoudyDropcap';
+  src: url('../fonts/GoudyInitialen.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Glass Antiqua';
   src: url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family:"Pixelated MS Sans Serif";
+  src: url("../fonts/MS Sans Serif.ttf") format("truetype");
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: 'Pixelify';
+  src: url('../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf');
   font-weight: 400;
   font-style: normal;
 }
@@ -34,6 +52,10 @@
   font-weight: 400;
   font-style: normal;
 }
+
+/*--------------------------------------------------------------
+# global
+--------------------------------------------------------------*/
 
 /* custom properties you can call with var() */
 /* The dark-theme will be the default */
@@ -158,6 +180,7 @@ a:hover {
   color: var(--n-black);
   border-radius: 30px;
   padding: 5px;
+  z-index: 1055;
 }
 
 .offcanvas-body {
@@ -174,6 +197,28 @@ a:hover {
   background-color: var(--n-green);
 }
 
+/* Choose layout has same id as the button but align styling with headers in offcanvas */
+#offcanvasExample .offcanvas-title{
+  margin-top: 1em !important;
+  font-size: 20px !important;
+  color: black;
+    
+  background: none;
+  padding: none;
+  margin: none;
+  box-shadow: none;
+  text-decoration: none;
+  outline: none;
+  outline-offset: none;
+  border-radius: 0;
+}
+
+#layout-buttons .btn {
+  margin-bottom: 1.618rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+}
+
 #default-title {
   color: rgb(118, 118, 118);
   margin-top: 1.618rem;
@@ -181,14 +226,18 @@ a:hover {
 
 #default-button {
   background-color: rgb(118, 118, 118) !important;
+  font-family: 'Cormorant Garamond';
 }
 
 #aldine-button {
   background-color: #e4dec6 !important;
-  border-color: #e4dec6 !important;
+  border-color: #574d38 !important;
   color: #574d38 !important;
   font-family: "Cardo", 'serif' !important;
   font-style: italic;
+  width: 150px;
+  box-shadow: none;
+  border-style: double;
  }
 
  #aldine-button:hover {
@@ -197,16 +246,16 @@ a:hover {
  }
 
  #artnouveau-button {
-  background-color: #ABC8C0 !important;
-  color: #FDFBEB !important;
+  background-color: #74918A !important;
+  border-color: #A8B162 !important;
+  color: #FBFDF7 !important;
   font-family: 'ArtNouveauCaps', 'serif' !important;
   font-style: italic;
  }
 
 #artnouveau-button:hover {
-  background-color: #3F334D !important;
-  border-color: #A8B162 !important;
-  color: #FDFBEB !important;
+  background-color: #574B60 !important;
+  color: #FBFDF7 !important;
 }
 
 #stijl-button {
@@ -226,17 +275,46 @@ a:hover {
 }
 
 #beall-button {
-  /* To be decided */
- }
+  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
 
- #web90s-button {
-  /* To be decided */
- }
+#beall-button:hover {
+  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
 
- #cyberpunk-button {
-  /* To be decided */
- }
+#windows-button {
+  width: 100%;
+  background: grey !important;
+  text-align: left;
+  font-family: "Pixelated MS Sans Serif", Arial;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  box-sizing: border-box;
+  min-height: 23px;
+  width: auto;
+  padding: 1 12px !important;
+  text-shadow: 0 0 #222;
+  color: black;
+}
 
+#cyberpunk-button {
+  background-color: hsl(154 50% 5%) !important;
+  border-color: hsl(154, 52%, 56%) !important;
+  color: hsl(154, 52%, 56%) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
+  font-family: 'Pixelify', sans-serif;
+  box-shadow: hsl(154, 52%, 56%) !important;
+}
+
+#cyberpunk-button:hover {
+  color: white !important;
+}
 
 
 footer {
@@ -662,13 +740,13 @@ color: var(--n-black);
 --------------------------------------------------------------*/
 
 #viewer {
-    margin-top: 6rem !important;
-    border: 50px solid transparent; /* Required for border-image to work */
+    /* margin-top: 6rem !important;
+    border: 50px solid transparent; 
     border-image-source: url('../resources/img/artnouveau/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
-    border-image-slice: 165 65 220; /* Adjust as needed for thickness */
+    border-image-slice: 165 65 220; 
     border-image-width: 50px;
-    border-image-repeat: round; /* Options: stretch | repeat | round | space */
-    border-image-outset: 0;
+    border-image-repeat: round; 
+    border-image-outset: 0; */
     /* padding: 6px 3px; */
     /* height: 100%; */
     /* padding-top: 60px;
@@ -678,6 +756,7 @@ color: var(--n-black);
     height: 90vh; /* Fixed height relative to screen */
     width: 100%;
     overflow-y: scroll;
+    margin-top: 0 !important;
     
     
 }
@@ -699,7 +778,7 @@ color: var(--n-black);
 
 /* Make carousel-inner scrollable if content grows */
 #artCarousel .carousel-inner {
-  background: var(--n-purple);
+  background: var(--n-purple-light);
   height: 100%;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -709,14 +788,14 @@ color: var(--n-black);
   /* margin: 5px;
   margin-top: 50px;
   margin-bottom: 80px; */
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 #artCarousel .carousel-item {
-  background: var(--n-purple);
+  background: var(--n-purple-light);
   height: 100%; /* Ensures uniform height */
   padding: 0 !important;
-
+  margin-top: 30px;
   
 }
 
@@ -724,16 +803,17 @@ color: var(--n-black);
 /* === Card === */
 
 #artCarousel .card {
-  background: var(--n-purple);
+  background: var(--n-purple-light);
   border: none;
-  border-radius: 2px;
-  width: 100%;
+  /* border-radius: 2px; */
+  /* width: 100%; */
   height: 100%; /* FIXED HEIGHT */
 }
 
 #artCarousel .card-body h5 {
   font-family: 'ArtNouveauCaps';
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
   font-weight: 600;
   padding-bottom: 8px;
   color: var(--n-white);
@@ -741,13 +821,15 @@ color: var(--n-black);
 }
 
 #artCarousel .card-body h6 {
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
   font-weight: 600;
   color: var(--n-black) !important;
 }
 
 #artCarousel .card-body p {
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
   
 }
 
@@ -758,11 +840,22 @@ color: var(--n-black);
   
 }
 
+@media (max-width: 375px) {
+  #artCarousel .card img {
+    max-width: 220px;
+  }
+}
+
+#artCarousel .card-text{
+  color: var(--n-white);
+  
+}
+
 /* --- Accordion --- */
 
 #artCarousel .accordion-button {
-  background: var(--n-purple);
-  color: var(--white);
+  background: var(--n-purple-light);
+  color: var(--n-white);
   border: none;
   border-bottom: 2px solid var(--n-green);
   border-radius: 0;
@@ -771,7 +864,8 @@ color: var(--n-black);
   padding-left: 2px;
   padding-bottom: 20px;
   /* font-weight: bold; */
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
   text-transform: capitalize;
   
 }
@@ -783,21 +877,21 @@ color: var(--n-black);
 }
 
 #artCarousel .accordion-button:not(.collapsed) {
-  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
-  background: var(--n-purple);
-  color: var(--white);
+  border-bottom: 2px solid color-mix(in srgb, var(--n-white), transparent 80%);
+  background: var(--n-purple-light);
+  color: var(--n-white);
 }
 
 /* When accordion is collapsed */
 #artCarousel .accordion-button.collapsed {
   border-bottom: 2px solid var(--n-green);
-  background: var(--n-purple);
-  color: var(--white);
+  background: var(--n-purple-light);
+  color: var(--n-white);
 }
 
 #artCarousel .accordion-body {
-  background: var(--n-purple);
-  color: var(--white);
+  background: var(--n-purple-light);
+  color: var(--n-white);
   border-bottom: 2px solid var(--n-green);
   border-radius: 0;
 }
@@ -830,12 +924,13 @@ color: var(--n-black);
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
+  font-size: clamp(0.75rem, 0.2813rem + 1.5vw, 1.125rem);
 }
 
 #artCarousel .accordion-body td {
   padding: 0.5rem 1rem; /* Padding inside cells */
   vertical-align: top;
-  color: var(--white);
+  color: var(--n-white);
   text-transform: capitalize;
 }
 
@@ -858,7 +953,8 @@ color: var(--n-black);
 }
 
 #artCarousel .accordion-body p {
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
 }
 
 /*--------------------------------------------------------------

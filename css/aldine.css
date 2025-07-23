@@ -1,8 +1,15 @@
 /*--------------------------------------------------------------
-# global
+/* FONTS IN ALPHABETIC ORDER 
 --------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Libertinus+Mono&family=Oxanium:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'ArtNouveauCaps';
+  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
+  font-weight: 200;
+}
 
 @font-face {
   font-family: 'DeStijl';
@@ -12,14 +19,43 @@
 }
 
 @font-face {
-    font-family: 'GoudyDropcap';
-    src: url('../fonts/GoudyInitialen.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: 'GoudyDropcap';
+  src: url('../fonts/GoudyInitialen.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
-/* custom properties you can call with var() */
-/* The dark-theme will be the default */
+@font-face {
+  font-family: 'Glass Antiqua';
+  src: url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family:"Pixelated MS Sans Serif";
+  src: url("../fonts/MS Sans Serif.ttf") format("truetype");
+  font-weight:normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: 'Pixelify';
+  src: url('../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'University';
+  src: url('../fonts/University.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*--------------------------------------------------------------
+# global
+--------------------------------------------------------------*/
 
 :root {
   --black: #1A1A1A;
@@ -139,12 +175,36 @@ a:hover {
 .offcanvas {
   background-image: url('../resources/img/aldine/old-parchmentpaper.jpg');
   color: #574d38;
+  z-index: 1055;
 }
 
 #layout-buttons .btn {
   margin-bottom: 1.618rem;
   padding: 0.5rem 1rem;
   background-color: var(--accent-color);
+}
+
+/* Choose layout has same id as the button but align styling with headers in offcanvas */
+#offcanvasExample .offcanvas-title{
+    margin-top: 1em !important;
+    font-size: 20px !important;
+    color: #574d38 !important;
+    
+    background: none;
+    padding: none;
+    margin: none;
+    box-shadow: none;
+    text-decoration: none;
+    outline: none;
+    outline-offset: none;
+    border-radius: 0;
+}
+
+
+#layout-buttons .btn {
+  margin-bottom: 1.618rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
 }
 
 #default-title {
@@ -154,14 +214,18 @@ a:hover {
 
 #default-button {
   background-color: rgb(118, 118, 118) !important;
+  font-family: 'Cormorant Garamond';
 }
 
 #aldine-button {
   background-color: #e4dec6 !important;
-  border-color: #e4dec6 !important;
+  border-color: #574d38 !important;
   color: #574d38 !important;
   font-family: "Cardo", 'serif' !important;
   font-style: italic;
+  width: 150px;
+  box-shadow: none;
+  border-style: double;
  }
 
  #aldine-button:hover {
@@ -170,25 +234,75 @@ a:hover {
  }
 
  #artnouveau-button {
-  /* To be decided */
+  background-color: #74918A !important;
+  border-color: #A8B162 !important;
+  color: #FBFDF7 !important;
+  font-family: 'ArtNouveauCaps', 'serif' !important;
+  font-style: italic;
  }
 
+#artnouveau-button:hover {
+  background-color: #574B60 !important;
+  color: #FBFDF7 !important;
+}
+
 #stijl-button {
-  font-family: "DeStijl", "sans-serif" !important;
+  font-family: "Destijl", "sans-serif" !important;
+  border-radius: 0 !important;
+  color: black !important;
+  box-shadow: inset -0.5em -0.5em #FDDE06;;
+  background-color: white !important ;
+  border: 2px solid black !important;
+}
+
+#stijl-button:hover {
+  color: white!important;;
+  box-shadow: inset -0.5em -0.5em#0300AD ;
+  background-color: black ! important;
+
 }
 
 #beall-button {
-  /* To be decided */
- }
+  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
 
- #web90s-button {
-  /* To be decided */
- }
+#beall-button:hover {
+  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
 
- #cyberpunk-button {
-  /* To be decided */
- }
+#windows-button {
+  width: 100%;
+  background: grey !important;
+  text-align: left;
+  font-family: "Pixelated MS Sans Serif", Arial;
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  box-sizing: border-box;
+  min-height: 23px;
+  width: auto;
+  padding: 1 12px !important;
+  text-shadow: 0 0 #222;
+  color: black;
+}
 
+#cyberpunk-button {
+  background-color: hsl(154 50% 5%) !important;
+  border-color: hsl(154, 52%, 56%) !important;
+  color: hsl(154, 52%, 56%) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
+  font-family: 'Pixelify', sans-serif;
+  box-shadow: hsl(154, 52%, 56%) !important;
+}
+
+#cyberpunk-button:hover {
+  color: white !important;
+}
 
 /* FOOTER PROPERTIES */
 footer {
@@ -218,7 +332,7 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 600px;
-  height: 100vh;
+  height: 80vh;
   width: 50%;
   float: left;
   position: relative;
@@ -276,7 +390,7 @@ footer {
 #abstract {
   float: left;
   width: 50vw;
-  height: 100vh;
+  height: 80vh;
   padding: 6vh 4vw 12vh 6vw; 
   overflow-y: auto;
   position: relative;
@@ -409,8 +523,7 @@ section:not(#hero):not(#abstract) {
    CAROUSEL WRAPPER
 --------------------------------------------- */
 #theme-carousel-wrapper,
-#narrative-carousel-wrapper,
-#collections-image-wrapper {
+#narrative-carousel-wrapper {
   width: 50vw;
   padding: 6vh 8vw 12vh 8vw;
   box-sizing: border-box;
@@ -489,13 +602,15 @@ section:not(#hero):not(#abstract) {
 --------------------------------------------- */
 @media (max-width: 768px) {
   #themes-info,
-  #narratives-info {
+  #narratives-info,
+  #collections-info {
     flex-direction: column;
     height: auto;
   }
 
   #theme-text-box,
   #narratives-text-box,
+  #collections-text-box,
   #theme-carousel-wrapper,
   #narrative-carousel-wrapper {
     width: 100vw;
@@ -543,33 +658,32 @@ section:not(#hero):not(#abstract) {
 
 /* Collections info section */
 /* --------------------------------------------------------------*/
-/* Collections info section (Desktop) */
 #collections-info {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   padding: 6vh 4vw 12vh 6vw;
-  box-sizing: border-box;
 }
 
-.collections-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 100vh;
+#collections-info .row,
+#collections-info .col-lg-6 {
+  height: 50vh;
 }
 
-/* Text box */
 #collections-text-box {
+  float: left;
   width: 50vw;
-  padding: 6vh 4vw 12vh 6vw;
-  box-sizing: border-box;
+  height: 80vh;
+  padding: 6vh 4vw 12vh 6vw; 
   overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
 }
 
-/* Image box */
 #collections-image-wrapper {
+  float: left;
   width: 50vw;
-  padding: 6vh 6vw 12vh 4vw;
+  height: 80vh;
+  padding: 6vh 6vw 12vh 4vw; /* mirror padding to align on right side */
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -579,8 +693,6 @@ section:not(#hero):not(#abstract) {
 #collectionsImageCard {
   width: 100%;
   height: 100%;
-  border-radius: 0;
-  border: 0;
 }
 
 #collectionsImage {
@@ -588,31 +700,44 @@ section:not(#hero):not(#abstract) {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 0;
+  border: #574d38 solid 1px;
 }
 
 @media (max-width: 768px) {
-  .collections-wrapper {
-    flex-direction: column;
-    height: auto;
-  }
-
   #collections-text-box,
   #collections-image-wrapper {
-    width: 100%;
-    padding: 1rem;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
+    padding: 1rem !important;
+    float: none !important;
+    display: block !important;
   }
 
   #collectionsImageCard {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
   }
 
   #collectionsImage {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
     object-fit: cover;
+    display: block;
+  }
+
+  #collections-info .row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #collections-info .col-lg-6,
+  #collections-info .col-md-5,
+  #collections-info .col-sm-10 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
 
@@ -953,4 +1078,3 @@ h1.mb-5.fw-bold {
 #artCarousel .accordion-body p {
   font-size: 16px;
 }
-

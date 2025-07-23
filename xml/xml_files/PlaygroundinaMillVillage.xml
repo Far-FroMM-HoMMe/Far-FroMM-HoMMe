@@ -12,12 +12,9 @@
         <source>https://www.artic.edu/artworks/11345/playground-in-a-mill-village-playground-in-a-tenement-alley-boston</source>
         <style>-</style>
         <subject>Children, City, Boston</subject>
-        <label/>
+        <label>Children find it easy to have fun wherever they are. Here the children of a mill village use a local alley as a baseball pitch.</label>
         <theme>Around the Kitchen Table</theme>
         <creditLine/>
-        <narrativeName n="1">teacher</narrativeName>
-        <narrativeName n="2">phdstudent</narrativeName>
-        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/playground.jpg</imageURL>
         <relativePath>resources/img/playground.jpg</relativePath>
     </artwork>
 </objects>
