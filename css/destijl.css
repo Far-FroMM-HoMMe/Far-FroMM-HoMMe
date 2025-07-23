@@ -1124,7 +1124,12 @@ color: var(--white);
 
 } 
 
-
+@media (max-width: 768px) {
+  #choose-narrative, #rooms, #collections {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
 
 /*--------------------------------------------------------------
 # artviewer
@@ -1197,7 +1202,6 @@ color: var(--white);
   letter-spacing: 0.2rem;
 }
 
-
 #gallery .card {
   position: relative;
   border:3px solid var(--black);
@@ -1223,6 +1227,54 @@ color: var(--white);
   pointer-events: none;
 }
 
+#gallery .accordion{
+  border: 3px solid var(--black);
+  padding: 0 !important;
+}
+
+#gallery .accordion-button {
+  border: none !important;
+  margin: 0 !important;
+}
+
+#gallery .accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+
+/* 1番目、5番目、9番目... */
+#gallery .gallery-card:nth-child(4n+1) .accordion-button {
+  background-color:var(--red); 
+  color: white;
+}
+
+/* 2番目、6番目、10番目... */
+#gallery .gallery-card:nth-child(4n+2) .accordion-button {
+  background-color:var(--blue);
+  color: white;
+}
+
+/* 3番目、7番目、11番目... */
+#gallery .gallery-card:nth-child(4n+3) .accordion-button {
+  background-color: var(--yellow); 
+  color: var(--black);
+}
+
+/* 4番目、8番目、12番目... */
+#gallery .gallery-card:nth-child(4n) .accordion-button {
+  background-color: var(--black); 
+  color:white;    
+}
+
+
+#gallery .card-text{
+  font-size: 0.rem;
+  text-align: justify;
+}
+
+
 /* Footer styles */
 footer {
   padding: 0.5rem;
@@ -1232,7 +1284,7 @@ footer {
   background-color: var(--black);
 }
 
-/* フッター内の各セクションをグリッド風に装飾 */
+/* make footer grid-like */
 footer .footer .col-md-3,
 footer .footer .col-md-6 {
   padding-top: 15px;
@@ -1248,7 +1300,7 @@ footer .footer .col-md-3 {
   color: var(--black);
 }
 
-/* フッターの下部（著作権部分） */
+/* lower part of footer (the copyright) */
 footer .text-center {
   background-color: var(--yellow);
   padding: 0.5rem;
@@ -1258,3 +1310,53 @@ footer .text-center {
   justify-content: center;
 }
 
+/*--------------------------------------------------------------
+# Documentation
+--------------------------------------------------------------*/
+
+#documentation {
+  padding: 2rem;
+  background: url("../resources/img/destijl/mondrian_frame5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 45vh;
+  background-position: right 120%;
+} 
+
+#documentation h1 {
+  font-size: clamp(3rem, 3vw, 4rem);
+
+  font-weight: bold;
+  color: var(--black);
+}
+
+#documentation h2 {
+  font-family: "Destijl";
+  font-size: clamp(2.5rem, 2vw, 3rem);
+  font-weight: bold;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+
+#documentation h3 {
+  font-family: "Destijl";
+  font-size: clamp(2rem, 1.5vw, 2rem);
+  font-weight: bold;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+/*--------------------------------------------------------------
+# Disclaimer  
+--------------------------------------------------------------*/
+
+
+#disclaimer {
+  padding: 2rem;
+  background: url("../resources/img/destijl/mondrian_frame5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 45vh;
+  background-position: right 100%;
+} 

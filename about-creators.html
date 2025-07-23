@@ -10,7 +10,7 @@
     <!-- bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <!-- custom stylesheet-->
-    <link rel="stylesheet" href="css/styles.css">
+    <link id="themeStylesheet" rel="stylesheet" href="css/styles.css">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,110 @@
     <title>Far From Home</title>
 </head>
 <body>
-    <h1>NIENTE</h1>
+
+  <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <div class="container-xxl">
+          <a href="#intro" class="navbar-brand">
+              <span class="text-light">
+                  <img src="resources/img/compass-modern-white.png" style="max-width: 50px; color: white;"><span id="navbartext">To have, to lose, to find</span>
+              </span>
+          </a>
+          <!-- toggle button for mobile nav -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- navbar links -->
+          <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a href="exhibition.html#choose-narrative" class="nav-link">Stories</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#themes" class="nav-link">Themes</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#collection" class="nav-link">The collection</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="aboutDropdown">About</a>
+                  <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                      <li><a class="dropdown-item" href="documentation.html">General scope and design choices</a></li>
+                      <li><a class="dropdown-item" href="disclaimer.html">Disclaimer</a></li>
+                      <li><a class="dropdown-item" href="about-creators.html">About the creators</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item ms-2">
+                  <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                      Choose your layout
+                  </a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav> 
+
+
+  <!-- About the creators -->
+<section id="creators" class="m-5 p-4">
+   <h1>About the Creators</h1>
+   <p>Our team is composed of three students from the University of Bologna, specializing in Digital Humanities and Digital Knowledge.</p>
+
+</section>
+
+<!-- 2035 background styles -->
+<div id="interlaced"></div>  
+<div id="glare"></div>
+
+<section id="offcanvas">
+    <!-- offcanvas section -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Choose your layout</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+          <div>
+              <p><i>Far From Home</i> is a cross-cultural and period-spanning virtual experience. To help you emerge in different time periods, and for the sake of this digital project, we designed several layouts that you can choose from. Each layout is inspired by a different period and culture, and it will change the way you experience the exhibition. To learn more about our design choices and CSS script, visit the <a href="documentation.html">general purpose and design choices</a> section.</p>
+          </div>
+          <div class="mb-4">
+              <h5 style="color: rgb(118, 118, 118)">Return to default settings</h5>
+              <button onclick="switchStyle('css/styles.css')" class="btn btn-secondary mb-3">Default</button>
+              <h5>Pre-modern layouts (1500-1900)</h5>
+              <button id="aldine-button" onclick="switchStyle('css/aldine.css')" class="btn btn-primary">Aldine</button>
+              <button id="artnouveau-button" onclick="switchStyle('css/nouveau.css')" class="btn btn-primary">Art nouveau</button>
+              <h5 class="mt-3">Modern and post-war layouts (1900-1970)</h5>
+              <button id="stijl-button" onclick="switchStyle('css/destijl.css')" class="btn btn-primary">De Stijl</button>
+              <button onclick="switchStyle('css/beall.css')" class="btn btn-primary">Lester Beall</button>
+              <h5 class="mt-3">Post-modern layouts (1970-2035)</h5>
+              <button onclick="switchStyle('css/90sweb.css')" class="btn btn-primary">90s-00s Web design</button>
+              <button id="cyberpunk-button" onclick="switchStyle('css/2035Collapse.css')" class="btn btn-primary">2035-The Web Collapsed</button>
+          </div>
+      </div>
+    </div> 
+  </section>
+
+<!-- JavaScript -->
+<!--Bootstrap JS and dependencies-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- set narrative value and start story -->
+  <script>
+    const startStoryLinks = document.querySelectorAll(".start-story");
+    startStoryLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const story = link.getAttribute("id");
+        console.log("Setting narValue:", story);
+        localStorage.setItem("narValue", story);
+      });
+    });
+  </script>
+
+  <!-- switch styles javascript-->
+  <script src="js/styles.js"></script>
 </body>
 </html>

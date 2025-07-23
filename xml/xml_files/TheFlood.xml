@@ -12,11 +12,9 @@
         <source>https://www.metmuseum.org/art/collection/search/206836</source>
         <style>Mannerist</style>
         <subject>Flood</subject>
-        <label/>
+        <label>Anguier, a French-born artist active in Rome from 1641-1651, worked with Bernini and Alessandro Algardi and was one of the latter's disciples picked to illustrate Old Testament scenes for the nave of San Giovanni in Laterano. This relief is a sketch-model for one of the series of thirteen stucco reliefs, intended as models for marbles but never subsequently executed, of Old and New Testament scenes. (The Met)</label>
         <theme>Nature Interferes</theme>
         <creditLine>Rogers Fund and Director's Discretionary Fund, 1980</creditLine>
-        <narrativeName>phdstudent</narrativeName>
-        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/the_flood.jpg</imageURL>
         <relativePath>resources/img/the_flood.jpg</relativePath>
     </artwork>
 </objects>

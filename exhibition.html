@@ -103,7 +103,7 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="inputyouridea">What is your idea of home?</h5>
+                <h5 class="modal-title" id="inputyourideaTitle">What is your idea of home?</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -183,7 +183,7 @@
           <!--svg image of the floorplan-->
           <div class="col-12 col-md-7">
             <!--svg comes here: set width to 100% and height to auto when copy & pasting. add ids according to the rooms-->
-            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" fill="none" viewBox="0 0 1491 982">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 1491 982">
               <g class="floor-plan">
                 <g id="travelling-through-time" class="room">
                   <path fill="#fff" d="M991 480h500v500H991z"/>
@@ -688,6 +688,10 @@
   
   </section>
 
+  <!-- 2035 background styles -->
+  <div id="interlaced"></div>  
+  <div id="glare"></div>
+
   <section id="offcanvas">
     <!-- offcanvas section -->
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -710,7 +714,7 @@
               <button onclick="switchStyle('css/beall.css')" class="btn btn-primary">Lester Beall</button>
               <h5 class="mt-3">Post-modern layouts (1970-2035)</h5>
               <button onclick="switchStyle('css/90sweb.css')" class="btn btn-primary">90s-00s Web design</button>
-              <button onclick="switchStyle('css/cyberpunk.css')" class="btn btn-primary">Japanese anime cyberpunk</button>
+              <button id="cyberpunk-button" onclick="switchStyle('css/2035Collapse.css')" class="btn btn-primary">2035-The Web Collapsed</button>
           </div>
       </div>
     </div> 
@@ -954,15 +958,10 @@ window.addEventListener('load', function() {
     });
   </script>
 
-<!--function to switch styles-->
-  <script>
-    //function to switch styles
-    function switchStyle(sheet) {
-      document.getElementById("themeStylesheet").setAttribute("href", sheet);
-    }
-  </script>
+  <!-- switch styles javascript-->
+  <script src="js/styles.js"></script>
 
-  <!-- set theme to launch gallery page and filter -->
+ <!-- set theme to launch gallery page and filter -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.addEventListener("click", (event) => {

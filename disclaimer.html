@@ -97,6 +97,10 @@
    <p>All copyrights and related rights on the content remain with their original owners. All copyright on the typographic and layout choices belong to 2025 © Anouk Flinkert, Regina Manyara and Shiho Nakamura</p>
 </section>
 
+<!-- 2035 background styles -->
+<div id="interlaced"></div>  
+<div id="glare"></div>
+
 <section id="offcanvas">
     <!-- offcanvas section -->
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -113,13 +117,13 @@
               <button onclick="switchStyle('css/styles.css')" class="btn btn-secondary mb-3">Default</button>
               <h5>Pre-modern layouts (1500-1900)</h5>
               <button id="aldine-button" onclick="switchStyle('css/aldine.css')" class="btn btn-primary">Aldine</button>
-              <button onclick="switchStyle('css/artnouveau.css')" class="btn btn-primary">Art nouveau</button>
+              <button id="artnouveau-button" onclick="switchStyle('css/nouveau.css')" class="btn btn-primary">Art nouveau</button>
               <h5 class="mt-3">Modern and post-war layouts (1900-1970)</h5>
               <button id="stijl-button" onclick="switchStyle('css/destijl.css')" class="btn btn-primary">De Stijl</button>
               <button onclick="switchStyle('css/beall.css')" class="btn btn-primary">Lester Beall</button>
               <h5 class="mt-3">Post-modern layouts (1970-2035)</h5>
               <button onclick="switchStyle('css/90sweb.css')" class="btn btn-primary">90s-00s Web design</button>
-              <button onclick="switchStyle('css/cyberpunk.css')" class="btn btn-primary">Japanese anime cyberpunk</button>
+              <button id="cyberpunk-button" onclick="switchStyle('css/2035Collapse.css')" class="btn btn-primary">2035-The Web Collapsed</button>
           </div>
       </div>
     </div> 
@@ -142,13 +146,8 @@
     });
   </script>
 
-<!--function to switch styles-->
-  <script>
-    //function to switch styles
-    function switchStyle(sheet) {
-      document.getElementById("themeStylesheet").setAttribute("href", sheet);
-    }
-  </script>
+  <!-- switch styles javascript-->
+  <script src="js/styles.js"></script>
 
 </body>
 </html>

@@ -36,6 +36,13 @@
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'Pixelify';
+    src: url('../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* custom properties you can call with var() */
 /* The dark-theme will be the default */
 
@@ -197,19 +204,34 @@ a:hover {
 
 }
 
-
-
 #beall-button {
+  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+#beall-button:hover {
+  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+#web90s-button {
   /* To be decided */
  }
 
- #web90s-button {
-  /* To be decided */
- }
+#cyberpunk-button {
+  background-color: hsl(154 50% 5%) !important;
+  border-color: hsl(154, 52%, 56%) !important;
+  color: hsl(154, 52%, 56%) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
+  font-family: 'Pixelify', sans-serif;
+  box-shadow: hsl(154, 52%, 56%) !important;
+}
 
- #cyberpunk-button {
-  /* To be decided */
- }
+#cyberpunk-button:hover {
+  color: white !important;
+}
 
 
 
@@ -604,19 +626,22 @@ color: var(--white);
 }
 
 #artCarousel .card-body h5 {
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
   font-weight: 600;
   padding-bottom: 8px;
 
 }
 
 #artCarousel .card-body h6 {
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
   font-weight: 600;
 }
 
 #artCarousel .card-body p {
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
   
 }
 
@@ -624,6 +649,17 @@ color: var(--white);
   object-fit: contain;
   object-position: 50% 50%;
   max-height: 550px;
+}
+
+@media (max-width: 375px) {
+  #artCarousel .card img {
+    max-width: 220px;
+  }
+}
+
+#artCarousel .card-text{
+  color: var(--white);
+  
 }
 
 /* --- Accordion --- */
@@ -639,7 +675,8 @@ color: var(--white);
   padding-left: 2px;
   padding-bottom: 20px;
   /* font-weight: bold; */
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
   text-transform: capitalize;
   
 }
@@ -698,6 +735,7 @@ color: var(--white);
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
+  font-size: clamp(0.75rem, 0.2813rem + 1.5vw, 1.125rem);
 }
 
 #artCarousel .accordion-body td {
@@ -726,7 +764,8 @@ color: var(--white);
 }
 
 #artCarousel .accordion-body p {
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
 }
 
 /*--------------------------------------------------------------

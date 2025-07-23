@@ -12,7 +12,7 @@
         "source": "https://www.metmuseum.org/art/collection/search/838860",
         "style": "-",
         "subject": "Mississippi, Black Americans, Flood",
-        "label": "",
+        "label": "Currier & Ives issued more than thirty lithographs of the great Mississippi River. As residents who lived along the Mississippi River were well aware, their fields and homes were often threatened by periodic floods when river water levels overflowed its banks. This lithograph presents Black people and white people courageously coping with such a natural disaster, while in the background, the steamboat 'Stonewall Jackson' (named for a Confederate general in the American Civil War who had died in 1863) progresses unhindered along the river. (The Met)",
         "theme": "Nature Interferes",
         "creditLine": "",
         "relativePath": "resources/img/high_water.jpg"
@@ -110,7 +110,7 @@
         "source": "https://www.loc.gov/item/2017762891/",
         "style": "Portrait",
         "subject": "Migrant Agricultural Laborers, Mothers, Poor Persons",
-        "label": "",
+        "label": "For many, Lange’s Migrant Mother, Nipomo, California is the single most recognizable image from the Great Depression, epitomizing the desperate circumstances many found themselves in during that period. It depicts thirty-two-year-old migrant farmworker Florence Owens Thompson and three of her children are depicted huddled together in a tent at a pea-pickers’ camp in Nipomo, California. (MOMA)",
         "theme": "Nature Interferes",
         "creditLine": "",
         "relativePath": "resources/img/migrant_mother.jpg"
@@ -129,7 +129,7 @@
         "source": "https://github.com/Far-FroMM-HoMMe/Far-FroMM-HoMMe/blob/f9cc542b6bcbb370ca4cfd69493c8f677c6928e9/resources/img/mandarake.jpg",
         "style": "street photography",
         "subject": "otaku collection",
-        "label": "",
+        "label": "Mandarake-Shibuya holds a collection of otaku cultural objects, old and new, ready to be found by those who take the time to look.",
         "theme": "Travelling Through Time",
         "creditLine": "",
         "relativePath": "resources/img/mandarake.jpg"
@@ -148,7 +148,7 @@
         "source": "https://www.artic.edu/artworks/11345/playground-in-a-mill-village-playground-in-a-tenement-alley-boston",
         "style": "-",
         "subject": "Children, City, Boston",
-        "label": "",
+        "label": "Children find it easy to have fun wherever they are. Here the children of a mill village use a local alley as a baseball pitch.",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
         "relativePath": "resources/img/playground.jpg"
@@ -205,7 +205,7 @@
         "source": "https://cyfrowe.mnw.art.pl/en/catalog/446995",
         "style": "Young Poland",
         "subject": "Refugees",
-        "label": "",
+        "label": "The painting titled ‘Refugees’ is an exceptional work in Rembowski’s oeuvre due to its large format (200 x 284 cm), use of the oil technique and subject matter. Rembowski managed to render this scene so evocatively that the lament and cries of the families, the rattle of the carts’ wheels, the hum of the river and the thunder of the approaching storm are almost audible. (National Museum of Warsaw)",
         "theme": "Taking Flight",
         "creditLine": "National Museum in Warsaw.",
         "relativePath": "resources/img/refugees.jpg"
@@ -224,9 +224,9 @@
         "source": "https://www.boijmans.nl/en/collection/artworks/1646/breakfast-piece",
         "style": "Still life",
         "subject": "Food",
-        "label": "",
+        "label": "This panel is a masterpiece from Pieter Claesz' monochrome period. The soft light and finely tuned colour palette in this balanced composition produces an atmosphere of calm. With its great simplicity, with only a single glass of beer, a knife, a herring, a bread and the cracked shell of a single hazelnut, this panel sings the praises of 'our daily bread'. (Boijmans)",
         "theme": "Around the Kitchen Table",
-        "creditLine": "This panel is a masterpiece from Pieter Claesz' monochrome period. The soft light and finely tuned colour palette in this balanced composition produces an atmosphere of calm. With its great simplicity, with only a single glass of beer, a knife, a herring, a bread and the cracked shell of a single hazelnut, this panel sings the praises of 'our daily bread'. (Boijmans)",
+        "creditLine": "",
         "relativePath": "resources/img/breakfast_piece.jpg"
     },
 
@@ -338,7 +338,7 @@
         "source": "https://www.katoutsubasa.com/projects/the-lighthouses/",
         "style": "Documentary",
         "subject": "Tsunami, lighthouse, reconstruction",
-        "label": "",
+        "label": "A project taken place in Fukushima, a region devastated by the Great East Japan Earthquake of March 2011. Wood was collected from tsunami debris to build a structured model of the Shioyazaki lighthouse, a local symbol also destroyed. The video documentary captures around 500 local participants pulling the structure upright with ropes. By recreating a lost landscape in a new form, the work expresses both the trauma of disaster and an act of renewal, reconnecting people to their home town, memory, and hope.",
         "theme": "Nature Interferes",
         "creditLine": "Kato Tsubasa, The Lighthouses - 11.3 PROJECT, courtesy of the artist.",
         "embedURL": "https://player.vimeo.com/video/288852544?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",

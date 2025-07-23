@@ -12,12 +12,9 @@
         <source>https://www.loc.gov/item/2017762891/</source>
         <style>Portrait</style>
         <subject>Migrant Agricultural Laborers, Mothers, Poor Persons</subject>
-        <label/>
+        <label>For many, Lange’s Migrant Mother, Nipomo, California is the single most recognizable image from the Great Depression, epitomizing the desperate circumstances many found themselves in during that period. It depicts thirty-two-year-old migrant farmworker Florence Owens Thompson and three of her children are depicted huddled together in a tent at a pea-pickers’ camp in Nipomo, California. (MOMA)</label>
         <theme>Nature Interferes</theme>
         <creditLine/>
-        <narrativeName n="1">phdstudent</narrativeName>
-        <narrativeName n="2">teacher</narrativeName>
-        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/migrant_mother.jpg</imageURL>
         <relativePath>resources/img/migrant_mother.jpg</relativePath>
     </artwork>
 </objects>
