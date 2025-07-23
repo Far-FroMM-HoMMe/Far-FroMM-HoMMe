@@ -1,0 +1,1047 @@
+/*--------------------------------------------------------------
+# global
+--------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Average&family=Bentham&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Encode+Sans:wght@100..900&family=Forum&family=Glass+Antiqua&family=Metamorphous&display=swap');
+
+@font-face {
+  font-family: 'DeStijl';
+  src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ArtNouveauCaps';
+  src: url('../fonts/Art Nouveau Caps.ttf') format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Glass Antiqua';
+  src: url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'University';
+  src: url('../fonts/University.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* custom properties you can call with var() */
+/* The dark-theme will be the default */
+
+:root {
+  --black: #1A1A1A;
+  --white: #EDEDED;
+  --primary-color: #82994B;         /*Moss Green*/
+  --primary-color-dark:#556a27 ;    /*darker moss green*/
+  --accent-color: #B14236;          /*Persian Red*/
+  --accent-color-dark: #952215;     /*darker persian red*/
+
+  --n-black: #211B29;
+  --n-white: #FDFBEB;
+  --n-purple: #3F334D;
+  --n-purple-light: #7D8491;
+  --n-blue: #ABC8C0;
+  --n-green: #A8B162;
+
+  /* Theme colours */
+  --kitchen: #F4BBD3;
+  --flight: #a10625;
+  --nature: #87B38D;
+  --time: #326273;
+}
+
+body {
+    background-color: var(--n-white);
+    color: var(--n-black);
+    font-family: 'Glass Antiqua', serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.5;
+    border: 50px solid transparent; /* Required for border-image to work */
+    border-image-source: url('../resources/img/artnouveau/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
+    border-image-slice: 165 65 220; /* Adjust as needed for thickness */
+    border-image-width: 50px;
+    border-image-repeat: round; /* Options: stretch | repeat | round | space */
+    border-image-outset: 0;
+}
+
+p { 
+    margin-bottom: 1.5em;
+}
+
+/* For light-theme pages, add class="light" to body to reverse bg and text colors */
+body.light {
+    background-color:  var(--n-white);           /*Anti Flash White*/
+    color: var(--n-black);                       /*Eerie Black*/
+}
+
+/* links and buttons */
+a {
+  color: var(--n-purple-light);
+}
+
+a:hover {
+  color: var(--n-purple);
+}
+
+.btn-primary {
+  background-color: var(--n-green);
+  border-color: var(--n-green);
+  color: var(--n-white);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--primary-color-dark) !important;  /*added !important because sometimes the bootstrap default color shows up */
+  border-color: var(--primary-color-dark) !important;
+
+}
+/* According to dark theme */
+.navbar {
+  background-color: color-mix(in srgb, var(--n-blue), transparent 60%);
+  color: var(--n-white);
+  position: fixed;
+  border-bottom: 5px solid var(--n-green);
+  /* border-radius: 5px; */
+  margin-inline: 50px;
+  /* margin-top: 50px; */
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 578px) {
+  .navbar {
+    background-color: color-mix(in srgb, var(--n-blue), transparent 60%);
+  }
+}
+
+#navbartext {
+  margin-left: 20px; 
+  /* font-family: 'Libertinus Mono', monospace;  */
+  font-size: clamp(0.75rem, 1vw, 1rem);
+}
+
+.nav-link {
+  color: var(--white) !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--n-green) !important;
+}
+
+.active {
+  color: var(--primary-color-dark) !important;
+}
+
+#chooseLayout {
+  background-color: var(--n-green);
+  color: var(--white);
+}
+
+/* According to dark theme */
+.offcanvas {
+  background-color: var(--n-white);
+  color: var(--n-black);
+  border-radius: 30px;
+  padding: 5px;
+}
+
+.offcanvas-body {
+  border: 5px solid var(--n-blue);
+  /* padding: 40px; */
+  border-radius: 30px;
+}
+
+
+
+#layout-buttons .btn {
+  margin-bottom: 1.618rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--n-green);
+}
+
+#default-title {
+  color: rgb(118, 118, 118);
+  margin-top: 1.618rem;
+}
+
+#default-button {
+  background-color: rgb(118, 118, 118) !important;
+}
+
+#aldine-button {
+  background-color: #e4dec6 !important;
+  border-color: #e4dec6 !important;
+  color: #574d38 !important;
+  font-family: "Cardo", 'serif' !important;
+  font-style: italic;
+ }
+
+ #aldine-button:hover {
+  background-color: #574d38 !important;
+  color: #e4dec6 !important;
+ }
+
+ #artnouveau-button {
+  background-color: #ABC8C0 !important;
+  color: #FDFBEB !important;
+  font-family: 'ArtNouveauCaps', 'serif' !important;
+  font-style: italic;
+ }
+
+#artnouveau-button:hover {
+  background-color: #3F334D !important;
+  border-color: #A8B162 !important;
+  color: #FDFBEB !important;
+}
+
+#stijl-button {
+  font-family: "Destijl", "sans-serif" !important;
+  border-radius: 0 !important;
+  color: black !important;
+  box-shadow: inset -0.5em -0.5em #FDDE06;;
+  background-color: white !important ;
+  border: 2px solid black !important;
+}
+
+#stijl-button:hover {
+  color: white!important;;
+  box-shadow: inset -0.5em -0.5em#0300AD ;
+  background-color: black ! important;
+
+}
+
+#beall-button {
+  /* To be decided */
+ }
+
+ #web90s-button {
+  /* To be decided */
+ }
+
+ #cyberpunk-button {
+  /* To be decided */
+ }
+
+
+
+footer {
+  background-color: var(--n-blue);
+  color: white;
+  padding: 30px 0;
+  font-size: 0.9rem;
+  /* margin-top: 5rem; */
+}
+
+.background-decoratif1 {
+  /* background: linear-gradient(rgba(250, 250, 250, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/img/artnouveau/36_mucha_documentsdecoratifs_1901-4.jpg") fixed center center;
+  background-size:contain;
+  padding: 100px 0;
+  min-height: 100px; */
+  background-image: url("../resources/img/artnouveau/Alfons_Mucha_border-1.jpg");
+  min-height: 150px;
+}
+
+/*--------------------------------------------------------------
+# index page
+--------------------------------------------------------------*/
+
+/* Thumbnail carousel removed to make place for premodern compas logo */
+#carouselHeaderImages img {
+  display: none;
+}
+
+/* index.global classes */
+.text-box {
+  background-color: rgba(248, 249, 250, 0);
+  padding: 1.618rem;
+}
+
+/* Smaller screens lose the margins to fit the whole screen */
+@media (max-width: 768px) {
+  .text-box {
+    padding: 1rem;
+  }
+}
+
+/* Animations blocks sliding in from left-side into screen */
+/*  Slide for mobile is from down up */
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* works better for smaller screens, when scrolling down the blocks move up slowly */
+@media (max-width: 768px) {
+  .hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.5s ease;
+  }
+  
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* hero/thumbnail section */
+/* --------------------------------------------------------------*/
+#hero {
+  background-image: url('../resources/img/artnouveau/36_mucha_documentsdecoratifs_1901-4.jpg');
+  
+}
+
+.hero-section {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(84, 83, 83, 0.2), rgba(0, 0, 0, 0.898));
+}
+
+.hero-text {
+  font-family: 'ArtNouveauCaps', 'serif';
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(7rem, 12vw, 11rem);
+  color: var(--n-white);
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  line-height: 1;
+  
+  position: absolute;
+  top: 60%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.hero-text span {
+    color: var(--n-green);
+}
+
+.hero-subtitle {
+  font-family: 'Glass Antiqua', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(1.5rem, 3vw, 5rem);
+  color: var(--n-green);
+  text-align: center;
+  text-shadow: 6px 6px 7px rgba(0, 0, 0, 0.772);
+  text-transform: uppercase;
+  line-height: 1;
+  
+  position: absolute;
+  top: clamp(95%, 81vw, 89%);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 0 40px;
+  box-sizing: border-box;
+  margin-top: 0.15rem;
+  padding-bottom: 30px;
+}
+
+/* Abstract section */
+/* --------------------------------------------------------------*/
+#abstract {
+  margin-top: 1.618rem;
+}
+
+.has-dropcap {
+  overflow: hidden;
+  font-size: 2rem;
+}
+
+.dropcap {
+  float: left;
+  font-size: clamp(18rem, 6vw, 8.5rem);
+  line-height: 0.70;
+  margin: 0.1em 0.1em 0em 0;
+  font-family: 'ArtNouveauCaps', Georgia, 'Times New Roman', Times, serif;
+  padding-right: 0.15rem;
+  padding-top: 20px;
+  color: var(--n-purple);
+}
+
+#abstract .text-box {
+  border: 5px solid var(--n-blue);
+  border-radius: 30px;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.card-carousel {
+  background-color: var(--n-white);
+}
+
+/* Themes-info and Narratives-info sections */
+/* they inherit most properties from the text-box class but need specific properties as well  */
+/* --------------------------------------------------------------*/
+#themes-info {
+    margin-top: 1.618rem;
+}
+
+#theme-text-box {
+  /* background-color: var(--primary-color) !important; */
+  border: 5px solid var(--n-blue);
+  border-radius: 30px;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+#narratives-text-box {
+  /* background-color: var(--accent-color) !important; */
+  border: 5px solid var(--n-blue);
+  border-radius: 30px;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.infoboxes-title {
+  font-size: clamp(6vw, 6vw, 7vw) !important;
+  color: var(--n-purple);
+}
+
+.infoboxes-text {
+  font-size: clamp(1rem, 0.75rem, 1.2rem);
+  line-height: 1.6;
+  margin-top: 1rem;
+  color: var(--n-black) !important;
+}
+
+.infoboxes-text a {
+color: var(--n-black);
+}
+
+/* Image tiles in the themes-info and narratives-info section */
+.img-card {
+    border-radius: 30px; 
+    border: none;
+    max-width: 83.3%;
+    max-height: 500px;
+    min-height: 500px;
+}
+
+#carouselThemeImages,
+#carouselNarrativeImages {
+  border: 5px solid var(--n-blue);
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+#collectionsImageCard {
+  border: 5px solid var(--n-blue);
+  border-radius: 30px;
+}
+
+
+#carouselThemeImages .card-img,
+#carouselNarrativeImages .card-img,
+#collections-info .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 25px;
+    min-height: 500px;
+    max-height: 500px;
+}
+
+#carouselThemeImages .card-img-overlay,
+#carouselNarrativeImages .card-img-overlay {
+    background: #574b60ab;
+    border-radius: 25px;
+}
+
+#carouselThemeImages .card-title-carousel,
+#carouselNarrativeImages .card-title-carousel {
+    font-size: clamp(2.8rem, 2.5vw, 3rem);
+    color: var(--white);
+}
+
+#carouselThemeImages .card-text-carousel,
+#carouselNarrativeImages .card-text-carousel {
+    color: var(--white);
+}
+#carouselThemeImages .card-text-carousel a,
+#carouselNarrativeImages .card-text-carousel a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: absolute;
+    top: 75%;
+    color: var(--n-green);
+}
+
+
+.infoboxes-title {
+    font-size: clamp(6vw, 6vw, 7vw) !important;
+}
+/* About info section */
+/* --------------------------------------------------------------*/
+
+#about-info {
+    margin-top: 1.618rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: var(--primary-color);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/*--------------------------------------------------------------
+# exhibition page
+--------------------------------------------------------------*/
+
+/*floating answers styles*/
+#floating{
+  background-color: var(--n-white);
+  padding: 0;
+  /* border: 5px solid var(--n-blue);
+  border-radius: 30px;
+  margin-bottom: 20px; */
+}
+
+.main-heading h1 {
+  font-family: 'ArtNouveauCaps', 'serif';
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(6rem, 1vw, 10rem);
+  color: var(--n-blue);
+  text-align: center;
+  /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
+  line-height: 1;
+}
+
+.description p {
+  font-size: 30px !important;
+  color: var(--n-purple) !important;
+}
+
+.floating-answers-container {
+    position: relative;
+    min-height: 600px;
+    background-color: var(--text-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;      
+    padding: 80px 50px;  
+}
+
+.floating-answer {
+    position: absolute;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--n-purple);
+    padding: 5px 10px;
+    border-radius: 8px;
+    max-width: 200px;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
+100% { transform: translateY(0); }
+}
+
+/* card link styles */
+.link-card:hover,
+.link-card:focus,
+.link-card:active {
+    background-color: var(--n-white); /* hovering background color */
+    transition: background-color 0.2s ease;
+}
+
+/*  interactive map styles */
+/* change color with hover */
+.room:hover { fill: var(--n-green); }
+
+  /* pop up style */
+.popup {
+    position: absolute;
+    display: none;
+    width: 50% ;            /* this is controlled with JS */
+    max-width: 300px;
+    padding: 1em 1.5em;
+    background: var(--n-blue);
+    border-radius: 1.5em;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+    font-size: 14px;
+    z-index: 10;
+}
+
+#choose-narrative {
+  text-align: center;
+}
+
+#choose-narrative .card {
+  background-color: var(--n-blue);
+  border: 5px solid var(--n-blue);
+  border-radius: 30px;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+
+/*--------------------------------------------------------------
+# art viewer
+--------------------------------------------------------------*/
+
+#viewer {
+    margin-top: 6rem !important;
+    border: 50px solid transparent; /* Required for border-image to work */
+    border-image-source: url('../resources/img/artnouveau/Alfons_Mucha_-_The_Moon_and_the_Stars,_1902.jpg');
+    border-image-slice: 165 65 220; /* Adjust as needed for thickness */
+    border-image-width: 50px;
+    border-image-repeat: round; /* Options: stretch | repeat | round | space */
+    border-image-outset: 0;
+    /* padding: 6px 3px; */
+    /* height: 100%; */
+    /* padding-top: 60px;
+    padding-bottom: 80px;
+    padding-inline: 5px; */
+
+    height: 90vh; /* Fixed height relative to screen */
+    width: 100%;
+    overflow-y: scroll;
+    
+    
+}
+
+/* === Carousel === */
+
+#artCarousel .carousel-control-prev, .carousel-control-next {
+  width: 3%;
+}
+
+#artCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0 !important;
+  height: 100%;
+  
+}
+
+/* Make carousel-inner scrollable if content grows */
+#artCarousel .carousel-inner {
+  background: var(--n-purple);
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0px !important;
+  /* margin: 5px;
+  margin-top: 50px;
+  margin-bottom: 80px; */
+  border-radius: 5px;
+}
+
+#artCarousel .carousel-item {
+  background: var(--n-purple);
+  height: 100%; /* Ensures uniform height */
+  padding: 0 !important;
+
+  
+}
+
+
+/* === Card === */
+
+#artCarousel .card {
+  background: var(--n-purple);
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+  height: 100%; /* FIXED HEIGHT */
+}
+
+#artCarousel .card-body h5 {
+  font-family: 'ArtNouveauCaps';
+  font-size: 30px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  color: var(--n-white);
+
+}
+
+#artCarousel .card-body h6 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--n-black) !important;
+}
+
+#artCarousel .card-body p {
+  font-size: 20px;
+  
+}
+
+#artCarousel .card img{
+  object-fit: contain;
+  object-position: 50% 50%;
+  max-height: 550px;
+  
+}
+
+/* --- Accordion --- */
+
+#artCarousel .accordion-button {
+  background: var(--n-purple);
+  color: var(--white);
+  border: none;
+  border-bottom: 2px solid var(--n-green);
+  border-radius: 0;
+  box-shadow: none; /* removes default focus shadow */
+  outline: none; /* removes focus outline */
+  padding-left: 2px;
+  padding-bottom: 20px;
+  /* font-weight: bold; */
+  font-size: 18px;
+  text-transform: capitalize;
+  
+}
+
+#artCarousel .accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+#artCarousel .accordion-button:not(.collapsed) {
+  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
+  background: var(--n-purple);
+  color: var(--white);
+}
+
+/* When accordion is collapsed */
+#artCarousel .accordion-button.collapsed {
+  border-bottom: 2px solid var(--n-green);
+  background: var(--n-purple);
+  color: var(--white);
+}
+
+#artCarousel .accordion-body {
+  background: var(--n-purple);
+  color: var(--white);
+  border-bottom: 2px solid var(--n-green);
+  border-radius: 0;
+}
+
+#artCarousel .accordion-item {
+  border: none; /* Removes the border around the item */
+  border-radius: 0;
+  background-color: transparent;
+}
+
+#artCarousel .accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23A8B162' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  transition: all 0.3s ease;
+}
+
+/* When accordion is open */
+#artCarousel .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23A8B162' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+}
+
+/* === Metadata Table === */
+#artCarousel .accordion-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
+}
+
+#artCarousel .accordion-body td {
+  padding: 0.5rem 1rem; /* Padding inside cells */
+  vertical-align: top;
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+/* Row bottom border */
+/* .accordion-body tr td{
+  border-bottom: 1px solid color-mix(in srgb, var(--white), transparent 30%);;
+} */
+
+/* Optional: spacing between first and second column */
+#artCarousel .accordion-body td:first-child {
+  font-weight: bold;
+  color: var(--n-green);
+  width: 30%;
+  padding-left: 0px;
+}
+
+#artCarousel .accordion-body td:last-child {
+  text-align: right;
+  word-break: break-word;
+}
+
+#artCarousel .accordion-body p {
+  font-size: 16px;
+}
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+
+#gallery h1 {
+  font-family: 'ArtNouveauCaps';
+  color: var(--n-black);
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: clamp(1.5rem, 5vw, 10rem);
+}
+
+#themes {
+  font-size: 25px;
+}
+
+.gallery-card .card {
+  background-color: color-mix(in srgb, var(--n-blue), transparent 40%);
+  border: 5px solid var(--n-blue);
+  border-radius: 30px;
+  padding: 20px !important;
+  margin-bottom: 20px;
+}
+
+.gallery-card .card-body h5 {
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 8px;
+
+}
+
+.gallery-card .card-body h6 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.gallery-card .card-body p {
+  font-size: 16px;
+  
+}
+
+.gallery-card .card img{
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+/* --- Accordion --- */
+
+.gallery-card .accordion-button {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 0;
+  box-shadow: none; /* removes default focus shadow */
+  outline: none; /* removes focus outline */
+  padding-left: 2px;
+  padding-bottom: 20px;
+  /* font-weight: bold; */
+  font-size: 18px;
+  text-transform: capitalize;
+  
+}
+
+.gallery-card .accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.gallery-card .accordion-button:not(.collapsed) {
+  border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* When accordion is collapsed */
+.gallery-card .accordion-button.collapsed {
+  border-bottom: 2px solid var(--primary-color);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.gallery-card .accordion-body {
+  background-color: var(--black);
+  color: var(--white);
+  border-bottom: 2px solid var(--primary-color);
+  border-radius: 0;
+}
+
+.gallery-card .accordion-item {
+  border: none; /* Removes the border around the item */
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.gallery-card .accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2382994B' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  transition: all 0.3s ease;
+}
+
+/* When accordion is open */
+.gallery-card .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23BEBEBECC' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+}
+
+/* === Metadata Table === */
+.gallery-card .accordion-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem; /* Adds vertical spacing between rows */
+}
+
+.gallery-card .accordion-body td {
+  padding: 0.5rem 1rem; /* Padding inside cells */
+  vertical-align: top;
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+/* Row bottom border */
+/* .accordion-body tr td{
+  border-bottom: 1px solid color-mix(in srgb, var(--white), transparent 30%);;
+} */
+
+/* Optional: spacing between first and second column */
+.gallery-card .accordion-body td:first-child {
+  font-weight: bold;
+  color: var(--primary-color);
+  width: 30%;
+  padding-left: 0px;
+}
+
+.gallery-card .accordion-body td:last-child {
+  text-align: right;
+  word-break: break-word;
+}
+
+.gallery-card .accordion-body p {
+  font-size: 16px;
+}
+
+.nature-interferes {
+  border: 5px solid var(--nature) !important;
+  
+}
+
+.travelling-through-time {
+  border: 5px solid var(--time) !important;
+}
+
+.taking-flight {
+  border: 5px solid var(--flight) !important;
+}
+
+.around-the-kitchen-table {
+  border: 5px solid var(--kitchen) !important;
+
+}
+
+#Around-the-Kitchen-Table {
+ color: var(--kitchen);
+}
+
+#Taking-Flight {
+  color: var(--flight);
+}
+
+#Nature-Interferes {
+  color: var(--nature);
+}
+
+#Travelling-Through-Time {
+  color: var(--time);
+}
+
