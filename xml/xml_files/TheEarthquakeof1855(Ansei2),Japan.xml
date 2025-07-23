@@ -12,11 +12,9 @@
         <source>http://collections.mfa.org/objects/498401/the-earthquake-of-1855-ansei-2-230-years-since-the-great</source>
         <style>Namazu-e</style>
         <subject>Earthquake</subject>
-        <label/>
+        <label>This color woodblock print depicts the Ansei Edo Earthquake, which struck Edo (now Tokyo) in 1855. The accompanying text references previous major earthquakes such as those in 1624 and 1703, highlighting the recurring nature of earthquakes in Japan's history. Known as nishiki-e, these multicolored woodblock prints became popular in the mid-Edo period. At the time, people believed giant underground catfish caused earthquakes, giving rise to a genre known as namazu-e (catfish prints).</label>
         <theme>Nature Interferes</theme>
         <creditLine/>
-        <narrativeName>businessman</narrativeName>
-        <imageURL>https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/the_earthquake_of_1855.jpg</imageURL>
         <relativePath>resources/img/the_earthquake_of_1855.jpg</relativePath>
     </artwork>
 </objects>

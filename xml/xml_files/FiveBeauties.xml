@@ -12,12 +12,9 @@
         <source>https://www.metmuseum.org/art/collection/search/667347</source>
         <style>Ukiyo-e</style>
         <subject>Women</subject>
-        <label/>
+        <label>The two women on the left play a hand-gesture game called kitsune-ken (fox fists) in which gestures representing a supernatural fox (kitsune) defeat those of a village head (shōya), who defeats a hunter (ryōshi), who in turn defeats the fox. An apprentice courtesan serves tea while a high-ranking courtesan makes a grand entrance. A feast of sashimi and other delicacies sits nearby. (The Met)</label>
         <theme>Around the Kitchen Table</theme>
         <creditLine/>
-        <narrativeName>phdstudent</narrativeName>
-        <imageURL n="1">https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/fivebeauties_1.jpg</imageURL>
-        <imageURL n="2">https://raw.githubusercontent.com/ValkyrieCain9/Far-FroMM-HoMMe/main/resources/img/fivebeauties_2.jpg</imageURL>
         <relativePath>resources/img/fivebeauties_1.jpg</relativePath>
     </artwork>
 </objects>

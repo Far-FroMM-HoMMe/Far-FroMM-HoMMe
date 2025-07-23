@@ -70,9 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
         //filter artworks based on narrative and make cards
         if (narrative) {
             const narArt = [];
-            for (const art of artworks) {
-                if (art.id in narrative.art) {
-                    narArt.push(art);
+            const narArtIds = Object.keys(narrative.art);
+            for (const artID of narArtIds) {
+                for (const art of artworks) {
+                    if (art.id === artID) {
+                        narArt.push(art);
+                    }
                 }
             }
 
