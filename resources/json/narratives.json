@@ -19,18 +19,18 @@
 
     {
         "id":"businessman",
-        "name": "",
+        "name": "Essential Picks",
         "art":{
-            "FFH-2-3":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
-            "FFH-3-1":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
-            "FFH-1-1":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
-            "FFH-2-4":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
-            "FFH-1-2":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
-            "FFH-3-5":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
-            "FFH-1-3":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
-            "FFH-2-2":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
-            "FFH-4-2":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus.",
-            "FFH-4-3":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, nesciunt in possimus culpa cum aperiam dolores voluptatem! Neque, cupiditate voluptatibus."
+            "FFH-1-2":"A bed to sleep in, a chair to sit on, a window to open. The bedroom, an intimate space filled with our favorite belongings, reminds us of the reassurance of having a place to rest your head.",
+            "FFH-1-1":"Familiar tastes often connect us deeply to our roots. A simple meal of bread, beer, and fish, woven into our daily routines, becomes a comfort food that soothes us.",
+            "FFH-3-5":"Our homes can be suddenly taken away. At times, nature’s force overwhelms us, destroying the places we call home. Still, people have recorded these moments, determined to preserve their memories.",
+            "FFH-2-3":"We may suddenly become outsiders —aliens in our own land, in the place we’ve always called home. Conflicts between nations disrupt the peace and daily lives of citizens, threatening not only their safety but also their sense of identity.",
+            "FFH-2-4":"When strife puts us in danger, it can tear us away from our loved ones. From Cidra's expression as she speaks to her family over the phone, we’re reminded that home is not just a place but the people we are with.",
+            "FFH-4-3":"Home is not just a physical place. Social media may offer us a virtual space to belong, but endless scrolling and seeking approval — is that truly where you can feel at home? Sometimes, the place we think of as “home” can slip away from our hearts.",
+            "FFH-2-2":"When separated from home, what can we hold on to? Perhaps like this soldier, thinking of and dreaming about loved ones far away may bring hope and comfort.",
+            "FFH-4-2":"Some may grow tired of the digital society today and wish to go back in time. The early days of machine technology— with an old box-shaped computer? Or even the Stone Age? In which era would you find your place of belonging?",
+            "FFH-3-1":"If Earth no longer offers refuge, maybe the only option left is to go to space. But can we truly build a new home there?",
+            "FFH-1-3":"What does “home” mean to you? A fertile land, a safe shelter, meals shared with family. Sometimes, we rediscover belonging not by returning, but by reimagining what home can be."
         }
     },
 
