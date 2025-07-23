@@ -197,13 +197,19 @@ a:hover {
 
 }
 
-
-
 #beall-button {
-  /* To be decided */
- }
+  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
 
- #web90s-button {
+#beall-button:hover {
+  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+#web90s-button {
   /* To be decided */
  }
 
