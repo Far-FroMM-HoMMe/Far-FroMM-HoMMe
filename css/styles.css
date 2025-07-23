@@ -113,7 +113,12 @@ a:hover {
   color: var(--white);
 }
 
-/* According to dark theme */
+/* Offcanvas */
+/* ------------------------------- */
+.offcanvas h5 {
+  background: none !important;
+}
+
 .offcanvas {
   background-color: var(--black);
   color: var(--white);
