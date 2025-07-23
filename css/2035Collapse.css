@@ -91,9 +91,8 @@ p {
 }
 
 /* For light-theme pages, add class="light" to body to reverse bg and text colors */
-body.light {
-    background-color:  #EDEDED;           /*Anti Flash White*/
-    color: #1A1A1A;                       /*Eerie Black*/
+body.light {          /*Anti Flash White*/
+    color: var(--white);                       /*Eerie Black*/
 }
 
 /* links and buttons */
@@ -105,7 +104,8 @@ a:hover {
   color: var(--crt-green);
 }
 
-.btn-primary {
+.btn-primary,
+.btn-outline-secondary {
   /* background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: var(#EDEDED); */
@@ -117,7 +117,10 @@ a:hover {
 
 .btn-primary:hover,
 .btn-primary:active,
-.btn-primary:focus {
+.btn-primary:focus,
+.btn-outline-secondary:hover,
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus {
   background-color: transparent !important;  /*added !important because sometimes the bootstrap default color shows up */
   border-color: var(--crt-green) !important;
   color: var(--crt-green) !important;
@@ -149,11 +152,11 @@ a:hover {
 }
 
 .nav-link:hover {
-  color: var(--primary-color) !important;
+  color: var(--crt-green) !important;
 }
 
 .active {
-  color: var(--primary-color-dark) !important;
+  color: var(--crt-green) !important;
 }
 
 #chooseLayout {
@@ -263,16 +266,6 @@ footer {
   font-size: 0.9rem;
   margin-top: 5rem;
 }
-
-/* #glare {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1; 
-    background: radial-gradient(hsl(154 5% 15%) 0%, hsl(154 50% 5%) 70%);
-} */
 
 #interlaced {
     position: fixed;
@@ -575,7 +568,9 @@ color: var(--white);
 
 /*floating answers styles*/
 #floating{
-    background-color: #fff;
+  background: radial-gradient(hsl(154 5% 15%) 0%, hsl(154 50% 5%) 70%);
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
 }
 
 .floating-answers-container {
@@ -604,13 +599,18 @@ color: var(--white);
 .floating-answer {
     position: absolute;
     font-style: italic;
-    color: #6c757d;
+    color: white;
     padding: 5px 10px;
     border-radius: 8px;
     max-width: 200px;
     pointer-events: none;
     animation: float 8s ease-in-out infinite;
     z-index: 10;
+}
+
+.description p {
+  color: var(--crt-green) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
 }
 
 .main-heading,
@@ -629,17 +629,23 @@ color: var(--white);
 /* card link styles */
 .card-group .card{
   border-radius: 0;
+  background-color: transparent;
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+  color: white !important;
 }
 .link-card:hover,
 .link-card:focus,
 .link-card:active {
-    background-color: #EDEDED; /* hovering background color */
+    background-color: hsla(157, 52%, 5%, 0.59); /* hovering background color */
     transition: background-color 0.2s ease;
 }
 
 /*  interactive map styles */
 /* change color with hover */
-.room:hover { fill: var(--primary-color); }
+.room:hover { 
+  fill: var(--crt-green); 
+}
 
   /* pop up style */
 .popup {
@@ -648,11 +654,50 @@ color: var(--white);
     width: 50% ;            /* this is controlled with JS */
     max-width: 300px;
     padding: 1em 1.5em;
-    background: #fff;
-    box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+    background-color: var(--crt-black);
+    border: 1px solid var(--crt-green);
+    box-shadow: 0 0 6px hsl(154, 52%, 56%);
     font-size: 14px;
     z-index: 10;
 }
+
+#inputyouridea .modal-content {
+  border-radius: 0 !important;
+  background-color: var(--crt-black) !important;
+  border: 1px solid var(--crt-green) !important;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%) !important;
+  color: var(--crt-green) !important;
+}
+
+#inputyouridea .modal-header {
+  border-bottom: 1px solid var(--crt-green) !important;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%) !important;
+}
+
+#inputyouridea p {
+  color: var(--crt-green) !important;
+}
+
+#inputyouridea .form-control {
+  border-radius: 0 !important;
+  background-color: var(--crt-black) !important;
+  border: 1px solid var(--crt-green) !important;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%) !important;
+  color: var(--crt-green) !important;
+}
+
+#inputyouridea .modal-footer {
+  border-width: 0;
+}
+
+#inputyouridea .btn {
+  background-color: transparent;
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+  color: white;
+}
+
+
 
 
 /*--------------------------------------------------------------
@@ -664,6 +709,10 @@ color: var(--white);
   height: 90vh; /* Fixed height relative to screen */
   width: 100%;
   overflow-y: scroll;
+  background-color: var(--crt-black);
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+  margin-bottom: 1rem !important;
 }
 
 /* === Carousel === */
@@ -683,7 +732,7 @@ color: var(--white);
 /* === Card === */
 
 #artCarousel .card {
-  background: var(--black);
+  background: radial-gradient(hsl(154 5% 15%) 0%, hsl(154 50% 5%) 70%);
   border: none;
   border-radius: 0;
 }
@@ -700,6 +749,7 @@ color: var(--white);
   /* font-size: 24px; */
   font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
   font-weight: 600;
+  color: white !important;
 }
 
 #artCarousel .card-body p {
@@ -728,10 +778,10 @@ color: var(--white);
 /* --- Accordion --- */
 
 #artCarousel .accordion-button {
-  background-color: var(--black);
+  background-color: transparent;
   color: var(--white);
   border: none;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--crt-green);
   border-radius: 0;
   box-shadow: none; /* removes default focus shadow */
   outline: none; /* removes focus outline */
@@ -752,22 +802,24 @@ color: var(--white);
 
 #artCarousel .accordion-button:not(.collapsed) {
   border-bottom: 2px solid color-mix(in srgb, var(--white), transparent 80%);
-  background-color: var(--black);
+  background-color: transparent;
   color: var(--white);
 }
 
 /* When accordion is collapsed */
 #artCarousel .accordion-button.collapsed {
-  border-bottom: 2px solid var(--primary-color);
-  background-color: var(--black);
+  border-bottom: 2px solid var(--crt-green);
+  background-color: transparent;
   color: var(--white);
 }
 
 #artCarousel .accordion-body {
-  background-color: var(--black);
+  background-color: transparent;
   color: var(--white);
-  border-bottom: 2px solid var(--primary-color);
+  border: 2px solid var(--crt-green);
   border-radius: 0;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+  padding-left: 15px !important;
 }
 
 #artCarousel .accordion-item {
@@ -784,13 +836,13 @@ color: var(--white);
   background-repeat: no-repeat;
   background-size: 1.25rem;
   background-position: center;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2382994B' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2354c997' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
   transition: all 0.3s ease;
 }
 
 /* When accordion is open */
 #artCarousel .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23BEBEBECC' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2354c997' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
 }
 
 /* === Metadata Table === */
@@ -816,7 +868,7 @@ color: var(--white);
 /* Optional: spacing between first and second column */
 #artCarousel .accordion-body td:first-child {
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--crt-green);
   width: 30%;
   padding-left: 0px;
 }
@@ -847,9 +899,12 @@ color: var(--white);
 }
 
 .gallery-card .card {
-  background: var(--black);
-  /* border: none; */
-  border-radius: 0;
+  border-radius: 0 ;
+  background-color: transparent;
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+  color: var(--crt-green);
+  padding-top: 20px !important;
 }
 
 .gallery-card .card-body h5 {
@@ -862,6 +917,7 @@ color: var(--white);
 .gallery-card .card-body h6 {
   font-size: 20px;
   font-weight: 600;
+  color: white !important;
 }
 
 .gallery-card .card-body p {
@@ -932,13 +988,13 @@ color: var(--white);
   background-repeat: no-repeat;
   background-size: 1.25rem;
   background-position: center;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2382994B' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2354c997' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
   transition: all 0.3s ease;
 }
 
 /* When accordion is open */
 .gallery-card .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23BEBEBECC' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2354c997' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
 }
 
 /* === Metadata Table === */
@@ -998,17 +1054,21 @@ color: var(--white);
 
 #Around-the-Kitchen-Table {
  color: var(--kitchen);
+ text-shadow: none;
 }
 
 #Taking-Flight {
   color: var(--flight);
+  text-shadow: none;
 }
 
 #Nature-Interferes {
   color: var(--nature);
+  text-shadow: none;
 }
 
 #Travelling-Through-Time {
   color: var(--time);
+  text-shadow: none;
 }
 

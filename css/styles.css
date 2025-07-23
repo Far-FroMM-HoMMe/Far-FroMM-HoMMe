@@ -36,6 +36,13 @@
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'Pixelify';
+    src: url('../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* custom properties you can call with var() */
 /* The dark-theme will be the default */
 
