@@ -76,7 +76,7 @@ body {
     ),
     url(../resources/img/2035/lain_room.jpg);
     background-size: contain;
-    color: var(--crt-green);
+    color: var(--white);
     text-shadow: 0 0 6px hsl(154, 52%, 56%);
     font-family: 'Pixelify', sans-serif;
     font-weight: 400;
@@ -98,24 +98,29 @@ body.light {
 
 /* links and buttons */
 a {
-  color: var(--accent-color);
+  color: var(--white);
 }
 
 a:hover {
-  color: var(--accent-color-dark);
+  color: var(--crt-green);
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color);
   border-color: var(--primary-color);
-  color: var(#EDEDED);
+  color: var(#EDEDED); */
+  border: 1px solid var(--crt-green);
+  background-color: transparent;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+
 }
 
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
-  background-color: var(--primary-color-dark) !important;  /*added !important because sometimes the bootstrap default color shows up */
-  border-color: var(--primary-color-dark) !important;
+  background-color: transparent !important;  /*added !important because sometimes the bootstrap default color shows up */
+  border-color: var(--crt-green) !important;
+  color: var(--crt-green) !important;
 
 }
 /* According to dark theme */
@@ -152,8 +157,10 @@ a:hover {
 }
 
 #chooseLayout {
-  background-color: var(--primary-color);
-  color: var(--white);
+  /* background-color: var(--primary-color);
+  color: var(--white); */
+  border: 1px solid var(--crt-green);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
 }
 
 /* According to dark theme */
@@ -219,17 +226,33 @@ a:hover {
 
 }
 
-
 #beall-button {
-  /* To be decided */
- }
+  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+#beall-button:hover {
+  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
 
  #web90s-button {
   /* To be decided */
  }
 
  #cyberpunk-button {
-  /* To be decided */
+  background-color: hsl(154 50% 5%) !important;
+  border-color: hsl(154, 52%, 56%) !important;
+  color: hsl(154, 52%, 56%) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
+  font-family: 'Pixelify', sans-serif;
+  box-shadow: hsl(154, 52%, 56%) !important;
+ }
+
+ #cyberpunk-button:hover {
+  color: white !important;
  }
 
 
@@ -281,8 +304,9 @@ footer {
 
 /* index.global classes */
 .text-box {
-  background-color: rgba(248, 249, 250, 0);
+  /* background-color: rgba(248, 249, 250, 0); */
   padding: 1.618rem;
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
 }
 
 /* Smaller screens lose the margins to fit the whole screen */
@@ -342,7 +366,8 @@ footer {
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
-    font-size: clamp(7rem, 12vw, 11rem);
+    /* font-size: clamp(7rem, 12vw, 11rem); */
+    font-size: clamp(3.75rem, -0.9375rem + 15vw, 7.5rem);
     /* color: rgb(247, 247, 247); */
     text-align: start;
     /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
@@ -355,6 +380,7 @@ footer {
     transform: translateY(-50%);
     padding: 0 40px;
     box-sizing: border-box;
+    padding-left: 90px;
 }
 
 /* .hero-text span {
@@ -381,12 +407,21 @@ footer {
     box-sizing: border-box;
     margin-top: 0.15rem;
     padding-bottom: 30px;
+    padding-left: 90px;
+}
+
+@media (max-width: 375px) {
+  .hero-text,
+  .hero-subtitle  {
+    padding: 0;
+  }
 }
 
 /* Abstract section */
 /* --------------------------------------------------------------*/
 #abstract {
   margin-top: 1.618rem;
+  margin-bottom: 20px;
 }
 
 /* .has-dropcap {
@@ -406,17 +441,25 @@ footer {
 /* Themes-info and Narratives-info sections */
 /* they inherit most properties from the text-box class but need specific properties as well  */
 /* --------------------------------------------------------------*/
+#carouselThemeImages,
+#carouselNarrativeImages,
+#collectionsImageCard {
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
+}
+
 #themes-info,
 #narratives-info {
     margin-top: 1.618rem;
 }
 
 #theme-text-box {
-    background-color: var(--primary-color) !important;
+  background-color: transparent !important;
+  border: 2px solid var(--crt-green);
 }
 
 #narratives-text-box {
-  background-color: var(--accent-color) !important;
+  background-color: transparent !important;
+  border: 2px solid var(--crt-green);
 }
 
 .infoboxes-title {
@@ -463,7 +506,7 @@ color: var(--white);
 
 #carouselThemeImages .card-title-carousel,
 #carouselNarrativeImages .card-title-carousel {
-    font-size: clamp(2.8rem, 2.5vw, 3rem);
+    font-size: clamp(6vw, 6vw, 7vw);
     color: var(--white);
 }
 
@@ -500,7 +543,7 @@ color: var(--white);
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 0 6px hsl(154, 52%, 56%);
 }
 
 .flip-card:hover .flip-card-inner {
