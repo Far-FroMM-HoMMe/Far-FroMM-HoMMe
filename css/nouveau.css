@@ -35,6 +35,13 @@
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'Pixelify';
+    src: url('../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* custom properties you can call with var() */
 /* The dark-theme will be the default */
 
@@ -226,16 +233,33 @@ a:hover {
 }
 
 #beall-button {
-  /* To be decided */
- }
+  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
+
+#beall-button:hover {
+  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
+  font-family: 'University', sans-serif !important;
+  color: white;
+}
 
  #web90s-button {
   /* To be decided */
  }
 
- #cyberpunk-button {
-  /* To be decided */
- }
+#cyberpunk-button {
+  background-color: hsl(154 50% 5%) !important;
+  border-color: hsl(154, 52%, 56%) !important;
+  color: hsl(154, 52%, 56%) !important;
+  text-shadow: 0 0 6px hsl(154, 52%, 56%);
+  font-family: 'Pixelify', sans-serif;
+  box-shadow: hsl(154, 52%, 56%) !important;
+}
+
+#cyberpunk-button:hover {
+  color: white !important;
+}
 
 
 
