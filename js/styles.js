@@ -1,15 +1,15 @@
-//switch styles and store in localStorage
+//switch styles and store in sessionStorage
 function switchStyle(sheetPath) {
   const stylesheet = document.getElementById("themeStylesheet");
   if (stylesheet) {
     stylesheet.setAttribute("href", sheetPath);
-    localStorage.setItem("themeStyle", sheetPath); 
+    sessionStorage.setItem("themeStyle", sheetPath); 
   }
 }
 
-//load the saved style from localStorage
+//load the saved style from sessionStorage
 window.addEventListener("DOMContentLoaded", function () {
-  const savedStyle = localStorage.getItem("themeStyle"); 
+  const savedStyle = sessionStorage.getItem("themeStyle"); 
   if (savedStyle) {
     switchStyle(savedStyle);
   }
