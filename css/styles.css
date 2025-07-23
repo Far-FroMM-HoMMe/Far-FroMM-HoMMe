@@ -685,6 +685,7 @@ color: var(--white);
   font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
   font-weight: 600;
   padding-bottom: 8px;
+  color: var(--primary-color);
 
 }
 
@@ -692,6 +693,7 @@ color: var(--white);
   /* font-size: 24px; */
   font-size: clamp(1.125rem, 0.6563rem + 1.5vw, 1.5rem);
   font-weight: 600;
+  color: var(--primary-color-dark) !important;
 }
 
 #artCarousel .card-body p {
@@ -848,16 +850,19 @@ color: var(--white);
   font-size: 25px;
   font-weight: 600;
   padding-bottom: 8px;
+  color: var(--primary-color);
 
 }
 
 .gallery-card .card-body h6 {
   font-size: 20px;
   font-weight: 600;
+  color: var(--primary-color-dark) !important;
 }
 
 .gallery-card .card-body p {
   font-size: 16px;
+  color: var(--white);
   
 }
 
