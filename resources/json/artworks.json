@@ -15,7 +15,8 @@
         "label": "Currier & Ives issued more than thirty lithographs of the great Mississippi River. As residents who lived along the Mississippi River were well aware, their fields and homes were often threatened by periodic floods when river water levels overflowed its banks. This lithograph presents Black people and white people courageously coping with such a natural disaster, while in the background, the steamboat 'Stonewall Jackson' (named for a Confederate general in the American Civil War who had died in 1863) progresses unhindered along the river. (The Met)",
         "theme": "Nature Interferes",
         "creditLine": "",
-        "relativePath": "resources/img/high_water.jpg"
+        "relativePath": "resources/img/high_water.jpg",
+        "qrCode":"resources/img/qr/highWater-qr-code.svg"
     },
 
     {
@@ -35,7 +36,8 @@
         "theme": "Travelling Through Time",
         "creditLine": "",
         "embedURL": "https://www.youtube.com/watch?v=UKftOH54iNU",
-        "relativePath": "resources/img/Stromae_carmen.jpg"
+        "relativePath": "resources/img/Stromae_carmen.jpg",
+        "qrCode":"resources/img/qr/carmen-qr-code.svg"
 	},
 
     {
@@ -56,7 +58,8 @@
         "creditLine": "Luna Maurer & Roel Wouters, Emojis is all we have",
         "embedURL": "https://player.vimeo.com/video/1088999517?h=10614fa4d5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "allow": "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share",
-        "relativePath": "resources/img/emoji.jpg"
+        "relativePath": "resources/img/emoji.jpg",
+        "qrCode":"resources/img/qr/emoji-qr-code.svg"
     },
 
     {
@@ -75,7 +78,8 @@
         "label": "The two women on the left play a hand-gesture game called kitsune-ken (fox fists) in which gestures representing a supernatural fox (kitsune) defeat those of a village head (shōya), who defeats a hunter (ryōshi), who in turn defeats the fox. An apprentice courtesan serves tea while a high-ranking courtesan makes a grand entrance. A feast of sashimi and other delicacies sits nearby. (The Met)",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
-        "relativePath": "resources/img/fivebeauties_1.jpg"
+        "relativePath": "resources/img/fivebeauties_1.jpg",
+        "qrCode":"resources/img/qr/beauties-qr-code.svg"
     },
 
     {
@@ -94,7 +98,8 @@
         "label": "Oakland, Calif., Mar. 1942. A large sign reading 'I am an American' placed in the window of a store, at [401 - 403 Eighth] and Franklin streets, on December 8, the day after Pearl Harbor. The store was closed following orders to persons of Japanese descent to evacuate from certain West Coast areas. The owner, a University of California graduate, will be housed with hundreds of evacuees in War Relocation Authority centers for the duration of the war. (LOC)",
         "theme": "Taking Flight",
         "creditLine": "",
-        "relativePath": "resources/img/i_am_an_american.jpg"
+        "relativePath": "resources/img/i_am_an_american.jpg",
+        "qrCode":"resources/img/qr/japaneseGrocery-qr-code.svg"
     },
 
     {
@@ -113,7 +118,8 @@
         "label": "For many, Lange’s Migrant Mother, Nipomo, California is the single most recognizable image from the Great Depression, epitomizing the desperate circumstances many found themselves in during that period. It depicts thirty-two-year-old migrant farmworker Florence Owens Thompson and three of her children are depicted huddled together in a tent at a pea-pickers’ camp in Nipomo, California. (MOMA)",
         "theme": "Nature Interferes",
         "creditLine": "",
-        "relativePath": "resources/img/migrant_mother.jpg"
+        "relativePath": "resources/img/migrant_mother.jpg",
+        "qrCode":"resources/img/qr/migrantMother-qr-code.svg"
     },
 
     {
@@ -132,7 +138,8 @@
         "label": "Mandarake-Shibuya holds a collection of otaku cultural objects, old and new, ready to be found by those who take the time to look.",
         "theme": "Travelling Through Time",
         "creditLine": "",
-        "relativePath": "resources/img/mandarake.jpg"
+        "relativePath": "resources/img/mandarake.jpg",
+        "qrCode":"resources/img/qr/mandarake-qr-code.svg"
     },
 
     {
@@ -151,7 +158,8 @@
         "label": "Children find it easy to have fun wherever they are. Here the children of a mill village use a local alley as a baseball pitch.",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
-        "relativePath": "resources/img/playground.jpg"
+        "relativePath": "resources/img/playground.jpg",
+        "qrCode":"resources/img/qr/playground-qr-code.svg"
     },
 
     {       
@@ -170,7 +178,8 @@
         "label": "The English princess Mary Stuart was married to the Dutch stadholder Willem II and died aged only 29. Hanneman painted this posthumous portrait a couple of years later. Mary is ready for a fancy-dress ball and wears a white dress, an ostrich feather turban and a Brazilian feathered cloak. Her servant is fastening a string of pearls, but Mary seems not to notice him. The black boy is reduced to an ‘exotic’ accessory, with which Hanneman emphasizes Mary’s white skin and elevated position. (Mauritshuis)",
         "theme": "Taking Flight",
         "creditLine": "Mauritshuis, The Hague.",
-        "relativePath": "resources/img/posthumous_mary.jpg"
+        "relativePath": "resources/img/posthumous_mary.jpg",
+        "qrCode":"resources/img/qr/mary-qr-code.svg"
     },
 
     {
@@ -189,7 +198,8 @@
         "label": "A lone figure carries a net bulging with belongings – a teapot, a game, a lamp – hastily gathered. The nomadic astronaut is in search of a new home on a safe planet.With Refugee Astronaut IX (2024) Shonibare imagines a world where rising water levels have left humanity searching for new places to survive. In a world built on endless growth, we often forget that Earth’s resources are finite. But what happens when we reach the limit? (FENIX)",
         "theme": "Nature Interferes",
         "creditLine": "",
-        "relativePath": "resources/img/refugee_astronaut.jpg"
+        "relativePath": "resources/img/refugee_astronaut.jpg",
+        "qrCode":"resources/img/qr/astronaut-qr-code.svg"
     },
 
     {
@@ -208,7 +218,8 @@
         "label": "The painting titled ‘Refugees’ is an exceptional work in Rembowski’s oeuvre due to its large format (200 x 284 cm), use of the oil technique and subject matter. Rembowski managed to render this scene so evocatively that the lament and cries of the families, the rattle of the carts’ wheels, the hum of the river and the thunder of the approaching storm are almost audible. (National Museum of Warsaw)",
         "theme": "Taking Flight",
         "creditLine": "National Museum in Warsaw.",
-        "relativePath": "resources/img/refugees.jpg"
+        "relativePath": "resources/img/refugees.jpg",
+        "qrCode":"resources/img/qr/refugees-qr-code.svg"
     },
 
     {
@@ -227,7 +238,8 @@
         "label": "This panel is a masterpiece from Pieter Claesz' monochrome period. The soft light and finely tuned colour palette in this balanced composition produces an atmosphere of calm. With its great simplicity, with only a single glass of beer, a knife, a herring, a bread and the cracked shell of a single hazelnut, this panel sings the praises of 'our daily bread'. (Boijmans)",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
-        "relativePath": "resources/img/breakfast_piece.jpg"
+        "relativePath": "resources/img/breakfast_piece.jpg",
+        "qrCode":"resources/img/qr/herring-qr-code.svg"
     },
 
     {
@@ -246,7 +258,8 @@
         "label": "Cidra, who escaped from to Sweden with her aunt and uncle, calls her mother who remained in Syria.",
         "theme": "Taking Flight",
         "creditLine": "",
-        "relativePath": "resources/img/syrian_cidra.jpg"
+        "relativePath": "resources/img/syrian_cidra.jpg",
+        "qrCode":"resources/img/qr/cidra-qr-code.svg"
     },
 
     {
@@ -265,7 +278,8 @@
         "label": "This painting is the second of the three distinct versions of Van Gogh's bedroom in his 'Yellow House' in Arles, France; the place where he had a home of his own for the first time. As he wrote in a letter addressed to his brother Theo, the use of bright colors was meant to express 'absolute repose', reflecting his longing for tranquility during the instability brought on by his illness.",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
-        "relativePath": "resources/img/the_bedroom_aic.jpg"
+        "relativePath": "resources/img/the_bedroom_aic.jpg",
+        "qrCode":"resources/img/qr/bedroom-qr-code.svg"
     },
 
     {
@@ -284,7 +298,8 @@
         "label": "This color woodblock print depicts the Ansei Edo Earthquake, which struck Edo (now Tokyo) in 1855. The accompanying text references previous major earthquakes such as those in 1624 and 1703, highlighting the recurring nature of earthquakes in Japan's history. Known as nishiki-e, these multicolored woodblock prints became popular in the mid-Edo period. At the time, people believed giant underground catfish caused earthquakes, giving rise to a genre known as namazu-e (catfish prints).",
         "theme": "Nature Interferes",
         "creditLine": "",
-        "relativePath": "resources/img/the_earthquake_of_1855.jpg"
+        "relativePath": "resources/img/the_earthquake_of_1855.jpg",
+        "qrCode":"resources/img/qr/earthquake-qr-code.svg"
     },
 
     {
@@ -303,7 +318,8 @@
         "label": "These puzzling pictograms of daily life on Joan Miró’s family farm in Montroig, Spain, invite us into a magical world. The dreamlike images attracted author Ernest Hemingway, the painting’s first owner, and did much to inspire the surrealist movement a few years later. (NGA)",
         "theme": "Around the Kitchen Table",
         "creditLine": "",
-        "relativePath": "resources/img/thefarm.jpg"
+        "relativePath": "resources/img/thefarm.jpg",
+        "qrCode":"resources/img/qr/farm-qr-code.svg"
     },
 
     {
@@ -322,7 +338,8 @@
         "label": "Anguier, a French-born artist active in Rome from 1641-1651, worked with Bernini and Alessandro Algardi and was one of the latter's disciples picked to illustrate Old Testament scenes for the nave of San Giovanni in Laterano. This relief is a sketch-model for one of the series of thirteen stucco reliefs, intended as models for marbles but never subsequently executed, of Old and New Testament scenes. (The Met)",
         "theme": "Nature Interferes",
         "creditLine": "Rogers Fund and Director's Discretionary Fund, 1980",
-        "relativePath": "resources/img/the_flood.jpg"
+        "relativePath": "resources/img/the_flood.jpg",
+        "qrCode":"resources/img/qr/flood-qr-code.svg"
     },
 
     {
@@ -343,7 +360,8 @@
         "creditLine": "Kato Tsubasa, The Lighthouses - 11.3 PROJECT, courtesy of the artist.",
         "embedURL": "https://player.vimeo.com/video/288852544?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "allow": "autoplay; picture-in-picture; clipboard-write; encrypted-media",
-        "relativePath": "resources/img/lighthouse.jpg"
+        "relativePath": "resources/img/lighthouse.jpg",
+        "qrCode":"resources/img/qr/lighthouse-qr-code.svg"
     },
 
     {
@@ -362,7 +380,8 @@
         "label": "During the Civil War a soldier rests in camp, his rifle and letter by his side, dreaming of reuniting with his wife and child. The memories of family and thoughts of home offer a sense of comfort and hope, providing a universally human moment in the harsh times of violence and uncertainty. Published by Currier & Ives, known for popular prints in 19th-century America.",
         "theme": "Taking Flight",
         "creditLine": "",
-        "relativePath": "resources/img/the_soldiers_dream_of_home.jpg"
+        "relativePath": "resources/img/the_soldiers_dream_of_home.jpg",
+        "qrCode":"resources/img/qr/soldier-qr-code.svg"
     },
 
     {
