@@ -182,13 +182,13 @@ document.addEventListener('DOMContentLoaded', () => {
         cardBody.querySelector("h6").textContent = art.creator;
         cardBody.querySelector("p").textContent = art.label;
 
-        //add accordion for metadata
-        cardBody.appendChild(addMeta(art));
-
         //add narrative accordion if narrative has been selected 
         if (narrative) {
             cardBody.appendChild(addNar(art, narrative));
         }
+
+        //add accordion for metadata
+        cardBody.appendChild(addMeta(art));
 
         return newCard;
 
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const accButton = newNar.querySelector("button");
         accButton.setAttribute("data-bs-target", `#nar-${art.id}`);
         accButton.setAttribute("aria-controls", `nar-${art.id}`);
-        accButton.textContent = `${narrative.name} narrative`;
+        accButton.textContent = `${narrative.name}`;
 
         const collapse = newNar.querySelector(".accordion-collapse");
         collapse.setAttribute("id", `nar-${art.id}`);
