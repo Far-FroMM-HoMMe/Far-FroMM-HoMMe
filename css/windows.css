@@ -25,13 +25,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Glass Antiqua';
-  src: url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
-  font-weight: 400;
-  font-style: normal;
-}
-
 @font-face{
   font-family:"Pixelated MS Sans Serif";
   src: url("../fonts/MS Sans Serif.ttf") format("truetype");
@@ -839,7 +832,6 @@ color: var(--white);
   #carouselNarrativeImages.carousel-inner, 
   #carouselNarrativeImages.carousel-item {
     height: 40vh;
-    width: 100vw;
   }
 
   #theme-info .justify-content-center,
@@ -856,12 +848,16 @@ color: var(--white);
     border-radius: 0;
     min-height: 40vh;
     max-height: 40vh;
-    width: 100vw !important;
   }
 
   #about-info .justify-content-center {
     justify-content: center !important;
     width: 90vw !important;
+  }
+
+  #collections-info .row {
+    justify-content: start !important;
+    width: 100vw;
   }
 }
 

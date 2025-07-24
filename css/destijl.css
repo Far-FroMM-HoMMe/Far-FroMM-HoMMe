@@ -25,13 +25,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Glass Antiqua';
-  src: url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
-  font-weight: 400;
-  font-style: normal;
-}
-
 @font-face{
   font-family:"Pixelated MS Sans Serif";
   src: url("../fonts/MS Sans Serif.ttf") format("truetype");
