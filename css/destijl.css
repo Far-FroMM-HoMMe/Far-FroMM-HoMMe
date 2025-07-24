@@ -234,6 +234,9 @@ a:hover {
 /*--------------------------------------------------------------
 # off canvas
 --------------------------------------------------------------*/
+.offcanvas {
+  z-index: 2000 !important;
+}
 
 .offcanvas-end   {
   background-image: url("../resources/img/destijl/mondrian_frame2.png"); 

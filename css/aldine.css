@@ -168,6 +168,7 @@ a:hover {
 .offcanvas {
   background-image: url('../resources/img/aldine/old-parchmentpaper.jpg');
   color: #574d38;
+  z-index: 2000;
 }
 
 /* Choose layout has same id as the button but align styling with headers in offcanvas */
