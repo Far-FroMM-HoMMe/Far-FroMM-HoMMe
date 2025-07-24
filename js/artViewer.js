@@ -69,6 +69,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //filter artworks based on narrative and make cards
         if (narrative) {
+            //create title slide for narrative 
+            //clone carousel item node to add it to current doc
+            const titleCarItem = document.importNode(carouselItem, true);
+
+            //add new item to carousel 
+            document.querySelector(".carousel-inner").appendChild(titleCarItem);
+
+            //clear item of cards 
+            titleCarItem.querySelector(".card").remove();
+
+            const titleDiv = document.createElement("div");
+            titleCarItem.appendChild(titleDiv);
+            titleDiv.classList.add("text-center", "p-4", "narTitle");
+
+            const narTitle = document.createElement("h2");
+            const narDesc = document.createElement("p");
+            titleDiv.appendChild(narTitle);
+            titleDiv.appendChild(narDesc);
+
+            narTitle.textContent = narrative.name;
+            narDesc.textContent = narrative.description;
+
+            //get the artworks in the order set in the narratives
             const narArt = [];
             const narArtIds = Object.keys(narrative.art);
             for (const artID of narArtIds) {

@@ -16,7 +16,7 @@
         "theme": "Nature Interferes",
         "creditLine": "",
         "relativePath": "resources/img/high_water.jpg",
-        "qrCode":"resources/img/qr/highWater-qr-code.svg"
+        "qrCode":"resources/img/qr/highWater-qr-code.png"
     },
 
     {
@@ -37,7 +37,7 @@
         "creditLine": "",
         "embedURL": "https://www.youtube.com/watch?v=UKftOH54iNU",
         "relativePath": "resources/img/Stromae_carmen.jpg",
-        "qrCode":"resources/img/qr/carmen-qr-code.svg"
+        "qrCode":"resources/img/qr/carmen-qr-code.png"
 	},
 
     {
@@ -59,7 +59,7 @@
         "embedURL": "https://player.vimeo.com/video/1088999517?h=10614fa4d5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "allow": "autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share",
         "relativePath": "resources/img/emoji.jpg",
-        "qrCode":"resources/img/qr/emoji-qr-code.svg"
+        "qrCode":"resources/img/qr/emoji-qr-code.png"
     },
 
     {
@@ -79,7 +79,7 @@
         "theme": "Around the Kitchen Table",
         "creditLine": "",
         "relativePath": "resources/img/fivebeauties_1.jpg",
-        "qrCode":"resources/img/qr/beauties-qr-code.svg"
+        "qrCode":"resources/img/qr/beauties-qr-code.png"
     },
 
     {
@@ -99,7 +99,7 @@
         "theme": "Taking Flight",
         "creditLine": "",
         "relativePath": "resources/img/i_am_an_american.jpg",
-        "qrCode":"resources/img/qr/japaneseGrocery-qr-code.svg"
+        "qrCode":"resources/img/qr/japaneseGrocery-qr-code.png"
     },
 
     {
@@ -119,7 +119,7 @@
         "theme": "Nature Interferes",
         "creditLine": "",
         "relativePath": "resources/img/migrant_mother.jpg",
-        "qrCode":"resources/img/qr/migrantMother-qr-code.svg"
+        "qrCode":"resources/img/qr/migrantMother-qr-code.png"
     },
 
     {
@@ -139,7 +139,7 @@
         "theme": "Travelling Through Time",
         "creditLine": "",
         "relativePath": "resources/img/mandarake.jpg",
-        "qrCode":"resources/img/qr/mandarake-qr-code.svg"
+        "qrCode":"resources/img/qr/mandarake-qr-code.png"
     },
 
     {
@@ -159,7 +159,7 @@
         "theme": "Around the Kitchen Table",
         "creditLine": "",
         "relativePath": "resources/img/playground.jpg",
-        "qrCode":"resources/img/qr/playground-qr-code.svg"
+        "qrCode":"resources/img/qr/playground-qr-code.png"
     },
 
     {       
@@ -179,7 +179,7 @@
         "theme": "Taking Flight",
         "creditLine": "Mauritshuis, The Hague.",
         "relativePath": "resources/img/posthumous_mary.jpg",
-        "qrCode":"resources/img/qr/mary-qr-code.svg"
+        "qrCode":"resources/img/qr/mary-qr-code.png"
     },
 
     {
@@ -199,7 +199,7 @@
         "theme": "Nature Interferes",
         "creditLine": "",
         "relativePath": "resources/img/refugee_astronaut.jpg",
-        "qrCode":"resources/img/qr/astronaut-qr-code.svg"
+        "qrCode":"resources/img/qr/astronaut-qr-code.png"
     },
 
     {
@@ -219,7 +219,7 @@
         "theme": "Taking Flight",
         "creditLine": "National Museum in Warsaw.",
         "relativePath": "resources/img/refugees.jpg",
-        "qrCode":"resources/img/qr/refugees-qr-code.svg"
+        "qrCode":"resources/img/qr/refugees-qr-code.png"
     },
 
     {
@@ -239,7 +239,7 @@
         "theme": "Around the Kitchen Table",
         "creditLine": "",
         "relativePath": "resources/img/breakfast_piece.jpg",
-        "qrCode":"resources/img/qr/herring-qr-code.svg"
+        "qrCode":"resources/img/qr/herring-qr-code.png"
     },
 
     {
@@ -259,7 +259,7 @@
         "theme": "Taking Flight",
         "creditLine": "",
         "relativePath": "resources/img/syrian_cidra.jpg",
-        "qrCode":"resources/img/qr/cidra-qr-code.svg"
+        "qrCode":"resources/img/qr/cidra-qr-code.png"
     },
 
     {
@@ -279,7 +279,7 @@
         "theme": "Around the Kitchen Table",
         "creditLine": "",
         "relativePath": "resources/img/the_bedroom_aic.jpg",
-        "qrCode":"resources/img/qr/bedroom-qr-code.svg"
+        "qrCode":"resources/img/qr/bedroom-qr-code.png"
     },
 
     {
@@ -299,7 +299,7 @@
         "theme": "Nature Interferes",
         "creditLine": "",
         "relativePath": "resources/img/the_earthquake_of_1855.jpg",
-        "qrCode":"resources/img/qr/earthquake-qr-code.svg"
+        "qrCode":"resources/img/qr/earthquake-qr-code.png"
     },
 
     {
@@ -319,7 +319,7 @@
         "theme": "Around the Kitchen Table",
         "creditLine": "",
         "relativePath": "resources/img/thefarm.jpg",
-        "qrCode":"resources/img/qr/farm-qr-code.svg"
+        "qrCode":"resources/img/qr/farm-qr-code.png"
     },
 
     {
@@ -339,7 +339,7 @@
         "theme": "Nature Interferes",
         "creditLine": "Rogers Fund and Director's Discretionary Fund, 1980",
         "relativePath": "resources/img/the_flood.jpg",
-        "qrCode":"resources/img/qr/flood-qr-code.svg"
+        "qrCode":"resources/img/qr/flood-qr-code.png"
     },
 
     {
@@ -361,7 +361,7 @@
         "embedURL": "https://player.vimeo.com/video/288852544?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "allow": "autoplay; picture-in-picture; clipboard-write; encrypted-media",
         "relativePath": "resources/img/lighthouse.jpg",
-        "qrCode":"resources/img/qr/lighthouse-qr-code.svg"
+        "qrCode":"resources/img/qr/lighthouse-qr-code.png"
     },
 
     {
@@ -381,7 +381,7 @@
         "theme": "Taking Flight",
         "creditLine": "",
         "relativePath": "resources/img/the_soldiers_dream_of_home.jpg",
-        "qrCode":"resources/img/qr/soldier-qr-code.svg"
+        "qrCode":"resources/img/qr/soldier-qr-code.png"
     },
 
     {
@@ -400,6 +400,7 @@
         "label": "The Stone-Age Computer is very organic, natural and in great contradiction to the conventional image of computers. The Stone-Age Computer is made like a miniature Japanese garden. The rocks, which function like a normal keyboard are imbedded in soil, moss and other living wild plants. Which shall be kept alive during the exhibition in the normal way with water, and the computer on.(Mathilde μP)",
         "theme": "Travelling Through Time",
         "creditLine": "Mathilde μP, The Stone Age Computer, courtesy of the artist.",
-        "relativePath": "resources/img/stone_age_computer_1.jpg"
+        "relativePath": "resources/img/stone_age_computer_1.jpg",
+        "qrCode":"resources/img/qr/stoneAge-qr-code.png"
     }
 ]

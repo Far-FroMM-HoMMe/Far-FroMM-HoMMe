@@ -166,10 +166,26 @@ document.addEventListener('DOMContentLoaded', () => {
         cardBody.querySelector("p").textContent = art.label;
 
         //add accordion for metadata
-        cardBody.appendChild(addMeta(art));
+        // cardBody.appendChild(addMeta(art));
+
+        //add qr code to download metadata
+        cardBody.appendChild(addQR(art));
 
         return newCard;
 
+    }
+
+    function addQR(art) {
+        const qrDiv = document.createElement("div");
+        qrDiv.classList.add("qr-container");
+
+        const qrImg = document.createElement("img");
+        qrDiv.appendChild(qrImg);
+        qrImg.setAttribute("src", art.qrCode);
+        qrImg.setAttribute("alt", `${art.title} QR Code`);
+        qrImg.classList.add("img-fluid");
+
+        return qrDiv;
     }
 
     function addMeta(art) {

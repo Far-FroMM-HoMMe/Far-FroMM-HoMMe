@@ -672,6 +672,21 @@ color: var(--white);
   scroll-behavior: smooth;
 }
 
+/* === Title slide === */
+
+.narTitle {
+  border: 1px solid var(--accent-color);
+}
+
+.narTitle h2 {
+  font-size: clamp(1.25rem, -0.3125rem + 5vw, 2.5rem);
+  color: var(--white);
+}
+
+.narTitle p {
+  font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
+  color: var(--accent-color);
+} 
 
 /* === Card === */
 
