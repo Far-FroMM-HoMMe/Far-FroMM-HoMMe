@@ -1279,9 +1279,7 @@ color: var(--white);
 # artviewer
 --------------------------------------------------------------*/
 #viewer{
-  background-image: url("../resources/img/destijl/destijl_bg.png");
-  background-attachment: fixed;
-  border-top: 4px solid var(--black);
+ border-top: 4px solid var(--black);
 }
 
 #artCarousel .card {
@@ -1367,7 +1365,7 @@ color: var(--white);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -1; /* 背面に配置 */
+  z-index: -1; 
   pointer-events: none;
 }
 
