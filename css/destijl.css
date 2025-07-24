@@ -499,7 +499,7 @@ a:hover {
   object-fit: cover;
 }
 
-/* ：赤の塗りつぶし */
+/* just red bg */
 .hero-section::before {
   content: "";
   grid-column: 8 / 9;
@@ -511,7 +511,7 @@ a:hover {
   border-bottom: 4px solid var(--black);
 }
 
-/* 下段すべて：黄色の塗りつぶし */
+/* just yellow bg */
 .hero-section::after {
   content: "";
   grid-column: 1 / 9;
@@ -543,7 +543,7 @@ a:hover {
     height: auto;
   }
 
-  /* 赤い塗りつぶし → 最下部に移動 */
+  /* red bg */
   .hero-section::before {
     order: 3;
     content: "";
@@ -558,7 +558,7 @@ a:hover {
     position: static;
   }
 
-  /* 黒い塗りつぶしは非表示 */
+  /* delete the black */
   .hero-section::after {
     display: none;
   }
@@ -598,7 +598,7 @@ a:hover {
 #abstract .text-box p.has-dropcap {
   grid-area: 1 / 1 / 4 / 2  ;
   background-color: var(--blue);
-  color: var(--white); /* 青背景 */
+  color: var(--white); /*  */
   border: 0;
   padding: 5rem;
   font-size: 1.5rem;
@@ -608,7 +608,7 @@ a:hover {
 }
 
 /* div2: <p class="hidden">（2番目の） */
-#abstract .text-box p.hidden:not(.has-dropcap) {
+#abstract .text-box .destijlgrid {
   grid-area: 2 / 2 / 5 / 3;
   background-color: white; 
   border-left: 4px solid black  ;
