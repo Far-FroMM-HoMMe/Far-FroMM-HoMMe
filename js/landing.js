@@ -55,9 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
     bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas) || new bootstrap.Offcanvas(offcanvas);
   }
 
+  // Set the initial style based on localStorage
   chooseLayoutBtn.addEventListener("click", function () {
+    // Check if the current style is Windows style
     currentStyle = localStorage.getItem("currentStyle") || "css/styles.css";
 
+    // if the current style is Windows and the screen width is less than or equal to 440px, show offcanvas
     if (currentStyle === "css/windows.css") {
       if (window.innerWidth <= 440) {
         bsOffcanvas.show();
@@ -67,15 +70,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // ✅ Switch to Windows style WITHOUT opening offcanvas
+  //  Switch to Windows style WITHOUT opening offcanvas
   windowsButton.addEventListener("click", function () {
     switchStyle("css/windows.css");
 
-    // Optional: If you ever want to close it manually after switch
     bsOffcanvas.hide();
   });
 
-  // Optional: wrap scrollable area
+  // wrap scrollable area
   const target = document.querySelector(".scrollable-area");
   if (target && !target.closest('.custom-scroll-wrapper')) {
     const wrapper = document.createElement("div");
