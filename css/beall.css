@@ -59,7 +59,7 @@
 
 :root {
   --black: rgb(13, 0, 0);
-  --lightblack: rgb(44, 42, 42);
+  --lightblack: rgb(88, 86, 86);
   --white: #ECE2D0;
   --red: #DC4F34;
   --lightred: #e07a66;
@@ -78,28 +78,31 @@ body {
   background-size: cover; /* PC用 */
   background-position: center center;
   background-repeat: no-repeat;
+  background-color: var(--blue);
 }
 
 @media (max-width: 768px) {
   html, body {
-    height: 100vh;                         /* ビューポートの高さに合わせる */
-    margin: 0;                             /* 念のため余白リセット */
+    height: 100vh;                         /* set height to vh */
+    margin: 0;                             
     padding: 0;
   }
 
   body {
-    background-size: auto 100vh;           /* 背景画像の高さを画面の高さに固定 */
-    background-position: 80% center;       /* 中心よりやや右 */
-    background-attachment: fixed;          /* 背景を固定 */
-    background-repeat: no-repeat;          /* 背景繰り返しなし */
+    background-size: auto 100vh;           
+    background-position: 80% center;       /* a little towards the right*/
+    background-attachment: fixed;          /* fix position, but doesnt work in iphone */
+    background-repeat: no-repeat;  
+    background-color: var(--blue);        
+    
   }
 }
 h1,h2,h3 {
   font-family: 'University', sans-serif;
   display: inline-block;
-  transform: scaleX(0.8);         /* 横幅を少し縮める */
+  transform: scaleX(0.8);         /* thin */
   transform-origin: left;
-  letter-spacing: 0.05em;          /* 文字間隔を少し広げる */
+  letter-spacing: 0.05em;          /* spacing */
 }
 
 h4,h5,h6,p, a,.btn{
@@ -388,7 +391,6 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0.5;
@@ -694,17 +696,29 @@ footer {
 /*--------------------------------------------------------------
 # exhibition page
 --------------------------------------------------------------*/
+
+
+#intro {
+  width: 100%;
+  margin-top: 3rem !important;
+  padding: 0 !important;
+}
+
+#intro .container {
+  max-width: 100%; 
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #intro .text-center {
   padding: 0;
   background-color: #ffe000;
   margin: 0!important;
-}
-
-#floating{
-  background-color: #fff;
-  padding-left: 0;
-  padding-right: 0;
-    
 }
 
 .floating-answers-container {
@@ -797,16 +811,20 @@ footer {
 /* narrative */
 
 #choose-narrative {
-  margin-top: 1.618rem !important;
-  padding: 2% !important;
+  margin-top: 2.5rem !important;
+  margin-left: 2.5rem !important;
+  margin-right: 2.5rem !important;
+  padding: 2.5% !important;
   background-color: var(--white);
 }
 
 #choose-narrative h1{
   background-color: var(--black);
+  margin-top: 0.5rem;  
   color: white;
   padding: 0.5rem;
   font-weight: lighter !important;
+
 }
 
 /* card link styles */
@@ -842,16 +860,19 @@ footer {
   /* Discover the rooms */
 
 #rooms {
-    margin-top: 1.618rem;
-    padding: 2% !important;
-    padding-bottom: 5% !important;
-    background-color: var(--yellow);
+  margin-top: 2.5rem !important;
+  margin-left: 2.5rem !important;
+  margin-right: 2.5rem !important;
+  padding: 2.5% !important;
+  padding-bottom: 5% !important;
+  background-color: var(--yellow);
 }
 
 #rooms h1{
   background-color: var(--black);
   color: white;
   padding: 0.5rem;
+  margin-top: 0.5rem;     
   font-weight: lighter !important;
 
 }
@@ -859,17 +880,25 @@ footer {
 /* browse the collections */
 
 #collections {
-    margin-top: 1.618rem;
-    padding-left: 2% !important;
-    background-color: var(--white);
+  margin-top: 2.5rem !important;
+  margin-left: 2.5rem !important;
+  margin-right: 2.5rem !important;
+  padding: 2.5% !important;
+  background-color: var(--white);
 }
 
 #collections h1{
   background-color: var(--black);
   color: white;
   padding: 0.5rem;
+  margin-top: 0.5rem !important;  
   font-weight: lighter !important;
 
+}
+
+#collections .container{
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
 }
 
 #collections .btn-outline-secondary {
@@ -884,26 +913,55 @@ footer {
 }
 
 
+
 @media (max-width: 768px) {
-  #choose-narrative, #rooms, #collections {
+  #choose-narrative, #rooms, #collections #gallery {
     margin-left: 1rem !important;
     margin-right: 1rem !important;
   }
+
 }
 
 /*--------------------------------------------------------------
 # gallery
 --------------------------------------------------------------*/
+
+
 #gallery {
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 #gallery h1{
   font-weight: 600;
-  font-size: clamp(4rem, 3.5vw, 3rem);
+  font-size: clamp(2rem, 3vw, 4rem);
   letter-spacing: 0.2rem;
   align-items: center;
 }
+
+#gallery #themes #Around-the-Kitchen-Table{
+  font-weight: 600;
+  background-color: var(--yellow);
+  color: white;
+}
+
+#gallery #themes #Taking-Flight{
+  font-weight: 600;
+  background-color: var(--red);
+  color: white;
+}
+
+#gallery #themes #Nature-Interferes{
+  font-weight: 600;
+  background-color: var(--blue);
+  color: white;
+}
+
+#gallery #themes #Travelling-Through-Time{
+  font-weight: 600;
+  background-color: var(--lightblack  );
+  color: white;
+}
+
 
 #gallery .gallery-card {
   padding: 1rem 1rem 2.5rem 1rem; /* add */
@@ -913,7 +971,7 @@ footer {
 
 #gallery .card {
   padding: 1rem !important;
-  border: none !important; /* Bootstrapのデフォルト維持でもOK */
+  border: none !important; 
 }
 
 
@@ -928,23 +986,19 @@ footer {
 }
 
 
-/* 1番目、5番目、9番目... */
-#gallery .gallery-card:nth-child(4n+1) {
+#gallery .gallery-card:has(.taking-flight) {
   background: linear-gradient(135deg, var(--red) 50%, var(--lightred) 50%);
 }
 
-/* 2番目、6番目、10番目... */
-#gallery .gallery-card:nth-child(4n+2) {
+#gallery .gallery-card:has(.nature-interferes) {
   background: linear-gradient(135deg, var(--blue) 50%, var(--lightblue) 50%);
 }
 
-/* 3番目、7番目、11番目... */
-#gallery .gallery-card:nth-child(4n+3)  {
+#gallery .gallery-card:has(.around-the-kitchen-table) {
   background: linear-gradient(135deg, var(--yellow) 50%, var(--lightyellow) 50%);
 }
 
-/* 4番目、8番目、12番目... */
-#gallery .gallery-card:nth-child(4n)  {
+#gallery .gallery-card:has(.travelling-through-time)  {
   background: linear-gradient(135deg, var(--black) 50%, var(--lightblack) 50%);
 }
 
@@ -952,7 +1006,6 @@ footer {
 /*--------------------------------------------------------------
 # artViewer
 --------------------------------------------------------------*/
-
 
 #artCarousel .carousel-inner {
   margin: 1rem;
@@ -1015,42 +1068,47 @@ footer {
 }
 
 /*--------------------------------------------------------------
-# disclaimer
+#  disclaimer, documentation, creators
 --------------------------------------------------------------*/
 
-#disclaimer {
-  background-color: rgba(255, 255, 255, 0.75);
-}
-
-/*--------------------------------------------------------------
-# Documentation
---------------------------------------------------------------*/
-
-#documentation {
+#documentation, #disclaimer, #creators {
   background-color: rgba(255, 255, 255, 0.75);
   margin-left: 3rem!important;
   margin-right: 3rem!important;
+  padding: 1.5rem!important;
   font-family: "Roboto Condensed", sans-serif;
 }
 
-#documentation h1 {
-  font-size: clamp(3rem, 3vw, 4rem);
+#documentation h1,
+#disclaimer h1,
+#creators h1 {
+  font-size: clamp(2rem, 3vw, 4rem);
   color: var(--black);
   padding: auto;
 }
 
-#documentation h2 {
+#documentation h2,
+#disclaimer h2,
+#creators h2 {
   font-family: 'University', sans-serif;
-  font-size: clamp(2.5rem, 2vw, 3rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
   color: var(--black);
   margin-bottom: 1rem;
 }
 
-
-#documentation h3 {
+#documentation h3,
+#disclaimer h3,
+#creators h3 {
   font-family: 'University', sans-serif;
-  font-size: clamp(2rem, 1.5vw, 2rem);
+  font-size: clamp(1rem, 1.5vw, 2rem);
   color: var(--black);
   margin-bottom: 1rem;
 }
 
+@media (max-width: 768px) {
+  #documentation, #disclaimer, #creators {
+  margin-left: 1.5rem!important;
+  margin-right: 1.5rem!important;
+  padding: 1rem!important;
+  }
+}

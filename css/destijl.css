@@ -53,6 +53,7 @@
   font-style: normal;
 }
 
+
 /*--------------------------------------------------------------
 # global
 --------------------------------------------------------------*/
@@ -64,32 +65,14 @@
   --yellow: #FDDE06;
   --blue: #0300AD;
 }
-/* SCSS RGB 
-$fire-engine-red: rgba(195, 40, 38, 1);
-$school-bus-yellow: rgba(255, 225, 0, 1);
-$marian-blue: rgba(60, 74, 153, 1);
-$black: rgba(0, 0, 0, 1);
-$white: rgba(255, 255, 255, 1);
 
-CSS HEX
---fire-engine-red: #c32826ff;
---school-bus-yellow: #ffe100ff;
---marian-blue: #3c4a99ff;
---black: #000000ff;
---white: #ffffffff;
-*/
 
-/* SCSS Gradient 
-$gradient-top: linear-gradient(0deg, #c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
-$gradient-right: linear-gradient(90deg, #c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
-$gradient-bottom: linear-gradient(180deg, #c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
-$gradient-left: linear-gradient(270deg, #c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
-$gradient-top-right: linear-gradient(45deg, #c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
-$gradient-bottom-right: linear-gradient(135deg, #c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
-$gradient-top-left: linear-gradient(225deg, #c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
-$gradient-bottom-left: linear-gradient(315deg, #c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
-$gradient-radial: radial-gradient(#c32826ff, #ffe100ff, #3c4a99ff, #1a1a1aff, #ffffffff);
-*/
+@font-face {
+  font-family: 'DeStijl';
+  src: url('../fonts/DeStijl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
 h1 {
     font-family: "DeStijl";
@@ -100,7 +83,6 @@ p {
 
 
 body{
-  /*background-image: url("destijl_bg.png") ;*/
   background-size: 50%;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -241,22 +223,6 @@ a:hover {
   color: var(--primary-color-dark) !important;
 }
 
-/*--------------------------------------------------------------
-# off canvas
---------------------------------------------------------------*/
-
-.offcanvas-end   {
-  background-image: url("../resources/img/destijl/mondrian_frame2.png"); 
-  background-size: 80%; 
-  background-position: right top; 
-  background-repeat: no-repeat;
-  padding-right: 1rem;
-}
-
-.offcanvas {
-  z-index: 1055;
-}
-
 /* button */
 .btn {
   background-color: var(--black);
@@ -272,12 +238,28 @@ a:hover {
   color:white !important  ;
 }
 
+/*--------------------------------------------------------------
+# off canvas
+--------------------------------------------------------------*/
+
+.offcanvas-end   {
+  background-image: url("../resources/img/destijl/mondrian_frame2.png"); 
+  background-size: 80%; 
+  background-position: right top; 
+  background-repeat: no-repeat;
+  padding-right: 1rem;
+}
+
+#layout-buttons .btn {
+  margin-bottom: 1.618rem;
+  background-color: var(--primary-color);
+}
 /* Choose layout has same id as the button but align styling with headers in offcanvas */
 #offcanvasExample .offcanvas-title{
   margin-top: 1em !important;
   font-size: 20px !important;
     
-  background: none;
+  background: none !important;
   padding: none;
   margin: none;
   box-shadow: none;
@@ -287,12 +269,6 @@ a:hover {
   border-radius: 0;
 }
 
-
-#layout-buttons .btn {
-  margin-bottom: 1.618rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
-}
 
 #default-title {
   color: rgb(118, 118, 118);
@@ -309,9 +285,8 @@ a:hover {
   border-color: #574d38 !important;
   color: #574d38 !important;
   font-family: "Cardo", 'serif' !important;
-  font-style: italic !important;
-  text-transform: initial;
-  width: 150px !important;
+  font-style: italic;
+  width: 150px;
   box-shadow: none;
   border-style: double;
  }
@@ -391,6 +366,7 @@ a:hover {
 #cyberpunk-button:hover {
   color: white !important;
 }
+
 
 /*--------------------------------------------------------------
 # index page
@@ -1126,7 +1102,7 @@ color: var(--white);
 .card:nth-of-type(4n+4) {
   border-right: 6px solid var(--black) !important;
   border-bottom: 6px solid var(--black) !important;
-} */
+} 
 
 /* card link styles */
 .link-card:hover,
@@ -1282,11 +1258,19 @@ color: var(--white);
   align-items: center;
   justify-content: center;
   padding: 5rem;
-  background-color: var(--white);
+  background-color: var(--red);
   align-self: start;
   margin: 0;
 
 } 
+
+  #choose-narrative, #rooms, #collections {
+    margin-top: 2.5rem !important;
+  }
+
+  #collections .container {
+    margin-top: 0 !important;
+  }
 
 @media (max-width: 768px) {
   #choose-narrative, #rooms, #collections {
@@ -1362,7 +1346,7 @@ color: var(--white);
 --------------------------------------------------------------*/
 #gallery h1{
   font-weight: 600;
-  font-size: clamp(4rem, 3.5vw, 3rem);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   letter-spacing: 0.2rem;
 }
 
@@ -1407,36 +1391,47 @@ color: var(--white);
   border: none;
 }
 
-
-/* 1番目、5番目、9番目... */
-#gallery .gallery-card:nth-child(4n+1) .accordion-button {
-  background-color:var(--red); 
-  color: white;
-}
-
-/* 2番目、6番目、10番目... */
-#gallery .gallery-card:nth-child(4n+2) .accordion-button {
-  background-color:var(--blue);
-  color: white;
-}
-
-/* 3番目、7番目、11番目... */
-#gallery .gallery-card:nth-child(4n+3) .accordion-button {
-  background-color: var(--yellow); 
-  color: var(--black);
-}
-
-/* 4番目、8番目、12番目... */
-#gallery .gallery-card:nth-child(4n) .accordion-button {
-  background-color: var(--black); 
-  color:white;    
-}
-
-
 #gallery .card-text{
   font-size: 0.rem;
   text-align: justify;
 }
+
+
+
+#gallery .gallery-card:has(.taking-flight) .accordion-button {
+  background-color:var(--red); 
+  color: white;
+}
+
+#gallery .gallery-card:has(.nature-interferes) .accordion-button {
+  background-color:var(--blue);
+  color: white;
+}
+
+#gallery .gallery-card:has(.around-the-kitchen-table) .accordion-button {
+  background-color: var(--yellow); 
+  color: var(--black);
+}
+
+#gallery .gallery-card:has(.travelling-through-time)  .accordion-button {
+  background-color: var(--black); 
+  color:white;    
+}
+
+@media (max-width: 768px) {
+ #gallery {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    font-size: 0.8 rem !important;
+  }
+ #gallery .card-body{
+  padding-left: 0;
+  padding-right: 0;
+ }
+}
+
 
 
 /* Footer styles */
@@ -1478,8 +1473,7 @@ footer .text-center {
 # Documentation
 --------------------------------------------------------------*/
 
-#documentation {
-  padding: 2rem;
+#documentation, #disclaimer, #creators {
   background: url("../resources/img/destijl/mondrian_frame5.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1487,40 +1481,65 @@ footer .text-center {
   background-position: right 120%;
 } 
 
-#documentation h1 {
-  font-size: clamp(3rem, 3vw, 4rem);
+#disclaimer, #creators{
+  margin: 3rem!important;
+  padding-left: 5rem!important;
+  padding-right: 5rem!important;
+} 
 
+#documentation h1,
+#disclaimer h1,
+#creators h1 {
+  font-size: clamp(2rem, 3vw, 4rem);
   font-weight: bold;
   color: var(--black);
 }
 
-#documentation h2 {
+#documentation h2,
+#disclaimer h2,
+#creators h2  {
   font-family: "Destijl";
-  font-size: clamp(2.5rem, 2vw, 3rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
   font-weight: bold;
   color: var(--black);
   margin-bottom: 1rem;
 }
 
 
-#documentation h3 {
+#documentation h3,
+#disclaimer h3,
+#creators h3 {
   font-family: "Destijl";
-  font-size: clamp(2rem, 1.5vw, 2rem);
+  font-size: clamp(1rem, 1.5vw, 2rem);
   font-weight: bold;
   color: var(--black);
   margin-bottom: 1rem;
 }
 
-/*--------------------------------------------------------------
-# Disclaimer  
---------------------------------------------------------------*/
+#documentation p,
+#disclaimer p,
+#creators p 
+#documentation a,
+#disclaimer a,
+#creators a{
+  font-family: "Oxanium";
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  margin-bottom: 1rem;
+}
 
-
-#disclaimer {
-  padding: 2rem;
-  background: url("../resources/img/destijl/mondrian_frame5.png");
+@media (max-width: 768px) {
+  #documentation, #disclaimer, #creators {
+  margin-left: 1rem!important;
+  margin-right: 1rem!important;
+  padding: 1rem!important;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 45vh;
-  background-position: right 100%;
+  background-size: auto 50vh;
+  }
+
+  #disclaimer, #creators{
+  margin-top: 3rem!important;
+  padding-left: 1.5rem!important;
+  padding-right: 1.5rem!important;
 } 
+}
