@@ -175,36 +175,12 @@ a:hover {
 .offcanvas {
   background-image: url('../resources/img/aldine/old-parchmentpaper.jpg');
   color: #574d38;
-  z-index: 1055;
 }
 
 #layout-buttons .btn {
   margin-bottom: 1.618rem;
   padding: 0.5rem 1rem;
   background-color: var(--accent-color);
-}
-
-/* Choose layout has same id as the button but align styling with headers in offcanvas */
-#offcanvasExample .offcanvas-title{
-    margin-top: 1em !important;
-    font-size: 20px !important;
-    color: #574d38 !important;
-    
-    background: none;
-    padding: none;
-    margin: none;
-    box-shadow: none;
-    text-decoration: none;
-    outline: none;
-    outline-offset: none;
-    border-radius: 0;
-}
-
-
-#layout-buttons .btn {
-  margin-bottom: 1.618rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
 }
 
 #default-title {
@@ -214,18 +190,14 @@ a:hover {
 
 #default-button {
   background-color: rgb(118, 118, 118) !important;
-  font-family: 'Cormorant Garamond';
 }
 
 #aldine-button {
   background-color: #e4dec6 !important;
-  border-color: #574d38 !important;
+  border-color: #e4dec6 !important;
   color: #574d38 !important;
   font-family: "Cardo", 'serif' !important;
   font-style: italic;
-  width: 150px;
-  box-shadow: none;
-  border-style: double;
  }
 
  #aldine-button:hover {
@@ -234,75 +206,25 @@ a:hover {
  }
 
  #artnouveau-button {
-  background-color: #74918A !important;
-  border-color: #A8B162 !important;
-  color: #FBFDF7 !important;
-  font-family: 'ArtNouveauCaps', 'serif' !important;
-  font-style: italic;
+  /* To be decided */
  }
 
-#artnouveau-button:hover {
-  background-color: #574B60 !important;
-  color: #FBFDF7 !important;
-}
-
 #stijl-button {
-  font-family: "Destijl", "sans-serif" !important;
-  border-radius: 0 !important;
-  color: black !important;
-  box-shadow: inset -0.5em -0.5em #FDDE06;;
-  background-color: white !important ;
-  border: 2px solid black !important;
-}
-
-#stijl-button:hover {
-  color: white!important;;
-  box-shadow: inset -0.5em -0.5em#0300AD ;
-  background-color: black ! important;
-
+  font-family: "DeStijl", "sans-serif" !important;
 }
 
 #beall-button {
-  background: linear-gradient(135deg,#569DC9 50%, #DC4F34 50%);
-  font-family: 'University', sans-serif !important;
-  color: white;
-}
+  /* To be decided */
+ }
 
-#beall-button:hover {
-  background: linear-gradient(135deg,#265471 50%, #9d2108 50%);
-  font-family: 'University', sans-serif !important;
-  color: white;
-}
+ #web90s-button {
+  /* To be decided */
+ }
 
-#windows-button {
-  width: 100%;
-  background: grey !important;
-  text-align: left;
-  font-family: "Pixelated MS Sans Serif", Arial;
-  font-size: 12px;
-  border: none;
-  border-radius: 0;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-  box-sizing: border-box;
-  min-height: 23px;
-  width: auto;
-  padding: 1 12px !important;
-  text-shadow: 0 0 #222;
-  color: black;
-}
+ #cyberpunk-button {
+  /* To be decided */
+ }
 
-#cyberpunk-button {
-  background-color: hsl(154 50% 5%) !important;
-  border-color: hsl(154, 52%, 56%) !important;
-  color: hsl(154, 52%, 56%) !important;
-  text-shadow: 0 0 6px hsl(154, 52%, 56%);
-  font-family: 'Pixelify', sans-serif;
-  box-shadow: hsl(154, 52%, 56%) !important;
-}
-
-#cyberpunk-button:hover {
-  color: white !important;
-}
 
 /* FOOTER PROPERTIES */
 footer {
@@ -627,7 +549,7 @@ section:not(#hero):not(#abstract) {
   #carouselThemeImages .card-img,
   #carouselNarrativeImages .card-img {
     height: auto;
-    max-height: none;
+    max-height: 40vh;
     object-fit: cover;
   }
 
@@ -649,7 +571,7 @@ section:not(#hero):not(#abstract) {
   #carouselThemeImages .card-text-carousel,
   #carouselNarrativeImages .card-text-carousel {
     color: var(--white);
-    font-size: clamp(14pt, 3vw, 10.5pt) !important;
+    font-size: clamp(10pt, 3vw, 10.5pt) !important;
     overflow-y: auto;
     max-height: 25vh;
     padding-right: 0.5rem;
@@ -728,7 +650,6 @@ section:not(#hero):not(#abstract) {
 
   #collections-info .row {
     display: flex;
-    flex-direction: column;
     align-items: stretch;
   }
 
@@ -778,6 +699,7 @@ section:not(#hero):not(#abstract) {
 
   #about-info .row {
     width: 100%;
+    margin-top: 40px;
   }
 
   #about-info h1.infoboxes-title {
@@ -927,6 +849,7 @@ h1.mb-5.fw-bold {
 /*--------------------------------------------------------------
 # art viewer
 --------------------------------------------------------------*/
+
 /* === Carousel === */
 
 #artCarousel .carousel-control-prev, .carousel-control-next {
@@ -1288,4 +1211,30 @@ h1,
 #documentation p,
 #disclaimer p {
   color: #574d38;
+}
+
+@media (max-width: 768px) {
+  h1,
+  .display-4 {
+    font-size: clamp(20pt, 3vw, 30pt);
+    letter-spacing: 0.5rem;
+    margin-top: 70px;
+  }
+
+  #documentation h2,
+  #documentation h3,
+  #disclaimer h2, 
+  #disclaimer h3,
+  #creators h2,
+  #creators h3 {
+    font-size: clamp(10pt, 3vw, 12pt);
+    letter-spacing: 0.25rem;
+  }
+
+  #documentation,
+  #disclaimer,
+  #creators {
+    margin: 0 !important;
+    padding: 0.5rem !important;
+  }
 }
