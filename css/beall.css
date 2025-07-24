@@ -755,7 +755,7 @@ footer {
 .main-heading .fw-bold{
   position: relative;
   z-index: 2;
-  background-color: var(--red);
+  background-color: rgba(220, 79, 52, 0.85);
   letter-spacing: 0.2rem;
   color: white;
   text-align: center; 
@@ -769,6 +769,10 @@ footer {
 .action-area {
   position: relative;
   z-index: 2; 
+}
+
+.description p {
+  background-color: rgba(255, 255, 255, 0.9); 
 }
 
 @keyframes float {
@@ -908,7 +912,7 @@ footer {
 
 
 @media (max-width: 768px) {
-  #choose-narrative, #rooms, #collections #gallery {
+  #choose-narrative, #rooms, #collections, #gallery {
     margin-left: 1rem !important;
     margin-right: 1rem !important;
   }
