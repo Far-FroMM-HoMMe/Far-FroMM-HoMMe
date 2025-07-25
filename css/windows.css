@@ -1017,6 +1017,7 @@ color: var(--white);
 
 #artCarousel .carousel-control-prev, .carousel-control-next {
   width: 3%;
+  background-color: #2222227e;
 }
 
 /* Make carousel-inner scrollable if content grows */

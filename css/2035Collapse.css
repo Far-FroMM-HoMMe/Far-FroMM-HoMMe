@@ -329,8 +329,8 @@ footer {
 @keyframes lines {
     0% {background-position: 0px 0px}
     50% {background-position: 0px 0px}
-    51% {background-position: 0px 2px}
-    100% {background-position: 0px 2px}
+    51% {background-position: 0px 1px}
+    100% {background-position: 0px 1px}
 }
 
 /*--------------------------------------------------------------
@@ -546,13 +546,14 @@ color: var(--white);
 
 #carouselThemeImages .card-title-carousel,
 #carouselNarrativeImages .card-title-carousel {
-    font-size: clamp(6vw, 6vw, 7vw);
+    font-size: clamp(1.25rem, -1.875rem + 10vw, 3.75rem);
     color: var(--white);
 }
 
 #carouselThemeImages .card-text-carousel,
 #carouselNarrativeImages .card-text-carousel {
     color: var(--white);
+    font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
 }
 #carouselThemeImages .card-text-carousel a,
 #carouselNarrativeImages .card-text-carousel a {

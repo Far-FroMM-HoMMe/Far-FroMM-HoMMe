@@ -1004,6 +1004,10 @@ footer {
 # artViewer
 --------------------------------------------------------------*/
 
+#artCarousel .carousel-control-prev, .carousel-control-next {
+  width: 2%;
+}
+
 #artCarousel .carousel-inner {
   margin: 1rem;
   

@@ -920,6 +920,7 @@ h1.mb-5.fw-bold {
 
 #artCarousel .carousel-control-prev, .carousel-control-next {
   width: 3%;
+  background-color: var(--accent-color);
 }
 
 /* Make carousel-inner scrollable if content grows */
