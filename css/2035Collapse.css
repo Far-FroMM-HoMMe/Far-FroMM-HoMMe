@@ -835,6 +835,10 @@ color: var(--white);
   
 }
 
+.click-to-view {
+  color: var(--white) !important;
+}
+
 /* --- Accordion --- */
 
 #artCarousel .accordion-button {
