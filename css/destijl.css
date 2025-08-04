@@ -654,7 +654,7 @@ a:hover {
   }
 
   /* second paragraph */
-  #abstract .text-box p.hidden:not(.has-dropcap) {
+  #abstract .text-box .destijlgrid  {
     order: 2;
     padding: 2rem;
     border-left: none;
@@ -763,22 +763,18 @@ color: var(--white);
 
 #carouselThemeImages .card-title-carousel,
 #carouselNarrativeImages .card-title-carousel {
-    font-size: clamp(2.8rem, 2.5vw, 3rem);
+    font-size: clamp(1.5rem, 2.5vw, 2.8rem);
     color: var(--white);
+    
 }
 
 #carouselThemeImages .card-text-carousel,
 #carouselNarrativeImages .card-text-carousel {
     color: var(--white);
+    padding: 1rem;
 }
 
-#carouselThemeImages .card-title-carousel{
- text-align: right;
-}
 
-#carouselThemeImages .card-text-carousel{
- text-align: right;
-}
 
 #carouselThemeImages .card-text-carousel a,
 #carouselNarrativeImages .card-text-carousel a {
@@ -788,6 +784,41 @@ color: var(--white);
     left: 50%;
     top: 75%;
     color: white;
+}
+
+
+#artCarousel .carousel-control-prev, 
+#artCarousel .carousel-control-next {
+  width: 3%;
+}
+
+@media (max-width: 768px) {
+  #theme-info .carousel-control-prev,
+  #theme-info .carousel-control-next,
+  #narrative-info .carousel-control-prev, 
+  #narrative-info .carousel-control-next,
+  #artCarousel .carousel-control-prev, 
+  #artCarousel .carousel-control-next 
+   {
+    width: 1.3rem !important;
+    padding: 0; /* デフォルトの余白を払いたいなら */
+  }
+
+  #theme-info h5,
+  #narrative-info h5,
+  #collections-info h5{
+    font-size: 1.5rem !important;
+  }
+
+  #Around-the-Kitchen-Table,
+  #Travelling-Through-Time,
+  #Taking-Flight,
+  #Nature-Interferes,
+  .start-story{
+    font-size: 1.1rem !important;
+    margin-top: 1rem;
+  }
+
 }
 
 /*------ Browse the collections section* --------*/
@@ -871,7 +902,17 @@ color: var(--white);
   color: white;
   transform: rotateY(180deg);
 }
-
+@media (max-width: 768px) {
+  #about-info .has-dropcap{
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+  #about-info .dropcap{
+    font-size: 4rem !important;
+    line-height: 1;
+    margin-right: 0.5rem;
+}
+}
 
 /*--------------------------------------------------------------
 # exhibition page
@@ -1282,9 +1323,11 @@ color: var(--white);
  border-top: 4px solid var(--black);
 }
 
-#artCarousel .carousel-control-prev, .carousel-control-next {
-  width: 3%;
-  background-color: var(--red);
+#artCarousel .carousel-control-prev, 
+#artCarousel .carousel-control-next {
+  width: 2rem;
+  background-color: var(--red) !important;
+  z-index: 0;
 }
 
 #artCarousel .card {
@@ -1540,5 +1583,5 @@ footer .text-center {
   margin-top: 3rem!important;
   padding-left: 1.5rem!important;
   padding-right: 1.5rem!important;
-} 
-}
+  } 
+};

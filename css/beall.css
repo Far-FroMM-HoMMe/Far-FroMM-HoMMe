@@ -560,9 +560,14 @@ a:hover {
   letter-spacing: 0.2rem;
   text-align: center;
 }
+
+#abstract p{
+  font-size: clamp(1rem, 1.5vw, 1.2rem) !important;
+}
+
 .dropcap {
   float: left;
-  font-size: clamp(18rem, 6vw, 8.5rem);
+  font-size: clamp(4rem, 6vw, 8.5rem);
   line-height: 0.70;
   margin: 0.1em 0.1em 0em 0;
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
@@ -594,7 +599,7 @@ a:hover {
 }
 
 .infoboxes-text {
-  font-size: clamp(1rem, 0.75rem, 1.2rem);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   line-height: 1.6;
   margin-top: 1rem;
   color: var(--black) !important;
@@ -664,13 +669,12 @@ color: var(--white);
 #about-info .has-dropcap .dropcap  {
   font-family: 'University', sans-serif;
   position: relative;
-  font-size: clamp(8rem, 6vw, 8.5rem);
   z-index: 0;
 }
 
 
 #about-info p{
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   text-align: justify;
 }
 
@@ -1004,12 +1008,21 @@ footer {
 # artViewer
 --------------------------------------------------------------*/
 
-#artCarousel .carousel-control-prev, .carousel-control-next {
-  width: 2%;
+
+#artCarousel {
+  display: flex;
+  justify-content: center; /* 横方向の中央揃え */
+}
+
+#artCarousel .carousel-control-prev, 
+#artCarousel .carousel-control-next {
+  width: 2rem;
+  
 }
 
 #artCarousel .carousel-inner {
-  margin: 1rem;
+  margin: 1rem !important;
+  padding: 1rem !important;
   
 }
 
@@ -1066,6 +1079,44 @@ footer {
 
 #artCarousel h2,h3,p {
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6, p, a{
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+  }
+  #theme-info .carousel-control-prev,
+  #theme-info .carousel-control-next,
+  #narrative-info .carousel-control-prev, 
+  #narrative-info .carousel-control-next,
+  #artCarousel .carousel-control-prev, 
+  #artCarousel .carousel-control-next 
+   {
+    width: 1.3rem !important;
+    padding: 0; /* デフォルトの余白を払いたいなら */
+  }
+
+#artCarousel .carousel-inner {
+  margin: 0.5rem !important;
+  padding: 0 !important;
+  
+}
+  #theme-info h5,
+  #narrative-info h5,
+  #collections-info h5{
+    font-size: 1.5rem !important;
+  }
+  
+  #Around-the-Kitchen-Table,
+  #Travelling-Through-Time,
+  #Taking-Flight,
+  #Nature-Interferes,
+  .start-story{
+    font-size: 1.2rem !important;
+    margin-top: 1rem;
+  }
+
 }
 
 /*--------------------------------------------------------------

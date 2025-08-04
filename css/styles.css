@@ -511,8 +511,8 @@ color: var(--white);
 #carouselThemeImages .carousel-control-prev-icon,
 #carouselNarrativeImages .carousel-control-next-icon,
 #carouselNarrativeImages .carousel-control-prev-icon {
-    width: 1rem;
-    height: 1rem;
+    width: 1rem !important;
+    height: 1rem !important;
 }
 
 /* About info section */
@@ -661,8 +661,9 @@ color: var(--white);
 
 /* === Carousel === */
 
-#artCarousel .carousel-control-prev, .carousel-control-next {
-  width: 3%;
+#artCarousel .carousel-control-prev, 
+#artCarousel .carousel-control-next {
+  width: 3% ;
 }
 
 /* Make carousel-inner scrollable if content grows */

@@ -1015,7 +1015,8 @@ color: var(--white);
   width: 100vw !important;
 }
 
-#artCarousel .carousel-control-prev, .carousel-control-next {
+#artCarousel .carousel-control-prev, 
+#artCarousel .carousel-control-next {
   width: 3%;
   background-color: #2222227e;
 }

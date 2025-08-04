@@ -918,7 +918,8 @@ h1.mb-5.fw-bold {
 
 /* === Carousel === */
 
-#artCarousel .carousel-control-prev, .carousel-control-next {
+#artCarousel .carousel-control-prev, 
+#artCarousel .carousel-control-next {
   width: 3%;
   background-color: var(--accent-color);
 }
